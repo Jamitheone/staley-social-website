@@ -12,6 +12,7 @@
     { "source": "/services", "destination": "/services.html" },
     { "source": "/results", "destination": "/results.html" },
     { "source": "/pricing", "destination": "/pricing.html" },
-    { "source": "/contact", "destination": "/contact.html" }
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/privacy", "destination": "/privacy.html" }
   ]
 }

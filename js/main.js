@@ -4,7 +4,135 @@
    nav behavior, FAQ, mobile menu
    ============================================ */
 
+// ─── Intro splash sequence ───
+(function () {
+  const overlay  = document.getElementById('introOverlay');
+  const logo     = document.getElementById('introLogo');
+  const tagline  = document.getElementById('introTagline');
+  const bar      = document.getElementById('introBar');
+  if (!overlay) return;
+
+  // Lock scroll during intro
+  document.body.style.overflow = 'hidden';
+
+  // Step 1 — logo fades + scales in (200ms delay)
+  setTimeout(() => { logo.classList.add('show'); }, 200);
+
+  // Step 2 — tagline slides up (700ms)
+  setTimeout(() => { tagline.classList.add('show'); }, 700);
+
+  // Step 3 — progress bar fills (900ms)
+  setTimeout(() => { bar.classList.add('fill'); }, 900);
+
+  // Step 4 — logo glow pulse (1.4s)
+  setTimeout(() => { logo.classList.add('glow'); }, 1400);
+
+  // Step 5 — overlay fades out (2.6s)
+  setTimeout(() => {
+    overlay.classList.add('hide');
+    document.body.style.overflow = '';
+  }, 2600);
+
+  // Step 6 — remove from DOM (3.4s)
+  setTimeout(() => { overlay.classList.add('gone'); }, 3400);
+})();
+
+// ─── Lenis smooth scroll (optional — graceful fallback if CDN fails) ───
+let lenis = null;
+try {
+  if (typeof Lenis !== 'undefined') {
+    lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }
+} catch (e) {
+  lenis = null;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  // ─── Portfolio carousel ───
+  const carousel = document.getElementById('portfolioCarousel');
+  if (carousel) {
+    const track = document.getElementById('pcTrack');
+    const slides = track.querySelectorAll('.pc-slide');
+    const dotsEl = document.getElementById('pcDots');
+    const total = slides.length;
+    let current = 0;
+    let autoTimer;
+
+    // Build dots
+    const dots = Array.from({ length: total }, (_, i) => {
+      const d = document.createElement('button');
+      d.className = 'pc-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      d.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(d);
+      return d;
+    });
+
+    function goTo(idx) {
+      current = (idx + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+      resetAuto();
+    }
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => goTo(current + 1), 4500);
+    }
+
+    document.getElementById('pcPrev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('pcNext').addEventListener('click', () => goTo(current + 1));
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    carousel.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
+    });
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    carousel.addEventListener('mouseleave', resetAuto);
+
+    resetAuto();
+  }
+
+  // ─── Floating CTA popup ───
+  const floatingCta = document.getElementById('floatingCta');
+  const floatingCtaClose = document.getElementById('floatingCtaClose');
+  if (floatingCta && window.innerWidth >= 768) {
+    setTimeout(() => floatingCta.classList.add('visible'), 9000);
+    floatingCtaClose?.addEventListener('click', () => {
+      floatingCta.classList.remove('visible');
+      setTimeout(() => floatingCta.classList.add('hidden'), 500);
+    });
+  }
+
+  // ─── data-aos scroll reveal ───
+  const aosEls = document.querySelectorAll('[data-aos]');
+  if (aosEls.length && 'IntersectionObserver' in window) {
+    const aosObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('aos-visible');
+          aosObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    aosEls.forEach(el => aosObs.observe(el));
+  } else {
+    aosEls.forEach(el => el.classList.add('aos-visible'));
+  }
 
   // ─── Nav scroll behavior ───
   const nav = document.getElementById('main-nav');
@@ -42,21 +170,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ─── Scroll reveal ───
-  const revealEls = document.querySelectorAll('.reveal');
-  if (revealEls.length && 'IntersectionObserver' in window) {
-    const revealObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(el => revealObs.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('visible'));
+  // ─── Scroll reveal + counter — Lenis-compatible ───
+  // IO breaks with Lenis; use scroll + RAF check instead
+  const allRevealEls = Array.from(document.querySelectorAll('.reveal, .reveal-wipe, .reveal-left, .reveal-right, .section-divider'));
+  const allCounterEls = Array.from(document.querySelectorAll('[data-counter]'));
+  const firedCounters = new Set();
+
+  function isInView(el, offset = 80) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight - offset && rect.bottom > 0;
   }
+
+  function checkRevealAndCounters() {
+    allRevealEls.forEach(el => {
+      if (!el.classList.contains('visible') && isInView(el, 60)) {
+        el.classList.add('visible');
+        // If inside a reveal-group, trigger siblings too
+        const group = el.closest('.reveal-group');
+        if (group) {
+          group.querySelectorAll('.reveal').forEach(sib => sib.classList.add('visible'));
+        }
+      }
+    });
+
+    allCounterEls.forEach(el => {
+      if (!firedCounters.has(el) && isInView(el, 100)) {
+        firedCounters.add(el);
+        animateCounter(el);
+      }
+    });
+  }
+
+  // RAF polling — works with or without Lenis, catches both smooth and native scroll
+  function rafRevealLoop() {
+    checkRevealAndCounters();
+    const allDone = allRevealEls.every(el => el.classList.contains('visible'))
+      && firedCounters.size >= allCounterEls.length;
+    if (!allDone) requestAnimationFrame(rafRevealLoop);
+  }
+  window.addEventListener('scroll', checkRevealAndCounters, { passive: true });
+  setTimeout(() => { checkRevealAndCounters(); requestAnimationFrame(rafRevealLoop); }, 150);
 
   // ─── Counter animations ───
   function animateCounter(el) {
@@ -79,47 +232,32 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(step);
   }
 
-  const counterEls = document.querySelectorAll('[data-counter]');
-  if (counterEls.length && 'IntersectionObserver' in window) {
-    const counterObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          counterObs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-    counterEls.forEach(el => counterObs.observe(el));
-  }
-
   // ─── FAQ accordion ───
   document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.setAttribute('aria-expanded', 'false');
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
       const isOpen = item.classList.contains('open');
       // Close all
-      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
       // Toggle current
-      if (!isOpen) item.classList.add('open');
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 
-  // ─── Contact form ───
+  // ─── Contact form — let it POST naturally; formsubmit redirects to ?sent=true ───
   const form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+    form.addEventListener('submit', () => {
       const btn = form.querySelector('[type="submit"]');
-      const originalText = btn.textContent;
-      btn.textContent = 'Message sent!';
+      btn.textContent = 'Sending…';
       btn.disabled = true;
-      btn.style.opacity = '0.7';
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        btn.style.opacity = '';
-        form.reset();
-      }, 4000);
     });
   }
 
@@ -157,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
       position: fixed; pointer-events: none; z-index: 9999;
       width: 300px; height: 300px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(45,99,216,0.06) 0%, transparent 70%);
       transform: translate(-50%, -50%);
       transition: opacity 0.3s ease;
       opacity: 0;
