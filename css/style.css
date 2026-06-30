@@ -343,6 +343,12 @@ p { line-height: 1.7; }
   filter: blur(100px);
   opacity: 0.35;
   animation: float 8s ease-in-out infinite;
+  /* Promote to its own compositor layer so the expensive blur is
+     rasterized once and the float animation is a cheap GPU transform,
+     instead of re-rasterizing a 100px blur every frame over the video. */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .hero-orb-1 {

@@ -4,6 +4,9 @@
    nav behavior, FAQ, mobile menu
    ============================================ */
 
+// ─── Motion preference (respected throughout) ───
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 // ─── Intro splash sequence ───
 (function () {
   const overlay  = document.getElementById('introOverlay');
@@ -11,6 +14,12 @@
   const tagline  = document.getElementById('introTagline');
   const bar      = document.getElementById('introBar');
   if (!overlay) return;
+
+  // Reduced motion: skip the timed splash entirely
+  if (reduceMotion) {
+    overlay.classList.add('gone');
+    return;
+  }
 
   // Lock scroll during intro
   document.body.style.overflow = 'hidden';
@@ -201,15 +210,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // RAF polling — works with or without Lenis, catches both smooth and native scroll
-  function rafRevealLoop() {
-    checkRevealAndCounters();
-    const allDone = allRevealEls.every(el => el.classList.contains('visible'))
-      && firedCounters.size >= allCounterEls.length;
-    if (!allDone) requestAnimationFrame(rafRevealLoop);
+  // Scroll-driven, rAF-throttled. getBoundingClientRect is read at most once
+  // per frame and only after an actual scroll, not every idle frame. This
+  // replaces a perpetual rAF loop that forced a synchronous layout each frame
+  // and competed with Lenis's own rAF, the main source of the scroll jank.
+  let revealTicking = false;
+  function onScrollReveal() {
+    if (revealTicking) return;
+    revealTicking = true;
+    requestAnimationFrame(() => {
+      checkRevealAndCounters();
+      revealTicking = false;
+    });
   }
-  window.addEventListener('scroll', checkRevealAndCounters, { passive: true });
-  setTimeout(() => { checkRevealAndCounters(); requestAnimationFrame(rafRevealLoop); }, 150);
+  window.addEventListener('scroll', onScrollReveal, { passive: true });
+  window.addEventListener('resize', onScrollReveal, { passive: true });
+  if (lenis) lenis.on('scroll', onScrollReveal);   // catch Lenis smooth scroll
+  // Initial pass (above-the-fold) + a safety pass after the splash lifts.
+  setTimeout(checkRevealAndCounters, 150);
+  setTimeout(checkRevealAndCounters, 2800);
 
   // ─── Counter animations ───
   function animateCounter(el) {
@@ -218,6 +237,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const isDecimal = String(target).includes('.');
     const suffix = el.dataset.suffix || '';
     const prefix = el.dataset.prefix || '';
+
+    // Reduced motion: show the final number immediately, no count-up.
+    if (reduceMotion) {
+      const final = isDecimal ? target.toFixed(1) : Math.floor(target).toLocaleString();
+      el.textContent = prefix + final + suffix;
+      return;
+    }
+
     const start = performance.now();
 
     function step(now) {
@@ -275,18 +302,33 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ─── Hero text animation (stagger lines) ───
+  // The intro splash covers the screen until ~2.6s, so kick the stagger off
+  // when the splash lifts, otherwise it plays behind the overlay and the
+  // visitor never sees it. With no splash (other pages / reduced motion),
+  // run it immediately.
   const heroLines = document.querySelectorAll('.hero-line');
-  heroLines.forEach((line, i) => {
-    line.style.opacity = '0';
-    line.style.transform = 'translateY(40px)';
-    line.style.transition = `opacity 0.7s ease ${0.1 + i * 0.12}s, transform 0.7s ease ${0.1 + i * 0.12}s`;
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        line.style.opacity = '1';
-        line.style.transform = 'translateY(0)';
+  if (heroLines.length) {
+    const hasIntro = document.getElementById('introOverlay') && !reduceMotion;
+    const startDelay = hasIntro ? 2650 : 0;
+
+    if (reduceMotion) {
+      heroLines.forEach(line => { line.style.opacity = '1'; });
+    } else {
+      heroLines.forEach(line => {
+        line.style.opacity = '0';
+        line.style.transform = 'translateY(40px)';
       });
-    });
-  });
+      setTimeout(() => {
+        heroLines.forEach((line, i) => {
+          line.style.transition = `opacity 0.7s ease ${i * 0.1}s, transform 0.7s ease ${i * 0.1}s`;
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            line.style.opacity = '1';
+            line.style.transform = 'translateY(0)';
+          }));
+        });
+      }, startDelay);
+    }
+  }
 
   // ─── Subtle cursor glow (desktop only) ───
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
