@@ -333,7 +333,7 @@
 /* ─── Tier Cards ─── */
 .tiers-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   align-items: start;
   perspective: 1200px;
@@ -845,6 +845,9 @@
 }
 
 /* ─── Responsive ─── */
+@media (max-width: 1180px) {
+  .tiers-grid { grid-template-columns: repeat(2, 1fr); max-width: 720px; margin: 0 auto; }
+}
 @media (max-width: 900px) {
   .pricing-hero-grid { grid-template-columns: 1fr; }
   .pricing-hero-stat { text-align: left; }
@@ -1159,6 +1162,48 @@
           </div>
         </div>
 
+        <!-- CUSTOM -->
+        <div class="tier-card-wrap reveal reveal-delay-3" data-tilt>
+          <div class="tier-card">
+            <div class="tier-badge new">Enterprise</div>
+            <div class="tier-name">Custom</div>
+            <div class="tier-price-block">
+              <span class="tier-price-num" style="font-size:0.62em;font-weight:600;">Let's talk</span>
+            </div>
+            <div class="tier-price-setup">Scoped to your business</div>
+            <p class="tier-desc">For multi-location brands, national footprints, or teams that need more than one department can carry. We build the package around what actually moves your revenue, not a fixed menu.</p>
+            <ul class="tier-features">
+              <li class="tier-feature">
+                <span class="tier-feature-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#2D63D8" stroke-width="3"><path d="M5 13l4 4L19 7" class="tier-feature-check"/></svg></span>
+                Everything in Full OS
+              </li>
+              <li class="tier-feature">
+                <span class="tier-feature-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#2D63D8" stroke-width="3"><path d="M5 13l4 4L19 7" class="tier-feature-check"/></svg></span>
+                Multi-location or multi-brand management
+              </li>
+              <li class="tier-feature">
+                <span class="tier-feature-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#2D63D8" stroke-width="3"><path d="M5 13l4 4L19 7" class="tier-feature-check"/></svg></span>
+                LinkedIn Ads + B2B/enterprise buyer targeting
+              </li>
+              <li class="tier-feature">
+                <span class="tier-feature-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#2D63D8" stroke-width="3"><path d="M5 13l4 4L19 7" class="tier-feature-check"/></svg></span>
+                Dedicated account strategist, weekly calls
+              </li>
+              <li class="tier-feature">
+                <span class="tier-feature-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#2D63D8" stroke-width="3"><path d="M5 13l4 4L19 7" class="tier-feature-check"/></svg></span>
+                Custom integrations (CRM, Microsoft 365, phone systems)
+              </li>
+              <li class="tier-feature">
+                <span class="tier-feature-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#2D63D8" stroke-width="3"><path d="M5 13l4 4L19 7" class="tier-feature-check"/></svg></span>
+                Priced to scope, no fixed ceiling
+              </li>
+            </ul>
+            <a href="contact.html#book" class="tier-cta outline">
+              Book a call <span class="tier-cta-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
       </div>
 
       <!-- AD SPEND NOTE -->
@@ -1225,6 +1270,19 @@
             <span class="stack-pill active">Website hosting</span>
             <span class="stack-pill active">Reputation mgmt</span>
             <span class="stack-pill active">KPI reports</span>
+          </div>
+        </div>
+        <div class="stack-row">
+          <div class="stack-tier-label">
+            <div class="stack-tier-name">Custom</div>
+            <div class="stack-tier-price">Let's talk</div>
+          </div>
+          <div class="stack-includes">
+            <span class="stack-pill active">All of the above</span>
+            <span class="stack-pill active">Multi-location</span>
+            <span class="stack-pill active">LinkedIn Ads</span>
+            <span class="stack-pill active">Dedicated strategist</span>
+            <span class="stack-pill active">Custom integrations</span>
           </div>
         </div>
       </div>
