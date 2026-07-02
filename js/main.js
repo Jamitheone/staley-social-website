@@ -316,14 +316,17 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       heroLines.forEach(line => {
         line.style.opacity = '0';
-        line.style.transform = 'translateY(40px)';
+        line.style.transform = 'translateY(44px)';
+        line.style.filter = 'blur(10px)';
       });
       setTimeout(() => {
         heroLines.forEach((line, i) => {
-          line.style.transition = `opacity 0.7s ease ${i * 0.1}s, transform 0.7s ease ${i * 0.1}s`;
+          const d = i * 0.09;
+          line.style.transition = `opacity 0.85s cubic-bezier(0.16,1,0.3,1) ${d}s, transform 0.85s cubic-bezier(0.16,1,0.3,1) ${d}s, filter 0.85s cubic-bezier(0.16,1,0.3,1) ${d}s`;
           requestAnimationFrame(() => requestAnimationFrame(() => {
             line.style.opacity = '1';
             line.style.transform = 'translateY(0)';
+            line.style.filter = 'blur(0)';
           }));
         });
       }, startDelay);
