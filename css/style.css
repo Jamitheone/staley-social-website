@@ -155,6 +155,8 @@ p { line-height: 1.7; }
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-logo-dot {
@@ -547,6 +549,29 @@ p { line-height: 1.7; }
   font-size: 0.78rem;
   color: var(--text-3);
   font-weight: 500;
+}
+
+/* Hero stat strip — borderless, breathes over the video */
+.hero-stats {
+  display: flex;
+  margin-top: 22px;
+}
+.hero-stat {
+  flex: 1;
+  padding: 2px 18px;
+  border-left: 1px solid var(--border);
+}
+.hero-stat:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+.hero-stat .stat-num {
+  font-size: clamp(1.6rem, 4.5vw, 2.1rem);
+  margin-bottom: 6px;
+}
+.hero-stat .stat-label {
+  font-size: 0.72rem;
+  line-height: 1.35;
 }
 
 /* ─── Trust / Logo Bar ─── */
@@ -1761,13 +1786,9 @@ p { line-height: 1.7; }
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(
-    to bottom,
-    rgba(9,9,15,0.70) 0%,
-    rgba(9,9,15,0.60) 40%,
-    rgba(9,9,15,0.88) 80%,
-    rgba(9,9,15,1.00) 100%
-  );
+  background:
+    linear-gradient(105deg, rgba(9,9,15,0.92) 0%, rgba(9,9,15,0.74) 38%, rgba(9,9,15,0.42) 68%, rgba(9,9,15,0.30) 100%),
+    linear-gradient(to bottom, transparent 55%, rgba(9,9,15,0.80) 88%, var(--bg) 100%);
 }
 
 .hero-bg .hero-orb,
@@ -1966,6 +1987,11 @@ p { line-height: 1.7; }
 
 /* ─── Responsive ─── */
 @media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .nav-cta .btn { display: none; }
+  .nav-cta .btn-primary { display: inline-flex; }
+  .nav-phone { display: none; }
+  .nav-hamburger { display: flex; }
   .hero-content { grid-template-columns: 1fr; gap: 48px; }
   .hero-right { max-width: 560px; }
   .services-grid { grid-template-columns: 1fr 1fr; }
@@ -1983,10 +2009,6 @@ p { line-height: 1.7; }
 
 @media (max-width: 768px) {
   .section { padding: 80px 0; }
-  .nav-links { display: none; }
-  .nav-cta .btn { display: none; }
-  .nav-cta .btn-primary { display: inline-flex; }
-  .nav-hamburger { display: flex; }
   .hero-content { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .results-grid { grid-template-columns: 1fr; }
@@ -2002,6 +2024,11 @@ p { line-height: 1.7; }
   .stat-cards { grid-template-columns: 1fr 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .hero-actions { gap: 12px; }
+  .hero-video-overlay {
+    background:
+      linear-gradient(to bottom, rgba(9,9,15,0.80) 0%, rgba(9,9,15,0.70) 42%, rgba(9,9,15,0.90) 84%, var(--bg) 100%);
+  }
+  .hero-stats { margin-top: 28px; }
 }
 
 @media (max-width: 480px) {
