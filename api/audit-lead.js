@@ -45,6 +45,23 @@ export default async function handler(req, res) {
     }).catch(() => {}); // phone is best-effort
   }
 
+  // drop the lead into the Marketing Pipeline as a New Lead card — best-effort
+  if (contactId) {
+    await fetch(`${base}/opportunities/`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        locationId: process.env.GHL_TSS_LOCATION_ID,
+        pipelineId: 'Ijv8HR88X8QFjaOayxKF', // Marketing Pipeline
+        pipelineStageId: '7c70932c-8991-4857-afcb-86136fb17cb8', // New Lead
+        contactId,
+        name: `${business} - Website Audit`,
+        status: 'open',
+        source: 'Website Audit Request',
+      }),
+    }).catch(() => {});
+  }
+
   // notify Jameson (same email channel the form used before) — best-effort
   await fetch('https://formsubmit.co/ajax/jameson@thestaleysocial.com', {
     method: 'POST',
