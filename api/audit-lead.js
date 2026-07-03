@@ -45,5 +45,20 @@ export default async function handler(req, res) {
     }).catch(() => {}); // phone is best-effort
   }
 
+  // notify Jameson (same email channel the form used before) — best-effort
+  await fetch('https://formsubmit.co/ajax/jameson@thestaleysocial.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify({
+      _subject: 'AUDIT REQUEST from thestaleysocial.com',
+      name: `${firstName} ${lastName || ''}`.trim(),
+      email,
+      business,
+      website,
+      phone: phone || '',
+      crm: contactId ? `Contact in TSS CRM: https://app.gohighlevel.com/v2/location/${process.env.GHL_TSS_LOCATION_ID}/contacts/detail/${contactId}` : 'CRM id missing',
+    }),
+  }).catch(() => {});
+
   return res.status(200).json({ ok: true });
 }
