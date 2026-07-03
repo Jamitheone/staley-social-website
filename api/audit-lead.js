@@ -63,9 +63,14 @@ export default async function handler(req, res) {
   }
 
   // notify Jameson (same email channel the form used before) — best-effort
-  await fetch('https://formsubmit.co/ajax/thestaleysocial@gmail.com', {
+  const notify = await fetch('https://formsubmit.co/ajax/thestaleysocial@gmail.com', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      Origin: 'https://thestaleysocial.com',
+      Referer: 'https://thestaleysocial.com/audit.html',
+    },
     body: JSON.stringify({
       _subject: 'AUDIT REQUEST from thestaleysocial.com',
       name: `${firstName} ${lastName || ''}`.trim(),
@@ -75,7 +80,13 @@ export default async function handler(req, res) {
       phone: phone || '',
       crm: contactId ? `Contact in TSS CRM: https://app.gohighlevel.com/v2/location/${process.env.GHL_TSS_LOCATION_ID}/contacts/detail/${contactId}` : 'CRM id missing',
     }),
-  }).catch(() => {});
+  }).catch(() => null);
+  let notifyResult = 'fetch-failed';
+  if (notify) {
+    try { notifyResult = JSON.stringify(await notify.json()).slice(0, 200); }
+    catch { notifyResult = `status ${notify.status}`; }
+  }
+  console.log('notify result:', notifyResult);
 
-  return res.status(200).json({ ok: true });
+  return res.status(200).json({ ok: true, notify: notifyResult });
 }
