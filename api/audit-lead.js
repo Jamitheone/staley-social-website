@@ -63,7 +63,7 @@ export default async function handler(req, res) {
   }
 
   // notify Jameson (same email channel the form used before) — best-effort
-  await fetch('https://formsubmit.co/ajax/jameson@thestaleysocial.com', {
+  await fetch('https://formsubmit.co/ajax/thestaleysocial@gmail.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     body: JSON.stringify({
