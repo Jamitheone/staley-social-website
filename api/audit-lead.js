@@ -1,4 +1,5 @@
-// Vercel serverless: audit form → TSS GHL sub-account contact (tag fires speed-to-lead workflow)
+// Vercel serverless: audit form → TSS GHL sub-account contact + Marketing Pipeline card.
+// Email notify is done client-side (browser → formsubmit); formsubmit 403s server-side POSTs.
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
 
@@ -62,31 +63,5 @@ export default async function handler(req, res) {
     }).catch(() => {});
   }
 
-  // notify Jameson (same email channel the form used before) — best-effort
-  const notify = await fetch('https://formsubmit.co/ajax/thestaleysocial@gmail.com', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-      Origin: 'https://thestaleysocial.com',
-      Referer: 'https://thestaleysocial.com/audit.html',
-    },
-    body: JSON.stringify({
-      _subject: 'AUDIT REQUEST from thestaleysocial.com',
-      name: `${firstName} ${lastName || ''}`.trim(),
-      email,
-      business,
-      website,
-      phone: phone || '',
-      crm: contactId ? `Contact in TSS CRM: https://app.gohighlevel.com/v2/location/${process.env.GHL_TSS_LOCATION_ID}/contacts/detail/${contactId}` : 'CRM id missing',
-    }),
-  }).catch(() => null);
-  let notifyResult = 'fetch-failed';
-  if (notify) {
-    try { notifyResult = JSON.stringify(await notify.json()).slice(0, 200); }
-    catch { notifyResult = `status ${notify.status}`; }
-  }
-  console.log('notify result:', notifyResult);
-
-  return res.status(200).json({ ok: true, notify: notifyResult });
+  return res.status(200).json({ ok: true, contactId });
 }
