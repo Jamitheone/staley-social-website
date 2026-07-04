@@ -156,9 +156,62 @@
       <div id="book" style="margin-bottom:64px;">
         <div class="section-label">Book a call</div>
         <h2 class="display-sm mb-16">Free 15-minute<br>audit call.</h2>
-        <p style="color:var(--text-2);line-height:1.75;margin-bottom:32px;max-width:660px;">
-          Pick a time below and you'll get 15 minutes with Jameson and Von. We'll pull up your Google profile, website, and ad account on a screen share and show you exactly what we'd fix first. No strings attached.
+        <p style="color:var(--text-2);line-height:1.75;margin-bottom:36px;max-width:680px;">
+          Pick a time below and you'll get 15 minutes with both founders. Jameson pulls your Google profile, website, and ad account up live on a screen share and shows you exactly what we'd fix first. Gevon shows you what your brand could look and sound like once the traffic starts coming in. No strings attached.
         </p>
+
+        <!-- WHO YOU'RE MEETING: two founders, two disciplines -->
+        <style>
+          .founders-split .founders-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+          .founders-split .founder-card { background:var(--bg-2); border:1px solid var(--border); border-radius:var(--radius); padding:30px 28px; position:relative; overflow:hidden; transition:border-color .3s var(--ease), transform .3s var(--ease); }
+          .founders-split .founder-card:hover { border-color:var(--border-hover); transform:translateY(-3px); }
+          .founders-split .founder-card::before { content:""; position:absolute; top:0; left:0; width:100%; height:3px; background:linear-gradient(90deg,var(--blue),transparent); }
+          .founders-split .founder-mono { width:54px; height:54px; border-radius:50%; background:linear-gradient(135deg,var(--blue),#1B3F8F); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:800; font-size:1.1rem; color:#fff; flex-shrink:0; letter-spacing:0.02em; }
+          .founders-split .skill-chip { font-size:0.78rem; font-weight:500; color:var(--text-2); background:var(--bg-3); border:1px solid var(--border); border-radius:100px; padding:6px 13px; white-space:nowrap; }
+          @media (max-width:720px){ .founders-split .founders-grid { grid-template-columns:1fr; } }
+        </style>
+        <div class="founders-split reveal" style="margin-bottom:44px;">
+          <div style="text-align:center;max-width:640px;margin:0 auto 32px;">
+            <div class="section-label" style="display:inline-block;">Who you're meeting</div>
+            <h3 style="font-family:var(--font-display);font-weight:800;font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.08;letter-spacing:-0.02em;margin-bottom:14px;">Two founders. Two disciplines.<br>One team that owns every part of it.</h3>
+            <p style="color:var(--text-2);line-height:1.7;">Most agencies put a salesperson on the call. You'll be talking to the two people who actually do the work, and between them they cover both halves of what makes marketing pay off.</p>
+          </div>
+          <div class="founders-grid">
+            <!-- Jameson: technical side -->
+            <div class="founder-card">
+              <div style="display:flex;align-items:center;gap:15px;margin-bottom:18px;">
+                <div class="founder-mono">JS</div>
+                <div>
+                  <div style="font-family:var(--font-display);font-weight:700;font-size:1.18rem;line-height:1.2;">Jameson Staley</div>
+                  <div style="font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--blue);margin-top:3px;">The technical side</div>
+                </div>
+              </div>
+              <p style="color:var(--text-2);line-height:1.65;font-size:0.93rem;margin-bottom:20px;">Runs the audit itself. Finds the exact leaks costing you leads across your ads, tracking, and site, then builds the systems that fix them and prove the return.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <span class="skill-chip">Google Ads &amp; tracking</span>
+                <span class="skill-chip">Web &amp; automation</span>
+                <span class="skill-chip">Data &amp; reporting</span>
+              </div>
+            </div>
+            <!-- Gevon: creative side -->
+            <div class="founder-card">
+              <div style="display:flex;align-items:center;gap:15px;margin-bottom:18px;">
+                <div class="founder-mono">GG</div>
+                <div>
+                  <div style="font-family:var(--font-display);font-weight:700;font-size:1.18rem;line-height:1.2;">Gevon Garner</div>
+                  <div style="font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--blue);margin-top:3px;">The creative side</div>
+                </div>
+              </div>
+              <p style="color:var(--text-2);line-height:1.65;font-size:0.93rem;margin-bottom:20px;">Owns how your business looks and sounds. Turns the traffic we bring in into a brand people remember, trust, and feel good handing their money to.</p>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <span class="skill-chip">Brand &amp; identity</span>
+                <span class="skill-chip">Content &amp; social</span>
+                <span class="skill-chip">Design direction</span>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:22px;color:var(--text-3);font-size:0.85rem;">Both of them are on the same 15-minute call, so nothing gets lost in a handoff to a junior team you'll never actually meet.</div>
+        </div>
         <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;overflow:hidden;" class="reveal">
           <iframe src="https://api.leadconnectorhq.com/widget/booking/NaxMeovXbpOUwKhhK5RB" style="width:100%;border:none;overflow:hidden;min-height:720px;display:block;" scrolling="no" id="msgsndr_NaxMeovXbpOUwKhhK5RB" title="Book a free 15-minute audit call"></iframe>
         </div>
