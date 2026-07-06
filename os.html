@@ -95,6 +95,12 @@
 
 /* Pricing card */
 .os-price-wrap { max-width: 440px; margin: 0 auto; }
+.os-tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1080px; margin: 0 auto; align-items: start; }
+.os-tier-grid .os-price-card { padding: 36px 28px; }
+.os-tier-grid .os-price-num { font-size: 3.4rem; }
+.os-tier-name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; letter-spacing: 0.02em; color: var(--text); margin-bottom: 14px; }
+.os-price-badge.neutral { background: rgba(91,142,240,0.08); border-color: rgba(91,142,240,0.25); color: #5B8EF0; }
+@media (max-width: 900px) { .os-tier-grid { grid-template-columns: 1fr; max-width: 440px; } }
 .os-price-card { position: relative; border-radius: 24px; border: 1px solid rgba(45,99,216,0.3); background: linear-gradient(180deg, rgba(45,99,216,0.07) 0%, var(--bg-2) 45%); padding: 44px 40px; text-align: center; box-shadow: 0 0 60px rgba(45,99,216,0.12); }
 .os-price-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: 100px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 22px; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25); color: #10B981; }
 .os-price-block { display: flex; align-items: baseline; justify-content: center; gap: 5px; margin-bottom: 6px; }
@@ -262,12 +268,13 @@
   <section class="section" style="padding-top:32px;" id="start">
     <div class="container">
       <div class="os-head reveal">
-        <h2>One plan. Start free.</h2>
-        <p>No setup fee. No contract. Cancel in two clicks if it is not for you.</p>
+        <h2>Pick your plan. Start free.</h2>
+        <p>Every plan starts with a 14-day free trial. No setup fee. No contract. Cancel in two clicks.</p>
       </div>
-      <div class="os-price-wrap reveal">
+      <div class="os-tier-grid reveal">
         <div class="os-price-card">
-          <div class="os-price-badge">14-day free trial</div>
+          <div class="os-tier-name">Starter OS</div>
+          <div class="os-price-badge">Most popular</div>
           <div class="os-price-block">
             <span class="os-price-dollar">$</span>
             <span class="os-price-num">197</span>
@@ -281,10 +288,49 @@
             <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Pipeline automations + review requests</li>
             <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Professional email + software tools</li>
           </ul>
-          <a href="https://buy.stripe.com/14AeVceExclXfqqeefbo407" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" onclick="gtag('event','trial_start_click',{location:'os_pricing'});">Start free trial <span style="font-size:1.1em;">→</span></a>
-          <p style="font-size:0.76rem;color:var(--text-3);margin-top:14px;">Ready now? <a href="https://buy.stripe.com/5kQ00idAt0Df0vw2vxbo40g" style="color:var(--text-2);text-decoration:underline;" onclick="gtag('event','paid_start_click',{location:'os_pricing'});">Skip the trial and start today</a>. Need it done for you instead? <a href="pricing.html" style="color:var(--text-2);text-decoration:underline;">See managed plans</a>.</p>
+          <a href="https://buy.stripe.com/14AeVceExclXfqqeefbo407" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" onclick="gtag('event','trial_start_click',{location:'os_pricing_197'});">Start free trial <span style="font-size:1.1em;">→</span></a>
+          <p style="font-size:0.76rem;color:var(--text-3);margin-top:14px;">Ready now? <a href="https://buy.stripe.com/5kQ00idAt0Df0vw2vxbo40g" style="color:var(--text-2);text-decoration:underline;" onclick="gtag('event','paid_start_click',{location:'os_pricing_197'});">Skip the trial and start today</a>.</p>
+        </div>
+        <div class="os-price-card">
+          <div class="os-tier-name">Growth OS</div>
+          <div class="os-price-badge neutral">14-day free trial</div>
+          <div class="os-price-block">
+            <span class="os-price-dollar">$</span>
+            <span class="os-price-num">397</span>
+            <span class="os-price-period">/mo</span>
+          </div>
+          <div class="os-price-trial">Free for 14 days, then $397/mo</div>
+          <ul class="os-price-list">
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Everything in Starter</li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Email marketing + campaigns</li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Funnels + website builder</li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Workflow automations + memberships</li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Full reporting suite</li>
+          </ul>
+          <a href="https://buy.stripe.com/bJe00i8g92Ln1zAfijbo40h" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" onclick="gtag('event','trial_start_click',{location:'os_pricing_397'});">Start free trial <span style="font-size:1.1em;">→</span></a>
+          <p style="font-size:0.76rem;color:var(--text-3);margin-top:14px;">Ready now? <a href="https://buy.stripe.com/4gM6oGgMFgCd2DEc67bo40i" style="color:var(--text-2);text-decoration:underline;" onclick="gtag('event','paid_start_click',{location:'os_pricing_397'});">Skip the trial and start today</a>.</p>
+        </div>
+        <div class="os-price-card">
+          <div class="os-tier-name">Command OS</div>
+          <div class="os-price-badge neutral">14-day free trial</div>
+          <div class="os-price-block">
+            <span class="os-price-dollar">$</span>
+            <span class="os-price-num">797</span>
+            <span class="os-price-period">/mo</span>
+          </div>
+          <div class="os-price-trial">Free for 14 days, then $797/mo</div>
+          <ul class="os-price-list">
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Everything in Growth</li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Team seats + user permissions</li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Advanced automations at scale</li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Documents, contracts + communities</li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Priority support</li>
+          </ul>
+          <a href="https://buy.stripe.com/eVq6oGaoheu5dii2vxbo40j" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" onclick="gtag('event','trial_start_click',{location:'os_pricing_797'});">Start free trial <span style="font-size:1.1em;">→</span></a>
+          <p style="font-size:0.76rem;color:var(--text-3);margin-top:14px;">Ready now? <a href="https://buy.stripe.com/aFa4gydAtgCd4LMeefbo40k" style="color:var(--text-2);text-decoration:underline;" onclick="gtag('event','paid_start_click',{location:'os_pricing_797'});">Skip the trial and start today</a>.</p>
         </div>
       </div>
+      <p style="text-align:center;font-size:0.78rem;color:var(--text-3);margin-top:22px;">Need it done for you instead? <a href="pricing.html" style="color:var(--text-2);text-decoration:underline;">See managed plans</a>.</p>
     </div>
   </section>
 
