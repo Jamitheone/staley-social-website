@@ -246,28 +246,35 @@
   next.addEventListener('click',function(){ if(!valid())return; if(i<total-1){i++;show();} });
   back.addEventListener('click',function(){ if(i>0){i--;show();} });
 
-  // assemble the one-shot build prompt from answers on submit
-  document.getElementById('form').addEventListener('submit',function(){
+  // On submit: send the intake to GHL (reliable), then redirect. FormSubmit email is a bonus.
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault();
     var f=this, g=function(n){var el=f.querySelector('[name="'+n+'"]');return el?el.value:''};
     var multi=function(n){return [].slice.call(f.querySelectorAll('[name="'+n+'"]:checked')).map(function(e){return e.value}).join(', ')};
-    var p="Build a premium, high-end website for this business. Make it feel like it cost $10k. No generic AI template look.\n\n"
-      +"BUSINESS: "+g('Business name')+": "+g('What you do')+"\n"
-      +"SERVES: "+g('Who you serve')+" | AREA: "+g('Location & service area')+"\n"
-      +"STORY: "+g('Why you started')+"\n"
-      +"DIFFERENTIATOR: "+g('What makes you different')+"\n"
-      +"FIRST FEELING ON LOAD: "+g('First feeling')+"\n"
-      +"VOICE: "+multi('Vibe')+" | ADMIRES: "+g('Brand they admire')+" | NEVER: "+g('Never sound like')+"\n"
-      +"COLORS love: "+g('Colors love')+" | hate: "+g('Colors hate')+"\n"
-      +"REFERENCE SITES: "+g('Sites they love')+"\n"
-      +"CUSTOMER PROBLEM: "+g('Customer problem')+" | OBJECTION: "+g('Customer objection')+"\n"
-      +"PRIMARY CTA: "+multi('Primary action')+"\n"
-      +"SERVICES/OFFERS: "+g('Services & offers')+"\n"
-      +"MUST INCLUDE: "+g('Must-haves')+"\n"
-      +"DO NOT INCLUDE: "+g('Do-not-include')+"\n"
-      +"LOGO: "+g('Has logo')+" | CURRENT SITE: "+g('Current website')+" | SOCIALS: "+g('Socials')+"\n"
-      +"NOTES: "+g('Anything else')+"\n\n"
-      +"Also generate 3 Higgsfield visual-hook concepts (eye-catching, brand-matched, can be faceless) for the hero and social ads.";
-    document.getElementById('buildprompt').value=p;
+
+    // every answer, keyed by its question label — this is the info Jameson works with
+    var answers={};
+    [].slice.call(f.querySelectorAll('[name]')).forEach(function(el){
+      if(el.name.charAt(0)==='_'||el.name==='AI_BUILD_PROMPT')return;
+      if((el.type==='checkbox'||el.type==='radio')){ if(el.checked){answers[el.name]=(answers[el.name]?answers[el.name]+', ':'')+el.value;} }
+      else if(el.value.trim()){ answers[el.name]=el.value.trim(); }
+    });
+    // optional starting prompt, for Jameson only — nothing auto-runs
+    answers['STARTING PROMPT (optional, Jameson use)']=
+      "Premium high-end site, $10k feel, no generic AI look. "+g('Business name')+": "+g('What you do')
+      +". Voice: "+multi('Vibe')+". Colors love "+g('Colors love')+", hate "+g('Colors hate')
+      +". Must include "+g('Must-haves')+". Do NOT include "+g('Do-not-include')+".";
+
+    var payload={ contactName:g('Contact name'), email:g('Email'), phone:g('Phone'), business:g('Business name'), answers:answers };
+    var done=function(){ location.href='/onboard.html?done=1'; };
+
+    // primary: reliable CRM insert + note + pipeline card
+    fetch('/api/brand-intake',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+      .then(function(){ done(); }).catch(function(){
+        // fallback: native FormSubmit email (only if API unreachable)
+        document.getElementById('buildprompt').value=answers['STARTING PROMPT (optional, Jameson use)'];
+        f.submit();
+      });
   });
 
   // success state
