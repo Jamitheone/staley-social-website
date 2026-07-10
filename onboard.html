@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Staley OS · Brand Intake</title>
+<!--
+  INVITE-ONLY. Never link this page from nav, footer, sitemap, or any public funnel.
+  Send the direct URL ONLY to clients who are already paying and website-ready.
+  Reason: if it's public, strangers submit and flood Jameson with website generations.
+  This form COLLECTS INFO ONLY. It does not auto-generate anything in Higgsfield or Claude.
+  The emailed "starting prompt" is a convenience for Jameson to use manually if he wants.
+-->
+
+<style>
+  :root{
+    --blue:#1f57ff; --blue-glow:#2f6bff; --blue-soft:#6f93ff;
+    --bg:#000; --panel:#0a0d14; --line:#1a2030; --text:#f3f6ff; --muted:#8890a5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px 120px}
+
+  /* header / logo */
+  header{text-align:center;padding:64px 24px 40px}
+  .logo{width:88px;height:88px;margin:0 auto 22px;filter:drop-shadow(0 0 22px rgba(31,87,255,.55))}
+  h1{font-size:clamp(28px,6vw,40px);font-weight:800;letter-spacing:-.02em}
+  .tag{color:var(--blue-soft);text-transform:uppercase;letter-spacing:.32em;font-size:11px;font-weight:700;margin-top:10px}
+  .lede{color:var(--muted);max-width:520px;margin:20px auto 0;font-size:15px}
+
+  /* progress */
+  .bar{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.86);backdrop-filter:blur(10px);padding:14px 0;border-bottom:1px solid var(--line)}
+  .bar-inner{max-width:720px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:14px}
+  .track{flex:1;height:5px;background:var(--line);border-radius:99px;overflow:hidden}
+  .fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--blue-glow));border-radius:99px;transition:width .35s ease}
+  .pct{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:34px;text-align:right}
+
+  section.step{display:none;animation:fade .4s ease}
+  section.step.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .step-num{color:var(--blue);font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+  .step h2{font-size:24px;font-weight:800;letter-spacing:-.01em;margin:6px 0 4px}
+  .step .sub{color:var(--muted);font-size:14px;margin-bottom:26px}
+
+  .field{margin-bottom:24px}
+  label.q{display:block;font-weight:600;font-size:15px;margin-bottom:8px}
+  label.q .opt{color:var(--muted);font-weight:400;font-size:13px}
+  input[type=text],input[type=email],input[type=url],textarea,select{
+    width:100%;background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    color:var(--text);padding:14px 16px;font-size:15px;font-family:inherit;transition:border-color .2s,box-shadow .2s}
+  textarea{min-height:100px;resize:vertical}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(31,87,255,.18)}
+  ::placeholder{color:#4a5266}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{position:relative}
+  .chip input{position:absolute;opacity:0;pointer-events:none}
+  .chip span{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:99px;font-size:14px;color:var(--muted);cursor:pointer;transition:all .18s;user-select:none}
+  .chip input:checked+span{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 0 16px rgba(31,87,255,.4)}
+
+  .nav{display:flex;justify-content:space-between;gap:14px;margin-top:36px}
+  button{font-family:inherit;font-weight:700;font-size:15px;border-radius:12px;padding:14px 30px;cursor:pointer;border:none;transition:transform .12s,opacity .2s}
+  button:active{transform:scale(.97)}
+  .back{background:transparent;color:var(--muted);border:1px solid var(--line)}
+  .next{background:linear-gradient(90deg,var(--blue),var(--blue-glow));color:#fff;margin-left:auto;box-shadow:0 6px 24px rgba(31,87,255,.35)}
+  .hide{display:none}
+
+  .done{text-align:center;padding:40px 0}
+  .done .check{width:72px;height:72px;margin:0 auto 24px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(31,87,255,.5)}
+  .foot{text-align:center;color:#3a4255;font-size:12px;margin-top:60px;letter-spacing:.05em}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar-inner">
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <div class="pct" id="pct">0%</div>
+  </div>
+</div>
+
+<header>
+  <svg class="logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Staley Social">
+    <defs>
+      <linearGradient id="g" x1="20" y1="10" x2="80" y2="90" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#4f7dff"/><stop offset="1" stop-color="#0d34c8"/>
+      </linearGradient>
+    </defs>
+    <path d="M50 4 88 26 88 74 50 96 12 74 12 26Z" stroke="url(#g)" stroke-width="2" opacity=".5"/>
+    <path d="M66 33c-3-5-9-8-16-8-9 0-16 5-16 13 0 17 32 8 32 24 0 8-8 13-17 13-7 0-13-3-16-8"
+          stroke="url(#g)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <h1>Let's build your brand</h1>
+  <div class="tag">Staley OS · Brand Intake</div>
+  <p class="lede">Ten minutes here saves us ten calls. Answer in your own words. The more honest and specific you are, the more the finished site feels like it came out of your head. Nothing here is permanent, it's a starting point we refine together.</p>
+</header>
+
+<div class="wrap">
+<form id="form" action="https://formsubmit.co/a3783e64c8c826bf63dd5ecae1673435" method="POST">
+  <input type="hidden" name="_subject" value="New Staley OS brand intake">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://thestaleysocial.com/onboard.html?done=1">
+  <input type="hidden" id="buildprompt" name="AI_BUILD_PROMPT" value="">
+
+  <!-- STEP 1 -->
+  <section class="step active" data-step="1">
+    <div class="step-num">Step 1 of 7</div>
+    <h2>The basics</h2>
+    <p class="sub">Start with the ground truth.</p>
+    <div class="field"><label class="q">Business name</label><input type="text" name="Business name" required></div>
+    <div class="field"><label class="q">In one sentence, what do you do?</label><input type="text" name="What you do" placeholder="e.g. I help anxious adults feel steady again through psychiatric care" required></div>
+    <div class="field"><label class="q">Who do you serve? <span class="opt">be specific</span></label><input type="text" name="Who you serve" placeholder="e.g. adults 25-55 in Missouri dealing with ADHD, anxiety, depression"></div>
+    <div class="field"><label class="q">Where are you located / what areas do you cover?</label><input type="text" name="Location & service area"></div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="step" data-step="2">
+    <div class="step-num">Step 2 of 7</div>
+    <h2>Your story</h2>
+    <p class="sub">This is what makes the site yours and not a template.</p>
+    <div class="field"><label class="q">Why did you start this? What drives you?</label><textarea name="Why you started"></textarea></div>
+    <div class="field"><label class="q">What do you do differently than everyone else in your space?</label><textarea name="What makes you different"></textarea></div>
+    <div class="field"><label class="q">What's the #1 thing you want people to feel the second they land on your site?</label><input type="text" name="First feeling" placeholder="e.g. relief, trust, this person gets me"></div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="step" data-step="3">
+    <div class="step-num">Step 3 of 7</div>
+    <h2>Voice &amp; personality</h2>
+    <p class="sub">If your brand were a person, how would it talk?</p>
+    <div class="field"><label class="q">Pick the words that fit your vibe <span class="opt">choose any</span></label>
+      <div class="chips">
+        <label class="chip"><input type="checkbox" name="Vibe" value="Warm"><span>Warm</span></label>
+        <label class="chip"><input type="checkbox" name="Vibe" value="Professional"><span>Professional</span></label>
+        <label class="chip"><input type="checkbox" name="Vibe" value="Bold"><span>Bold</span></label>
+        <label class="chip"><input type="checkbox" name="Vibe" value="Calm"><span>Calm</span></label>
+        <label class="chip"><input type="checkbox" name="Vibe" value="Luxury"><span>Luxury</span></label>
+        <label class="chip"><input type="checkbox" name="Vibe" value="Approachable"><span>Approachable</span></label>
+        <label class="chip"><input type="checkbox" name="Vibe" value="Playful"><span>Playful</span></label>
+        <label class="chip"><input type="checkbox" name="Vibe" value="Clinical/Trusted"><span>Clinical / Trusted</span></label>
+        <label class="chip"><input type="checkbox" name="Vibe" value="Modern"><span>Modern</span></label>
+        <label class="chip"><input type="checkbox" name="Vibe" value="Classic"><span>Classic</span></label>
+      </div>
+    </div>
+    <div class="field"><label class="q">A brand you admire (any industry) and why? <span class="opt">optional</span></label><input type="text" name="Brand they admire"></div>
+    <div class="field"><label class="q">Anything you never want to sound like?</label><input type="text" name="Never sound like" placeholder="e.g. salesy, corporate, cold"></div>
+  </section>
+
+  <!-- STEP 4 -->
+  <section class="step" data-step="4">
+    <div class="step-num">Step 4 of 7</div>
+    <h2>Look &amp; feel</h2>
+    <p class="sub">Paint me a picture. Links are gold here.</p>
+    <div class="field"><label class="q">Colors you love <span class="opt">names or hex, whatever you've got</span></label><input type="text" name="Colors love"></div>
+    <div class="field"><label class="q">Colors you hate</label><input type="text" name="Colors hate"></div>
+    <div class="field"><label class="q">Paste 1-3 websites you think look amazing <span class="opt">competitors or not</span></label><textarea name="Sites they love" placeholder="one per line"></textarea></div>
+    <div class="field"><label class="q">Do you have a logo already? <span class="opt">if yes, email it to thestaleysocial@gmail.com after this</span></label>
+      <select name="Has logo"><option value="">Choose one</option><option>Yes, I have one I love</option><option>Yes, but it needs work</option><option>No, I need one</option></select>
+    </div>
+  </section>
+
+  <!-- STEP 5 -->
+  <section class="step" data-step="5">
+    <div class="step-num">Step 5 of 7</div>
+    <h2>Your customer</h2>
+    <p class="sub">The site talks to them, not to you.</p>
+    <div class="field"><label class="q">What's the #1 problem your customer is trying to solve when they find you?</label><textarea name="Customer problem"></textarea></div>
+    <div class="field"><label class="q">What's stopping them from choosing you? <span class="opt">the objection in their head</span></label><input type="text" name="Customer objection" placeholder="e.g. cost, is it legit, will it actually work"></div>
+    <div class="field"><label class="q">What do you want them to DO on the site?</label>
+      <div class="chips">
+        <label class="chip"><input type="checkbox" name="Primary action" value="Book a call/appointment"><span>Book a call</span></label>
+        <label class="chip"><input type="checkbox" name="Primary action" value="Fill out a form"><span>Fill out a form</span></label>
+        <label class="chip"><input type="checkbox" name="Primary action" value="Call/text"><span>Call or text</span></label>
+        <label class="chip"><input type="checkbox" name="Primary action" value="Buy/subscribe"><span>Buy / subscribe</span></label>
+        <label class="chip"><input type="checkbox" name="Primary action" value="Learn more"><span>Learn more</span></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 6 -->
+  <section class="step" data-step="6">
+    <div class="step-num">Step 6 of 7</div>
+    <h2>Must-haves &amp; no-gos</h2>
+    <p class="sub">The details that make or break it.</p>
+    <div class="field"><label class="q">List your services / offers <span class="opt">and prices if you show them</span></label><textarea name="Services & offers"></textarea></div>
+    <div class="field"><label class="q">Anything that MUST be on the site? <span class="opt">a specific tool, credential, guarantee, photo</span></label><textarea name="Must-haves" placeholder="e.g. must mention we use Carepatron, must show my credentials"></textarea></div>
+    <div class="field"><label class="q">Anything that must NOT be on the site?</label><textarea name="Do-not-include" placeholder="e.g. do not mention Optimantra, no stock photos of fake smiling people"></textarea></div>
+  </section>
+
+  <!-- STEP 7 -->
+  <section class="step" data-step="7">
+    <div class="step-num">Step 7 of 7</div>
+    <h2>Logistics</h2>
+    <p class="sub">Last stretch. So we can wire everything up.</p>
+    <div class="field"><label class="q">Your name</label><input type="text" name="Contact name" required></div>
+    <div class="field"><label class="q">Best email</label><input type="email" name="Email" required></div>
+    <div class="field"><label class="q">Best phone</label><input type="text" name="Phone"></div>
+    <div class="field"><label class="q">Current website <span class="opt">if any</span></label><input type="url" name="Current website"></div>
+    <div class="field"><label class="q">Do you own your domain? Where?</label><input type="text" name="Domain status" placeholder="e.g. yes, on GoDaddy / no, need one"></div>
+    <div class="field"><label class="q">Instagram / socials <span class="opt">so we match the look</span></label><input type="text" name="Socials"></div>
+    <div class="field"><label class="q">Anything else on your mind?</label><textarea name="Anything else"></textarea></div>
+  </section>
+
+  <div class="nav">
+    <button type="button" class="back hide" id="back">Back</button>
+    <button type="button" class="next" id="next">Continue</button>
+    <button type="submit" class="next hide" id="submit">Send it to Jameson →</button>
+  </div>
+</form>
+
+<!-- success shown via ?done=1 -->
+<div class="done hide" id="thanks">
+  <div class="check"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <h2>Got it. This is everything I needed.</h2>
+  <p class="sub" style="max-width:440px;margin:12px auto 0">Jameson has your answers. You'll hear back with a first look soon. Go do what you're good at, the rest is handled.</p>
+</div>
+
+<div class="foot">THE STALEY SOCIAL · STALEY OS</div>
+</div>
+
+<script>
+(function(){
+  var steps=[].slice.call(document.querySelectorAll('.step'));
+  var i=0, total=steps.length;
+  var fill=document.getElementById('fill'), pct=document.getElementById('pct');
+  var back=document.getElementById('back'), next=document.getElementById('next'), submit=document.getElementById('submit');
+
+  function show(){
+    steps.forEach(function(s,n){s.classList.toggle('active',n===i)});
+    back.classList.toggle('hide', i===0);
+    next.classList.toggle('hide', i===total-1);
+    submit.classList.toggle('hide', i!==total-1);
+    var p=Math.round(((i+1)/total)*100);
+    fill.style.width=p+'%'; pct.textContent=p+'%';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  // required-field gate on the current step only
+  function valid(){
+    var cur=steps[i];
+    var reqs=[].slice.call(cur.querySelectorAll('[required]'));
+    for(var k=0;k<reqs.length;k++){ if(!reqs[k].value.trim()){ reqs[k].focus(); reqs[k].style.borderColor='#ff4d5e'; return false; } }
+    return true;
+  }
+  next.addEventListener('click',function(){ if(!valid())return; if(i<total-1){i++;show();} });
+  back.addEventListener('click',function(){ if(i>0){i--;show();} });
+
+  // assemble the one-shot build prompt from answers on submit
+  document.getElementById('form').addEventListener('submit',function(){
+    var f=this, g=function(n){var el=f.querySelector('[name="'+n+'"]');return el?el.value:''};
+    var multi=function(n){return [].slice.call(f.querySelectorAll('[name="'+n+'"]:checked')).map(function(e){return e.value}).join(', ')};
+    var p="Build a premium, high-end website for this business. Make it feel like it cost $10k. No generic AI template look.\n\n"
+      +"BUSINESS: "+g('Business name')+": "+g('What you do')+"\n"
+      +"SERVES: "+g('Who you serve')+" | AREA: "+g('Location & service area')+"\n"
+      +"STORY: "+g('Why you started')+"\n"
+      +"DIFFERENTIATOR: "+g('What makes you different')+"\n"
+      +"FIRST FEELING ON LOAD: "+g('First feeling')+"\n"
+      +"VOICE: "+multi('Vibe')+" | ADMIRES: "+g('Brand they admire')+" | NEVER: "+g('Never sound like')+"\n"
+      +"COLORS love: "+g('Colors love')+" | hate: "+g('Colors hate')+"\n"
+      +"REFERENCE SITES: "+g('Sites they love')+"\n"
+      +"CUSTOMER PROBLEM: "+g('Customer problem')+" | OBJECTION: "+g('Customer objection')+"\n"
+      +"PRIMARY CTA: "+multi('Primary action')+"\n"
+      +"SERVICES/OFFERS: "+g('Services & offers')+"\n"
+      +"MUST INCLUDE: "+g('Must-haves')+"\n"
+      +"DO NOT INCLUDE: "+g('Do-not-include')+"\n"
+      +"LOGO: "+g('Has logo')+" | CURRENT SITE: "+g('Current website')+" | SOCIALS: "+g('Socials')+"\n"
+      +"NOTES: "+g('Anything else')+"\n\n"
+      +"Also generate 3 Higgsfield visual-hook concepts (eye-catching, brand-matched, can be faceless) for the hero and social ads.";
+    document.getElementById('buildprompt').value=p;
+  });
+
+  // success state
+  if(location.search.indexOf('done=1')>-1){
+    document.getElementById('form').style.display='none';
+    document.querySelector('.bar').style.display='none';
+    document.querySelector('header').style.display='none';
+    document.getElementById('thanks').classList.remove('hide');
+  } else { show(); }
+})();
+</script>
+</body>
+</html>
