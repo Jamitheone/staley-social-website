@@ -71,23 +71,5 @@ export default async function handler(req, res) {
     }).catch(() => {});
   }
 
-  // instant email notify to Jameson via GHL (conversations use Version 2021-04-15)
-  if (contactId) {
-    const summary = Object.entries(answers || {})
-      .filter(([, v]) => v && String(v).trim())
-      .map(([k, v]) => `<p style="margin:4px 0"><b>${k}:</b> ${v}</p>`).join('');
-    await fetch(`${base}/conversations/messages`, {
-      method: 'POST',
-      headers: { ...headers, Version: '2021-04-15' },
-      body: JSON.stringify({
-        type: 'Email',
-        contactId,
-        emailTo: 'thestaleysocial@gmail.com',
-        subject: `New brand intake: ${business}`,
-        html: `<h2>New Staley OS brand intake</h2><p><b>From:</b> ${contactName || ''} (${email}${phone ? ', ' + phone : ''})</p>${summary}`,
-      }),
-    }).catch(() => {});
-  }
-
   return res.status(200).json({ ok: true, contactId });
 }

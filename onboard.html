@@ -268,13 +268,16 @@
     var payload={ contactName:g('Contact name'), email:g('Email'), phone:g('Phone'), business:g('Business name'), answers:answers };
     var done=function(){ location.href='/onboard.html?done=1'; };
 
-    // primary: reliable CRM insert + note + pipeline card
+    // notify: email to Jameson's inbox (fire-and-forget; FormSubmit is browser-only)
+    var emailBody=Object.keys(answers).map(function(k){return k+': '+answers[k]}).join('\n');
+    fetch('https://formsubmit.co/ajax/thestaleysocial@gmail.com',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({_subject:'New brand intake: '+g('Business name'),name:g('Contact name'),email:g('Email'),message:emailBody})
+    }).catch(function(){});
+
+    // record: reliable CRM insert + note + pipeline card (source of truth)
     fetch('/api/brand-intake',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-      .then(function(){ done(); }).catch(function(){
-        // fallback: native FormSubmit email (only if API unreachable)
-        document.getElementById('buildprompt').value=answers['STARTING PROMPT (optional, Jameson use)'];
-        f.submit();
-      });
+      .then(function(){ done(); }).catch(function(){ done(); });
   });
 
   // success state
