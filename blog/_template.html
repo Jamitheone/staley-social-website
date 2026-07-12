@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{DESCRIPTION}}">
+  <title>{{TITLE}} | The Staley Social</title>
+  <link rel="icon" href="../favicon.ico" sizes="32x32">
+  <link rel="canonical" href="https://thestaleysocial.com/blog/{{SLUG}}.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:url" content="https://thestaleysocial.com/blog/{{SLUG}}.html">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=8">
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    .post-wrap { max-width: 720px; margin: 0 auto; padding: 140px 24px 80px; }
+    .post-wrap h1 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 2.25rem; margin-bottom: 0.5rem; }
+    .post-wrap time { display: block; opacity: 0.6; font-size: 0.85rem; margin-bottom: 2rem; }
+    .post-wrap p { line-height: 1.7; margin-bottom: 1.25rem; }
+    .post-wrap a.back { display: inline-block; margin-top: 2rem; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="post-wrap">
+    <h1>{{TITLE}}</h1>
+    <time datetime="{{DATE_ISO}}">{{DATE_HUMAN}}</time>
+    {{BODY_HTML}}
+    <a class="back" href="index.html">&larr; back to blog</a>
+  </div>
+</body>
+</html>
