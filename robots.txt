@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /onboard.html
+Disallow: /ads-intake.html
+
+Sitemap: https://thestaleysocial.com/sitemap.xml
