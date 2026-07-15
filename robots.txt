@@ -3,4 +3,21 @@ Allow: /
 Disallow: /onboard.html
 Disallow: /ads-intake.html
 
+# AI answer engines / retrieval bots — explicitly allowed so this site is
+# eligible to be cited in ChatGPT, Perplexity, and Claude search results.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
 Sitemap: https://thestaleysocial.com/sitemap.xml
