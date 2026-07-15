@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>OPERATOR &mdash; Course Vault</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=6">
+<style>
+body { background:var(--bg); }
+.vault { display:grid; grid-template-columns:260px 1fr; max-width:1180px; margin:0 auto; min-height:100vh; }
+/* sidebar */
+.v-side { position:sticky; top:0; align-self:start; height:100vh; overflow-y:auto; border-right:1px solid var(--border); padding:32px 24px; }
+.v-side .brand { font-family:var(--font-display); font-weight:800; font-size:1.15rem; letter-spacing:-0.03em; color:var(--text); margin-bottom:4px; }
+.v-side .brand .dot { color:var(--blue); }
+.v-side .sub { font-size:0.72rem; color:var(--text-3); margin-bottom:28px; }
+.v-nav a { display:block; font-size:0.84rem; color:var(--text-2); padding:8px 12px; border-radius:8px; text-decoration:none; line-height:1.4; transition:background 0.2s, color 0.2s; }
+.v-nav a:hover { background:var(--bg-2); color:var(--text); }
+.v-nav a .n { color:var(--text-3); font-family:var(--font-display); font-weight:700; margin-right:8px; }
+.v-nav a.bonus { color:var(--blue); }
+/* content */
+.v-main { padding:56px clamp(24px,6vw,80px); max-width:820px; }
+.v-main h1 { font-family:var(--font-display); font-size:clamp(2rem,5vw,3.2rem); font-weight:800; letter-spacing:-0.045em; color:var(--text); line-height:1.05; margin-bottom:16px; }
+.v-main .lede { font-size:1.05rem; color:var(--text-2); line-height:1.7; margin-bottom:12px; }
+.v-mod { padding:56px 0; border-top:1px solid var(--border); scroll-margin-top:24px; }
+.v-mod:first-of-type { border-top:none; }
+.v-mod .kicker { font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--blue); margin-bottom:10px; }
+.v-mod h2 { font-family:var(--font-display); font-size:clamp(1.6rem,3.5vw,2.3rem); font-weight:800; letter-spacing:-0.035em; color:var(--text); margin-bottom:20px; line-height:1.1; }
+.v-mod h3 { font-family:var(--font-display); font-size:1.15rem; font-weight:700; color:var(--text); margin:32px 0 12px; letter-spacing:-0.02em; }
+.v-mod p { font-size:0.98rem; color:var(--text-2); line-height:1.78; margin-bottom:16px; }
+.v-mod ul, .v-mod ol { margin:0 0 18px; padding-left:22px; }
+.v-mod li { font-size:0.96rem; color:var(--text-2); line-height:1.7; margin-bottom:8px; }
+.v-mod strong { color:var(--text); font-weight:600; }
+.v-mod a { color:var(--blue); text-decoration:underline; text-underline-offset:2px; }
+.v-mod code { font-family:'JetBrains Mono', monospace; font-size:0.85em; background:var(--bg-3); color:#9DB8F5; padding:2px 6px; border-radius:5px; }
+.v-mod pre { background:var(--bg-2); border:1px solid var(--border); border-radius:12px; padding:20px 22px; overflow-x:auto; margin:0 0 20px; }
+.v-mod pre code { background:none; color:var(--text-2); padding:0; font-size:0.84rem; line-height:1.7; display:block; }
+.callout { border:1px solid rgba(45,99,216,0.3); background:rgba(45,99,216,0.06); border-radius:12px; padding:18px 22px; margin:0 0 22px; }
+.callout .ct { font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-bottom:8px; }
+.callout p { font-size:0.92rem; margin-bottom:0; }
+.win { border-left:3px solid var(--blue); padding:4px 0 4px 18px; margin:0 0 22px; }
+.win .wt { font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-bottom:6px; }
+.win p { margin-bottom:0; font-size:0.94rem; }
+.pill { display:inline-block; font-size:0.72rem; font-weight:600; color:var(--text-3); border:1px solid var(--border); border-radius:100px; padding:4px 12px; margin-bottom:24px; }
+.v-mobilehead { display:none; }
+@media (max-width:860px) {
+  .vault { grid-template-columns:1fr; }
+  .v-side { display:none; }
+  .v-mobilehead { display:flex; position:sticky; top:0; z-index:20; align-items:center; gap:10px; background:var(--bg); border-bottom:1px solid var(--border); padding:16px 20px; font-family:var(--font-display); font-weight:800; color:var(--text); }
+  .v-mobilehead .dot { color:var(--blue); }
+  .v-main { padding:32px 20px; }
+}
+</style>
+</head>
+<body>
+<div class="v-mobilehead"><span class="dot">&#9670;</span> OPERATOR Vault</div>
+<div class="vault">
+  <!-- SIDEBAR -->
+  <aside class="v-side">
+    <div class="brand"><span class="dot">&#9670;</span> OPERATOR</div>
+    <div class="sub">The course vault</div>
+    <nav class="v-nav">
+      <a href="#welcome">Start here</a>
+      <a href="#m0"><span class="n">00</span>Set up your machine</a>
+      <a href="#m1"><span class="n">01</span>How to vibe code</a>
+      <a href="#m2"><span class="n">02</span>Ship something today</a>
+      <a href="#m3"><span class="n">03</span>Give your AI memory</a>
+      <a href="#m4"><span class="n">04</span>Your first agent</a>
+      <a href="#m5"><span class="n">05</span>Loops that run themselves</a>
+      <a href="#m6"><span class="n">06</span>Connect it to the world</a>
+      <a href="#m7"><span class="n">07</span>Point it at your business</a>
+      <a href="#m8"><span class="n">08</span>Architect your ARIS</a>
+      <a href="#m9"><span class="n">09</span>Turn it into income</a>
+      <a href="#bonus" class="bonus">&#9733; The bonus vault</a>
+    </nav>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="v-main">
+    <section id="welcome">
+      <span class="pill">Welcome, operator</span>
+      <h1>You bought the whole system. Here it is.</h1>
+      <p class="lede">This is the exact architecture I used to build ARIS, the AI that runs my life and my business. Ten modules, in order. Each one ends with something you actually built. Read at your own pace, keep this page open while you work, and do the "build this now" step in every module. That's where the learning lives.</p>
+      <p class="lede">One rule before you start: <strong>you learn this by shipping, not by reading.</strong> Don't binge all ten modules and then start. Do module 0, then module 1, and build as you go.</p>
+      <div class="callout"><div class="ct">Lifetime access</div><p>Video modules are being recorded and will appear right here as they go live. Bookmark this URL. It's yours forever, no subscription, no expiry.</p></div>
+    </section>
+
+    <!-- MODULE 0 -->
+    <section class="v-mod" id="m0">
+      <div class="kicker">Module 00</div>
+      <h2>Set up your machine</h2>
+      <p>You need three things: a computer, a terminal, and an AI coding tool. That's it. If the word "terminal" makes you nervous, good. By the end of this module it won't.</p>
+      <h3>The stack, and what it costs</h3>
+      <ul>
+        <li><strong>Your computer</strong> (Mac or Windows). Nothing special. What you already own is fine.</li>
+        <li><strong>The terminal</strong>. On Mac it's an app literally called Terminal. On Windows, install Windows Terminal from the Store. It's a text box where you type commands instead of clicking buttons. That's the whole mystery.</li>
+        <li><strong>Claude Code</strong>. This is the AI that writes, runs, and fixes code by talking to you. It's what ARIS is built on. Roughly $20/month to start, and you can do a lot on the entry tier.</li>
+      </ul>
+      <p>Total to start: the price of one AI subscription. You can build real, deployed things at that level before spending another dollar.</p>
+      <h3>Getting Claude Code running</h3>
+      <p>Open your terminal and install it (the current one-line install command is on <a href="https://claude.com/claude-code" target="_blank" rel="noopener">claude.com/claude-code</a>, I'm pointing you there instead of pasting a command that'll be stale in a month). Then type <code>claude</code> and hit enter. You're in. It'll ask you to log in the first time.</p>
+      <h3>The only terminal commands you actually need</h3>
+      <pre><code>cd my-folder      # "change directory" — go into a folder
+ls                # list what's in the current folder
+mkdir projects    # make a new folder called projects
+claude            # start the AI</code></pre>
+      <p>That's genuinely most of it. When you don't know a command, ask Claude Code itself. "How do I get back to my home folder?" is a valid thing to type at it.</p>
+      <div class="win"><div class="wt">Build this now</div><p>Make a folder called <code>operator</code>, <code>cd</code> into it, run <code>claude</code>, and type: "Explain what folder we're in right now and what's in it." You just had your first working session. That's the whole loop, everything else is bigger versions of this.</p></div>
+    </section>
+
+    <!-- MODULE 1 -->
+    <section class="v-mod" id="m1">
+      <div class="kicker">Module 01</div>
+      <h2>How to actually vibe code</h2>
+      <p>Vibe coding is not "the AI reads your mind." It's a conversation loop, and there's a skill to running it well. Master this and everything else in the course is just applying it to bigger targets.</p>
+      <h3>The loop</h3>
+      <ol>
+        <li><strong>Describe the outcome</strong>, not the code. "I want a page that shows my daily tasks in a list" beats "write a React component with a useState array."</li>
+        <li><strong>Let it work.</strong> It'll write files, run things, show you results.</li>
+        <li><strong>Look at what came back.</strong> Did it do the thing? Run it and see.</li>
+        <li><strong>Correct in plain English.</strong> "The list works but I want newest on top" is a complete, useful instruction.</li>
+        <li><strong>Repeat</strong> until it's right.</li>
+      </ol>
+      <h3>How to describe what you want</h3>
+      <p>The gap between a bad result and a great one is almost always the prompt. Three habits that fix 90% of it:</p>
+      <ul>
+        <li><strong>Give context first.</strong> "I'm building a personal dashboard. It's just for me, runs on my laptop." Now every answer is aimed correctly.</li>
+        <li><strong>Say what "done" looks like.</strong> "Done means I can open it in my browser and see today's date." A clear finish line means it knows when to stop.</li>
+        <li><strong>One thing at a time.</strong> Don't ask for ten features in one message. Ask for one, verify it, then the next. This is the single biggest quality lever.</li>
+      </ul>
+      <h3>When it breaks (it will)</h3>
+      <p>Errors are not failure, they're information. When something breaks: <strong>copy the error and paste it straight back to the AI</strong> with "this broke, fix it." You do not need to understand the error. That's the entire trick that makes non-coders dangerous now. Read the error only well enough to notice if it's saying the same thing twice, which means the current approach is stuck and you should say "try a completely different approach."</p>
+      <div class="callout"><div class="ct">The rule I live by</div><p>If it fails the same way two or three times, stop iterating and change the approach entirely. Repeating a broken plan louder never works. This one rule will save you more time than any prompt trick.</p></div>
+      <div class="win"><div class="wt">Build this now</div><p>Ask Claude Code to build "a single HTML page that shows a random motivational quote and a button to get a new one." Get it working in your browser. Then change one thing about it with a plain-English instruction. You just ran the full loop, including a revision.</p></div>
+    </section>
+
+    <!-- MODULE 2 -->
+    <section class="v-mod" id="m2">
+      <div class="kicker">Module 02</div>
+      <h2>Ship something real, today</h2>
+      <p>Nothing builds belief like seeing your thing live on the actual internet with a URL you can text to a friend. We're doing that in this module, before we go any deeper.</p>
+      <h3>What we're shipping</h3>
+      <p>A one-page personal site. A link-in-bio, a landing page, a "here's what I do" page. Small on purpose. The point is the <em>deploy</em>, not the page.</p>
+      <h3>The move</h3>
+      <ol>
+        <li>Tell Claude Code: "Build me a clean one-page personal site with my name, a short bio, and links. Plain HTML and CSS, no framework." Iterate until you like it in your browser.</li>
+        <li>Then: "Deploy this to the internet for free and give me the live URL." It'll walk you through a free host (Vercel and Netlify both have generous free tiers and both can deploy a static page in under a minute).</li>
+        <li>Open the URL on your phone. That's the moment it clicks.</li>
+      </ol>
+      <div class="callout"><div class="ct">Gotcha from experience</div><p>Deploy tools sometimes print a scary-looking error <em>and still succeed</em>. Before you panic, actually open the live URL. Half the time the "error" was noise and your site is already up. Always verify the real URL, never trust the console alone.</p></div>
+      <div class="win"><div class="wt">Build this now</div><p>Ship the page. Get a real URL. Send it to one person. Done is a link you can share, nothing less.</p></div>
+    </section>
+
+    <!-- MODULE 3 -->
+    <section class="v-mod" id="m3">
+      <div class="kicker">Module 03</div>
+      <h2>Give your AI a memory</h2>
+      <p>Here's the difference between a chatbot and an assistant: memory. A chatbot forgets you the second you close the window. ARIS remembers who I am, what I'm working on, and every lesson it's already learned. This module is the single most important idea in the whole course.</p>
+      <h3>The CLAUDE.md pattern</h3>
+      <p>Claude Code reads a file called <code>CLAUDE.md</code> automatically at the start of every session. Whatever's in it becomes standing context. This is your AI's long-term memory, and it's just a text file you control.</p>
+      <p>Put in it the things you'd have to re-explain every time:</p>
+      <pre><code># Who I am
+Name: [you]. I go by [name]. Talk to me directly, no fluff.
+
+# What I'm working on
+Building a personal AI system. Current focus: [x].
+
+# Rules
+- Always verify before telling me something is done.
+- Ask before doing anything I can't undo.</code></pre>
+      <p>Now every session starts with the AI already knowing all of that. You stop repeating yourself. That's the whole win, and it compounds.</p>
+      <h3>Memory that grows</h3>
+      <p>The next level: a memory <em>folder</em>, where each fact lives in its own small file, plus one index file the AI reads first. When the AI learns something worth keeping ("this deploy trick failed, here's what worked"), it writes a new memory file. Over weeks, your system gets genuinely smarter about <em>your</em> world, not just the world in general.</p>
+      <div class="callout"><div class="ct">Why this matters more than it looks</div><p>Every correction you save today is a mistake your AI never makes again. Memory is how a generic tool becomes <em>your</em> tool. This is the mechanism behind everything impressive about ARIS.</p></div>
+      <div class="win"><div class="wt">Build this now</div><p>Create a <code>CLAUDE.md</code> in your <code>operator</code> folder. Write five lines: who you are, what you're building, and three rules for how the AI should behave. Start a fresh session and ask "what do you know about me and this project?" Watch it answer from the file.</p></div>
+    </section>
+
+    <!-- MODULE 4 -->
+    <section class="v-mod" id="m4">
+      <div class="kicker">Module 04</div>
+      <h2>Build your first agent</h2>
+      <p>Up to now it's been you and one AI in a conversation. An agent is a specialized worker you hand a focused job to, with its own fresh attention. Instead of one assistant juggling everything, you get a team.</p>
+      <h3>Why agents beat one long conversation</h3>
+      <p>When a single session tries to do too much, quality drops. It loses the thread, gets lazy, drifts off goal. A sub-agent gets a clean context window and one job, so it stays sharp. Give the researcher one task: research. Give the writer one task: write. Each does its one thing well.</p>
+      <h3>When to use one (and when not to)</h3>
+      <ul>
+        <li><strong>Use an agent</strong> when a task is self-contained and you can describe the finished result. "Research this company and give me back five facts." "Write three versions of this email."</li>
+        <li><strong>Don't bother</strong> for quick one-off things or tightly connected steps where each depends on the last. The overhead isn't worth it. Laziness is a virtue here, spin up an agent only when it earns its keep.</li>
+      </ul>
+      <h3>How you actually do it</h3>
+      <p>In Claude Code you just ask: "Spin up a sub-agent to research X while we keep working on Y." It handles the mechanics. The skill is in <em>scoping</em>: give the agent a crisp goal, the context it needs, and a clear description of what to hand back. A vague agent is a useless agent.</p>
+      <div class="win"><div class="wt">Build this now</div><p>Pick a real task with a clear output, like "research the top three tools for [thing I care about] and return a one-line verdict on each." Have Claude Code run it as a sub-agent. Notice you got a clean answer without cluttering your main thread.</p></div>
+    </section>
+
+    <!-- MODULE 5 -->
+    <section class="v-mod" id="m5">
+      <div class="kicker">Module 05</div>
+      <h2>Design a loop that runs itself</h2>
+      <p>This is the idea that turns a tool you sit at into a system that works while you sleep. My rule: <strong>the unit of work is a loop, not a prompt.</strong> Stop prompting the AI over and over. Design loops that prompt the AI for you.</p>
+      <h3>The six parts of every loop</h3>
+      <p>If you can't fill in all six, it's not a loop yet, it's a wish. Every real one needs:</p>
+      <ol>
+        <li><strong>Trigger</strong> &mdash; what starts it. A time (every morning at 7), an event, or a condition.</li>
+        <li><strong>Action</strong> &mdash; what it does when triggered.</li>
+        <li><strong>Oracle</strong> &mdash; the outside truth that tells you if it's actually working. Not a vibe. A number: replies received, dollars in, errors down. This is the part everyone skips and it's the most important one.</li>
+        <li><strong>Memory</strong> &mdash; what it remembers between runs so it doesn't repeat itself.</li>
+        <li><strong>Output</strong> &mdash; what it delivers. A text to your phone, a file, a posted thing.</li>
+        <li><strong>Exit</strong> &mdash; when it stops or hands back to you.</li>
+      </ol>
+      <h3>Making it run on a schedule</h3>
+      <p>On a Mac, the built-in scheduler is called <code>launchd</code>. On Windows it's Task Scheduler. You don't need to learn either by hand. Tell Claude Code: "Set this script up to run every morning at 7am and text me the result." It writes the schedule config for you. My whole system is a stack of these.</p>
+      <div class="callout"><div class="ct">The oracle rule</div><p>A loop with no oracle is a loop you can't trust. If you can't name the external number that proves it's working, you've built a machine that might be quietly doing nothing. Define the oracle first, before the action.</p></div>
+      <div class="win"><div class="wt">Build this now</div><p>Design one loop on paper, all six parts filled in. Easy starter: a morning brief. Trigger: 7am daily. Action: pull the weather and your calendar. Oracle: did the text arrive. Output: a text to your phone. Then have Claude Code build and schedule it. Wake up tomorrow to your first autonomous loop.</p></div>
+    </section>
+
+    <!-- MODULE 6 -->
+    <section class="v-mod" id="m6">
+      <div class="kicker">Module 06</div>
+      <h2>Connect it to the world</h2>
+      <p>A memory and a loop are powerful, but your AI is still trapped in a box until it can touch your real tools. This module gives it hands.</p>
+      <h3>Three ways to connect anything</h3>
+      <ul>
+        <li><strong>APIs.</strong> Most apps you use (your calendar, your CRM, Stripe, your email) offer an API, which is just a doorway for code to read and write data. You don't hand-write the API calls. You say "connect to my [tool] and pull my [data]," give the AI a key, and it does the wiring.</li>
+        <li><strong>MCP.</strong> A newer standard that plugs pre-built tools straight into your AI. Think of it as an app store for AI capabilities. Search for one that fits, connect it, and your AI can now use that tool directly.</li>
+        <li><strong>Browser automation.</strong> For tools with no API, your AI can literally drive a web browser: click, type, read the page. Slower and more fragile, but it means <em>nothing</em> is truly off-limits.</li>
+      </ul>
+      <div class="callout"><div class="ct">Handle keys like keys</div><p>API keys and passwords are exactly that, keys to your accounts. Never paste them into a public chat or commit them into code that goes online. Keep them in a separate, private config file. Your AI can use a key without it ever being exposed. Treat a leaked key like a lost house key: rotate it immediately.</p></div>
+      <div class="win"><div class="wt">Build this now</div><p>Connect one real tool. Easiest wins: your calendar or the weather. Ask Claude Code to "connect to [tool] and tell me [something from it]." The first time your AI reads live data from your actual account, the box is open for good.</p></div>
+    </section>
+
+    <!-- MODULE 7 -->
+    <section class="v-mod" id="m7">
+      <div class="kicker">Module 07</div>
+      <h2>Point it at your business</h2>
+      <p>Everything so far has been the toolkit. Now we aim it at the thing that pays you. These are the real patterns I run for my agency, generalized so you can point them at whatever you do for money.</p>
+      <h3>The three automations that move the needle</h3>
+      <ul>
+        <li><strong>Outreach.</strong> A loop that finds prospects, researches each one, writes a personalized message, and logs who got contacted so it never doubles up. Oracle: reply rate. The whole thing runs on a schedule and reports to you.</li>
+        <li><strong>Content.</strong> A loop that takes an idea, produces the post or video, and queues it for a human (you) to approve before it goes out. AI does the heavy lifting, you keep the taste and the final yes.</li>
+        <li><strong>CRM and follow-up.</strong> Speed-to-lead is a superpower. A loop that reacts the instant a lead comes in, and never lets a follow-up slip, will out-perform competitors who are "getting to it." Oracle: leads worked, follow-ups sent.</li>
+      </ul>
+      <h3>The one human checkpoint</h3>
+      <p>Automate everything except the irreversible, outward-facing moment. Anything that sends, posts, spends, or deletes should pause for your yes. Everything up to that point runs itself. That single principle lets you automate aggressively without waking up to a disaster.</p>
+      <div class="callout"><div class="ct">Where the money actually is</div><p>Notice you can run these <em>for other people</em>. Building your own system is step one. Running it as a service, or selling access to it, is a business. Module 9 is about exactly that.</p></div>
+      <div class="win"><div class="wt">Build this now</div><p>Pick the one automation that would save you the most hours this week and build a first version. Keep the human checkpoint on the send step. Even a rough version that saves two hours a week is a compounding win.</p></div>
+    </section>
+
+    <!-- MODULE 8 -->
+    <section class="v-mod" id="m8">
+      <div class="kicker">Module 08</div>
+      <h2>Architect your own ARIS</h2>
+      <p>You now have all the pieces: memory, agents, loops, connections. This module is how they snap into one coherent system instead of a pile of clever scripts.</p>
+      <h3>The three-layer architecture</h3>
+      <ol>
+        <li><strong>Knowledge (bottom).</strong> Everything your system knows: your memory files, your notes, a searchable map of your own stuff. Every layer above pulls context from here.</li>
+        <li><strong>Workflows (middle).</strong> For any job too big for a single prompt, a structured multi-step process, often fanning out to several agents. This is where hard, multi-part tasks get done well.</li>
+        <li><strong>Loops (top).</strong> The autonomous monitors from module 5, each watching something and acting on a schedule, each with its oracle.</li>
+      </ol>
+      <p>The magic is that they feed each other. A loop notices something, kicks off a workflow, which reads from your knowledge layer, and writes a new memory back down. That circulation is what makes a system feel alive instead of like a set of alarms.</p>
+      <h3>Start small, let it grow</h3>
+      <p>I did not build ARIS in a weekend. It started as one <code>CLAUDE.md</code> and one morning-brief loop, and grew every time I hit a task I was tired of doing by hand. That's the actual method: <strong>automate your own annoyance, one loop at a time.</strong> Don't try to design the whole cathedral up front. Lay one brick that's useful today.</p>
+      <div class="win"><div class="wt">Build this now</div><p>Sketch your own system on one page. What's in your knowledge layer? What's the first workflow? What are your first two or three loops? You don't build it all today. You build the map, then add one piece a week.</p></div>
+    </section>
+
+    <!-- MODULE 9 -->
+    <section class="v-mod" id="m9">
+      <div class="kicker">Module 09</div>
+      <h2>Turn it into income</h2>
+      <p>Meta-module. You're standing inside the exact playbook right now, because this course is a thing I built with the system the course teaches. Here's how to do the same.</p>
+      <h3>The three ways to make money with this</h3>
+      <ul>
+        <li><strong>Sell the outcome (done-for-you).</strong> Run your automations for clients. This pays the most per client but it's a job, you're the bottleneck. Sell it selectively and price it high.</li>
+        <li><strong>Sell the access (software / templates).</strong> Package what you built so others can run it themselves. Lower price, but it scales because you're not doing the work each time. This is the passive engine.</li>
+        <li><strong>Sell the knowledge (like this).</strong> Teach people to build it. Write it down once, sell it many times. Fastest to start because you already know the material, it's what you built.</li>
+      </ul>
+      <h3>The fastest path to a first dollar</h3>
+      <p>Don't build for a hypothetical audience. <strong>Sell to the people already asking you.</strong> If people are messaging you "how did you do that," that's proven demand. Offer them the thing before you've built the whole thing. Presales validate the idea and fund the work.</p>
+      <ol>
+        <li>Write down what you'd teach on a call. That's your outline.</li>
+        <li>Make a simple sales page and a payment link. Both can be built with the skills in this course, in an afternoon.</li>
+        <li>Post it to the people already asking. Founding price, real urgency.</li>
+        <li>Deliver, gather feedback, raise the price, add video. Improve the thing while it's already selling.</li>
+      </ol>
+      <div class="callout"><div class="ct">You already have the proof</div><p>The credibility that sells this is the working system you built in modules 0 through 8. Show the thing running. Nobody argues with a machine that's visibly doing the work.</p></div>
+      <div class="win"><div class="wt">Build this now</div><p>Write the one-paragraph pitch for something you could sell using what you built. Who's it for, what do they get, what's the price. That paragraph is the seed of your own income stream. Ship it this week.</p></div>
+    </section>
+
+    <!-- BONUS -->
+    <section class="v-mod" id="bonus">
+      <div class="kicker">&#9733; Bonus vault</div>
+      <h2>The templates and files</h2>
+      <p>The starting points I actually use. Copy them, change the names, make them yours.</p>
+      <h3>Starter CLAUDE.md</h3>
+      <pre><code># [Your name]'s system
+Call me [name]. Be direct, no fluff. Action over explanation.
+
+## Who I am
+[role, city, what you do]
+
+## What I'm building
+A personal AI operator. Current focus: [x].
+
+## Rules
+- Verify before saying something is done. Show proof.
+- Ask before anything irreversible or outward-facing (send, post, spend, delete).
+- If something fails 2-3 times, change approach entirely.
+- No fluff, no filler.
+
+## Tools I use
+[list your connected tools as you add them]</code></pre>
+      <h3>Loop design template</h3>
+      <pre><code>Loop name:
+1. Trigger  &mdash; when does it start?
+2. Action   &mdash; what does it do?
+3. Oracle   &mdash; what NUMBER proves it works?
+4. Memory   &mdash; what does it remember between runs?
+5. Output   &mdash; what does it deliver, and where?
+6. Exit     &mdash; when does it stop or hand back to me?</code></pre>
+      <h3>Agent scoping prompt</h3>
+      <pre><code>Spin up a sub-agent to [one clear job].
+Context it needs: [the minimum background].
+Hand back: [exact shape of the result you want].</code></pre>
+      <h3>The starter prompt for any new build</h3>
+      <pre><code>I'm building [what], for [who]. It runs on [where].
+Start simple: [the smallest useful version].
+Done means: [the finish line I can check].
+Do one step, then check with me before the next.</code></pre>
+      <div class="callout"><div class="ct">That's the course</div><p>You have the whole system now. Go build your own. When you ship something, I want to see it: <a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a>.</p></div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
