@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wins · The Staley Social</title>
+<!--
+  TESTIMONIAL PAGE SCAFFOLD (built 7/9)
+  TODO before publishing:
+  1. Drop screenshot images into tss-pitch-page/img/testimonials/ and set the <img src> below.
+  2. Get a one-line "cool if I feature you?" text from each client before going live with a NAMED quote.
+  3. Add this page to the nav + deploy (push main).
+-->
+<style>
+  :root{--blue:#1f57ff;--blue-soft:#7f9dff;--bg:#05070d;--panel:#0b0f18;--line:#1a2233;--text:#eef2ff;--muted:#8b93a8}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px 100px}
+  header{text-align:center;padding:80px 20px 50px}
+  .logo{width:64px;height:64px;filter:drop-shadow(0 0 18px rgba(31,87,255,.55));margin-bottom:20px}
+  .kicker{color:var(--blue-soft);text-transform:uppercase;letter-spacing:.34em;font-size:11px;font-weight:700;margin-bottom:12px}
+  h1{font-size:clamp(30px,6vw,46px);font-weight:800;letter-spacing:-.02em}
+  .sub{color:var(--muted);max-width:520px;margin:16px auto 0}
+  .grid{display:grid;grid-template-columns:1fr;gap:22px;margin-top:20px}
+  @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:30px 28px;display:flex;flex-direction:column}
+  .quote{font-size:19px;font-weight:600;line-height:1.5;letter-spacing:-.01em}
+  .quote::before{content:"\201C";color:var(--blue);font-size:40px;line-height:0;vertical-align:-14px;margin-right:4px}
+  .who{margin-top:20px;display:flex;align-items:center;gap:12px}
+  .av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#0d34c8);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:#fff}
+  .who b{display:block;font-size:15px}
+  .who span{color:var(--muted);font-size:13px}
+  .shot{margin-top:20px;border:1px dashed var(--line);border-radius:12px;min-height:120px;display:flex;align-items:center;justify-content:center;color:#3a4255;font-size:13px;text-align:center;padding:20px}
+  .shot img{max-width:100%;border-radius:12px;display:block}
+  .draft{position:absolute;top:14px;right:14px;background:#3a2a00;color:#ffcf5c;font-size:10px;font-weight:800;padding:4px 9px;border-radius:99px;letter-spacing:.08em;text-transform:uppercase}
+  .card{position:relative}
+  .foot{text-align:center;color:#3a4255;font-size:12px;margin-top:60px;letter-spacing:.06em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <svg class="logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="g" x1="20" y1="10" x2="80" y2="90" gradientUnits="userSpaceOnUse"><stop stop-color="#4f7dff"/><stop offset="1" stop-color="#0d34c8"/></linearGradient></defs>
+    <path d="M50 4 88 26 88 74 50 96 12 74 12 26Z" stroke="url(#g)" stroke-width="2" opacity=".5"/>
+    <path d="M66 33c-3-5-9-8-16-8-9 0-16 5-16 13 0 17 32 8 32 24 0 8-8 13-17 13-7 0-13-3-16-8" stroke="url(#g)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div class="kicker">Real clients · Real results</div>
+  <h1>Don't take our word for it</h1>
+  <p class="sub">Business owners who got their time back and watched the leads come in.</p>
+</header>
+
+<div class="grid">
+
+  <div class="card">
+    <span class="draft">Draft · get consent</span>
+    <p class="quote">You're a lifesaver. I'm telling everyone about you.</p>
+    <div class="who">
+      <div class="av">O</div>
+      <div><b>Olga E.</b><span>Eldridge Family Psychiatry, St. Louis</span></div>
+    </div>
+    <div class="shot"><!-- <img src="img/testimonials/olga-1.png" alt="Olga text"> -->Screenshot slot: img/testimonials/olga-1.png</div>
+  </div>
+
+  <div class="card">
+    <span class="draft">Draft · get consent</span>
+    <p class="quote">I got 24 leads seeking people like me. I was shocked. This is so cool.</p>
+    <div class="who">
+      <div class="av">P</div>
+      <div><b>Peyton B.</b><span>Financial Advisor, Greenwood MO</span></div>
+    </div>
+    <div class="shot"><!-- <img src="img/testimonials/peyton-1.png" alt="Peyton text"> -->Screenshot slot: img/testimonials/peyton-1.png</div>
+  </div>
+
+  <div class="card">
+    <span class="draft">Draft · get consent</span>
+    <p class="quote">Just tell me what needs to be done and I'm on it. You're awesome.</p>
+    <div class="who">
+      <div class="av">O</div>
+      <div><b>Olga E.</b><span>Eldridge Family Psychiatry</span></div>
+    </div>
+    <div class="shot"><!-- <img src="img/testimonials/olga-2.png" alt="Olga text"> -->Screenshot slot: img/testimonials/olga-2.png</div>
+  </div>
+
+  <div class="card">
+    <span class="draft">Draft · get consent</span>
+    <p class="quote">Cold calling ain't it. Now the leads just show up in my inbox.</p>
+    <div class="who">
+      <div class="av">P</div>
+      <div><b>Peyton B.</b><span>Financial Advisor</span></div>
+    </div>
+    <div class="shot"><!-- <img src="img/testimonials/peyton-2.png" alt="Peyton text"> -->Screenshot slot: img/testimonials/peyton-2.png</div>
+  </div>
+
+</div>
+
+<div class="foot">THE STALEY SOCIAL · STALEY OS &nbsp;|&nbsp; scaffold, not yet deployed</div>
+</div>
+</body>
+</html>
