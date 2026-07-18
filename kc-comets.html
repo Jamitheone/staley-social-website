@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kansas City Comets | Official Site · MASL Indoor Soccer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Barlow:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+/* ========== RESET & VARS ========== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  /* Real KC Comets brand: red-primary, navy base, silver, gold. Pulled from
+     kccomets.com (site.css): red #EF3A34 / #CD1608, blue #1467BF, gold #FFB529. */
+  --comet-red: #EF3A34;
+  --comet-red-deep: #CD1608;
+  --comet-blue: #1467BF;
+  --comet-blue-dark: #0C2A4A;
+  --comet-blue-deep: #001428;
+  --comet-silver: #C0C8D4;
+  --comet-white: #FFFFFF;
+  --comet-gold: #FFB529;
+  /* legacy token names remapped to brand so existing rules recolor in one shot:
+     the old "cyan" accent is now Comets red; the old "neon-blue" is real blue. */
+  --accent-cyan: var(--comet-red);
+  --neon-blue: var(--comet-blue);
+  --bg-dark: #05080E;
+  --bg-card: #0F1623;
+  --bg-card-hover: #1A2332;
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --gradient-blue: linear-gradient(135deg, var(--comet-red) 0%, var(--comet-red-deep) 100%);
+  --gradient-red: linear-gradient(135deg, var(--comet-red) 0%, var(--comet-red-deep) 100%);
+  --glow-blue: 0 0 26px rgba(239, 58, 52, 0.42), 0 0 52px rgba(239, 58, 52, 0.16);
+  --glow-cyan: 0 0 22px rgba(239, 58, 52, 0.45), 0 0 44px rgba(239, 58, 52, 0.18);
+  --glow-red: 0 0 22px rgba(239, 58, 52, 0.45), 0 0 44px rgba(239, 58, 52, 0.18);
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Barlow', -apple-system, sans-serif;
+  background: var(--bg-dark); color: var(--text-primary);
+  overflow-x: hidden; -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+/* ========== LOADING SCREEN ========== */
+.loader {
+  position: fixed; inset: 0; z-index: 9999; background: var(--bg-dark);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+.loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-logo {
+  width: 100px; height: 100px; border-radius: 50%;
+  background: var(--gradient-blue); display: flex; align-items: center;
+  justify-content: center; font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem; color: white; animation: loader-pulse 1.5s ease-in-out infinite;
+  box-shadow: var(--glow-blue);
+}
+@keyframes loader-pulse {
+  0%, 100% { transform: scale(1); box-shadow: var(--glow-blue); }
+  50% { transform: scale(1.1); box-shadow: 0 0 50px rgba(239, 58, 52, 0.8), 0 0 100px rgba(239, 58, 52, 0.4); }
+}
+.loader-bar { width: 200px; height: 3px; background: rgba(255,255,255,0.1); border-radius: 3px; margin-top: 30px; overflow: hidden; }
+.loader-fill { width: 0%; height: 100%; background: var(--gradient-blue); border-radius: 3px; animation: load-fill 2s ease-out forwards; }
+@keyframes load-fill { to { width: 100%; } }
+
+/* ========== NAVBAR ========== */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(6, 10, 18, 0.7); backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(239, 58, 52, 0.15);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.navbar.scrolled { background: rgba(6, 10, 18, 0.95); border-bottom-color: rgba(239, 58, 52, 0.2); }
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 72px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 14px;
+  font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.2rem;
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.logo-icon {
+  width: 44px; height: 44px; background: var(--gradient-blue);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: white;
+  box-shadow: 0 0 20px rgba(239, 58, 52, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+.nav-logo:hover .logo-icon { box-shadow: var(--glow-blue); }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a {
+  font-family: 'Oswald', sans-serif; font-size: 0.82rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 2.5px; color: var(--text-secondary);
+  transition: all 0.3s ease; position: relative; padding: 4px 0;
+}
+.nav-links a:hover { color: var(--accent-cyan); text-shadow: 0 0 20px rgba(239, 58, 52, 0.5); }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent-cyan), transparent);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--gradient-blue); color: white; padding: 10px 28px;
+  border-radius: 6px; font-family: 'Oswald', sans-serif; font-size: 0.82rem;
+  font-weight: 600; text-transform: uppercase; letter-spacing: 2px;
+  border: none; cursor: pointer; position: relative; overflow: hidden;
+  box-shadow: 0 4px 15px rgba(239, 58, 52, 0.4);
+  transition: all 0.3s ease;
+}
+.nav-cta::before {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.15), transparent);
+  animation: shimmer-rotate 3s linear infinite;
+}
+@keyframes shimmer-rotate { to { transform: rotate(360deg); } }
+.nav-cta:hover { transform: translateY(-2px); box-shadow: var(--glow-blue); }
+.mobile-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+/* ========== HERO ========== */
+.hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center;
+  overflow: hidden; padding-top: 72px;
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse at 15% 45%, rgba(239, 58, 52, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(239, 58, 52, 0.12) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 110%, rgba(0, 36, 79, 0.9) 0%, transparent 50%),
+    var(--bg-dark);
+}
+/* Animated grid lines */
+.hero-grid-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background-image:
+    linear-gradient(rgba(239, 58, 52, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 58, 52, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: grid-drift 20s linear infinite;
+}
+@keyframes grid-drift { to { background-position: 60px 60px; } }
+
+/* Particles */
+.hero-particles { position: absolute; inset: 0; z-index: 2; overflow: hidden; }
+.particle {
+  position: absolute; border-radius: 50%; opacity: 0;
+  animation: float-up linear infinite;
+}
+.particle.blue { background: var(--accent-cyan); }
+.particle.white { background: rgba(255,255,255,0.6); }
+@keyframes float-up {
+  0% { opacity: 0; transform: translateY(100vh) scale(0) rotate(0deg); }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.2; }
+  100% { opacity: 0; transform: translateY(-10vh) scale(1.2) rotate(180deg); }
+}
+/* Comet streak */
+.comet-streak {
+  position: absolute; z-index: 2; width: 150px; height: 2px;
+  background: linear-gradient(90deg, var(--accent-cyan), transparent);
+  border-radius: 2px; opacity: 0; animation: streak 6s ease-in-out infinite;
+  filter: blur(0.5px);
+}
+@keyframes streak {
+  0% { opacity: 0; transform: translate(-200px, 0) rotate(-35deg); }
+  5% { opacity: 1; }
+  30% { opacity: 0; transform: translate(calc(100vw + 200px), -300px) rotate(-35deg); }
+  100% { opacity: 0; }
+}
+.hero-content {
+  position: relative; z-index: 3; max-width: 1280px; margin: 0 auto;
+  padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: center;
+}
+.hero-text { max-width: 600px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(255, 181, 41, 0.08); border: 1px solid rgba(255, 181, 41, 0.3);
+  padding: 8px 20px; border-radius: 50px; font-size: 0.72rem;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px;
+  color: #FFB529; margin-bottom: 28px;
+  animation: badge-glow 3s ease-in-out infinite;
+}
+@keyframes badge-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 181, 41, 0.1); }
+  50% { box-shadow: 0 0 25px rgba(255, 181, 41, 0.25); }
+}
+.hero-badge .pulse {
+  width: 8px; height: 8px; background: #FFB529; border-radius: 50%;
+  animation: dot-pulse 1.5s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(255, 181, 41, 0.6);
+}
+@keyframes dot-pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.4; } }
+
+.hero h1 {
+  font-family: 'Oswald', sans-serif; font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 700; text-transform: uppercase; line-height: 0.92;
+  margin-bottom: 24px; letter-spacing: -1px;
+}
+.hero h1 .line { display: block; overflow: hidden; }
+.hero h1 .line-inner {
+  display: block; transform: translateY(110%);
+  animation: reveal-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero h1 .line:nth-child(2) .line-inner { animation-delay: 0.15s; }
+@keyframes reveal-up { to { transform: translateY(0); } }
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, #1467BF 50%, var(--accent-cyan) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease infinite;
+}
+@keyframes gradient-shift { 0% { background-position: 0% center; } 50% { background-position: 100% center; } 100% { background-position: 0% center; } }
+
+.hero-sub {
+  font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8;
+  margin-bottom: 40px; max-width: 480px;
+  opacity: 0; animation: fade-in 1s 0.5s ease forwards;
+}
+@keyframes fade-in { to { opacity: 1; } }
+
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fade-in 1s 0.7s ease forwards; }
+
+/* Glowing primary button */
+.btn-primary {
+  background: var(--gradient-blue); color: white; padding: 18px 44px;
+  border-radius: 10px; font-family: 'Oswald', sans-serif; font-size: 1rem;
+  font-weight: 600; text-transform: uppercase; letter-spacing: 2px;
+  border: none; cursor: pointer; position: relative; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(239, 58, 52, 0.5);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex; align-items: center; gap: 10px;
+  animation: btn-glow 3s ease-in-out infinite;
+}
+@keyframes btn-glow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(239, 58, 52, 0.5); }
+  50% { box-shadow: 0 4px 40px rgba(239, 58, 52, 0.8), 0 0 60px rgba(0, 100, 255, 0.3); }
+}
+.btn-primary::after {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
+  animation: btn-shine 3s ease-in-out infinite;
+}
+@keyframes btn-shine { 0% { transform: translateX(-100%) rotate(0); } 100% { transform: translateX(100%) rotate(0); } }
+.btn-primary:hover { transform: translateY(-4px) scale(1.02); box-shadow: var(--glow-blue), 0 20px 40px rgba(0, 0, 0, 0.3); }
+
+.btn-outline {
+  background: transparent; color: white; padding: 18px 44px;
+  border-radius: 10px; font-family: 'Oswald', sans-serif; font-size: 1rem;
+  font-weight: 600; text-transform: uppercase; letter-spacing: 2px;
+  border: 2px solid rgba(255,255,255,0.15); cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.btn-outline:hover {
+  border-color: var(--accent-cyan); color: var(--accent-cyan);
+  box-shadow: 0 0 30px rgba(239, 58, 52, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Hero Card */
+.hero-visual { position: relative; opacity: 0; animation: slide-in-right 1s 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+@keyframes slide-in-right { from { opacity: 0; transform: translateX(60px); } to { opacity: 1; transform: translateX(0); } }
+
+.hero-card {
+  background: linear-gradient(145deg, rgba(239, 58, 52, 0.12), rgba(6, 10, 18, 0.95));
+  border: 1px solid rgba(239, 58, 52, 0.15); border-radius: 24px;
+  padding: 40px; width: 100%; max-width: 460px;
+  backdrop-filter: blur(20px); position: relative; overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.hero-card:hover { transform: translateY(-8px); box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(239, 58, 52, 0.2); }
+.hero-card::before {
+  content: ''; position: absolute; inset: -2px; border-radius: 26px; padding: 2px;
+  background: conic-gradient(from 0deg, var(--accent-cyan), transparent 30%, var(--comet-blue), transparent 70%, var(--accent-cyan));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: border-spin 6s linear infinite; opacity: 0.4;
+}
+@keyframes border-spin { to { transform: rotate(360deg); } }
+.hero-card-content { position: relative; z-index: 1; }
+.next-game-label {
+  font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 3px; color: var(--accent-cyan);
+  margin-bottom: 20px; text-shadow: 0 0 20px rgba(239, 58, 52, 0.5);
+}
+.matchup { display: flex; align-items: center; justify-content: center; gap: 28px; margin-bottom: 28px; }
+.team-badge { text-align: center; flex: 1; }
+.team-badge .emblem {
+  width: 88px; height: 88px; border-radius: 50%; margin: 0 auto 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif; font-size: 2rem; font-weight: 700;
+  transition: all 0.4s ease;
+}
+.team-kc .emblem {
+  background: var(--gradient-red); color: white;
+  box-shadow: 0 0 40px rgba(239, 58, 52, 0.6); animation: emblem-glow 3s ease-in-out infinite;
+}
+@keyframes emblem-glow {
+  0%, 100% { box-shadow: 0 0 30px rgba(239, 58, 52, 0.5); }
+  50% { box-shadow: 0 0 50px rgba(239, 58, 52, 0.85), 0 0 80px rgba(239, 58, 52, 0.25); }
+}
+.team-away .emblem { background: linear-gradient(135deg, #47505F, #1E2530); color: var(--comet-silver); box-shadow: 0 0 24px rgba(30, 37, 48, 0.5); }
+.team-badge .team-name { font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+.vs-badge {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  width: 48px; height: 48px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-secondary);
+}
+.game-meta {
+  display: flex; flex-direction: column; gap: 12px;
+  background: rgba(0, 0, 0, 0.4); border-radius: 14px; padding: 18px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.game-meta-row { display: flex; align-items: center; gap: 12px; font-size: 0.88rem; }
+.game-meta-row .icon { color: var(--accent-cyan); font-size: 1.1rem; width: 22px; text-align: center; }
+.game-meta-row .label { color: var(--text-secondary); }
+.game-meta-row .value { color: var(--text-primary); font-weight: 600; margin-left: auto; }
+
+/* ========== STATS BAR ========== */
+.stats-bar {
+  background: linear-gradient(135deg, var(--comet-blue-dark), var(--comet-blue));
+  padding: 56px 0; position: relative; overflow: hidden;
+}
+.stats-bar::before {
+  content: ''; position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.stats-bar::after {
+  content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  animation: sweep 8s linear infinite;
+}
+@keyframes sweep { to { left: 200%; } }
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+  position: relative; z-index: 1;
+}
+.stat-item { text-align: center; }
+.stat-number {
+  font-family: 'Bebas Neue', sans-serif; font-size: 4rem;
+  color: white; line-height: 1; margin-bottom: 6px;
+}
+.stat-label {
+  font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 400;
+  text-transform: uppercase; letter-spacing: 4px; color: rgba(255,255,255,0.5);
+}
+
+/* ========== SECTIONS ========== */
+.section { padding: 100px 0; position: relative; }
+.section-header { text-align: center; margin-bottom: 64px; }
+.section-label {
+  font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 5px; color: var(--accent-cyan);
+  margin-bottom: 14px;
+}
+.section-title {
+  font-family: 'Oswald', sans-serif; font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 700; text-transform: uppercase; line-height: 1.05;
+}
+
+/* ========== SCROLL ANIMATIONS ========== */
+.reveal { opacity: 0; transform: translateY(40px); transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-60px); transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(60px); transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+.reveal-scale { opacity: 0; transform: scale(0.9); transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+/* Staggered children */
+.stagger-children .reveal-child { opacity: 0; transform: translateY(30px); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+.stagger-children.visible .reveal-child { opacity: 1; transform: translateY(0); }
+
+/* ========== PLAYOFFS BANNER ========== */
+.playoffs-banner {
+  background: linear-gradient(135deg, #001428 0%, #1467BF 40%, #001A3A 100%);
+  border: 1px solid rgba(239, 58, 52, 0.2); border-radius: 20px;
+  padding: 56px 48px; text-align: center; position: relative;
+  overflow: hidden; margin-bottom: 80px;
+  box-shadow: 0 0 60px rgba(239, 58, 52, 0.2);
+}
+.playoffs-banner::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(239, 58, 52, 0.15), transparent 60%);
+}
+.playoffs-banner::after {
+  content: ''; position: absolute; inset: -3px; border-radius: 22px; padding: 3px;
+  background: linear-gradient(135deg, var(--accent-cyan), transparent 40%, var(--comet-blue), transparent 70%, var(--accent-cyan));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.5;
+}
+.playoffs-content { position: relative; z-index: 1; }
+.playoffs-badge {
+  display: inline-block; background: rgba(255, 181, 41, 0.12);
+  border: 1px solid rgba(255, 181, 41, 0.35); color: #FFB529;
+  padding: 8px 24px; border-radius: 50px; font-size: 0.72rem;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 3px;
+  margin-bottom: 20px; animation: badge-glow-green 2s ease-in-out infinite;
+}
+@keyframes badge-glow-green {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 181, 41, 0.15); }
+  50% { box-shadow: 0 0 30px rgba(255, 181, 41, 0.35); }
+}
+.playoffs-banner h2 {
+  font-family: 'Oswald', sans-serif; font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700; text-transform: uppercase; margin-bottom: 12px;
+}
+.playoffs-banner p { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 32px; }
+
+/* ========== SCHEDULE ========== */
+.schedule-grid { display: grid; gap: 12px; }
+.game-row {
+  display: grid; grid-template-columns: 100px 1fr 220px 140px;
+  align-items: center; gap: 20px;
+  background: var(--bg-card); border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 14px; padding: 20px 28px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative; overflow: hidden;
+}
+.game-row::before {
+  content: ''; position: absolute; inset: 0; opacity: 0;
+  background: linear-gradient(135deg, rgba(239, 58, 52, 0.08), transparent);
+  transition: opacity 0.4s ease;
+}
+.game-row:hover::before { opacity: 1; }
+.game-row:hover { border-color: rgba(239, 58, 52, 0.3); transform: translateX(6px) scale(1.01); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
+.game-row.playoff { background: linear-gradient(90deg, rgba(239,58,52,0.10), transparent 60%); }
+.game-row.playoff .game-date { color: var(--comet-red); }
+.game-date { font-family: 'Bebas Neue', sans-serif; font-size: 1.05rem; color: var(--accent-cyan); letter-spacing: 1px; }
+.game-opponent { font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 600; text-transform: uppercase; position: relative; z-index: 1; }
+.game-opponent span { color: var(--text-secondary); font-weight: 400; font-size: 0.8rem; margin-left: 8px; }
+.game-venue { font-size: 0.82rem; color: var(--text-secondary); position: relative; z-index: 1; }
+.game-result { text-align: right; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 1rem; position: relative; z-index: 1; }
+.game-result.win { color: #FFB529; }
+.game-result.loss { color: #FF4D4D; }
+.game-result.upcoming { color: var(--accent-cyan); font-size: 0.85rem; }
+
+/* ========== ROSTER ========== */
+.roster-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 20px; }
+.player-card {
+  background: var(--bg-card); border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 18px; padding: 30px; position: relative;
+  overflow: hidden; cursor: default;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.player-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--gradient-blue); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.player-card:hover::before { transform: scaleX(1); }
+.player-card::after {
+  content: ''; position: absolute; inset: 0; opacity: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(239, 58, 52, 0.12), transparent 60%);
+  transition: opacity 0.5s ease;
+}
+.player-card:hover::after { opacity: 1; }
+.player-card:hover {
+  transform: translateY(-10px); border-color: rgba(239, 58, 52, 0.4);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(239, 58, 52, 0.15);
+}
+.player-number {
+  position: absolute; top: 8px; right: 16px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 4rem;
+  background: linear-gradient(180deg, rgba(239, 58, 52, 0.15), transparent);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; line-height: 1; transition: all 0.4s ease;
+}
+.player-card:hover .player-number { opacity: 0.5; transform: scale(1.1); }
+.player-position {
+  display: inline-block; font-size: 0.62rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 2px; padding: 5px 12px;
+  border-radius: 5px; margin-bottom: 14px; position: relative; z-index: 1;
+}
+.pos-fw { background: rgba(255, 77, 77, 0.12); color: #FF6B6B; border: 1px solid rgba(255, 77, 77, 0.2); }
+.pos-mf { background: rgba(239, 58, 52, 0.12); color: var(--accent-cyan); border: 1px solid rgba(239, 58, 52, 0.2); }
+.pos-df { background: rgba(255, 181, 41, 0.12); color: #FFB529; border: 1px solid rgba(255, 181, 41, 0.2); }
+.pos-gk { background: rgba(184, 149, 62, 0.12); color: var(--comet-gold); border: 1px solid rgba(184, 149, 62, 0.2); }
+.player-name {
+  font-family: 'Oswald', sans-serif; font-size: 1.35rem; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px;
+  position: relative; z-index: 1;
+}
+.player-meta { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 18px; position: relative; z-index: 1; }
+.player-stats { display: flex; gap: 24px; position: relative; z-index: 1; }
+.player-stat .num { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; color: white; line-height: 1; }
+.player-stat .lbl { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-secondary); }
+.all-star-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(184, 149, 62, 0.1); border: 1px solid rgba(184, 149, 62, 0.25);
+  color: var(--comet-gold); padding: 4px 12px; border-radius: 50px;
+  font-size: 0.62rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1.5px; margin-bottom: 14px; position: relative; z-index: 1;
+}
+
+/* ========== VENUE ========== */
+.venue-section {
+  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--comet-blue-deep) 50%, var(--bg-dark) 100%);
+}
+.venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.venue-visual {
+  background: linear-gradient(145deg, rgba(239, 58, 52, 0.15), rgba(6, 10, 18, 0.9));
+  border: 1px solid rgba(239, 58, 52, 0.1); border-radius: 24px;
+  padding: 48px; aspect-ratio: 16/10; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+  position: relative; overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+}
+.venue-visual:hover { transform: scale(1.02); box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 40px rgba(239, 58, 52, 0.15); }
+.venue-visual::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(239, 58, 52, 0.08), transparent 60%);
+}
+.venue-visual .arena-icon { font-size: 5rem; margin-bottom: 20px; opacity: 0.8; filter: drop-shadow(0 0 20px rgba(239, 58, 52, 0.3)); }
+.venue-visual h3 {
+  font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 8px; position: relative;
+}
+.venue-visual p { color: var(--text-secondary); font-size: 0.95rem; position: relative; }
+.venue-info h2 {
+  font-family: 'Oswald', sans-serif; font-size: 2.8rem; font-weight: 700;
+  text-transform: uppercase; line-height: 1.05; margin-bottom: 24px;
+}
+.venue-info p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; font-size: 1.05rem; }
+.venue-features { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 36px; }
+.venue-feature {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(0, 0, 0, 0.3); padding: 16px 20px; border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: all 0.3s ease;
+}
+.venue-feature:hover { background: rgba(239, 58, 52, 0.1); border-color: rgba(239, 58, 52, 0.2); transform: translateX(4px); }
+.venue-feature .icon { color: var(--accent-cyan); font-size: 1.3rem; }
+.venue-feature .text { font-size: 0.9rem; font-weight: 500; }
+
+/* ========== TICKETS CTA ========== */
+.tickets-cta {
+  background: var(--gradient-blue); position: relative; overflow: hidden; padding: 100px 0;
+}
+.tickets-cta::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 15% 50%, rgba(239, 58, 52, 0.25), transparent 50%),
+    radial-gradient(circle at 85% 50%, rgba(255, 255, 255, 0.06), transparent 50%),
+    radial-gradient(circle at 50% 120%, rgba(0, 0, 0, 0.4), transparent 50%);
+}
+/* Animated stripe */
+.tickets-cta::after {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: repeating-linear-gradient(
+    45deg, transparent, transparent 40px, rgba(255,255,255,0.02) 40px, rgba(255,255,255,0.02) 80px
+  );
+  animation: stripe-move 30s linear infinite;
+}
+@keyframes stripe-move { to { transform: translate(80px, 80px); } }
+.tickets-inner { position: relative; z-index: 1; text-align: center; }
+.tickets-inner h2 {
+  font-family: 'Oswald', sans-serif; font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+  font-weight: 700; text-transform: uppercase; margin-bottom: 16px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+.tickets-inner p { font-size: 1.15rem; opacity: 0.85; margin-bottom: 40px; max-width: 560px; margin-left: auto; margin-right: auto; }
+.btn-white {
+  background: white; color: var(--comet-blue); padding: 20px 56px;
+  border-radius: 10px; font-family: 'Oswald', sans-serif; font-size: 1.15rem;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 2px;
+  border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative; overflow: hidden;
+}
+.btn-white::after {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: linear-gradient(45deg, transparent 40%, rgba(239, 58, 52, 0.08) 50%, transparent 60%);
+  animation: btn-shine 4s ease-in-out infinite;
+}
+.btn-white:hover { transform: translateY(-5px) scale(1.03); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); }
+.ticket-options { display: flex; gap: 24px; justify-content: center; margin-top: 48px; flex-wrap: wrap; }
+.ticket-option {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px; padding: 28px 36px; text-align: center;
+  backdrop-filter: blur(10px); min-width: 180px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ticket-option:hover {
+  background: rgba(255,255,255,0.15); transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); border-color: rgba(255,255,255,0.3);
+}
+.ticket-option .price { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; line-height: 1; margin-bottom: 6px; }
+.ticket-option .type { font-family: 'Oswald', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.75; }
+
+/* ========== SPONSORS ========== */
+.sponsors-section { background: var(--bg-card); border-top: 1px solid rgba(255,255,255,0.04); }
+.sponsors-tier { margin-bottom: 48px; }
+.sponsors-tier:last-child { margin-bottom: 0; }
+.tier-label { text-align: center; font-family: 'Oswald', sans-serif; font-size: 0.68rem; font-weight: 500; text-transform: uppercase; letter-spacing: 5px; color: var(--text-secondary); margin-bottom: 24px; }
+.sponsors-logos { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; }
+.sponsor-logo {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px; padding: 22px 36px; display: flex; align-items: center;
+  justify-content: center; min-height: 72px; transition: all 0.4s ease;
+}
+.sponsor-logo:hover { background: rgba(239, 58, 52, 0.08); border-color: rgba(239, 58, 52, 0.2); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+.sponsor-logo span { font-family: 'Oswald', sans-serif; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); }
+.sponsor-logo.title { border-color: rgba(184, 149, 62, 0.2); }
+.sponsor-logo.title span { font-size: 1.1rem; color: var(--comet-gold); }
+
+/* ========== FOOTER ========== */
+.footer {
+  background: var(--comet-blue-deep); border-top: 1px solid rgba(239, 58, 52, 0.15);
+  padding: 72px 0 32px;
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
+.footer-brand .logo {
+  font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.footer-brand p { color: var(--text-secondary); line-height: 1.7; font-size: 0.9rem; max-width: 320px; }
+.social-links { display: flex; gap: 10px; margin-top: 24px; }
+.social-link {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 700; color: var(--text-secondary);
+  transition: all 0.3s ease; font-family: 'Barlow', sans-serif;
+}
+.social-link:hover { background: var(--comet-blue); border-color: var(--comet-blue); color: white; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(239, 58, 52, 0.4); }
+.footer-col h4 {
+  font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 3px; color: var(--accent-cyan);
+  margin-bottom: 20px;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a { color: var(--text-secondary); font-size: 0.88rem; transition: all 0.3s ease; }
+.footer-col a:hover { color: white; transform: translateX(3px); display: inline-block; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.05); padding-top: 28px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.78rem; color: var(--text-secondary);
+}
+.footer-bottom .agency {
+  color: var(--accent-cyan); font-weight: 600; opacity: 0.8;
+}
+.footer-bottom .masl-badge { font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; text-align: center; }
+  .hero-text { max-width: 100%; margin: 0 auto; }
+  .hero-sub { max-width: 100%; margin-left: auto; margin-right: auto; }
+  .hero-buttons { justify-content: center; }
+  .hero-visual { display: none; }
+  .venue-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-toggle { display: block; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .game-row { grid-template-columns: 1fr; gap: 8px; padding: 16px 20px; }
+  .game-result { text-align: left; }
+  .venue-features { grid-template-columns: 1fr; }
+  .ticket-options { flex-direction: column; align-items: center; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .hero h1 { font-size: 3.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== LOADER ========== -->
+<div class="loader" id="loader">
+  <div class="loader-logo">KC</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-icon">KC</div>
+      <span>Kansas City<br><span style="color: var(--accent-cyan); font-size: 0.85em;">Comets</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#roster">Roster</a></li>
+      <li><a href="#venue">Arena</a></li>
+      <li><a href="#tickets">Tickets</a></li>
+      <li><a href="#sponsors">Partners</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})">
+      <span style="position:relative;z-index:1;">Get Tickets</span>
+    </button>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">&#9776;</button>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="comet-streak" style="top: 20%; left: 10%;"></div>
+  <div class="comet-streak" style="top: 60%; left: 40%; animation-delay: 3s; width: 100px;"></div>
+  <div class="comet-streak" style="top: 35%; left: 60%; animation-delay: 5s; width: 80px;"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        2026 MASL Playoffs · Live Now
+      </div>
+      <h1>
+        <span class="line"><span class="line-inner">Kansas City</span></span>
+        <span class="line"><span class="line-inner highlight">Comets</span></span>
+      </h1>
+      <p class="hero-sub">
+        The heartbeat of Kansas City indoor soccer. Electrifying arena action at Cable Dahmer Arena, where legends are forged on the turf and championships are won.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})">
+          <span style="position:relative;z-index:1;display:flex;align-items:center;gap:10px;">&#127903; Buy Playoff Tickets</span>
+        </button>
+        <button class="btn-outline" onclick="document.getElementById('schedule').scrollIntoView({behavior:'smooth'})">
+          &#9654; View Schedule
+        </button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-content">
+          <div class="next-game-label">&#9889; MASL Quarterfinal · Game 1</div>
+          <div class="matchup">
+            <div class="team-badge team-kc">
+              <div class="emblem">KC</div>
+              <div class="team-name">Comets</div>
+            </div>
+            <div class="vs-badge">VS</div>
+            <div class="team-badge team-away">
+              <div class="emblem">STL</div>
+              <div class="team-name">Ambush</div>
+            </div>
+          </div>
+          <div class="game-meta">
+            <div class="game-meta-row">
+              <span class="icon">&#128197;</span>
+              <span class="label">Date</span>
+              <span class="value">Mon, April 6, 2026</span>
+            </div>
+            <div class="game-meta-row">
+              <span class="icon">&#128336;</span>
+              <span class="label">Kickoff</span>
+              <span class="value">7:00 PM CT</span>
+            </div>
+            <div class="game-meta-row">
+              <span class="icon">&#127967;</span>
+              <span class="label">Venue</span>
+              <span class="value">Cable Dahmer Arena</span>
+            </div>
+            <div class="game-meta-row">
+              <span class="icon">&#127941;</span>
+              <span class="label">Series</span>
+              <span class="value">Best of 3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STATS BAR ========== -->
+<section class="stats-bar" id="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number" data-target="40" data-suffix="+">0</div>
+        <div class="stat-label">Years of KC Soccer</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="12">0</div>
+        <div class="stat-label">Home Games 2025-26</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="4">0</div>
+        <div class="stat-label">All-MASL Honorees</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="5800" data-comma="true">0</div>
+        <div class="stat-label">Arena Capacity</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SCHEDULE ========== -->
+<section class="section" id="schedule">
+  <div class="container">
+    <div class="playoffs-banner reveal-scale">
+      <div class="playoffs-content">
+        <div class="playoffs-badge">&#127942; Playoffs 2026</div>
+        <h2>The Comets Are In The Playoffs</h2>
+        <p>MASL Quarterfinals vs. the St. Louis Ambush. The rivalry reaches its climax under the brightest lights.</p>
+        <button class="btn-primary" onclick="document.getElementById('tickets').scrollIntoView({behavior:'smooth'})">
+          <span style="position:relative;z-index:1;display:flex;align-items:center;gap:10px;">&#127915; Secure Your Playoff Seats</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="section-header reveal">
+      <div class="section-label">2025-26 Season</div>
+      <div class="section-title">Schedule & Results</div>
+    </div>
+    <div class="schedule-grid stagger-children reveal">
+      <div class="game-row home reveal-child" style="transition-delay:0.05s">
+        <div class="game-date">NOV 29</div>
+        <div class="game-opponent">St. Louis Ambush <span>Home Opener</span></div>
+        <div class="game-venue">Cable Dahmer Arena</div>
+        <div class="game-result win">W 7-4</div>
+      </div>
+      <div class="game-row away reveal-child" style="transition-delay:0.1s">
+        <div class="game-date">DEC 5</div>
+        <div class="game-opponent">Chihuahua Savage <span>Away</span></div>
+        <div class="game-venue">Gimnasio Bernardo Aguirre</div>
+        <div class="game-result loss">L 5-8</div>
+      </div>
+      <div class="game-row home reveal-child" style="transition-delay:0.15s">
+        <div class="game-date">DEC 12</div>
+        <div class="game-opponent">Milwaukee Wave <span>Home</span></div>
+        <div class="game-venue">Cable Dahmer Arena</div>
+        <div class="game-result win">W 9-6</div>
+      </div>
+      <div class="game-row home reveal-child" style="transition-delay:0.2s">
+        <div class="game-date">DEC 27</div>
+        <div class="game-opponent">St. Louis Ambush <span>Home</span></div>
+        <div class="game-venue">Cable Dahmer Arena</div>
+        <div class="game-result win">W 6-3</div>
+      </div>
+      <div class="game-row home reveal-child" style="transition-delay:0.25s">
+        <div class="game-date">JAN 4</div>
+        <div class="game-opponent">St. Louis Ambush <span>Home</span></div>
+        <div class="game-venue">Cable Dahmer Arena</div>
+        <div class="game-result win">W 8-5</div>
+      </div>
+      <div class="game-row home reveal-child" style="transition-delay:0.3s">
+        <div class="game-date">JAN 11</div>
+        <div class="game-opponent">Milwaukee Wave <span>Home</span></div>
+        <div class="game-venue">Cable Dahmer Arena</div>
+        <div class="game-result win">W 10-4</div>
+      </div>
+      <div class="game-row home reveal-child" style="transition-delay:0.35s">
+        <div class="game-date">JAN 16</div>
+        <div class="game-opponent">Tacoma Stars <span>Home</span></div>
+        <div class="game-venue">Cable Dahmer Arena</div>
+        <div class="game-result win">W 7-5</div>
+      </div>
+      <div class="game-row home reveal-child" style="transition-delay:0.4s">
+        <div class="game-date">MAR 14</div>
+        <div class="game-opponent">San Diego Sockers <span>Home</span></div>
+        <div class="game-venue">Cable Dahmer Arena</div>
+        <div class="game-result win">W 6-5</div>
+      </div>
+      <div class="game-row home reveal-child" style="transition-delay:0.45s">
+        <div class="game-date">MAR 21</div>
+        <div class="game-opponent">Baltimore Blast <span>Home</span></div>
+        <div class="game-venue">Cable Dahmer Arena</div>
+        <div class="game-result win">W 8-3</div>
+      </div>
+      <div class="game-row home reveal-child" style="transition-delay:0.5s">
+        <div class="game-date">MAR 27</div>
+        <div class="game-opponent">San Diego Sockers <span>Home</span></div>
+        <div class="game-venue">Cable Dahmer Arena</div>
+        <div class="game-result win">W 5-4</div>
+      </div>
+      <div class="game-row playoff reveal-child" style="transition-delay:0.55s">
+        <div class="game-date">APR 6</div>
+        <div class="game-opponent">St. Louis Ambush <span>&#127942; Quarterfinal G1</span></div>
+        <div class="game-venue">Cable Dahmer Arena</div>
+        <div class="game-result upcoming">7:00 PM CT &#8594;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ROSTER ========== -->
+<section class="section" id="roster" style="background: linear-gradient(180deg, var(--bg-dark) 0%, #0B1120 50%, var(--bg-dark) 100%);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Meet the Squad</div>
+      <div class="section-title">2025-26 Roster</div>
+    </div>
+    <div class="roster-grid stagger-children reveal">
+      <div class="player-card reveal-child" style="transition-delay:0.05s">
+        <div class="player-number">11</div>
+        <div class="all-star-badge">&#11088; All-MASL First Team</div>
+        <span class="player-position pos-fw">Forward</span>
+        <div class="player-name">Rian Marques</div>
+        <div class="player-meta">Brazil &bull; 5'9" &bull; 170 lbs</div>
+        <div class="player-stats">
+          <div class="player-stat"><div class="num">44</div><div class="lbl">Points</div></div>
+          <div class="player-stat"><div class="num">28</div><div class="lbl">Goals</div></div>
+          <div class="player-stat"><div class="num">16</div><div class="lbl">Assists</div></div>
+        </div>
+      </div>
+      <div class="player-card reveal-child" style="transition-delay:0.1s">
+        <div class="player-number">8</div>
+        <div class="all-star-badge">&#11088; 2025 MASL All-Star</div>
+        <span class="player-position pos-fw">Forward</span>
+        <div class="player-name">Zach Reget</div>
+        <div class="player-meta">Kenosha, WI &bull; 6'0" &bull; 200 lbs</div>
+        <div class="player-stats">
+          <div class="player-stat"><div class="num">36</div><div class="lbl">Points</div></div>
+          <div class="player-stat"><div class="num">22</div><div class="lbl">Goals</div></div>
+          <div class="player-stat"><div class="num">14</div><div class="lbl">Assists</div></div>
+        </div>
+      </div>
+      <div class="player-card reveal-child" style="transition-delay:0.15s">
+        <div class="player-number">10</div>
+        <div class="all-star-badge">&#11088; 2025 MASL All-Star</div>
+        <span class="player-position pos-mf">Midfielder</span>
+        <div class="player-name">Leo Acosta</div>
+        <div class="player-meta">Kansas City, MO</div>
+        <div class="player-stats">
+          <div class="player-stat"><div class="num">32</div><div class="lbl">Points</div></div>
+          <div class="player-stat"><div class="num">15</div><div class="lbl">Goals</div></div>
+          <div class="player-stat"><div class="num">17</div><div class="lbl">Assists</div></div>
+        </div>
+      </div>
+      <div class="player-card reveal-child" style="transition-delay:0.2s">
+        <div class="player-number">7</div>
+        <span class="player-position pos-fw">Forward</span>
+        <div class="player-name">Nathan Durdle</div>
+        <div class="player-meta">Rookie Sensation &bull; 2-Year Extension</div>
+        <div class="player-stats">
+          <div class="player-stat"><div class="num">24</div><div class="lbl">Points</div></div>
+          <div class="player-stat"><div class="num">16</div><div class="lbl">Goals</div></div>
+          <div class="player-stat"><div class="num">8</div><div class="lbl">Assists</div></div>
+        </div>
+      </div>
+      <div class="player-card reveal-child" style="transition-delay:0.25s">
+        <div class="player-number">1</div>
+        <span class="player-position pos-gk">Goalkeeper</span>
+        <div class="player-name">Nicolau Neto</div>
+        <div class="player-meta">Brazil &bull; Veteran GK</div>
+        <div class="player-stats">
+          <div class="player-stat"><div class="num">72%</div><div class="lbl">Save %</div></div>
+          <div class="player-stat"><div class="num">8</div><div class="lbl">Clean Sheets</div></div>
+        </div>
+      </div>
+      <div class="player-card reveal-child" style="transition-delay:0.3s">
+        <div class="player-number">4</div>
+        <span class="player-position pos-df">Defender</span>
+        <div class="player-name">John Osorio</div>
+        <div class="player-meta">Kansas City Native &bull; Team Captain</div>
+        <div class="player-stats">
+          <div class="player-stat"><div class="num">18</div><div class="lbl">Points</div></div>
+          <div class="player-stat"><div class="num">6</div><div class="lbl">Goals</div></div>
+          <div class="player-stat"><div class="num">12</div><div class="lbl">Assists</div></div>
+        </div>
+      </div>
+      <div class="player-card reveal-child" style="transition-delay:0.35s">
+        <div class="player-number">14</div>
+        <span class="player-position pos-mf">Midfielder</span>
+        <div class="player-name">Kevin Ellis</div>
+        <div class="player-meta">Kansas City, MO &bull; Fan Favorite</div>
+        <div class="player-stats">
+          <div class="player-stat"><div class="num">20</div><div class="lbl">Points</div></div>
+          <div class="player-stat"><div class="num">10</div><div class="lbl">Goals</div></div>
+          <div class="player-stat"><div class="num">10</div><div class="lbl">Assists</div></div>
+        </div>
+      </div>
+      <div class="player-card reveal-child" style="transition-delay:0.4s">
+        <div class="player-number">21</div>
+        <span class="player-position pos-fw">Forward</span>
+        <div class="player-name">Lucas Sousa</div>
+        <div class="player-meta">Brazil &bull; Dynamic Attacker</div>
+        <div class="player-stats">
+          <div class="player-stat"><div class="num">26</div><div class="lbl">Points</div></div>
+          <div class="player-stat"><div class="num">18</div><div class="lbl">Goals</div></div>
+          <div class="player-stat"><div class="num">8</div><div class="lbl">Assists</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== VENUE ========== -->
+<section class="section venue-section" id="venue">
+  <div class="container">
+    <div class="venue-grid">
+      <div class="venue-visual reveal-left">
+        <div class="arena-icon">&#127967;</div>
+        <h3>Cable Dahmer Arena</h3>
+        <p>19100 E Valley View Pkwy<br>Independence, MO 64055</p>
+      </div>
+      <div class="venue-info reveal-right">
+        <div class="section-label">Home Turf</div>
+        <h2>Cable Dahmer<br>Arena</h2>
+        <p>
+          Located in Independence, Missouri, Cable Dahmer Arena is the epicenter of Kansas City indoor soccer. The intimate 5,800-seat venue delivers an unmatched atmosphere. Every seat feels like courtside for the fastest game on turf.
+        </p>
+        <div class="venue-features">
+          <div class="venue-feature">
+            <span class="icon">&#127866;</span>
+            <span class="text">Full-Service Concessions</span>
+          </div>
+          <div class="venue-feature">
+            <span class="icon">&#127919;</span>
+            <span class="text">Fan Zone Activities</span>
+          </div>
+          <div class="venue-feature">
+            <span class="icon">&#128663;</span>
+            <span class="text">Free Parking</span>
+          </div>
+          <div class="venue-feature">
+            <span class="icon">&#128106;</span>
+            <span class="text">Family-Friendly</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TICKETS CTA ========== -->
+<section class="tickets-cta" id="tickets">
+  <div class="container tickets-inner reveal-scale">
+    <div class="section-label" style="color: rgba(255,255,255,0.6);">Don't Miss a Moment</div>
+    <h2>Get Your Tickets</h2>
+    <p>From single-game passes to full season memberships. Experience the energy of Comets soccer live at Cable Dahmer Arena.</p>
+    <button class="btn-white">
+      <span style="position:relative;z-index:1;display:flex;align-items:center;gap:10px;">&#127903; Purchase Tickets Now</span>
+    </button>
+    <div class="ticket-options">
+      <div class="ticket-option">
+        <div class="price">$15</div>
+        <div class="type">General Admission</div>
+      </div>
+      <div class="ticket-option">
+        <div class="price">$25</div>
+        <div class="type">Reserved Seating</div>
+      </div>
+      <div class="ticket-option">
+        <div class="price">$199</div>
+        <div class="type">Season Pass</div>
+      </div>
+      <div class="ticket-option">
+        <div class="price">VIP</div>
+        <div class="type">Premium Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SPONSORS ========== -->
+<section class="section sponsors-section" id="sponsors">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Proud Partners</div>
+      <div class="section-title">Our Sponsors</div>
+    </div>
+    <div class="sponsors-tier reveal">
+      <div class="tier-label">Title Sponsor</div>
+      <div class="sponsors-logos">
+        <div class="sponsor-logo title"><span>CommunityAmerica Credit Union</span></div>
+      </div>
+    </div>
+    <div class="sponsors-tier reveal">
+      <div class="tier-label">Official Partners</div>
+      <div class="sponsors-logos">
+        <div class="sponsor-logo"><span>Capelli Sport</span></div>
+        <div class="sponsor-logo"><span>Charlie Hustle</span></div>
+        <div class="sponsor-logo"><span>Orthopedic &amp; Sports Medicine</span></div>
+        <div class="sponsor-logo"><span>MBB Agency</span></div>
+      </div>
+    </div>
+    <div class="sponsors-tier reveal" style="margin-top: 48px;">
+      <div class="tier-label">League Partner</div>
+      <div class="sponsors-logos">
+        <div class="sponsor-logo"><span>Major Arena Soccer League</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div style="width:36px;height:36px;background:var(--gradient-blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:white;box-shadow:0 0 15px rgba(239,58,52,0.4);">KC</div>
+          Kansas City Comets
+        </div>
+        <p>Kansas City's premier indoor soccer club, competing in the Major Arena Soccer League. Bringing world-class arena soccer to the heartland since 1981.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/KansasCityComets" class="social-link" title="Facebook">f</a>
+          <a href="#" class="social-link" title="X/Twitter">X</a>
+          <a href="#" class="social-link" title="Instagram">IG</a>
+          <a href="#" class="social-link" title="TikTok">TT</a>
+          <a href="https://www.linkedin.com/company/missouri-comets" class="social-link" title="LinkedIn">in</a>
+          <a href="#" class="social-link" title="YouTube">YT</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Team</h4>
+        <ul>
+          <li><a href="#roster">Roster</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#">Stats</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">History</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Fans</h4>
+        <ul>
+          <li><a href="#tickets">Buy Tickets</a></li>
+          <li><a href="#">Fan Shop</a></li>
+          <li><a href="#">Group Sales</a></li>
+          <li><a href="#">Youth Programs</a></li>
+          <li><a href="#">Promotions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Club</h4>
+        <ul>
+          <li><a href="#">Front Office</a></li>
+          <li><a href="#sponsors">Sponsors</a></li>
+          <li><a href="#venue">Arena Info</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Kansas City Comets. All rights reserved.</span>
+      <span class="agency">Designed by The Staley Social LLC</span>
+      <span class="masl-badge">Member of the MASL</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+// ===== Loader =====
+window.addEventListener('load', () => {
+  setTimeout(() => document.getElementById('loader').classList.add('hidden'), 2200);
+});
+
+// ===== Navbar scroll =====
+const navbar = document.getElementById('navbar');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ===== Particle system =====
+const pc = document.getElementById('particles');
+for (let i = 0; i < 40; i++) {
+  const p = document.createElement('div');
+  p.classList.add('particle', Math.random() > 0.3 ? 'blue' : 'white');
+  p.style.left = Math.random() * 100 + '%';
+  p.style.animationDuration = (Math.random() * 10 + 8) + 's';
+  p.style.animationDelay = (Math.random() * 12) + 's';
+  const size = Math.random() * 3 + 1;
+  p.style.width = p.style.height = size + 'px';
+  pc.appendChild(p);
+}
+
+// ===== Scroll Reveal =====
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => revealObserver.observe(el));
+
+// ===== Counter Animation =====
+let countersAnimated = false;
+function animateCounters() {
+  if (countersAnimated) return;
+  countersAnimated = true;
+  document.querySelectorAll('.stat-number').forEach(el => {
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const useComma = el.dataset.comma === 'true';
+    const duration = 2000;
+    const start = performance.now();
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const current = Math.round(eased * target);
+      el.textContent = (useComma ? current.toLocaleString() : current) + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  });
+}
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) animateCounters(); });
+}, { threshold: 0.4 });
+statsObserver.observe(document.getElementById('stats-bar'));
+
+// ===== Smooth scroll nav =====
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// ===== Parallax on hero card =====
+const heroCard = document.querySelector('.hero-card');
+if (heroCard && window.innerWidth > 1024) {
+  document.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 12;
+    const y = (e.clientY / window.innerHeight - 0.5) * 12;
+    heroCard.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
+  });
+}
+</script>
+
+</body>
+</html>
