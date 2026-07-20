@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Signs your marketing agency isn't tracking conversions correctly">
   <title>Signs your marketing agency isn't tracking conversions correctly | The Staley Social</title>
-  <link rel="icon" href="../favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="canonical" href="https://thestaleysocial.com/blog/signs-your-marketing-agency-isn-t-tracking-conversions-correctly.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Signs your marketing agency isn't tracking conversions correctly">
   <meta property="og:description" content="Signs your marketing agency isn't tracking conversions correctly">
   <meta property="og:url" content="https://thestaleysocial.com/blog/signs-your-marketing-agency-isn-t-tracking-conversions-correctly.html">
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=8">
+  <link rel="stylesheet" href="/css/style.css?v=8">
   <style>
     body { font-family: 'DM Sans', sans-serif; }
     .post-wrap { max-width: 720px; margin: 0 auto; padding: 140px 24px 80px; }
@@ -31,6 +31,34 @@
   </script>
 </head>
 <body>
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/os.html">Software</a>
+        <a href="/services.html">Services</a>
+        <a href="/results.html">Results</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="/os.html" class="btn btn-primary btn-sm">Start free</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="/">Home</a>
+    <a href="/os.html">Software</a>
+    <a href="/services.html">Services</a>
+    <a href="/results.html">Results</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+
   <div class="post-wrap">
     <h1>Signs your marketing agency isn't tracking conversions correctly</h1>
     <time datetime="2026-07-14">July 14, 2026</time>
@@ -40,7 +68,15 @@
     <p>You should also be wary if your agency is relying too heavily on vanity metrics, such as likes and followers. While these metrics can be useful for gauging engagement, they don't necessarily translate to real-world conversions. If your agency is focusing too much on these metrics, they may be missing the bigger picture. You want an agency that can tie their marketing efforts back to real-world results, such as sales, revenue, and customer acquisition.</p>
     <p>To get a better handle on your marketing performance, you should ask your agency to provide you with regular, detailed reports on your conversions. These reports should include metrics such as conversion rate, cost per conversion, and return on ad spend. If your agency can't provide you with this information, or if they seem evasive or unclear when you ask for it, it may be time to look for a new agency. You deserve to know exactly how your marketing budget is being spent, and what kind of results you're getting.</p>
     <p>In Kansas City, there are many marketing agencies to choose from, and not all of them are created equal. When you're evaluating an agency, make sure to ask tough questions about how they track conversions. Do they use a clear and consistent definition of a conversion? Do they track conversions across all of your marketing channels? Can they provide you with regular, detailed reports on your conversions? If you're not getting the answers you want, it may be time to look elsewhere. Your marketing budget is too valuable to waste on an agency that isn't delivering real results.</p>
-    <a class="back" href="index.html">&larr; back to blog</a>
+    <a class="back" href="/blog/">&larr; back to blog</a>
   </div>
+  <script>
+    (function(){
+      var nav=document.getElementById('main-nav');
+      if(nav){var s=function(){nav.classList.toggle('scrolled',window.scrollY>20)};addEventListener('scroll',s,{passive:true});s();}
+      var h=document.getElementById('nav-hamburger'),m=document.getElementById('nav-mobile');
+      if(h&&m){h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open');});}
+    })();
+  </script>
 </body>
 </html>

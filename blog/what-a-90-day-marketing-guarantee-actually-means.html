@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="What a 90-day marketing guarantee actually means">
   <title>What a 90-day marketing guarantee actually means | The Staley Social</title>
-  <link rel="icon" href="../favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="canonical" href="https://thestaleysocial.com/blog/what-a-90-day-marketing-guarantee-actually-means.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="What a 90-day marketing guarantee actually means">
   <meta property="og:description" content="What a 90-day marketing guarantee actually means">
   <meta property="og:url" content="https://thestaleysocial.com/blog/what-a-90-day-marketing-guarantee-actually-means.html">
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=8">
+  <link rel="stylesheet" href="/css/style.css?v=8">
   <style>
     body { font-family: 'DM Sans', sans-serif; }
     .post-wrap { max-width: 720px; margin: 0 auto; padding: 140px 24px 80px; }
@@ -31,6 +31,34 @@
   </script>
 </head>
 <body>
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/os.html">Software</a>
+        <a href="/services.html">Services</a>
+        <a href="/results.html">Results</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="/os.html" class="btn btn-primary btn-sm">Start free</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="/">Home</a>
+    <a href="/os.html">Software</a>
+    <a href="/services.html">Services</a>
+    <a href="/results.html">Results</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+
   <div class="post-wrap">
     <h1>What a 90-day marketing guarantee actually means</h1>
     <time datetime="2026-07-20">July 20, 2026</time>
@@ -40,7 +68,15 @@
     <p>It's also important to understand what a 90-day marketing guarantee doesn't mean. It's not a magic solution that will fix all your business problems overnight. Marketing is a process that takes time, effort, and patience. A guarantee is not a substitute for a well-thought-out strategy or hard work - it's a promise that the agency will do their part to help you achieve your goals. You still need to be involved in the process and provide feedback and guidance to the agency.</p>
     <p>When you're considering a marketing agency in Kansas City, a 90-day guarantee can be a big plus. It shows that the agency is confident in their abilities and willing to stand behind their work. Just make sure you understand what the guarantee entails and what you can expect. Ask questions, read the fine print, and make sure you're comfortable with the terms. With the right agency and a clear understanding of what a 90-day marketing guarantee means, you can feel confident that your marketing efforts will pay off and help your business grow.</p>
     <p>In Kansas City, there are many marketing agencies to choose from, but not all of them offer a 90-day guarantee. If you're looking for a partner that will work with you to achieve your marketing goals and stand behind their work, look for an agency that offers this kind of guarantee. It's a sign that they're committed to your success and willing to put their money where their mouth is. With a 90-day marketing guarantee, you can focus on running your business and leave the marketing to the experts.</p>
-    <a class="back" href="index.html">&larr; back to blog</a>
+    <a class="back" href="/blog/">&larr; back to blog</a>
   </div>
+  <script>
+    (function(){
+      var nav=document.getElementById('main-nav');
+      if(nav){var s=function(){nav.classList.toggle('scrolled',window.scrollY>20)};addEventListener('scroll',s,{passive:true});s();}
+      var h=document.getElementById('nav-hamburger'),m=document.getElementById('nav-mobile');
+      if(h&&m){h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open');});}
+    })();
+  </script>
 </body>
 </html>

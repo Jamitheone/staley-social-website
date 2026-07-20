@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{{DESCRIPTION}}">
   <title>{{TITLE}} | The Staley Social</title>
-  <link rel="icon" href="../favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="canonical" href="https://thestaleysocial.com/blog/{{SLUG}}.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="{{TITLE}}">
   <meta property="og:description" content="{{DESCRIPTION}}">
   <meta property="og:url" content="https://thestaleysocial.com/blog/{{SLUG}}.html">
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=8">
+  <link rel="stylesheet" href="/css/style.css?v=8">
   <style>
     body { font-family: 'DM Sans', sans-serif; }
     .post-wrap { max-width: 720px; margin: 0 auto; padding: 140px 24px 80px; }
@@ -31,11 +31,48 @@
   </script>
 </head>
 <body>
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/os.html">Software</a>
+        <a href="/services.html">Services</a>
+        <a href="/results.html">Results</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="/os.html" class="btn btn-primary btn-sm">Start free</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="/">Home</a>
+    <a href="/os.html">Software</a>
+    <a href="/services.html">Services</a>
+    <a href="/results.html">Results</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+
   <div class="post-wrap">
     <h1>{{TITLE}}</h1>
     <time datetime="{{DATE_ISO}}">{{DATE_HUMAN}}</time>
     {{BODY_HTML}}
-    <a class="back" href="index.html">&larr; back to blog</a>
+    <a class="back" href="/blog/">&larr; back to blog</a>
   </div>
+
+  <script>
+    (function(){
+      var nav=document.getElementById('main-nav');
+      if(nav){var s=function(){nav.classList.toggle('scrolled',window.scrollY>20)};addEventListener('scroll',s,{passive:true});s();}
+      var h=document.getElementById('nav-hamburger'),m=document.getElementById('nav-mobile');
+      if(h&&m){h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open');});}
+    })();
+  </script>
 </body>
 </html>
