@@ -311,16 +311,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const hasIntro = document.getElementById('introOverlay') && !reduceMotion;
     const startDelay = hasIntro ? 2650 : 0;
 
+    // Split headline lines into masked words: each word rises out of its own
+    // clip. Non-headline hero-lines keep the blur-rise below.
+    const headlineLines = Array.from(document.querySelectorAll('.hero-headline .hero-line'));
+    const otherLines = Array.from(heroLines).filter(l => !headlineLines.includes(l));
+    const words = [];
+    if (!reduceMotion) {
+      headlineLines.forEach(line => {
+        const frag = document.createDocumentFragment();
+        Array.from(line.childNodes).forEach(node => {
+          const cls = node.nodeType === 1 ? node.className : '';
+          const text = node.textContent;
+          text.split(/(\s+)/).forEach(part => {
+            if (!part.trim()) { frag.appendChild(document.createTextNode(part)); return; }
+            const mask = document.createElement('span');
+            mask.className = 'w-mask';
+            const w = document.createElement('span');
+            w.className = 'w' + (cls ? ' ' + cls : '');
+            w.textContent = part;
+            mask.appendChild(w);
+            frag.appendChild(mask);
+            words.push(w);
+          });
+        });
+        line.textContent = '';
+        line.appendChild(frag);
+      });
+    }
+
     if (reduceMotion) {
       heroLines.forEach(line => { line.style.opacity = '1'; });
     } else {
-      heroLines.forEach(line => {
+      setTimeout(() => {
+        words.forEach((w, i) => {
+          w.style.transition = `transform 0.75s cubic-bezier(0.16,1,0.3,1) ${i * 0.04}s`;
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            w.style.transform = 'translateY(0)';
+          }));
+        });
+      }, startDelay);
+      otherLines.forEach(line => {
         line.style.opacity = '0';
         line.style.transform = 'translateY(44px)';
         line.style.filter = 'blur(10px)';
       });
       setTimeout(() => {
-        heroLines.forEach((line, i) => {
+        otherLines.forEach((line, i) => {
           const d = i * 0.09;
           line.style.transition = `opacity 0.85s cubic-bezier(0.16,1,0.3,1) ${d}s, transform 0.85s cubic-bezier(0.16,1,0.3,1) ${d}s, filter 0.85s cubic-bezier(0.16,1,0.3,1) ${d}s`;
           requestAnimationFrame(() => requestAnimationFrame(() => {
