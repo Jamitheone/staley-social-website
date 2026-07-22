@@ -130,11 +130,54 @@
         </div>
 
         <!-- RIGHT: AUDIT REQUEST FORM -->
-        <!-- GHL Prospecting Widget (live 7/4, Premium add-on active). Real audit tool, not a static form. -->
+        <!-- GHL Prospecting Widget with native-form failover. The widget 404s to a
+             white page whenever the GHL Prospecting add-on billing lapses, so
+             /api/widget-check probes it server-side and this page swaps in the
+             original audit form when it is down. The funnel never white-screens. -->
         <div>
           <div class="contact-form reveal">
             <h3>Get your free audit</h3>
-            <iframe src="https://services.leadconnectorhq.com/prospecting/widgets/public/6a4975569df9f78373efdd3c" style="width:100%;border:none;overflow:hidden;min-height:820px;display:block;" scrolling="no" id="prospecting-widget-6a4975569df9f78373efdd3c" title="Get Your Marketing Report In Seconds"></iframe>
+            <div id="widget-wrap">
+              <iframe src="https://services.leadconnectorhq.com/prospecting/widgets/public/6a4975569df9f78373efdd3c" style="width:100%;border:none;overflow:hidden;min-height:820px;display:block;" scrolling="no" id="prospecting-widget-6a4975569df9f78373efdd3c" title="Get Your Marketing Report In Seconds"></iframe>
+            </div>
+            <div id="audit-fallback" style="display:none;">
+            <form id="audit-form" action="https://formsubmit.co/thestaleysocial@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="AUDIT REQUEST from thestaleysocial.com">
+              <input type="hidden" name="_next" value="https://thestaleysocial.com/audit.html?sent=true">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="text" name="_honey" style="display:none" aria-hidden="true" tabindex="-1">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First name</label>
+                  <input type="text" id="first-name" name="first-name" placeholder="Jamie" autocomplete="given-name" required>
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last name</label>
+                  <input type="text" id="last-name" name="last-name" placeholder="Smith" autocomplete="family-name" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="jamie@yourbusiness.com" autocomplete="email" required>
+              </div>
+              <div class="form-group">
+                <label for="business">Business name</label>
+                <input type="text" id="business" name="business" placeholder="Your business" autocomplete="organization" required>
+              </div>
+              <div class="form-group">
+                <label for="website">Website (or Google Business listing)</label>
+                <input type="text" id="website" name="website" placeholder="yourbusiness.com" inputmode="url" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone (optional, for texting the results)</label>
+                <input type="tel" id="phone" name="phone" placeholder="(816) 555-0100" autocomplete="tel">
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">
+                Send me my audit
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </form>
+            </div>
             <p style="text-align:center;font-size:0.78rem;color:var(--text-3);margin-top:12px;">Audit delivered within one business day. No spam, no pitch deck.</p>
           </div>
         </div>
@@ -216,6 +259,19 @@
         if (b) { b.style.display = 'block'; setTimeout(function(){ b.style.display = 'none'; }, 6000); }
       });
     }
+    // Widget failover: if the GHL Prospecting widget is dead (billing lapse → 404
+    // white page), hide it and show the native audit form. Any doubt → form,
+    // because the form path always works and a white page converts nobody.
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('/api/widget-check').then(function(r){ return r.json(); }).then(function(d) {
+        if (d && d.ok) return;
+        document.getElementById('widget-wrap').style.display = 'none';
+        document.getElementById('audit-fallback').style.display = 'block';
+      }).catch(function() {
+        document.getElementById('widget-wrap').style.display = 'none';
+        document.getElementById('audit-fallback').style.display = 'block';
+      });
+    });
     // Audit form: CRM insert via /api/audit-lead (server) + email notify via formsubmit (browser).
     // formsubmit only works from the browser (it 403s server-side POSTs), so the email is fired here.
     document.addEventListener('DOMContentLoaded', function() {
