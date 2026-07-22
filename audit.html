@@ -232,7 +232,9 @@
           business: form['business'].value,
           website: form['website'].value,
           phone: form['phone'].value,
-          honey: form['_honey'].value
+          honey: form['_honey'].value,
+          // ponytail: ?ref=<slug> on the share link is the whole attribution system
+          ref: new URLSearchParams(window.location.search).get('ref') || ''
         };
         // email notify (browser → formsubmit) — fire and forget
         fetch('https://formsubmit.co/ajax/thestaleysocial@gmail.com', {
@@ -245,7 +247,8 @@
             email: lead.email,
             business: lead.business,
             website: lead.website,
-            phone: lead.phone || ''
+            phone: lead.phone || '',
+            referred_by: lead.ref || 'none'
           })
         }).catch(function() {});
         // CRM + pipeline (server)

@@ -3,7 +3,9 @@
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
 
-  const { firstName, lastName, email, business, website, phone, honey } = req.body || {};
+  const { firstName, lastName, email, business, website, phone, honey, ref } = req.body || {};
+  // ponytail: slug only, it becomes a GHL tag/source string
+  const referrer = typeof ref === 'string' ? ref.replace(/[^a-z0-9-]/gi, '').slice(0, 32) : '';
   if (honey) return res.status(200).json({ ok: true }); // bot
   if (!firstName || !email || !business || !website) {
     return res.status(400).json({ error: 'Missing required fields' });
@@ -27,8 +29,10 @@ export default async function handler(req, res) {
       email,
       companyName: business,
       website,
-      source: 'Website Audit Request',
-      tags: ['website-audit-request'],
+      source: referrer ? `Referral: ${referrer}` : 'Website Audit Request',
+      tags: referrer
+        ? ['website-audit-request', 'referral', `referred-by-${referrer}`]
+        : ['website-audit-request'],
     }),
   });
   const data = await upsert.json();
