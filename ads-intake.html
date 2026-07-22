@@ -239,7 +239,7 @@
     var emailBody=Object.keys(answers).map(function(k){return k+': '+answers[k]}).join('\n');
     fetch('https://formsubmit.co/ajax/thestaleysocial@gmail.com',{
       method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({_subject:'New ads intake: '+g('Business name'),name:g('Contact name'),email:g('Email'),message:emailBody})
+      body:JSON.stringify({_cc:'gevongarner2003@gmail.com',_subject:'New ads intake: '+g('Business name'),name:g('Contact name'),email:g('Email'),message:emailBody})
     }).catch(function(){});
 
     // record: reliable CRM insert + note + pipeline card (source of truth)
