@@ -25,7 +25,6 @@ async function generateAdsPlan(business, answers) {
             descriptions: { type: 'array', items: { type: 'string' } },
           },
           required: ['name', 'keywords', 'headlines', 'descriptions'],
-          additionalProperties: false,
         },
       },
       targeting_summary: { type: 'string' },
@@ -36,7 +35,7 @@ async function generateAdsPlan(business, answers) {
       'platforms_recommended', 'primary_keywords', 'negative_keywords',
       'ad_groups', 'targeting_summary', 'daily_budget_split', 'next_steps',
     ],
-    additionalProperties: false,
+    // ponytail: no additionalProperties — Gemini responseSchema (OpenAPI subset) rejects it with a 400
   };
 
   const resp = await fetch(
