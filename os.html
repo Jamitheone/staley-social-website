@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=11">
+  <link rel="stylesheet" href="css/style.css?v=12">
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 <script type="application/ld+json">
 {
@@ -70,8 +70,9 @@
 .os-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 24px; padding: 6px 14px; border: 1px solid rgba(45,99,216,0.25); border-radius: 100px; background: rgba(45,99,216,0.05); }
 .os-hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981; }
 .os-hero-title { font-family: var(--font-display); font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 800; letter-spacing: -0.045em; line-height: 1.0; color: var(--text); max-width: 14ch; margin: 0 auto 28px; }
-.os-hero-title .accent { background: linear-gradient(135deg, #2D63D8 0%, #5B8EF0 50%, #2D63D8 100%); background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradientShift 4s ease infinite; }
-@keyframes gradientShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+/* Was an infinitely animating clipped gradient: repainted the hero headline
+   forever for no gain. Solid blue matches the home hero. */
+.os-hero-title .accent { color: var(--blue); }
 .os-hero-sub { font-size: 1.08rem; color: var(--text-2); max-width: 540px; line-height: 1.7; margin: 0 auto 36px; }
 .os-hero-cta { display: flex; flex-direction: column; align-items: center; gap: 14px; }
 .os-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
@@ -437,10 +438,8 @@
 
   <script src="js/main.js"></script>
   <script>
-    // FAQ accordion
-    document.querySelectorAll('.faq-q').forEach(function(btn){
-      btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });
-    });
+    // FAQ accordion lives in main.js. A duplicate handler here fired on the same
+    // click and toggled the item straight back shut, so the FAQ did nothing.
     // Cursor orb (skip on touch)
     (function(){
       var orb = document.getElementById('cursorOrb');

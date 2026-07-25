@@ -1635,14 +1635,20 @@ p { line-height: 1.7; }
   color: var(--gold);
 }
 
+/* grid-template-rows instead of max-height: animates without the layout thrash,
+   and drops the old magic 300px ceiling that silently clipped longer answers.
+   The padding transition here was dead anyway, padding lives on .faq-a p. */
 .faq-a {
-  max-height: 0;
+  display: grid;
+  grid-template-rows: 0fr;
   overflow: hidden;
-  transition: max-height 0.3s var(--ease), padding 0.3s var(--ease);
+  transition: grid-template-rows 0.3s var(--ease);
 }
 
+.faq-a > * { min-height: 0; }
+
 .faq-item.open .faq-a {
-  max-height: 300px;
+  grid-template-rows: 1fr;
 }
 
 .faq-a p {
@@ -1952,13 +1958,11 @@ p { line-height: 1.7; }
 .mb-60 { margin-bottom: 60px; }
 .gap-y-16 { row-gap: 16px; }
 
-/* Gold gradient text */
-.text-gradient {
-  background: linear-gradient(135deg, #5A8FFF 0%, #2D63D8 50%, #1A4FC4 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+/* Headline accent. Was a 3-stop gradient whose dark end (#1A4FC4) sat at poor
+   contrast on the near-black bg. Solid blue matches the home hero's .text-blue,
+   which is the strongest headline on the site. Class name kept so the 9 pages
+   using it need no edit. */
+.text-gradient { color: var(--blue); }
 
 /* Active nav underline */
 .nav-links a.active {
@@ -2429,15 +2433,19 @@ body::after {
   transform: translateX(0);
 }
 
-/* Full-width animated line that draws across the viewport on scroll */
+/* Full-width animated line that draws across the viewport on scroll.
+   scaleX, not width: these sit in normal flow, so animating width relayouts
+   the page on every scroll for every divider. transform composites instead. */
 .section-divider {
-  width: 0;
+  width: 100%;
   height: 1px;
   background: linear-gradient(90deg, var(--gold) 0%, rgba(45,99,216,0.3) 65%, transparent 100%);
-  transition: width 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .section-divider.visible {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 /* Stacked words: upgrade from fade-up to clip-path wipe (more dramatic, screenwide) */
