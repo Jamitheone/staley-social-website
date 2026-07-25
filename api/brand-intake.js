@@ -43,33 +43,45 @@ export default async function handler(req, res) {
     }).catch(() => {});
   }
 
+  // note + pipeline card are best-effort for the SUBMITTER (never block the form),
+  // but their status is reported back so a stale pipeline id can't fail silently.
+  // ponytail: status string, not retries — a bad id needs a human fix anyway.
+  const step = async (label, url, body) => {
+    try {
+      const r = await fetch(url, { method: 'POST', headers, body: JSON.stringify(body) });
+      if (r.ok) return 'ok';
+      console.error(`brand-intake ${label} failed`, r.status, await r.text());
+      return `http_${r.status}`;
+    } catch (e) {
+      console.error(`brand-intake ${label} threw`, e);
+      return 'threw';
+    }
+  };
+
   // full questionnaire → one note on the contact (this is the info Jameson works with)
+  let note = 'skipped';
   if (contactId && answers && typeof answers === 'object') {
     const noteBody = 'BRAND INTAKE\n\n' +
       Object.entries(answers)
         .filter(([, v]) => v && String(v).trim())
         .map(([k, v]) => `${k}: ${v}`)
         .join('\n');
-    await fetch(`${base}/contacts/${contactId}/notes`, {
-      method: 'POST', headers, body: JSON.stringify({ body: noteBody }),
-    }).catch(() => {});
+    note = await step('note', `${base}/contacts/${contactId}/notes`, { body: noteBody });
   }
 
   // Marketing Pipeline card → surfaces in the daily leadcheck brief = the notification
+  let opportunity = 'skipped';
   if (contactId) {
-    await fetch(`${base}/opportunities/`, {
-      method: 'POST', headers,
-      body: JSON.stringify({
-        locationId: process.env.GHL_TSS_LOCATION_ID,
-        pipelineId: 'Ijv8HR88X8QFjaOayxKF',
-        pipelineStageId: '7c70932c-8991-4857-afcb-86136fb17cb8',
-        contactId,
-        name: `${business} - Brand Intake`,
-        status: 'open',
-        source: 'Brand Intake Form',
-      }),
-    }).catch(() => {});
+    opportunity = await step('opportunity', `${base}/opportunities/`, {
+      locationId: process.env.GHL_TSS_LOCATION_ID,
+      pipelineId: 'Ijv8HR88X8QFjaOayxKF',
+      pipelineStageId: '7c70932c-8991-4857-afcb-86136fb17cb8',
+      contactId,
+      name: `${business} - Brand Intake`,
+      status: 'open',
+      source: 'Brand Intake Form',
+    });
   }
 
-  return res.status(200).json({ ok: true, contactId });
+  return res.status(200).json({ ok: true, contactId, note, opportunity });
 }
