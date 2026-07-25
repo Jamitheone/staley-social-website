@@ -10,11 +10,13 @@
   --bg-2: #0F0F1A;
   --bg-3: #14141F;
   --bg-4: #1A1A28;
-  --gold: #2D63D8;
-  --gold-dim: rgba(45,99,216,0.12);
-  --gold-glow: rgba(45,99,216,0.28);
+  /* Blue is the only accent. --blue/--blue-dim were byte-identical duplicates
+     of --blue/--blue-dim from an older palette, collapsed 2026-07-25. The only
+     real gold left on the site is the hardcoded #b8972e scarcity pill in
+     home.css and KC Comets' own brand tokens in kc-comets.html. */
   --blue: #2D63D8;
   --blue-dim: rgba(45,99,216,0.12);
+  --blue-glow: rgba(45,99,216,0.28);
   --text: #EBEBF2;
   --text-2: #ACACC6;
   --text-3: #6E6E8C;
@@ -23,7 +25,7 @@
   --radius: 16px;
   --radius-sm: 10px;
   --shadow: 0 4px 32px rgba(9,9,20,0.65);
-  --shadow-gold: 0 0 40px rgba(45,99,216,0.18);
+  --shadow-blue: 0 0 40px rgba(45,99,216,0.18);
   --nav-h: 76px;
   --font-display: 'Bricolage Grotesque', sans-serif;
   --font-body: 'Inter Tight', 'Nunito Sans', sans-serif;
@@ -98,7 +100,6 @@ h1, h2, h3, h4, h5, h6 {
 
 p { line-height: 1.7; }
 
-.text-gold { color: var(--gold); }
 .text-blue { color: var(--blue); }
 .text-muted { color: var(--text-2); }
 .text-dim { color: var(--text-3); }
@@ -165,9 +166,9 @@ p { line-height: 1.7; }
 .nav-logo-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--blue);
   flex-shrink: 0;
-  box-shadow: 0 0 10px var(--gold);
+  box-shadow: 0 0 10px var(--blue);
 }
 
 .nav-links {
@@ -187,7 +188,7 @@ p { line-height: 1.7; }
 
 .nav-links a:hover { color: var(--text); }
 
-.nav-links a.active { color: var(--gold); }
+.nav-links a.active { color: var(--blue); }
 
 .nav-cta {
   display: flex;
@@ -225,7 +226,7 @@ p { line-height: 1.7; }
 }
 
 .btn-primary {
-  background: var(--gold);
+  background: var(--blue);
   color: #ffffff;
 }
 
@@ -260,15 +261,15 @@ p { line-height: 1.7; }
   transform: translateY(-2px);
 }
 
-.btn-outline-gold {
+.btn-outline-blue {
   background: transparent;
-  color: var(--gold);
-  border: 1px solid var(--gold-glow);
+  color: var(--blue);
+  border: 1px solid var(--blue-glow);
 }
 
-.btn-outline-gold:hover {
-  background: var(--gold-dim);
-  border-color: var(--gold);
+.btn-outline-blue:hover {
+  background: var(--blue-dim);
+  border-color: var(--blue);
   transform: translateY(-2px);
 }
 
@@ -286,7 +287,7 @@ p { line-height: 1.7; }
 .btn-primary:active,
 .btn-secondary:active,
 .btn-outline:active,
-.btn-outline-gold:active {
+.btn-outline-blue:active {
   transform: translateY(1px) scale(0.97);
   transition-duration: 0.08s;
 }
@@ -416,8 +417,8 @@ p { line-height: 1.7; }
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold);
-  background: var(--gold-dim);
+  color: var(--blue);
+  background: var(--blue-dim);
   border: 1px solid rgba(45,99,216,0.2);
   padding: 6px 14px;
   border-radius: 100px;
@@ -428,8 +429,8 @@ p { line-height: 1.7; }
   content: '';
   width: 6px; height: 6px;
   border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 8px var(--gold);
+  background: var(--blue);
+  box-shadow: 0 0 8px var(--blue);
   flex-shrink: 0;
 }
 
@@ -476,7 +477,7 @@ p { line-height: 1.7; }
 }
 
 .hero-proof-item svg {
-  color: var(--gold);
+  color: var(--blue);
   flex-shrink: 0;
 }
 
@@ -503,19 +504,19 @@ p { line-height: 1.7; }
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--gold), transparent);
+  background: linear-gradient(90deg, var(--blue), transparent);
 }
 
 .guarantee-icon {
   width: 48px; height: 48px;
-  background: var(--gold-dim);
+  background: var(--blue-dim);
   border: 1px solid rgba(45,99,216,0.3);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  color: var(--gold);
+  color: var(--blue);
 }
 
 .guarantee-card h3 {
@@ -531,7 +532,7 @@ p { line-height: 1.7; }
 }
 
 .guarantee-card .guarantee-bold {
-  color: var(--gold);
+  color: var(--blue);
   font-weight: 600;
 }
 
@@ -567,7 +568,7 @@ p { line-height: 1.7; }
   font-variant-numeric: tabular-nums;
 }
 
-.stat-num .accent { color: var(--gold); }
+.stat-num .accent { color: var(--blue); }
 
 .stat-label {
   font-size: 0.78rem;
@@ -661,14 +662,14 @@ p { line-height: 1.7; }
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--blue);
   margin-bottom: 20px;
 }
 
 .section-label::before {
   content: '';
   width: 20px; height: 2px;
-  background: var(--gold);
+  background: var(--blue);
   flex-shrink: 0;
 }
 
@@ -708,7 +709,7 @@ p { line-height: 1.7; }
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--gold), var(--blue));
+  background: linear-gradient(90deg, var(--blue), var(--blue));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s var(--ease);
@@ -717,7 +718,7 @@ p { line-height: 1.7; }
 .service-card:hover {
   border-color: var(--border-hover);
   transform: translateY(-6px);
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-blue);
 }
 
 .service-card:hover::after { transform: scaleX(1); }
@@ -734,7 +735,6 @@ p { line-height: 1.7; }
 
 .service-card:hover .service-icon { transform: scale(1.1) rotate(-5deg); }
 
-.service-icon.gold { background: var(--gold-dim); color: var(--gold); }
 .service-icon.blue { background: var(--blue-dim); color: var(--blue); }
 .service-icon.green { background: rgba(16,185,129,0.1); color: #10B981; }
 .service-icon.purple { background: rgba(139,92,246,0.1); color: #8B5CF6; }
@@ -759,7 +759,7 @@ p { line-height: 1.7; }
   gap: 6px;
   font-size: 0.83rem;
   font-weight: 600;
-  color: var(--gold);
+  color: var(--blue);
   margin-top: 16px;
   cursor: pointer;
   opacity: 0;
@@ -797,7 +797,7 @@ p { line-height: 1.7; }
   font-size: 3.2rem;
   font-weight: 800;
   letter-spacing: -0.05em;
-  color: var(--gold);
+  color: var(--blue);
   line-height: 1;
   font-variant-numeric: tabular-nums;
   margin-bottom: 8px;
@@ -809,7 +809,7 @@ p { line-height: 1.7; }
 
 .result-num .suffix {
   font-size: 1.6rem;
-  color: var(--gold);
+  color: var(--blue);
 }
 
 .result-label {
@@ -854,8 +854,8 @@ p { line-height: 1.7; }
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold);
-  background: var(--gold-dim);
+  color: var(--blue);
+  background: var(--blue-dim);
   border: 1px solid rgba(45,99,216,0.15);
   padding: 4px 12px;
   border-radius: 100px;
@@ -890,7 +890,7 @@ p { line-height: 1.7; }
   font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--gold);
+  color: var(--blue);
   letter-spacing: -0.04em;
 }
 
@@ -929,7 +929,7 @@ p { line-height: 1.7; }
   display: flex;
   gap: 3px;
   margin-bottom: 16px;
-  color: var(--gold);
+  color: var(--blue);
 }
 
 .testimonial-text {
@@ -957,7 +957,7 @@ p { line-height: 1.7; }
   font-family: var(--font-display);
   font-size: 0.9rem;
   font-weight: 800;
-  color: var(--gold);
+  color: var(--blue);
   flex-shrink: 0;
 }
 
@@ -994,8 +994,8 @@ p { line-height: 1.7; }
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold);
-  background: var(--gold-dim);
+  color: var(--blue);
+  background: var(--blue-dim);
   border: 1px solid rgba(45,99,216,0.2);
   padding: 6px 14px;
   border-radius: 100px;
@@ -1028,14 +1028,14 @@ p { line-height: 1.7; }
 .guarantee-point-icon {
   width: 28px; height: 28px;
   border-radius: 50%;
-  background: var(--gold-dim);
+  background: var(--blue-dim);
   border: 1px solid rgba(45,99,216,0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   margin-top: 2px;
-  color: var(--gold);
+  color: var(--blue);
 }
 
 .guarantee-point-text {
@@ -1067,7 +1067,7 @@ p { line-height: 1.7; }
   font-family: var(--font-display);
   font-size: 7rem;
   font-weight: 800;
-  color: var(--gold);
+  color: var(--blue);
   letter-spacing: -0.06em;
   line-height: 1;
   margin-bottom: 8px;
@@ -1143,7 +1143,7 @@ p { line-height: 1.7; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #ffffff;
-  background: var(--gold);
+  background: var(--blue);
   padding: 4px 12px;
   border-radius: 100px;
   margin-bottom: 20px;
@@ -1200,7 +1200,7 @@ p { line-height: 1.7; }
 .pricing-feature svg {
   flex-shrink: 0;
   margin-top: 2px;
-  color: var(--gold);
+  color: var(--blue);
 }
 
 .pricing-feature.dim { color: var(--text-3); }
@@ -1221,7 +1221,7 @@ p { line-height: 1.7; }
   left: calc(12.5%);
   right: calc(12.5%);
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-glow), var(--gold), var(--gold-glow), transparent);
+  background: linear-gradient(90deg, transparent, var(--blue-glow), var(--blue), var(--blue-glow), transparent);
 }
 
 .process-step {
@@ -1245,14 +1245,14 @@ p { line-height: 1.7; }
   font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 800;
-  color: var(--gold);
+  color: var(--blue);
   margin-bottom: 24px;
   transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
 }
 
 .process-step:hover .process-num {
-  border-color: var(--gold);
-  background: var(--gold-dim);
+  border-color: var(--blue);
+  background: var(--blue-dim);
 }
 
 .process-step h4 {
@@ -1329,12 +1329,12 @@ p { line-height: 1.7; }
 .contact-detail-icon {
   width: 44px; height: 44px;
   border-radius: 12px;
-  background: var(--gold-dim);
+  background: var(--blue-dim);
   border: 1px solid rgba(45,99,216,0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gold);
+  color: var(--blue);
   flex-shrink: 0;
 }
 
@@ -1394,7 +1394,7 @@ p { line-height: 1.7; }
 .form-group input:focus-visible,
 .form-group textarea:focus-visible,
 .form-group select:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--blue);
   outline-offset: 2px;
 }
 
@@ -1479,7 +1479,7 @@ p { line-height: 1.7; }
 
 .about-image-tag .title {
   font-size: 0.8rem;
-  color: var(--gold);
+  color: var(--blue);
   font-weight: 500;
 }
 
@@ -1531,7 +1531,7 @@ p { line-height: 1.7; }
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 800;
-  color: var(--gold);
+  color: var(--blue);
   letter-spacing: -0.04em;
   line-height: 1;
   margin-bottom: 4px;
@@ -1575,7 +1575,7 @@ p { line-height: 1.7; }
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 800;
-  color: var(--gold);
+  color: var(--blue);
 }
 
 .team-card .name {
@@ -1586,7 +1586,7 @@ p { line-height: 1.7; }
 
 .team-card .role {
   font-size: 0.78rem;
-  color: var(--gold);
+  color: var(--blue);
   font-weight: 500;
 }
 
@@ -1621,7 +1621,7 @@ p { line-height: 1.7; }
   transition: color 0.2s;
 }
 
-.faq-q:hover { color: var(--gold); }
+.faq-q:hover { color: var(--blue); }
 
 .faq-icon {
   width: 24px; height: 24px;
@@ -1632,7 +1632,7 @@ p { line-height: 1.7; }
 
 .faq-item.open .faq-icon {
   transform: rotate(45deg);
-  color: var(--gold);
+  color: var(--blue);
 }
 
 /* grid-template-rows instead of max-height: animates without the layout thrash,
@@ -1747,7 +1747,7 @@ p { line-height: 1.7; }
   color: var(--text-3);
 }
 
-.footer-bottom a { color: var(--gold); }
+.footer-bottom a { color: var(--blue); }
 
 /* ─── Intro Splash ─── */
 .intro-overlay {
@@ -1804,7 +1804,7 @@ p { line-height: 1.7; }
   position: absolute;
   bottom: 0; left: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), var(--blue), transparent);
+  background: linear-gradient(90deg, transparent, var(--blue), var(--blue), transparent);
   width: 0%;
   transition: width 1.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1873,7 +1873,7 @@ p { line-height: 1.7; }
 }
 
 .marquee-dot {
-  color: var(--gold);
+  color: var(--blue);
   opacity: 0.5;
   font-size: 1.1rem;
   flex-shrink: 0;
@@ -1967,7 +1967,7 @@ p { line-height: 1.7; }
 /* Active nav underline */
 .nav-links a.active {
   position: relative;
-  color: var(--gold);
+  color: var(--blue);
 }
 
 /* ─── Contact CTA cards ─── */
@@ -1995,7 +1995,7 @@ p { line-height: 1.7; }
   background: var(--bg-3);
 }
 
-.contact-cta-phone:hover { border-color: var(--gold); }
+.contact-cta-phone:hover { border-color: var(--blue); }
 
 .contact-cta-icon {
   width: 44px;
@@ -2010,10 +2010,10 @@ p { line-height: 1.7; }
   flex-shrink: 0;
 }
 
-.contact-cta-icon-gold {
-  background: var(--gold-dim);
+.contact-cta-icon-blue {
+  background: var(--blue-dim);
   border-color: rgba(245,158,11,0.2);
-  color: var(--gold);
+  color: var(--blue);
 }
 
 .contact-cta-label {
@@ -2132,19 +2132,19 @@ p { line-height: 1.7; }
 
 /* ─── Focus-visible — keyboard navigation rings ─── */
 :focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--blue);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--blue);
   outline-offset: 3px;
 }
 
 .nav-links a:focus-visible,
 .nav-logo:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--blue);
   outline-offset: 4px;
   border-radius: 4px;
 }
@@ -2152,7 +2152,7 @@ p { line-height: 1.7; }
 .service-card:focus-visible,
 .testimonial-card:focus-visible,
 .team-card:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--blue);
   outline-offset: 4px;
 }
 
@@ -2265,7 +2265,7 @@ body::after {
   top: -100%;
   left: 16px;
   z-index: 9999;
-  background: var(--gold);
+  background: var(--blue);
   color: #fff;
   padding: 10px 20px;
   border-radius: 0 0 var(--radius-sm) var(--radius-sm);
@@ -2372,14 +2372,14 @@ body::after {
 }
 
 .floating-cta-underline {
-  color: var(--gold);
+  color: var(--blue);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .floating-cta-btn {
   display: inline-block;
-  background: var(--gold);
+  background: var(--blue);
   color: #fff;
   padding: 12px 24px;
   border-radius: 100px;
@@ -2439,7 +2439,7 @@ body::after {
 .section-divider {
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, var(--gold) 0%, rgba(45,99,216,0.3) 65%, transparent 100%);
+  background: linear-gradient(90deg, var(--blue) 0%, rgba(45,99,216,0.3) 65%, transparent 100%);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
@@ -2515,7 +2515,7 @@ body::after {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--blue);
   background: rgba(184,151,46,0.15);
   border: 1px solid rgba(184,151,46,0.3);
   border-radius: 4px;
