@@ -348,6 +348,36 @@
   margin-bottom: 2px;
 }
 
+/* ─── Review ask (sits right under the testimonials, where readers are already primed) ─── */
+.h-review-ask {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 40px;
+  padding: 28px 32px;
+  background: var(--blue-dim);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius);
+}
+.h-review-ask-copy strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.h-review-ask-copy span {
+  font-size: 0.9rem;
+  color: var(--text-2);
+  font-weight: 300;
+}
+@media (max-width: 720px) {
+  .h-review-ask { flex-direction: column; align-items: flex-start; gap: 20px; padding: 24px; }
+  .h-review-ask .btn { width: 100%; justify-content: center; }
+}
+
 /* ─── Small overrides ─── */
 .page-home .process-num {
   font-family: var(--font-display);
