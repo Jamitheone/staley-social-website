@@ -3,7 +3,7 @@
 // public URL turns into a white 404 page. audit.html asks this endpoint on
 // load and fails over to the native audit form when the widget is down.
 // Server-side probe because the browser cannot read a cross-origin status.
-const WIDGET_URL = 'https://services.leadconnectorhq.com/prospecting/widgets/public/6a4975569df9f78373efdd3c';
+const WIDGET_URL = 'https://services.leadconnectorhq.com/prospecting/widgets/public/6a669a92ca53d71c4a2d8307';
 
 export default async function handler(req, res) {
   res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=600');
