@@ -21,6 +21,18 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
     return;
   }
 
+  // A 2.6s scroll-locked splash on EVERY pageview is a bounce tax and it
+  // delayed LCP by the whole sequence. First visit of the session only.
+  try {
+    if (sessionStorage.getItem('tssIntroSeen')) {
+      overlay.classList.add('gone');
+      return;
+    }
+    sessionStorage.setItem('tssIntroSeen', '1');
+  } catch (e) {
+    /* private mode: fall through and just play it */
+  }
+
   // Lock scroll during intro
   document.body.style.overflow = 'hidden';
 

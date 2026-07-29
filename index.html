@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=13">
-  <link rel="stylesheet" href="css/home.css?v=14">
+  <link rel="stylesheet" href="css/home.css?v=15">
   <!-- Lenis smooth scroll (package renamed from @studio-freight/lenis; old URL 404'd silently) -->
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
 <script type="application/ld+json">
@@ -193,13 +193,13 @@
   <!-- ─── HERO ─── -->
   <section class="hero">
     <div class="hero-bg">
-      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/images/hero-poster.webp" fetchpriority="high">
+      <!-- The 6.3MB video was preload="auto" + fetchpriority="high", so it was
+           the LCP element on every visit. It is decoration behind the headline,
+           so the poster carries first paint and the video streams in after. -->
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/images/hero-poster.webp" fetchpriority="low">
         <source src="assets/video/amg-drone-compressed.mp4" type="video/mp4">
       </video>
       <div class="hero-video-overlay"></div>
-      <div class="hero-orb hero-orb-1"></div>
-      <div class="hero-orb hero-orb-2"></div>
-      <div class="hero-grid"></div>
     </div>
 
     <div class="container">
@@ -244,28 +244,29 @@
           </div>
         </div>
 
-        <!-- RIGHT: Guarantee card + 2x2 stat cards -->
+        <!-- RIGHT: the guarantee and the receipts, set as a ledger rather than
+             two glass cards. Same copy, no surfaces. -->
         <div class="hero-right hero-line">
-          <div class="guarantee-card">
-            <div class="guarantee-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            </div>
-            <h3>The Staley Guarantee</h3>
-            <p><span class="guarantee-bold">30% more Google Business Profile views by month 2,</span> or month 2 is completely free. No other KC agency puts this in writing.</p>
-          </div>
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <div class="stat-num text-blue"><span data-counter data-target="20" data-suffix="%">0%</span></div>
-              <div class="stat-label">More ticket sales<br>KC Comets, month 1</div>
-            </div>
-            <div class="hero-stat">
-              <div class="stat-num text-blue"><span data-counter data-target="14" data-suffix="+">0</span></div>
-              <div class="stat-label">Leads in week 1<br>OFB SWFL</div>
-            </div>
-            <div class="hero-stat">
-              <div class="stat-num text-blue"><span data-counter data-target="180" data-suffix="M+">0</span></div>
-              <div class="stat-label">Views generated<br>across platforms</div>
-            </div>
+          <div class="hero-ledger">
+            <p class="hero-ledger-lede">
+              <span class="hero-ledger-mark">The Staley Guarantee.</span>
+              <span class="guarantee-bold">30% more Google Business Profile views by month 2,</span>
+              or month 2 is completely free. No other KC agency puts this in writing.
+            </p>
+            <dl class="hero-stats">
+              <div class="hero-stat">
+                <dt class="stat-num"><span data-counter data-target="20" data-suffix="%">0%</span></dt>
+                <dd class="stat-label">More ticket sales, KC Comets, month 1</dd>
+              </div>
+              <div class="hero-stat">
+                <dt class="stat-num"><span data-counter data-target="14" data-suffix="+">0</span></dt>
+                <dd class="stat-label">Leads in week 1, OFB SWFL</dd>
+              </div>
+              <div class="hero-stat">
+                <dt class="stat-num"><span data-counter data-target="180" data-suffix="M+">0</span></dt>
+                <dd class="stat-label">Views generated across platforms</dd>
+              </div>
+            </dl>
           </div>
         </div>
 
@@ -323,48 +324,41 @@
 
       <div class="h-services-header reveal-wipe">
         <h2 class="display-md">Everything your business needs.</h2>
-        <p class="h-services-sub">One team. Zero handoffs. No fluff.</p>
+        <p class="h-services-sub">Handled in-house, so nothing gets passed between three vendors before it reaches you.</p>
       </div>
 
       <div class="h-srv-list">
         <a href="services.html#google-ads" class="h-srv-row reveal">
-          <span class="h-srv-num">01</span>
           <span class="h-srv-name">Google Ads &amp; Geofencing</span>
           <span class="h-srv-desc">Stop bleeding budget on clicks that don't convert.</span>
           <span class="h-srv-arrow">&rarr;</span>
         </a>
         <a href="services.html#web" class="h-srv-row reveal">
-          <span class="h-srv-num">02</span>
           <span class="h-srv-name">Website Design &amp; Development</span>
           <span class="h-srv-desc">Fast, mobile-first sites built to convert visitors.</span>
           <span class="h-srv-arrow">&rarr;</span>
         </a>
         <a href="services.html#gbp" class="h-srv-row reveal">
-          <span class="h-srv-num">03</span>
           <span class="h-srv-name">Google Business Profile</span>
           <span class="h-srv-desc">Show up in the Local 3-Pack and get more calls.</span>
           <span class="h-srv-arrow">&rarr;</span>
         </a>
         <a href="services.html#social" class="h-srv-row reveal">
-          <span class="h-srv-num">04</span>
           <span class="h-srv-name">Social Media Management</span>
           <span class="h-srv-desc">Content that actually looks like your brand.</span>
           <span class="h-srv-arrow">&rarr;</span>
         </a>
         <a href="services.html#video" class="h-srv-row reveal">
-          <span class="h-srv-num">05</span>
           <span class="h-srv-name">Video &amp; Content Production</span>
           <span class="h-srv-desc">Reels, TikToks, brand videos, scripted and shot.</span>
           <span class="h-srv-arrow">&rarr;</span>
         </a>
         <a href="services.html#email" class="h-srv-row reveal">
-          <span class="h-srv-num">06</span>
           <span class="h-srv-name">Email Marketing &amp; SEO</span>
           <span class="h-srv-desc">Automated nurture flows plus long-term organic traffic.</span>
           <span class="h-srv-arrow">&rarr;</span>
         </a>
         <a href="pricing.html#staley-os" class="h-srv-row reveal os-service-row">
-          <span class="h-srv-num">07</span>
           <span class="h-srv-name">Staley OS <span class="h-srv-badge">Software</span></span>
           <span class="h-srv-desc">CRM, speed-to-lead, pipeline, dashboard. Your operating system.</span>
           <span class="h-srv-arrow">&rarr;</span>
@@ -454,14 +448,14 @@
           </div>
         </div>
 
-        <div class="os-dashboard reveal reveal-delay-1" aria-hidden="true" role="img" aria-label="Staley OS dashboard mockup">
+        <div class="os-dashboard reveal reveal-delay-1" aria-hidden="true" role="img" aria-label="Example of the Staley OS dashboard, illustrative data">
           <div class="os-dash-bar">
             <div class="os-dash-dots">
               <span class="os-dash-dot os-dot-red"></span>
               <span class="os-dash-dot os-dot-yellow"></span>
               <span class="os-dash-dot os-dot-green"></span>
             </div>
-            <span class="os-dash-bar-label">Staley OS &middot; Live Dashboard</span>
+            <span class="os-dash-bar-label">Staley OS dashboard &middot; example view</span>
             <span class="os-dash-live"><span class="os-dash-live-dot"></span>Live</span>
           </div>
           <div class="os-dash-stats">
@@ -481,18 +475,18 @@
           <div class="os-dash-pipe">
             <div class="os-dash-col">
               <div class="os-dash-col-hd">New Lead <span>3</span></div>
-              <div class="os-dash-card"><div class="os-card-name">Mike T.</div><div class="os-card-meta os-green">Contacted &middot; 60s</div></div>
-              <div class="os-dash-card"><div class="os-card-name">Sarah K.</div><div class="os-card-meta os-green">Contacted &middot; 2m</div></div>
-              <div class="os-dash-card"><div class="os-card-name">Thomas R.</div><div class="os-card-meta os-yellow">Awaiting reply</div></div>
+              <div class="os-dash-card"><div class="os-card-name">Darnell Pruitt</div><div class="os-card-meta os-green">Contacted &middot; 60s</div></div>
+              <div class="os-dash-card"><div class="os-card-name">Marisol Vega</div><div class="os-card-meta os-green">Contacted &middot; 2m</div></div>
+              <div class="os-dash-card"><div class="os-card-name">Aaron Whitfield</div><div class="os-card-meta os-yellow">Awaiting reply</div></div>
             </div>
             <div class="os-dash-col">
               <div class="os-dash-col-hd">Qualified <span>2</span></div>
-              <div class="os-dash-card"><div class="os-card-name">James W.</div><div class="os-card-meta">$8,500 &middot; Call booked</div></div>
-              <div class="os-dash-card"><div class="os-card-name">Dana B.</div><div class="os-card-meta">$5,200 &middot; Proposal sent</div></div>
+              <div class="os-dash-card"><div class="os-card-name">Priya Raghavan</div><div class="os-card-meta">$8,500 &middot; Call booked</div></div>
+              <div class="os-dash-card"><div class="os-card-name">Cody Lindstrom</div><div class="os-card-meta">$5,200 &middot; Proposal sent</div></div>
             </div>
             <div class="os-dash-col">
               <div class="os-dash-col-hd">Won <span>1</span></div>
-              <div class="os-dash-card os-card-won"><div class="os-card-name">Lisa M.</div><div class="os-card-meta os-green">$12,000 &middot; Closed</div></div>
+              <div class="os-dash-card os-card-won"><div class="os-card-name">Renata Alvarez</div><div class="os-card-meta os-green">$12,000 &middot; Closed</div></div>
             </div>
           </div>
           <div class="os-dash-foot">
@@ -578,9 +572,9 @@
     <div class="container">
       <div class="text-center mb-60 reveal-wipe">
         <div class="section-label" style="justify-content:center;">Proof of work</div>
-        <h2 class="display-md mb-16">Numbers don't lie.</h2>
+        <h2 class="display-md mb-16">What the last 12 months<br>actually produced.</h2>
         <p style="color:var(--text-2);font-size:1rem;max-width:520px;margin:0 auto;line-height:1.75;">
-          Real results from real clients. Not vanity metrics, ticket sales, conversions, and revenue.
+          Ticket sales, qualified leads, and views. Every number below traces back to a named client and a date.
         </p>
       </div>
 
