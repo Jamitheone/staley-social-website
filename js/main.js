@@ -358,13 +358,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (reduceMotion) {
       heroLines.forEach(line => { line.style.opacity = '1'; });
     } else {
+      // The headline starts clipped via CSS, so if the reveal never runs the H1
+      // is invisible. A double rAF gets starved in a background or throttled
+      // tab, which left it blank. One forced reflow commits the start state,
+      // then the end state is set in the same tick, no frame callback needed.
       setTimeout(() => {
         words.forEach((w, i) => {
           w.style.transition = `transform 0.75s cubic-bezier(0.16,1,0.3,1) ${i * 0.04}s`;
-          requestAnimationFrame(() => requestAnimationFrame(() => {
-            w.style.transform = 'translateY(0)';
-          }));
         });
+        void document.documentElement.offsetHeight;
+        words.forEach(w => { w.style.transform = 'translateY(0)'; });
       }, startDelay);
       otherLines.forEach(line => {
         line.style.opacity = '0';
@@ -375,11 +378,12 @@ document.addEventListener('DOMContentLoaded', () => {
         otherLines.forEach((line, i) => {
           const d = i * 0.09;
           line.style.transition = `opacity 0.85s cubic-bezier(0.16,1,0.3,1) ${d}s, transform 0.85s cubic-bezier(0.16,1,0.3,1) ${d}s, filter 0.85s cubic-bezier(0.16,1,0.3,1) ${d}s`;
-          requestAnimationFrame(() => requestAnimationFrame(() => {
-            line.style.opacity = '1';
-            line.style.transform = 'translateY(0)';
-            line.style.filter = 'blur(0)';
-          }));
+        });
+        void document.documentElement.offsetHeight;
+        otherLines.forEach(line => {
+          line.style.opacity = '1';
+          line.style.transform = 'translateY(0)';
+          line.style.filter = 'blur(0)';
         });
       }, startDelay);
     }
