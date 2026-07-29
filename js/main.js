@@ -238,6 +238,17 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScrollReveal, { passive: true });
   window.addEventListener('resize', onScrollReveal, { passive: true });
   if (lenis) lenis.on('scroll', onScrollReveal);   // catch Lenis smooth scroll
+
+  // revealTicking is only cleared inside the rAF callback, so a dropped frame
+  // (scrolling in a backgrounded or throttled tab) latched it true and every
+  // later scroll returned early, leaving the rest of the page invisible even
+  // after the tab came back. Clear the latch and sweep directly on refocus.
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState !== 'visible') return;
+    revealTicking = false;
+    checkRevealAndCounters();
+  });
+
   // Initial pass (above-the-fold) + a safety pass after the splash lifts.
   setTimeout(checkRevealAndCounters, 150);
   setTimeout(checkRevealAndCounters, 2800);
