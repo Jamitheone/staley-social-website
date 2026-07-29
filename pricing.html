@@ -30,6 +30,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=13">
+  <link rel="stylesheet" href="css/flat.css?v=1">
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 <script type="application/ld+json">
 {
@@ -164,16 +165,7 @@
   margin-bottom: 24px;
 }
 .pricing-hero-title .accent {
-  background: linear-gradient(135deg, #2D63D8 0%, #5B8EF0 50%, #2D63D8 100%);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradientShift 4s ease infinite;
-}
-@keyframes gradientShift {
-  0%,100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  color: var(--blue);
 }
 .pricing-hero-sub {
   font-size: 1rem;
@@ -202,24 +194,14 @@
 .audit-banner {
   position: relative;
   overflow: hidden;
-  border-radius: 24px;
-  border: 1px solid rgba(251,191,36,0.2);
-  background: linear-gradient(135deg, rgba(251,191,36,0.06) 0%, rgba(251,191,36,0.02) 40%, transparent 70%);
-  padding: 56px 64px;
+  border-radius: 0;
+  border: 0;
+  border-top: 1px solid rgba(184,151,46,0.42);
+  border-bottom: 1px solid var(--border);
+  background: none;
+  padding: 48px 0 52px;
   margin-bottom: 80px;
   cursor: default;
-}
-.audit-banner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(105deg, transparent 40%, rgba(251,191,36,0.04) 60%, transparent 70%);
-  background-size: 200% 100%;
-  animation: shimmer 3s ease infinite;
-}
-@keyframes shimmer {
-  0% { background-position: -100% 0; }
-  100% { background-position: 200% 0; }
 }
 .audit-banner-inner {
   display: grid;
@@ -237,7 +219,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #F59E0B;
+  color: #b8972e;
   margin-bottom: 16px;
 }
 .audit-banner-tag::before {
@@ -246,12 +228,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #F59E0B;
-  animation: blink 2s ease infinite;
-}
-@keyframes blink {
-  0%,100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  background: #b8972e;
 }
 .audit-price-block {
   display: flex;
@@ -264,12 +241,12 @@
   font-size: clamp(3.5rem, 8vw, 6rem);
   font-weight: 800;
   letter-spacing: -0.05em;
-  color: #F59E0B;
+  color: #b8972e;
   line-height: 1;
 }
 .audit-price-label {
   font-size: 1rem;
-  color: rgba(245,158,11,0.6);
+  color: rgba(184,151,46,0.66);
   font-weight: 500;
 }
 .audit-banner-title {
@@ -302,15 +279,13 @@
 .audit-check {
   width: 18px;
   height: 18px;
-  border-radius: 50%;
-  background: rgba(251,191,36,0.12);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-shrink: 0;
 }
 .audit-check svg {
-  color: #F59E0B;
+  color: #b8972e;
 }
 .audit-banner-cta {
   display: flex;
@@ -320,7 +295,7 @@
 }
 .audit-apply-note {
   font-size: 0.78rem;
-  color: rgba(245,158,11,0.6);
+  color: rgba(184,151,46,0.66);
   display: flex;
   align-items: center;
   gap: 6px;
@@ -358,63 +333,33 @@
 .tiers-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  align-items: start;
-  perspective: 1200px;
+  gap: 0;
+  align-items: stretch;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 .tier-card-wrap {
   position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+  border-right: 1px solid var(--border);
 }
+.tier-card-wrap:last-child { border-right: 0; }
 .tier-card {
   position: relative;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  background: var(--bg-2);
-  padding: 36px 32px 40px;
-  overflow: hidden;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0;
+  border: 0;
+  background: none;
+  padding: 40px 30px 42px 0;
+  height: 100%;
 }
-.tier-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(45,99,216,0.3), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-.tier-card:hover::before { opacity: 1; }
-.tier-card:hover {
-  border-color: rgba(45,99,216,0.25);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 40px rgba(45,99,216,0.08);
-}
+.tier-card-wrap:not(:first-child) .tier-card { padding-left: 30px; }
 
-/* Featured card */
+/* The recommended tier was marked with a gradient border mask, a 60px glow and
+   a pulsing outline. A solid blue rule above it and heavier price type read as
+   "this one" without the light show. */
 .tier-card.featured {
-  border-color: rgba(45,99,216,0.3);
-  background: linear-gradient(180deg, rgba(45,99,216,0.06) 0%, var(--bg-2) 40%);
-  box-shadow: 0 0 60px rgba(45,99,216,0.12), inset 0 1px 0 rgba(45,99,216,0.2);
-}
-.tier-card.featured::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: 21px;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(45,99,216,0.5) 0%, transparent 40%, transparent 60%, rgba(91,142,240,0.3) 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  animation: borderPulse 4s ease infinite;
-  pointer-events: none;
-}
-@keyframes borderPulse {
-  0%,100% { opacity: 0.6; }
-  50% { opacity: 1; }
+  box-shadow: inset 0 2px 0 0 var(--blue);
+  padding-top: 44px;
 }
 
 /* Tier badge */
@@ -422,9 +367,9 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 12px;
-  border-radius: 100px;
-  font-size: 0.68rem;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.66rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -433,22 +378,14 @@
   overflow: hidden;
 }
 .tier-badge.popular {
-  background: linear-gradient(135deg, rgba(45,99,216,0.2), rgba(45,99,216,0.1));
-  border: 1px solid rgba(45,99,216,0.3);
-  color: #5B8EF0;
-}
-.tier-badge.popular::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(105deg, transparent 30%, rgba(91,142,240,0.2) 50%, transparent 70%);
-  background-size: 200% 100%;
-  animation: shimmer 2s ease infinite;
+  background: none;
+  border: 0;
+  color: var(--blue);
 }
 .tier-badge.new {
-  background: rgba(16,185,129,0.08);
-  border: 1px solid rgba(16,185,129,0.2);
-  color: #10B981;
+  background: none;
+  border: 0;
+  color: var(--text-3);
 }
 
 /* Tier name */
@@ -524,18 +461,14 @@
   transform: translateY(0);
 }
 .tier-feature-icon {
-  width: 18px;
+  width: 15px;
   height: 18px;
-  border-radius: 5px;
-  background: rgba(45,99,216,0.1);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-shrink: 0;
   margin-top: 1px;
-}
-.tier-feature.featured-feature .tier-feature-icon {
-  background: rgba(45,99,216,0.15);
+  color: var(--blue);
 }
 .tier-feature-check {
   stroke-dasharray: 20;
@@ -557,7 +490,7 @@
   gap: 8px;
   width: 100%;
   padding: 14px 24px;
-  border-radius: 12px;
+  border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
@@ -577,12 +510,10 @@
 .tier-cta.primary {
   background: var(--blue);
   color: #fff;
-  box-shadow: 0 4px 20px rgba(45,99,216,0.3);
 }
 .tier-cta.primary:hover {
   background: #3D73E8;
-  box-shadow: 0 8px 32px rgba(45,99,216,0.45);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 .tier-cta.outline {
   background: transparent;
@@ -606,9 +537,8 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   margin-top: 80px;
 }
 .stack-row {
@@ -648,19 +578,19 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 5px 12px;
-  border-radius: 100px;
+  padding: 4px 10px;
+  border-radius: 3px;
   font-size: 0.75rem;
   font-weight: 500;
-  background: var(--bg-3);
+  background: none;
   border: 1px solid var(--border);
-  color: var(--text-2);
+  color: var(--text-3);
   white-space: nowrap;
 }
 .stack-pill.active {
-  background: rgba(45,99,216,0.1);
-  border-color: rgba(45,99,216,0.25);
-  color: #5B8EF0;
+  background: none;
+  border-color: rgba(45,99,216,0.42);
+  color: var(--blue);
 }
 
 /* ─── Guarantee strip ─── */
@@ -668,17 +598,18 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  background: rgba(45,99,216,0.05);
-  border: 1px solid rgba(45,99,216,0.15);
-  border-radius: 16px;
-  padding: 28px 36px;
+  background: none;
+  border: 0;
+  border-top: 1px solid rgba(45,99,216,0.35);
+  border-radius: 0;
+  padding: 30px 0 0;
   margin: 64px 0;
 }
 .guarantee-icon-wrap {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: rgba(45,99,216,0.1);
+  width: 32px;
+  height: 32px;
+  border-radius: 0;
+  background: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -707,20 +638,20 @@
 }
 
 /* ─── FAQ ─── */
-.faq-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+.faq-list { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .faq-item { border-bottom: 1px solid var(--border); }
 .faq-item:last-child { border-bottom: none; }
-.faq-q { width: 100%; background: none; border: none; color: var(--text); text-align: left; padding: 22px 28px; font-family: var(--font-body); font-size: 0.92rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; transition: background 0.2s ease; }
-.faq-q:hover { background: var(--bg-2); }
+.faq-q { width: 100%; background: none; border: none; color: var(--text); text-align: left; padding: 22px 0; font-family: var(--font-body); font-size: 0.92rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; transition: background 0.2s ease; }
+.faq-q:hover { color: var(--blue); }
 .faq-icon { width: 18px; height: 18px; flex-shrink: 0; color: var(--text-3); transition: transform 0.3s ease; }
 .faq-item.open .faq-icon { transform: rotate(45deg); }
-.faq-a { display: none; padding: 0 28px 22px; }
+.faq-a { display: none; padding: 0 0 22px; }
 .faq-item.open .faq-a { display: block; }
 .faq-a p { font-size: 0.88rem; color: var(--text-2); line-height: 1.75; }
 
 /* ─── CTA ─── */
 .cta-section { padding: 80px 0; }
-.cta-inner { background: linear-gradient(135deg, rgba(45,99,216,0.08) 0%, transparent 60%); border: 1px solid rgba(45,99,216,0.15); border-radius: 24px; padding: 64px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+.cta-inner { background: none; border: 0; border-top: 1px solid rgba(45,99,216,0.35); border-radius: 0; padding: 56px 0 0; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
 .cta-text h2 { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.04em; color: var(--text); margin-bottom: 12px; }
 .cta-text p { color: var(--text-2); font-size: 0.92rem; line-height: 1.7; max-width: 420px; }
 .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -741,22 +672,26 @@
 .identity-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 .identity-card {
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 28px 24px 24px;
+  border: 0;
+  border-right: 1px solid var(--border);
+  border-radius: 0;
+  padding: 30px 26px 28px 0;
   cursor: pointer;
   transition: border-color 0.25s ease, background 0.25s ease, transform 0.2s ease;
   background: var(--bg-2);
   user-select: none;
   position: relative;
 }
+.identity-card:last-child { border-right: 0; }
+.identity-card:not(:first-child) { padding-left: 26px; }
 .identity-card:hover {
-  border-color: rgba(45,99,216,0.3);
-  background: var(--bg-3);
-  transform: translateY(-2px);
+  background: none;
+  transform: none;
 }
 .identity-card.active {
   border-color: var(--blue);
@@ -897,7 +832,7 @@
     })(window, document, "clarity", "script", "xozvrx8hnl");
   </script>
 </head>
-<body>
+<body class="page-flat">
   <a href="#main-content" class="skip-link">Skip to content</a>
   <div class="cursor-orb" id="cursorOrb"></div>
 
@@ -997,12 +932,12 @@
             </ul>
           </div>
           <div class="audit-banner-cta">
-            <a href="contact.html#book" class="btn btn-primary btn-lg" style="background:#F59E0B;border:none;box-shadow:0 8px 32px rgba(245,158,11,0.25);">
+            <a href="contact.html#book" class="btn btn-primary btn-lg" style="background:#b8972e;border:none;">
               Book the audit <span style="font-size:1.1em;">→</span>
             </a>
             <div class="audit-apply-note">$297 applies toward month 1 if you sign a retainer</div>
-            <div style="margin-top:8px;padding:16px 20px;border-radius:12px;border:1px solid rgba(251,191,36,0.12);background:rgba(251,191,36,0.04);">
-              <div style="font-size:0.75rem;font-weight:600;color:#F59E0B;margin-bottom:6px;">PROOF IT WORKS</div>
+            <div style="margin-top:12px;padding:18px 0 0;border-top:1px solid var(--border);">
+              <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.16em;color:var(--text-3);margin-bottom:8px;">PROOF IT WORKS</div>
               <p style="font-size:0.82rem;color:var(--text-2);line-height:1.6;">Office Brokers of SWFL: 20 conversions in the first week after we fixed their tracking and restructured their campaign. The audit found the issue in 10 minutes.</p>
             </div>
           </div>

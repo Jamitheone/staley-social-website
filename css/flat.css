@@ -1,0 +1,166 @@
+/* ============================================================
+   TSS — de-slop pass for services / pricing / results
+   2026-07-29, continuation of the homepage pass in home.css
+
+   Same principle: remove surfaces, let hairlines, type weight
+   and space carry the hierarchy. Scoped to .page-flat so the
+   remaining 15 pages keep the card style until they get their
+   own pass. Loaded AFTER style.css.
+
+   Duplicates a few rules from home.css on purpose. Hoisting
+   them into a shared scope would mean touching style.css,
+   which is what keeps the blast radius at three pages.
+   ============================================================ */
+
+/* ─── Feature / case cards ───
+   The 3-equal-bordered-cards row is the single most generic
+   layout on the site. Now ruled columns that read as a list. */
+.page-flat .services-grid,
+.page-flat .results-grid {
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 64px;
+}
+
+.page-flat .service-card,
+.page-flat .result-stat {
+  background: none;
+  border: 0;
+  border-right: 1px solid var(--border);
+  border-radius: 0;
+  padding: 38px 34px 38px 0;
+  text-align: left;
+  box-shadow: none;
+}
+.page-flat .service-card:not(:first-child),
+.page-flat .result-stat:not(:first-child) { padding-left: 34px; }
+.page-flat .service-card:last-child,
+.page-flat .result-stat:last-child { border-right: 0; }
+
+/* The hover was a 6px lift plus a blue glow plus a sweeping
+   underline bar. One hairline warming up says the same thing. */
+.page-flat .service-card { transition: border-color 0.3s var(--ease); }
+.page-flat .service-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-right-color: var(--border);
+}
+.page-flat .service-card::after { display: none; }
+.page-flat .service-card:hover h3 { color: var(--blue); }
+.page-flat .service-card h3 { transition: color 0.25s var(--ease); }
+
+/* Rounded tinted icon squares are the other half of the card
+   look, and the green/purple/red/teal variants were four extra
+   accent colours on a site whose one accent is blue. */
+.page-flat .service-icon {
+  /* width:auto stretched the flex container to the full column. */
+  width: fit-content;
+  height: auto;
+  border-radius: 0;
+  background: none !important;
+  color: var(--blue) !important;
+  margin-bottom: 18px;
+  justify-content: flex-start;
+}
+.page-flat .service-card:hover .service-icon { transform: none; }
+
+.page-flat .result-num {
+  justify-content: flex-start;
+  color: #fff;
+  font-size: clamp(2.5rem, 4.2vw, 3.4rem);
+  margin-bottom: 14px;
+}
+.page-flat .result-num .suffix { color: var(--blue); }
+.page-flat .result-client { font-style: normal; color: var(--text-3); }
+
+/* ─── Case studies ─── */
+.page-flat .case-card {
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  padding: 34px 0 8px;
+  transition: border-top-color 0.3s var(--ease);
+}
+.page-flat .case-card:hover { transform: none; border-top-color: var(--blue); }
+
+.page-flat .case-card-tag {
+  background: none !important;
+  border: 0 !important;
+  border-radius: 0;
+  padding: 0;
+  color: var(--text-3);
+  letter-spacing: 0.16em;
+}
+
+.page-flat .case-card h3 { letter-spacing: -0.03em; }
+.page-flat .case-card p,
+.page-flat .service-card p { max-width: 46ch; text-wrap: pretty; }
+.page-flat .case-metric-num { font-variant-numeric: tabular-nums; }
+
+/* ─── Portfolio carousel ───
+   Kept, it shows real client work. Chrome squared off and the
+   arrows calmed down so they stop reading as UI furniture. */
+.page-flat .portfolio-carousel { border-radius: 0; }
+
+.page-flat .pc-arrow {
+  border-radius: 0;
+  width: 44px;
+  height: 44px;
+  background: rgba(7, 7, 12, 0.72);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+.page-flat .pc-arrow:hover {
+  background: rgba(7, 7, 12, 0.9);
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* .pc-tag was blue text on a gold-tinted chip: two accents
+   fighting inside one 3px-radius badge. Now a plain label. */
+.page-flat .pc-tag {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.62);
+  letter-spacing: 0.16em;
+}
+
+.page-flat .pc-caption {
+  padding: 48px 26px 22px;
+  background: linear-gradient(to top, rgba(4, 6, 12, 0.92) 0%, rgba(4, 6, 12, 0.35) 55%, transparent 100%);
+}
+
+/* ─── FAQ ───
+   De-carded but still an accordion. pricing.html and os.html
+   carry FAQPage schema that mirrors these exact questions, and
+   schema without matching visible content measurably hurts AI
+   citation rate, so the markup stays as it is. */
+.page-flat .faq-item {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  overflow: visible;
+}
+.page-flat .faq-item:first-child { border-top: 1px solid var(--border); }
+.page-flat .faq-q { padding: 22px 0; font-weight: 500; font-size: 1rem; }
+.page-flat .faq-a p { padding: 0 0 22px; max-width: 68ch; }
+
+/* ─── Mobile ─── */
+@media (max-width: 900px) {
+  .page-flat .services-grid,
+  .page-flat .results-grid { grid-template-columns: 1fr; }
+  .page-flat .service-card,
+  .page-flat .result-stat {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 30px 0;
+  }
+  .page-flat .service-card:not(:first-child),
+  .page-flat .result-stat:not(:first-child) { padding-left: 0; }
+  .page-flat .service-card:last-child,
+  .page-flat .result-stat:last-child { border-bottom: 0; }
+}
