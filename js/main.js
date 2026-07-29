@@ -320,8 +320,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // run it immediately.
   const heroLines = document.querySelectorAll('.hero-line');
   if (heroLines.length) {
-    const hasIntro = document.getElementById('introOverlay') && !reduceMotion;
-    const startDelay = hasIntro ? 2650 : 0;
+    // Gate on whether the splash is actually PLAYING, not merely present. It
+    // stays in the DOM with .gone on repeat visits, and keying off existence
+    // alone left the hero blank for 2.6s with no overlay covering it.
+    const intro = document.getElementById('introOverlay');
+    const introPlaying = intro && !reduceMotion && !intro.classList.contains('gone');
+    const startDelay = introPlaying ? 2650 : 0;
 
     // Split headline lines into masked words: each word rises out of its own
     // clip. Non-headline hero-lines keep the blur-rise below.
