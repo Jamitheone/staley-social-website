@@ -2073,6 +2073,19 @@ p { line-height: 1.7; }
   .nav-cta .btn-secondary { display: none; }
 }
 
+/* Nav collapses to the hamburger before the links overflow. The 9th item
+   (Course, added 7/30) pushed the desktop nav's natural width to 1108px,
+   so the old 1024px hamburger breakpoint left a window where the links
+   ran into the CTA buttons. Nav only, the 1024 block below still owns
+   the layout breakpoints. */
+@media (max-width: 1120px) {
+  .nav-links { display: none; }
+  .nav-cta .btn { display: none; }
+  .nav-cta .btn-primary { display: inline-flex; }
+  .nav-phone { display: none; }
+  .nav-hamburger { display: flex; }
+}
+
 @media (max-width: 1024px) {
   .nav-links { display: none; }
   .nav-cta .btn { display: none; }
