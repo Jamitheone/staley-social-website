@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=13">
-  <link rel="stylesheet" href="css/flat.css?v=1">
+  <link rel="stylesheet" href="css/flat.css?v=3">
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 <script type="application/ld+json">
 {
@@ -110,20 +110,6 @@
 
 <style>
 /* PRICING PAGE Custom Animations */
-
-/* Orb cursor glow */
-.cursor-orb {
-  position: fixed;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(45,99,216,0.12) 0%, transparent 70%);
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: left 0.08s linear, top 0.08s linear;
-  z-index: 0;
-  will-change: left, top;
-}
 
 /* ─── Hero ─── */
 .pricing-hero {
@@ -834,7 +820,6 @@
 </head>
 <body class="page-flat">
   <a href="#main-content" class="skip-link">Skip to content</a>
-  <div class="cursor-orb" id="cursorOrb"></div>
 
   <!-- NAV -->
   <nav class="nav" id="main-nav">
@@ -1002,7 +987,7 @@
       <div class="tiers-grid">
 
         <!-- FOUNDATION OS -->
-        <div class="tier-card-wrap reveal" data-tilt id="tier-foundation">
+        <div class="tier-card-wrap reveal" id="tier-foundation">
           <div class="tier-card">
             <div class="tier-name">Staley OS <span style="font-size:0.55em;font-weight:500;color:var(--blue);letter-spacing:0.06em;text-transform:uppercase;vertical-align:middle;margin-left:6px;">Software</span></div>
             <div class="tier-price-block">
@@ -1046,7 +1031,7 @@
         </div>
 
         <!-- GROWTH OS (FEATURED) -->
-        <div class="tier-card-wrap reveal reveal-delay-1" data-tilt id="tier-growth">
+        <div class="tier-card-wrap reveal reveal-delay-1" id="tier-growth">
           <div class="tier-card featured">
             <div class="tier-badge popular">
               <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -1094,7 +1079,7 @@
         </div>
 
         <!-- ADS OS -->
-        <div class="tier-card-wrap reveal reveal-delay-2" data-tilt id="tier-ads">
+        <div class="tier-card-wrap reveal reveal-delay-2" id="tier-ads">
           <div class="tier-card">
             <div class="tier-name">Ads OS</div>
             <div class="tier-price-block">
@@ -1137,7 +1122,7 @@
         </div>
 
         <!-- FULL OS -->
-        <div class="tier-card-wrap reveal reveal-delay-3" data-tilt id="tier-full">
+        <div class="tier-card-wrap reveal reveal-delay-3" id="tier-full">
           <div class="tier-card">
             <div class="tier-badge new">Full Stack</div>
             <div class="tier-name">Full OS</div>
@@ -1477,40 +1462,13 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 The Staley Social LLC. All rights reserved.</p>
-        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a></p>
+        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js?v=4"></script>
   <script>
-  // ─── Cursor orb tracking ───
-  const orb = document.getElementById('cursorOrb');
-  if (orb && window.matchMedia('(pointer: fine)').matches) {
-    document.addEventListener('mousemove', e => {
-      orb.style.left = e.clientX + 'px';
-      orb.style.top = e.clientY + 'px';
-    });
-  } else if (orb) {
-    orb.style.display = 'none';
-  }
-
-  // ─── 3D card tilt ───
-  document.querySelectorAll('[data-tilt]').forEach(wrap => {
-    const card = wrap.querySelector('.tier-card');
-    wrap.addEventListener('mousemove', e => {
-      const rect = wrap.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      wrap.style.transition = 'none';
-      wrap.style.transform = `perspective(1000px) rotateX(${-y * 8}deg) rotateY(${x * 8}deg) translateZ(8px)`;
-    });
-    wrap.addEventListener('mouseleave', () => {
-      wrap.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-      wrap.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
-    });
-  });
-
   // ─── Price counter animation ───
   function countUp(el, target, duration) {
     const start = performance.now();

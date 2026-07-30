@@ -771,12 +771,9 @@
   min-width: 6px;
   background: #b8972e;
   border-radius: 50%;
-  animation: pulse-gold 2s ease-in-out infinite;
-}
-
-@keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(184, 151, 46, 0.45); }
-  50%       { box-shadow: 0 0 0 5px rgba(184, 151, 46, 0); }
+  /* Was an infinite pulsing ring. Above the fold and always visible, so by
+     the Frequency Gate the right amount of motion here is none. Same call
+     as the blinking tag dot removed from pricing.html. */
 }
 
 /* ─── Service row — OS badge ─── */

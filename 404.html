@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=13">
+  <link rel="stylesheet" href="css/flat.css?v=3">
   <style>
     .not-found {
       min-height: 100dvh;
@@ -21,20 +22,6 @@
       padding: 48px 24px;
       position: relative;
       overflow: hidden;
-    }
-    .not-found-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-    .not-found-orb {
-      position: absolute;
-      width: 600px; height: 600px;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(45,99,216,0.15) 0%, transparent 70%);
-      filter: blur(80px);
     }
     .not-found-inner {
       position: relative;
@@ -47,10 +34,7 @@
       font-weight: 800;
       letter-spacing: -0.06em;
       line-height: 1;
-      color: transparent;
-      background: linear-gradient(135deg, var(--blue) 0%, rgba(45,99,216,0.4) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
+      color: var(--blue);
       margin-bottom: 24px;
       font-variant-numeric: tabular-nums;
     }
@@ -102,13 +86,10 @@
     })(window, document, "clarity", "script", "xozvrx8hnl");
   </script>
 </head>
-<body>
+<body class="page-flat">
   <a href="#main-content" class="skip-link">Skip to content</a>
 
   <main id="main-content" class="not-found">
-    <div class="not-found-bg">
-      <div class="not-found-orb"></div>
-    </div>
     <div class="not-found-inner">
       <div class="not-found-code">404</div>
       <div class="not-found-divider"></div>

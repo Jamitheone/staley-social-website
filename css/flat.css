@@ -149,8 +149,195 @@
 .page-flat .faq-q { padding: 22px 0; font-weight: 500; font-size: 1rem; }
 .page-flat .faq-a p { padding: 0 0 22px; max-width: 68ch; }
 
+/* ============================================================
+   PASS 3 — 2026-07-30: about / contact / audit / work / legal.
+   Every remaining page now carries .page-flat, so the scoping
+   note above is historical. style.css is still untouched: the
+   card style is what an un-flagged page falls back to, which
+   keeps client-site templates that share it from drifting.
+   ============================================================ */
+
+/* ─── Team ───
+   Centred cards with rounded avatar tiles that lift on hover.
+   The photos are initials, so the tile was chrome around a
+   letter. Ruled columns, left-aligned, name carries the row. */
+.page-flat .team-grid {
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.page-flat .team-card {
+  background: none;
+  border: 0;
+  border-right: 1px solid var(--border);
+  border-radius: 0;
+  padding: 30px 26px 30px 0;
+  text-align: left;
+  transition: none;
+}
+.page-flat .team-card:not(:first-child) { padding-left: 26px; }
+.page-flat .team-card:last-child { border-right: 0; }
+.page-flat .team-card:hover { transform: none; border-color: var(--border); }
+.page-flat .team-avatar {
+  /* width:auto on a flex box stretches to the full column, same trap as
+     .service-icon above. Measured 357px wide before this. */
+  width: fit-content;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  margin: 0 0 12px;
+  justify-content: flex-start;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  color: var(--text-3);
+}
+
+/* ─── About stats ───
+   Two tinted boxes. The number is already 2rem display weight,
+   it does not need a container to be read as a number. */
+.page-flat .about-stats { gap: 0; margin-top: 40px; }
+.page-flat .about-stat {
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  padding: 20px 20px 20px 0;
+}
+.page-flat .about-stat:nth-child(even) {
+  border-left: 1px solid var(--border);
+  padding-left: 20px;
+}
+
+/* The founder portrait sat in a 24px-radius box with a
+   blurred glass caption floating inside it. Square frame,
+   caption sits under the image on its own rule. */
+.page-flat .about-image { border-radius: 0; }
+.page-flat .about-image-tag {
+  background: rgba(9, 9, 15, 0.82);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  bottom: 0; left: 0; right: 0;
+  padding: 16px 20px;
+}
+
+/* ─── Pills ───
+   .founder-social-link and .skill-chip were 100px-radius
+   chips. Same fix as .pc-tag above: label, not badge. */
+.page-flat .founder-social-link,
+.page-flat .founders-split .skill-chip {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
+.page-flat .founder-social-link {
+  border-bottom: 1px solid var(--border);
+  padding: 0 0 3px;
+}
+.page-flat .founder-social-link:hover { color: var(--text); border-bottom-color: var(--text-3); }
+.page-flat .founders-split .skill-chip { color: var(--text-3); }
+.page-flat .founders-split .skill-chip:not(:last-child)::after {
+  content: '·';
+  margin-left: 11px;
+  color: var(--border-hover);
+}
+
+/* ─── Founder card ───
+   Card plus hover lift plus a 3px gradient bar bleeding off
+   the top edge. The bar was the tell. */
+.page-flat .founders-split .founder-card {
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  padding: 32px 0 0;
+  transition: none;
+}
+.page-flat .founders-split .founder-card:hover { transform: none; }
+.page-flat .founders-split .founder-card::before { display: none; }
+/* Round gradient-filled initials puck. Initials are type. */
+.page-flat .founders-split .founder-mono {
+  width: auto; height: auto;
+  border-radius: 0;
+  background: none;
+  color: var(--blue);
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+}
+
+/* ─── Contact rows ───
+   Rounded tinted icon tiles on every contact method, plus the
+   whole row as a card. The glyph alone reads the same. */
+.page-flat .contact-cta-card {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 20px 0;
+  transition: opacity 0.2s var(--ease);
+}
+.page-flat .contact-cta-card:hover { background: none; border-color: var(--border); opacity: 0.72; }
+.page-flat .contact-cta-icon,
+.page-flat .contact-detail-icon {
+  width: auto; height: auto;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
+/* The form was a 40px-padded card floating next to the copy.
+   One rule down its left edge ties it to the column instead. */
+.page-flat .contact-form {
+  background: none;
+  border: 0;
+  border-left: 1px solid var(--border);
+  border-radius: 0;
+  padding: 4px 0 4px 40px;
+}
+
+/* ─── Closing CTA ───
+   Diagonal blue wash behind the last section on about/work.
+   Same hairline band the rest of the page uses. */
+.page-flat .cta-section { background: none; }
+
+/* ─── Work ───
+   The browser chrome stays: it frames a real screenshot and
+   the URL bar shows the live domain, which is the proof. Only
+   the 70px drop shadow and the 14px radius come off, those
+   are the card, not the device. */
+.page-flat .browser {
+  border-radius: 0;
+  box-shadow: none;
+  border-color: var(--border);
+}
+.page-flat .work-tags span {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  color: var(--text-3);
+}
+.page-flat .work-tags { gap: 0; column-gap: 22px; }
+.page-flat .work-tags span:not(:last-child)::after {
+  content: '·';
+  margin-left: 22px;
+  color: var(--border-hover);
+}
+
 /* ─── Mobile ─── */
 @media (max-width: 900px) {
+  .page-flat .team-grid { grid-template-columns: 1fr; }
+  .page-flat .team-card {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 26px 0;
+  }
+  .page-flat .team-card:not(:first-child) { padding-left: 0; }
+  .page-flat .team-card:last-child { border-bottom: 0; }
+  .page-flat .contact-form { border-left: 0; padding-left: 0; }
   .page-flat .services-grid,
   .page-flat .results-grid { grid-template-columns: 1fr; }
   .page-flat .service-card,

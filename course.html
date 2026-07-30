@@ -10,14 +10,22 @@
   <meta property="og:title" content="OPERATOR | Build your own ARIS">
   <meta property="og:description" content="Build a personal AI system that runs your life and business. No CS degree. Self-paced course.">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Staley Social">
+  <meta property="og:image" content="https://thestaleysocial.com/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OPERATOR | Build your own ARIS">
+  <meta name="twitter:description" content="Build a personal AI system that runs your life and business. No CS degree. Self-paced course.">
+  <meta name="twitter:image" content="https://thestaleysocial.com/assets/og-image.png">
+  <meta name="theme-color" content="#090910">
   <link rel="icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=13">
+  <link rel="stylesheet" href="css/flat.css?v=3">
 <style>
 /* ponytail: reuses os.html's .os-* classes from style.css; only course-specific bits here */
-.op-eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:0.72rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--blue); margin-bottom:24px; padding:6px 14px; border:1px solid rgba(45,99,216,0.25); border-radius:100px; background:rgba(45,99,216,0.05); }
+.op-eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:0.72rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--blue); margin-bottom:24px; }
 .op-hero-title { font-family:var(--font-display); font-size:clamp(2.8rem,7vw,5.4rem); font-weight:800; letter-spacing:-0.045em; line-height:1.02; color:var(--text); max-width:15ch; margin:0 auto 26px; }
 .op-hero-title .accent { color:var(--blue); }
 .op-hero-sub { font-size:1.1rem; color:var(--text-2); max-width:560px; line-height:1.7; margin:0 auto 34px; }
@@ -32,24 +40,25 @@
 .op-head h2 { font-family:var(--font-display); font-size:clamp(1.9rem,4vw,3rem); font-weight:800; letter-spacing:-0.04em; color:var(--text); margin-bottom:14px; }
 .op-head p { color:var(--text-2); max-width:520px; margin:0 auto; font-size:0.96rem; line-height:1.7; }
 .op-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; }
-.op-card { border:1px solid var(--border); border-radius:18px; background:var(--bg-2); padding:30px 28px; transition:border-color 0.3s var(--ease), transform 0.25s var(--ease); }
-.op-card:hover { border-color:var(--border-hover); transform:translateY(-3px); }
-.op-card-icon { width:44px; height:44px; border-radius:11px; background:rgba(45,99,216,0.1); display:flex; align-items:center; justify-content:center; color:var(--blue); margin-bottom:18px; font-size:1.2rem; }
+.op-card { border:0; border-top:1px solid var(--border); border-radius:0; background:none; padding:28px 26px 28px 0; }
+.op-card:hover h3 { color:var(--blue); }
+.op-card h3 { transition:color 0.25s var(--ease); }
+.op-card-icon { width:fit-content; border-radius:0; background:none; display:flex; align-items:center; color:var(--blue); margin-bottom:16px; font-size:1.1rem; }
 .op-card h3 { font-family:var(--font-display); font-size:1.05rem; font-weight:700; letter-spacing:-0.02em; color:var(--text); margin-bottom:8px; }
 .op-card p { font-size:0.88rem; color:var(--text-2); line-height:1.65; }
 /* curriculum */
 .op-modules { max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:12px; }
-.op-mod { display:flex; gap:20px; align-items:flex-start; border:1px solid var(--border); border-radius:16px; background:var(--bg-2); padding:24px 26px; transition:border-color 0.3s var(--ease); }
-.op-mod:hover { border-color:var(--border-hover); }
-.op-mod-num { font-family:var(--font-display); font-size:1.4rem; font-weight:800; color:var(--blue); line-height:1; min-width:44px; }
+.op-mod { display:flex; gap:24px; align-items:baseline; border:0; border-top:1px solid var(--border); border-radius:0; background:none; padding:24px 0; }
+.op-modules { gap:0; border-bottom:1px solid var(--border); }
+.op-mod-num { font-family:var(--font-body); font-size:0.74rem; font-weight:600; letter-spacing:0.16em; color:var(--text-3); line-height:1.6; min-width:34px; }
 .op-mod-body h3 { font-family:var(--font-display); font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:6px; letter-spacing:-0.02em; }
 .op-mod-body p { font-size:0.88rem; color:var(--text-2); line-height:1.6; }
 /* pricing */
 .op-price-wrap { max-width:460px; margin:0 auto; }
-.op-price-card { position:relative; border-radius:24px; border:1px solid rgba(45,99,216,0.3); background:linear-gradient(180deg, rgba(45,99,216,0.07) 0%, var(--bg-2) 45%); padding:44px 40px; text-align:center; box-shadow:0 0 60px rgba(45,99,216,0.12); }
-.op-price-badge { position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--blue); color:#fff; font-size:0.68rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:6px 16px; border-radius:100px; white-space:nowrap; }
+.op-price-card { position:relative; border:0; border-top:2px solid var(--blue); border-radius:0; background:none; padding:38px 0 0; text-align:left; }
+.op-price-badge { display:block; margin-bottom:16px; color:var(--blue); font-size:0.68rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; }
 .op-price-was { font-size:1.05rem; color:var(--text-3); text-decoration:line-through; margin-bottom:4px; }
-.op-price-row { display:flex; align-items:flex-start; justify-content:center; gap:2px; }
+.op-price-row { display:flex; align-items:flex-start; gap:2px; }
 .op-price-dollar { font-family:var(--font-display); font-size:1.6rem; font-weight:700; color:var(--text-2); margin-top:10px; }
 .op-price-num { font-family:var(--font-display); font-size:4.2rem; font-weight:800; letter-spacing:-0.05em; color:var(--text); line-height:1; }
 .op-price-period { font-size:0.9rem; color:var(--text-3); margin-top:8px; }
@@ -58,16 +67,16 @@
 .op-price-list .ic { flex-shrink:0; margin-top:3px; }
 .op-urgency { font-size:0.8rem; color:var(--blue); font-weight:600; margin-top:16px; }
 /* faq (reuse .faq-* from style.css if present, else define) */
-.op-faq { max-width:680px; margin:0 auto; display:flex; flex-direction:column; border:1px solid var(--border); border-radius:16px; overflow:hidden; }
+.op-faq { max-width:680px; margin:0 auto; display:flex; flex-direction:column; border-top:1px solid var(--border); }
 .op-faq-item { border-bottom:1px solid var(--border); }
 .op-faq-item:last-child { border-bottom:none; }
-.op-faq-q { width:100%; background:none; border:none; color:var(--text); text-align:left; padding:22px 28px; font-family:var(--font-body); font-size:0.92rem; font-weight:600; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; }
-.op-faq-q:hover { background:var(--bg-2); }
+.op-faq-q { width:100%; background:none; border:none; color:var(--text); text-align:left; padding:22px 0; font-family:var(--font-body); font-size:0.95rem; font-weight:500; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.op-faq-q:hover { color:var(--blue); }
 .op-faq-icon { width:18px; height:18px; flex-shrink:0; color:var(--text-3); transition:transform 0.3s var(--ease); }
 .op-faq-item.open .op-faq-icon { transform:rotate(45deg); }
-.op-faq-a { max-height:0; overflow:hidden; transition:max-height 0.3s var(--ease); }
-.op-faq-item.open .op-faq-a { max-height:260px; }
-.op-faq-a p { font-size:0.88rem; color:var(--text-2); line-height:1.75; padding:0 28px 22px; }
+.op-faq-a { display:none; }
+.op-faq-item.open .op-faq-a { display:block; }
+.op-faq-a p { font-size:0.88rem; color:var(--text-2); line-height:1.75; padding:0 0 22px; max-width:68ch; }
 .op-section { padding:96px 0; }
 .op-section-tight { padding:72px 0; }
 </style>
@@ -80,8 +89,11 @@
     })(window, document, "clarity", "script", "xozvrx8hnl");
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"OPERATOR","description":"Self-paced written course: build a personal AI system that runs your life and business.","url":"https://thestaleysocial.com/course.html","brand":{"@type":"Organization","name":"The Staley Social","url":"https://thestaleysocial.com/"},"offers":{"@type":"Offer","price":"149","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://thestaleysocial.com/course.html"}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thestaleysocial.com/"},{"@type":"ListItem","position":2,"name":"OPERATOR Course","item":"https://thestaleysocial.com/course.html"}]}
+</script>
 </head>
-<body>
+<body class="page-flat">
   <!-- NAV -->
   <nav class="nav" id="main-nav">
     <div class="nav-inner">
@@ -116,7 +128,6 @@
     <a href="tel:+18166528233" style="text-align:center;font-size:0.75rem;color:var(--text-2);">(816) 652-8233</a>
   </div>
 
-  <div class="cursor-orb" id="cursorOrb"></div>
 
   <!-- HERO -->
   <section class="op-section" style="padding-top:calc(var(--nav-h) + 72px); text-align:center;">
@@ -144,7 +155,7 @@
     <div class="container">
       <div class="op-head reveal">
         <span class="tag">What you walk away with</span>
-        <h2>Not theory. A system that runs.</h2>
+        <h2>What you have running by the end</h2>
         <p>By the end you have your own AI operator: something that remembers, acts, and works while you sleep. Here's what you build along the way.</p>
       </div>
       <div class="op-grid">
@@ -163,8 +174,8 @@
     <div class="container">
       <div class="op-head reveal">
         <span class="tag">The curriculum</span>
-        <h2>Ten modules. Zero fluff.</h2>
-        <p>Written, self-paced, copy-paste friendly. Every module ends with something you actually built.</p>
+        <h2>Ten modules, each ending in something you built</h2>
+        <p>Written, self-paced, copy-paste friendly.</p>
       </div>
       <div class="op-modules">
         <div class="op-mod reveal"><div class="op-mod-num">00</div><div class="op-mod-body"><h3>Set up your machine</h3><p>The full stack, what it costs, and how to get Claude Code running. We demystify the terminal in ten minutes. You do not need to be technical.</p></div></div>
@@ -187,7 +198,7 @@
     <div class="container">
       <div class="op-head reveal">
         <span class="tag">Who this is for</span>
-        <h2>Three kinds of people buy this.</h2>
+        <h2>Who this is for</h2>
       </div>
       <div class="op-grid" style="max-width:960px; margin:0 auto;">
         <div class="op-card reveal"><div class="op-card-icon">&#128187;</div><h3>The would-be builder</h3><p>You have ideas for apps and tools but "can't code." You want to ship real things without spending two years learning to program first.</p></div>
@@ -202,7 +213,7 @@
     <div class="container">
       <div class="op-head reveal">
         <span class="tag">Get access</span>
-        <h2>One payment. Yours forever.</h2>
+        <h2>Pay once, keep it</h2>
         <p>Founding price for the first students. It goes to $297 once the founding spots are gone.</p>
       </div>
       <div class="op-price-wrap reveal">
@@ -232,7 +243,7 @@
   <!-- FAQ -->
   <section class="op-section-tight">
     <div class="container">
-      <div class="op-head reveal"><span class="tag">Questions</span><h2>Before you buy.</h2></div>
+      <div class="op-head reveal"><span class="tag">Questions</span><h2>Questions people ask first</h2></div>
       <div class="op-faq reveal">
         <div class="op-faq-item"><button class="op-faq-q">What even is "vibe coding"? <svg class="op-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="op-faq-a"><p>It's building software by talking to an AI in plain English instead of writing code yourself. You say what you want, the AI writes it, you check it and ask for changes. This course teaches you how to do that well, then how to point it at real things in your life and your business.</p></div></div>
         <div class="op-faq-item"><button class="op-faq-q">Do I need to know how to code? <svg class="op-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="op-faq-a"><p>No. That's the entire point. You'll be talking to AI in plain English and it writes the code. I explain the few technical bits you do need, in normal words, as they come up.</p></div></div>
@@ -248,7 +259,7 @@
   <!-- FINAL CTA -->
   <section class="op-section" style="text-align:center; background:var(--bg-2);">
     <div class="container">
-      <h2 class="reveal" style="font-family:var(--font-display); font-size:clamp(1.9rem,4vw,3rem); font-weight:800; letter-spacing:-0.04em; color:var(--text); margin-bottom:16px; max-width:18ch; margin-inline:auto;">Stop watching AI demos. Build the thing.</h2>
+      <h2 class="reveal" style="font-family:var(--font-display); font-size:clamp(1.9rem,4vw,3rem); font-weight:800; letter-spacing:-0.04em; color:var(--text); margin-bottom:16px; max-width:18ch; margin-inline:auto;">You have watched enough AI demos</h2>
       <p class="reveal" style="color:var(--text-2); font-size:0.98rem; line-height:1.7; max-width:460px; margin:0 auto 32px;">The same system I built, written down so you can copy it. Founding price won't last.</p>
       <a href="https://buy.stripe.com/6oU9AScwp2Ln4LMgmnbo40t" class="btn btn-primary btn-lg reveal" onclick="if(window.gtag)gtag('event','course_purchase_click',{location:'final'});">Get OPERATOR for $149 <span style="font-size:1.1em;">&rarr;</span></a>
     </div>
@@ -273,7 +284,7 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 The Staley Social LLC. All rights reserved.</p>
-        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a></p>
+        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </footer>
@@ -283,11 +294,6 @@
     document.querySelectorAll('.op-faq-q').forEach(function(btn){
       btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });
     });
-    (function(){
-      var orb = document.getElementById('cursorOrb');
-      if (!orb || window.matchMedia('(hover: none)').matches) return;
-      window.addEventListener('mousemove', function(e){ orb.style.left = e.clientX + 'px'; orb.style.top = e.clientY + 'px'; });
-    })();
   </script>
   <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_901c8ea583cc41d3bc52d54eaee00e34"></script>
 </body>
