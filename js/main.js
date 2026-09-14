@@ -438,3 +438,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+// Conversion signals -> GA4. book_cta = clicked a "Book a call" link, call_click = tel: tap,
+// booking_complete = the GHL calendar iframe posted a booking-confirmed message.
+// ponytail: matches GHL's postMessage by substring ("booking"/"appointment"), tighten once a real payload is logged.
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href]');
+  if (!a || typeof gtag !== 'function') return;
+  var h = a.getAttribute('href') || '';
+  if (h.indexOf('tel:') === 0) gtag('event', 'call_click', { page: location.pathname, transport_type: 'beacon' });
+  else if (/#book$/.test(h)) gtag('event', 'book_cta', { page: location.pathname });
+});
+window.addEventListener('message', function (e) {
+  if (!/leadconnectorhq\.com|msgsndr\.com/.test(e.origin) || typeof gtag !== 'function') return;
+  var d = typeof e.data === 'string' ? e.data : JSON.stringify(e.data || '');
+  if (/booking|appointment/i.test(d) && /complete|confirm|success|booked/i.test(d) && !window.__tssBooked) {
+    window.__tssBooked = true;
+    gtag('event', 'booking_complete', { page: location.pathname });
+  }
+});
