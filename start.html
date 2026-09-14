@@ -235,8 +235,7 @@
           <div class="browse-tag">Most popular</div>
           <div class="browse-price">$197<small>/mo</small></div>
           <div class="browse-desc"><b>Staley OS Software.</b> CRM, 60-second speed-to-lead, call tracking, automations, dashboard. Run it yourself.</div>
-          <a href="https://buy.stripe.com/14AeVceExclXfqqeefbo407" class="browse-cta primary" onclick="gtag('event','trial_start_click',{location:'start_browse'});">Start free trial →</a>
-          <p style="font-size:0.72rem;color:var(--text-3);margin-top:8px;text-align:center;"><a href="https://buy.stripe.com/5kQ00idAt0Df0vw2vxbo40g" style="color:var(--text-2);text-decoration:underline;" onclick="gtag('event','paid_start_click',{location:'start_browse'});">Skip the trial, start today</a></p>
+          <a href="https://square.link/u/f8LEH8D0" class="browse-cta primary" onclick="gtag('event','checkout_click',{location:'start_browse'});">Get started →</a>
         </div>
         <div class="browse-card reveal">
           <div class="browse-tag">Done-for-you</div>
@@ -300,7 +299,7 @@
   <script src="js/main.js?v=5"></script>
   <script>
   (function(){
-    var TRIAL = "https://buy.stripe.com/14AeVceExclXfqqeefbo407";
+    var TRIAL = "https://square.link/u/f8LEH8D0";
     var BOOK = "contact.html#book";
     var answers = {};
     var current = 1;
@@ -358,9 +357,9 @@
       }
       // DIY software
       if (how === 'diy') {
-        return { name:'Staley OS', price:'Free for 14 days, then $197/mo', eyebrow:'Your match',
+        return { name:'Staley OS', price:'Starts at $197/mo', eyebrow:'Your match',
           why:'You want to run it yourself, and this is the fastest win. Your leads, calls, pipeline, and reviews in one dashboard, with a text going out to every new inquiry in 60 seconds. Start free, no card charged for 14 days.',
-          cta:'Start your free trial', href:TRIAL, sec:'Cancel anytime. Or <a href="'+BOOK+'">book a call first</a>.' };
+          cta:'Get started', href:TRIAL, sec:'Cancel anytime. Or <a href="'+BOOK+'">book a call first</a>.' };
       }
       // Done-for-you paths
       if (problem === 'traffic') {
