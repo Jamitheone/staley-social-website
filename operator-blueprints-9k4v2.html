@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>OPERATOR &mdash; Breakthroughs &amp; Blueprints (Lifetime)</title>
+  <title>OPERATOR | Build your own ARIS, chapters 11 and up</title>
   <link rel="icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,27 +46,27 @@ body { background:var(--bg); }
 </head>
 <body>
 <main class="bp">
-  <span class="pill">&#9733; Lifetime vault</span>
-  <h1>Breakthroughs &amp; Blueprints</h1>
-  <p class="lede">This is the part only lifetime operators get. The ten modules teach you to build the system. This page is where I keep going: the advanced patterns, the walls I hit, and the exact fixes, written up as blueprints you can copy the moment I ship them.</p>
-  <p class="lede">It's a living page. New entries land at the top, dated. You bought it once, you get all of it forever. Bookmark this URL right next to your module vault.</p>
-  <p class="backlink">Your core course lives here: <a href="operator-vault-7fq3.html">the ten-module vault &rarr;</a></p>
+  <span class="pill">Lifetime chapters 11+</span>
+  <h1>Chapters 11 and up</h1>
+  <p class="lede">These are the later chapters of OPERATOR, the ones that come with lifetime. Chapters 00 to 10 teach you to build the system. From here I keep going: the advanced patterns, the walls I hit, and the exact fixes, written up as chapters you can copy the moment I ship them.</p>
+  <p class="lede">New chapters are added at the end, dated, same course and same numbering. You bought it once, you get all of it forever.</p>
+  <p class="backlink">Back to chapters 00 to 10: <a href="operator-vault-7fq3.html">the course so far &rarr;</a></p>
 
   <!-- ENTRY -->
   <section class="entry">
-    <div class="date">2026-09-18</div>
-    <span class="tag">Blueprint &middot; Architecture</span>
+    <div class="date">2026-09-18 &middot; Chapter 11</div>
+    <span class="tag">Architecture</span>
     <h2>Stop prompting. Start running loops.</h2>
     <p>The single biggest shift from "I use AI" to "AI runs things for me" is this: the unit of work stops being a prompt and becomes a <strong>loop</strong>. A prompt happens once, when you're sitting there. A loop runs on its own trigger, forever, and reports to you. My whole system is a stack of these, not a person typing at a chat box.</p>
     <h3>The contract every loop has to sign</h3>
     <p>If you can't fill in all six of these, you don't have a loop, you have a wish. Write them down before you build anything:</p>
     <ol>
-      <li><strong>Trigger</strong> &mdash; time, event, or condition that starts it.</li>
-      <li><strong>Action</strong> &mdash; the work it does.</li>
-      <li><strong>Oracle</strong> &mdash; the outside <em>number</em> that proves it worked. Not a vibe. Replies received, dollars in, errors down.</li>
-      <li><strong>Memory</strong> &mdash; what persists between runs so it never repeats itself.</li>
-      <li><strong>Output</strong> &mdash; what it delivers, and where (a text, a file, a posted thing).</li>
-      <li><strong>Exit</strong> &mdash; when it stops or hands back to you.</li>
+      <li><strong>Trigger</strong>: time, event, or condition that starts it.</li>
+      <li><strong>Action</strong>: the work it does.</li>
+      <li><strong>Oracle</strong>: the outside <em>number</em> that proves it worked. Not a vibe. Replies received, dollars in, errors down.</li>
+      <li><strong>Memory</strong>: what persists between runs so it never repeats itself.</li>
+      <li><strong>Output</strong>: what it delivers, and where (a text, a file, a posted thing).</li>
+      <li><strong>Exit</strong>: when it stops or hands back to you.</li>
     </ol>
     <h3>The move most people miss: a watcher on the watcher</h3>
     <p>Once you have loops running while you sleep, you need something checking that they actually ran. A loop that silently dies looks identical to a quiet day. So every important loop gets a second, dumb loop watching its oracle: if the number a loop is supposed to move hasn't moved, or its heartbeat file is stale, the watcher texts me. Cheap insurance against a machine that's quietly doing nothing.</p>
@@ -75,8 +75,8 @@ body { background:var(--bg); }
 
   <!-- ENTRY -->
   <section class="entry">
-    <div class="date">2026-09-18</div>
-    <span class="tag">Blueprint &middot; Autonomy</span>
+    <div class="date">2026-09-18 &middot; Chapter 12</div>
+    <span class="tag">Autonomy</span>
     <h2>How to go hands-off without blowing yourself up</h2>
     <p>Everyone wants "set it and forget it." The reason most people can't is they treat autonomy as all-or-nothing. It isn't. The trick is a hard line drawn in exactly one place.</p>
     <h3>Automate everything up to the irreversible edge</h3>
@@ -90,8 +90,8 @@ body { background:var(--bg); }
 
   <!-- ENTRY -->
   <section class="entry">
-    <div class="date">2026-09-18</div>
-    <span class="tag">Blueprint &middot; Compounding</span>
+    <div class="date">2026-09-18 &middot; Chapter 13</div>
+    <span class="tag">Compounding</span>
     <h2>The flywheel: never pay for the same lesson twice</h2>
     <p>This is the mechanism that makes my system get smarter every single week without me sitting down to "improve" it. It's a rule, and it runs on every wall I hit.</p>
     <h3>The rule</h3>
@@ -103,8 +103,8 @@ body { background:var(--bg); }
 
   <!-- ENTRY -->
   <section class="entry">
-    <div class="date">2026-09-18</div>
-    <span class="tag">Blueprint &middot; Reliability</span>
+    <div class="date">2026-09-18 &middot; Chapter 14</div>
+    <span class="tag">Reliability</span>
     <h2>Make your agents survive the real world</h2>
     <p>A demo works once, on your machine, while you watch. A system runs unattended for months across sleep, network drops, and updates. The gap between those two is where every "it just stopped working" lives. Here's what actually closes it.</p>
     <ul>
@@ -118,8 +118,8 @@ body { background:var(--bg); }
 
   <!-- ENTRY -->
   <section class="entry">
-    <div class="date">2026-09-18</div>
-    <span class="tag">Blueprint &middot; Efficiency</span>
+    <div class="date">2026-09-18 &middot; Chapter 15</div>
+    <span class="tag">Efficiency</span>
     <h2>API first, browser last</h2>
     <p>When you want your AI to do something on a website, post, change a setting, pull data, the obvious move is to have it drive a browser: click, type, read the screen. It's also usually the wrong first move. Browser automation is slow, fragile, burns way more compute, and trips bot-detection that fails you anyway.</p>
     <h3>The order of operations</h3>
@@ -133,10 +133,10 @@ body { background:var(--bg); }
 
   <!-- ENTRY -->
   <section class="entry">
-    <div class="date">2026-09-18</div>
-    <span class="tag">Blueprint &middot; Comms</span>
+    <div class="date">2026-09-18 &middot; Chapter 16</div>
+    <span class="tag">Comms</span>
     <h2>An assistant that answers in your voice</h2>
-    <p>The highest-leverage loop I run reads my incoming messages, understands them, and replies the way I actually talk, so a real person gets a real answer fast even when I'm heads-down or asleep. Getting this right is more about restraint than cleverness.</p>
+    <p>The highest-value loop I run reads my incoming messages, understands them, and replies the way I actually talk, so a real person gets a real answer fast even when I'm heads-down or asleep. Getting this right is more about restraint than cleverness.</p>
     <h3>What makes it not feel like a bot</h3>
     <ul>
       <li><strong>Voice is mined, not guessed.</strong> Feed it your real past messages and let it learn your register, punctuation, and rhythm. A generic "professional" tone is the tell. Yours isn't generic.</li>
@@ -146,9 +146,18 @@ body { background:var(--bg); }
     <div class="blueprint"><div class="bt">Copy this</div><p>Before you automate any reply, write your own "voice rules" file: the words you never use, your punctuation habits, how blunt you are. It's the difference between an assistant people like hearing from and one they can smell a mile away.</p></div>
   </section>
 
+  <!-- ENTRY -->
+  <section class="entry">
+    <div class="date">2026-10-10 &middot; Chapter 17</div>
+    <span class="tag">Private repo</span>
+    <h2>The ARIS build, as files</h2>
+    <p>Everything above is easier with the real thing open next to it. Lifetime members get read-only access to a private GitHub repo with a curated copy of the ARIS build: the agent patterns, loops, memory structure and skills. Client data, keys and personal files are never in it.</p>
+    <div class="blueprint"><div class="bt">Get your invite</div><p>Send your GitHub username on the <a href="operator-repo.html" style="color:var(--blue);text-decoration:underline;">invite page</a> and I send the invite right away. Updates to the repo land here as new chapters.</p></div>
+  </section>
+
   <div class="foot">
     <p>More lands here as I build it. When you ship something using one of these, I want to see it, reply to your access email or reach me at <a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a>.</p>
-    <p>&mdash; Jameson</p>
+    <p>Jameson</p>
   </div>
 </main>
 </body>
