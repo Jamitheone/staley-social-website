@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get repo access | OPERATOR</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://thestaleysocial.com/operator-repo.html">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/flat.css?v=3">
+</head>
+<body>
+  <section class="op-section" style="min-height:70vh;display:flex;align-items:center;text-align:center;">
+    <div class="container" style="max-width:560px;">
+      <h1 style="font-family:var(--font-display);font-size:clamp(2rem,5vw,2.8rem);font-weight:800;letter-spacing:-0.03em;color:var(--text);margin-bottom:16px;">Get the private repo</h1>
+      <p style="color:var(--text-2);font-size:1.02rem;line-height:1.7;margin:0 auto 26px;">Your lifetime tier includes read-only access to the curated ARIS build on GitHub. Enter your GitHub username and I send the invite right away.</p>
+      <form id="f" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+        <input id="u" name="u" type="text" required maxlength="39" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="your-github-username" aria-label="GitHub username" style="flex:1;min-width:220px;padding:14px 16px;background:var(--bg-2);border:1px solid var(--border);color:var(--text);font:inherit;">
+        <button class="btn btn-primary btn-lg" type="submit" id="b">Send my invite</button>
+      </form>
+      <p id="m" role="status" style="color:var(--text-2);font-size:0.95rem;line-height:1.6;margin-top:20px;min-height:1.6em;"></p>
+      <p style="color:var(--text-3);font-size:0.85rem;line-height:1.6;margin-top:18px;">Trouble? Text me at <a href="tel:+18166528233" style="color:var(--blue);text-decoration:underline;">(816) 652-8233</a>.</p>
+    </div>
+  </section>
+  <script>
+  (function(){
+    var t=new URLSearchParams(location.search).get('t')||'';
+    var f=document.getElementById('f'),m=document.getElementById('m'),b=document.getElementById('b');
+    if(!t){m.textContent='This page needs the link from your access email.';b.disabled=true;}
+    f.addEventListener('submit',function(e){
+      e.preventDefault(); b.disabled=true; m.textContent='Sending...';
+      fetch('https://track.thestaleysocial.com/operator-repo',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({t:t,u:document.getElementById('u').value})})
+        .then(function(r){return r.json();})
+        .then(function(d){m.textContent=d.detail||(d.ok?'Sent.':'Something went wrong.');b.disabled=!!d.ok;})
+        .catch(function(){m.textContent='Could not reach the server. Text me and I will add you by hand.';b.disabled=false;});
+    });
+  })();
+  </script>
+</body>
+</html>
