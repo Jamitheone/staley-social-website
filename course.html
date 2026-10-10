@@ -69,6 +69,7 @@
 .op-price-period { font-size:0.9rem; color:var(--text-3); margin-top:8px; }
 .op-price-list { list-style:none; padding:0; margin:26px 0 30px; text-align:left; display:flex; flex-direction:column; gap:11px; }
 .op-price-list li { display:flex; align-items:flex-start; gap:10px; font-size:0.9rem; color:var(--text-2); }
+.op-price-list .op-li { display:block; min-width:0; }
 .op-price-list .ic { flex-shrink:0; margin-top:3px; }
 .op-urgency { font-size:0.8rem; color:var(--blue); font-weight:600; margin-top:16px; }
 /* faq (reuse .faq-* from style.css if present, else define) */
@@ -269,11 +270,11 @@
             <span class="op-price-period">one time</span>
           </div>
           <ul class="op-price-list">
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Chapters 00 to 10, unlocked the moment you buy</li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>My real projects and open source code, yours to copy</li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Chapter 10: fill in the blank templates and prompts</li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>The course exactly as it stands today</li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>One payment. No subscription, ever</li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Chapters 00 to 10, unlocked the moment you buy</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">My real projects and open source code, yours to copy</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Chapter 10: fill in the blank templates and prompts</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">The course exactly as it stands today</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">One payment. No subscription, ever</span></li>
           </ul>
           <a href="https://square.link/u/Z5EHwS8t" class="btn btn-secondary btn-lg" style="width:100%; justify-content:center;" onclick="if(window.gtag)gtag('event','course_purchase_click',{location:'pricing',tier:'build'});">Get the build for $25 <span style="font-size:1.1em;">&rarr;</span></a>
           <p style="font-size:0.74rem; color:var(--text-3); margin-top:14px;">Secure checkout by Square. Access delivered the moment you pay.</p>
@@ -286,12 +287,12 @@
             <span class="op-price-period">one time</span>
           </div>
           <ul class="op-price-list">
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Chapters 00 to 10, everything in the current build</li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><strong>Chapters 11 to 16:</strong> the advanced patterns and the exact fixes for walls I hit, written up as later chapters of the same course</li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><strong>Chapter 17, a private GitHub repo invite:</strong> read-only access to a curated copy of the ARIS build, with the agent patterns, loops, memory structure and skills. Send your GitHub username after checkout</li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Every new chapter and video version I add later, no extra charge</li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Locks in this price forever</li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>One payment. No subscription, ever</li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Chapters 00 to 10, everything in the current build</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li"><strong>Chapters 11 to 16.</strong> The advanced patterns and the exact fixes for walls I hit, written up as later chapters of the same course</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li"><strong>Chapter 17.</strong> A private GitHub repo invite, with read-only access to a curated copy of the ARIS build, with the agent patterns, loops, memory structure and skills. Send your GitHub username after checkout</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Every new chapter and video version I add later, no extra charge</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Locks in this price forever</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">One payment. No subscription, ever</span></li>
           </ul>
           <a href="https://square.link/u/p16XWFAG" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" onclick="if(window.gtag)gtag('event','course_purchase_click',{location:'pricing',tier:'lifetime'});">Get lifetime for $50 <span style="font-size:1.1em;">&rarr;</span></a>
           <p style="font-size:0.74rem; color:var(--text-3); margin-top:14px;">Secure checkout by Square. Access delivered the moment you pay.</p>
