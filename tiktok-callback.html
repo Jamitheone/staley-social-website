@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>TikTok authorization | The Staley Social</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <style>
+    :root { --bg:#090910; --panel:#12121f; --line:#26263a; --text:#eceef5; --dim:#9aa0b4; --blue:#2D63D8; --bad:#e5484d; --ok:#3dd68c; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; background:var(--bg); color:var(--text);
+           font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; padding:24px; }
+    main { width:100%; max-width:560px; background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:28px; }
+    h1 { font-size:1.25rem; margin:0 0 6px; }
+    p { margin:0 0 16px; color:var(--dim); }
+    .status { font-weight:600; margin-bottom:12px; }
+    .status.ok { color:var(--ok); } .status.bad { color:var(--bad); }
+    label { display:block; font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; color:var(--dim); margin:14px 0 4px; }
+    .box { width:100%; background:#0b0b16; border:1px solid var(--line); border-radius:8px; color:var(--text);
+           padding:10px 12px; font:13px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; word-break:break-all; min-height:42px; }
+    button { margin-top:10px; background:var(--blue); color:#fff; border:0; border-radius:8px; padding:10px 16px; font-weight:600; font-size:.9rem; font-family:inherit; cursor:pointer; }
+    button:hover { filter:brightness(1.1); }
+    .hint { font-size:.85rem; margin-top:18px; margin-bottom:0; }
+    [hidden] { display:none !important; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>TikTok authorization</h1>
+  <p>Callback for The Staley Social posting tool. Nothing on this page is sent anywhere except, optionally, to a program running on your own computer.</p>
+  <div id="status" class="status">Reading response...</div>
+
+  <div id="ok" hidden>
+    <label>Authorization code</label>
+    <div class="box" id="code"></div>
+    <button type="button" id="copy-code">Copy code</button>
+    <label>Full callback URL</label>
+    <div class="box" id="url"></div>
+    <button type="button" id="copy-url">Copy URL</button>
+    <p class="hint" id="relay"></p>
+  </div>
+
+  <div id="err" hidden>
+    <label>Error</label>
+    <div class="box" id="errtext"></div>
+  </div>
+</main>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var code = q.get("code"), state = q.get("state"), error = q.get("error");
+  var el = function (id) { return document.getElementById(id); };
+  var status = el("status");
+
+  // Drop the code from the address bar and history so it is not left in browser history or shared by accident.
+  var fullUrl = location.href;
+  try { history.replaceState(null, "", location.pathname); } catch (e) {}
+
+  if (error || !code) {
+    status.textContent = "Authorization did not complete.";
+    status.className = "status bad";
+    el("err").hidden = false;
+    el("errtext").textContent = error
+      ? error + (q.get("error_description") ? ": " + q.get("error_description") : "")
+      : "No authorization code in this URL. Start again from the terminal with --auth.";
+    return;
+  }
+
+  status.textContent = "Authorized. Finish in the terminal.";
+  status.className = "status ok";
+  el("ok").hidden = false;
+  el("code").textContent = code;
+  el("url").textContent = fullUrl;
+
+  function copier(btnId, text) {
+    var b = el(btnId);
+    b.addEventListener("click", function () {
+      var done = function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = btnId === "copy-code" ? "Copy code" : "Copy URL"; }, 1500); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () {});
+    });
+  }
+  copier("copy-code", code);
+  copier("copy-url", fullUrl);
+
+  // Best effort: hand the code to the tiktok_api.py listener on this same computer.
+  // Mixed-content to localhost is allowed in most browsers; if blocked, paste the code into the terminal.
+  var relay = el("relay");
+  relay.textContent = "Trying to hand the code to your terminal automatically. If it does not say done there, paste the code into the terminal prompt.";
+  try {
+    var target = "http://127.0.0.1:5599/callback?" + new URLSearchParams({ code: code, state: state || "" }).toString();
+    fetch(target, { mode: "no-cors", cache: "no-store", referrerPolicy: "no-referrer" })
+      .then(function () { relay.textContent = "Code sent to your terminal. You can close this tab."; })
+      .catch(function () { relay.textContent = "Could not reach the terminal automatically. Copy the code above and paste it at the prompt."; });
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>

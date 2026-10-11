@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Returning from your bank | The Staley Social</title>
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <style>
+    body { margin:0; min-height:100vh; display:grid; place-items:center; background:#090910; color:#eceef5;
+           font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; padding:24px; text-align:center; }
+    p { color:#9aa0b4; max-width:460px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Returning from your bank</h1>
+  <p id="msg">Handing you back to the ARIS money dashboard on this computer.</p>
+</main>
+<script>
+// Plaid OAuth return page (Wells Fargo and other OAuth banks need an https redirect_uri).
+// It carries no data of its own: it forwards the query string (oauth_state_id) to the ARIS
+// dashboard running on this same computer, which resumes Plaid Link. The destination host is
+// fixed, so this page cannot be used as an open redirect.
+(function () {
+  var dest = "http://localhost:3001/money" + location.search;
+  try { location.replace(dest); } catch (e) {}
+  setTimeout(function () {
+    var m = document.getElementById("msg");
+    m.textContent = "If nothing happened, open http://localhost:3001/money on the computer that runs ARIS.";
+  }, 2500);
+})();
+</script>
+</body>
+</html>

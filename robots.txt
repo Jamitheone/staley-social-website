@@ -2,6 +2,8 @@ User-agent: *
 Allow: /
 Disallow: /onboard.html
 Disallow: /ads-intake.html
+Disallow: /tiktok/
+Disallow: /plaid/
 
 # AI answer engines / retrieval bots — explicitly allowed so this site is
 # eligible to be cited in ChatGPT, Perplexity, and Claude search results.

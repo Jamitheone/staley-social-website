@@ -1,12 +1,80 @@
 {
   "rewrites": [
-    { "source": "/start", "destination": "/start.html" },
-    { "source": "/os", "destination": "/os.html" },
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/services", "destination": "/services.html" },
-    { "source": "/results", "destination": "/results.html" },
-    { "source": "/pricing", "destination": "/pricing.html" },
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/privacy", "destination": "/privacy.html" }
+    {
+      "source": "/start",
+      "destination": "/start.html"
+    },
+    {
+      "source": "/os",
+      "destination": "/os.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/services.html"
+    },
+    {
+      "source": "/results",
+      "destination": "/results.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/tiktok/callback",
+      "destination": "/tiktok-callback.html"
+    },
+    {
+      "source": "/plaid/oauth",
+      "destination": "/plaid-oauth.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/tiktok/callback",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/plaid/oauth",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
   ]
 }
