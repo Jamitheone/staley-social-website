@@ -39,6 +39,18 @@
     {
       "source": "/plaid/oauth",
       "destination": "/plaid-oauth.html"
+    },
+    {
+      "source": "/riderlab/privacy",
+      "destination": "/riderlab/privacy.html"
+    },
+    {
+      "source": "/riderlab/support",
+      "destination": "/riderlab/support.html"
+    },
+    {
+      "source": "/riderlab/delete-account",
+      "destination": "/riderlab/delete-account.html"
     }
   ],
   "headers": [
