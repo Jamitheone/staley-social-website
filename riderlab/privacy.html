@@ -49,6 +49,7 @@ nav a{margin-right:16px;font-size:14px}
 <tr><td><strong>Service requests</strong></td><td>If you ask the Lab for a bike service look: the issue, bike, urgency, an optional phone number, and the typed name on the service agreement. Visible to you and the Lab mechanics only.</td></tr>
 <tr><td><strong>Safety info (optional)</strong></td><td>Emergency contacts and medical notes you choose to enter. Stored in a private record only you can read. The SOS button builds a text message with your location and hands it to your phone's own messaging app. We do not send it.</td></tr>
 <tr><td><strong>Technical</strong></td><td>Standard server logs and an authentication token needed to keep you signed in, handled by Google Firebase.</td></tr>
+<tr><td><strong>Alerts</strong></td><td>If you turn on alerts, we store a push notification token and your alert settings (which alerts you want) in a private record only you can read. The token is sent to Expo's push service only to deliver an alert to your phone. It is deleted when you turn alerts off or delete your account. The in-app Alerts list stores a short copy of what happened (for example that a friend liked your post) until you delete it or your account.</td></tr>
 </table>
 
 <h2>Who can see what</h2>
@@ -62,6 +63,7 @@ nav a{margin-right:16px;font-size:14px}
 <ul>
 <li><strong>Google Firebase</strong> (Authentication and Cloud Firestore) stores account and app data on our behalf.</li>
 <li><strong>Apple</strong> and <strong>Google</strong> for Sign in with Apple and Google sign-in, if you choose them.</li>
+<li><strong>Expo push notification service</strong> delivers alerts to your phone if you turn them on. It receives your push token and the alert text, nothing else.</li>
 <li><strong>Photon geocoder (komoot.io)</strong> receives the place name you type into route search, with your approximate position to rank nearby results. Nothing else is sent.</li>
 <li>The <strong>web version</strong> at app.riderlabkc.com also uses Google Analytics and Microsoft Clarity to measure site usage and OpenFreeMap for map tiles. The iPhone and Android apps do not include those analytics tools.</li>
 </ul>
