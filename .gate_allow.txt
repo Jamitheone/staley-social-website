@@ -1,0 +1,40 @@
+# Approved index.html copy TSS stands behind. The gate's local copy-audit model is
+# non-deterministic and flags these every run: Jameson's deliberate guarantee
+# positioning (slogan: "Guaranteed results or we work for free"), real client
+# metrics and testimonials from results.html, and a few UI fragments the text
+# extractor concatenates. Case-insensitive substring match (entry in flagged text).
+
+# --- Guarantee positioning (standing brand claims) ---
+in writing
+only one in KC
+only guarantee
+No KC competitor
+Every agency in Kansas City
+backs it up
+month 2 is free
+no fine print
+
+# --- Real client metrics ---
+Views generated across platforms
+180M
+180 M
+lift in close rate
+lose 70%
+
+# --- Real client testimonials (names + roles) ---
+Owner, KC Comets
+Brian
+Jeff Moore
+Francisco
+night and day
+
+# --- UI fragments the extractor concatenates (not real copy defects) ---
+How we
+View all case studies
+
+# --- Owner-chosen taglines (style, not invented fact) ---
+climbs while you sleep
+Stop bleeding budget
+looks like your brand
+scripted and shot
+nurture flows
