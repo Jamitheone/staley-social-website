@@ -13,6 +13,10 @@
       "destination": "/about.html"
     },
     {
+      "source": "/jameson-staley",
+      "destination": "/jameson-staley.html"
+    },
+    {
       "source": "/services",
       "destination": "/services.html"
     },
