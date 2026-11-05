@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free OPERATOR chapters | The Staley Social</title>
+  <link rel="canonical" href="https://thestaleysocial.com/free-course.html">
+  <meta property="og:url" content="https://thestaleysocial.com/free-course.html">
+  <meta name="description" content="Read the first two chapters of OPERATOR free. Set up your machine, run your first AI session, and learn the vibe coding loop. No email, no card.">
+  <meta property="og:title" content="Free OPERATOR chapters | Learn to build with AI">
+  <meta property="og:description" content="Chapters 0 and 1 of OPERATOR, free. Set up your machine and learn the loop. No email, no card.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Staley Social">
+  <meta property="og:image" content="https://thestaleysocial.com/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free OPERATOR chapters | Learn to build with AI">
+  <meta name="twitter:description" content="Chapters 0 and 1 of OPERATOR, free. Set up your machine and learn the loop. No email, no card.">
+  <meta name="twitter:image" content="https://thestaleysocial.com/assets/og-image.png">
+  <meta name="theme-color" content="#090910">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB8CM3TL22"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GB8CM3TL22');</script>
+  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/flat.css?v=3">
+<style>
+/* ponytail: reuses os.html's .os-* classes from style.css; only course-specific bits here */
+.op-eyebrow { display:inline-flex; align-items:center; gap:8px; font-size:0.72rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--blue); margin-bottom:24px; }
+.op-hero-title { font-family:var(--font-display); font-size:clamp(2.8rem,7vw,5.4rem); font-weight:800; letter-spacing:-0.045em; line-height:1.02; color:var(--text); max-width:15ch; margin:0 auto 26px; }
+.op-hero-title .accent { color:var(--blue); }
+.op-hero-sub { font-size:1.1rem; color:var(--text-2); max-width:560px; line-height:1.7; margin:0 auto 34px; }
+.op-hero-note { font-size:0.82rem; color:var(--text-3); display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:center; }
+.op-hero-note b { color:var(--text-2); font-weight:600; }
+.op-trust { display:flex; align-items:center; justify-content:center; gap:44px; flex-wrap:wrap; padding:28px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-top:60px; }
+.op-trust-num { font-family:var(--font-display); font-size:2rem; font-weight:800; letter-spacing:-0.04em; color:var(--text); line-height:1; }
+.op-trust-num .accent { color:var(--blue); }
+.op-trust-label { font-size:0.76rem; color:var(--text-3); margin-top:6px; }
+.op-head { text-align:center; max-width:640px; margin:0 auto 52px; }
+.op-head .tag { font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--blue); display:block; margin-bottom:14px; }
+.op-head h2 { font-family:var(--font-display); font-size:clamp(1.9rem,4vw,3rem); font-weight:800; letter-spacing:-0.04em; color:var(--text); margin-bottom:14px; }
+.op-head p { color:var(--text-2); max-width:520px; margin:0 auto; font-size:0.96rem; line-height:1.7; }
+.op-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; }
+.op-card { border:0; border-top:1px solid var(--border); border-radius:0; background:none; padding:28px 26px 28px 0; }
+.op-card:hover h3 { color:var(--blue); }
+.op-card h3 { transition:color 0.25s var(--ease); }
+.op-card-icon { width:fit-content; border-radius:0; background:none; display:flex; align-items:center; color:var(--blue); margin-bottom:16px; font-size:1.1rem; }
+.op-card h3 { font-family:var(--font-display); font-size:1.05rem; font-weight:700; letter-spacing:-0.02em; color:var(--text); margin-bottom:8px; }
+.op-card p { font-size:0.88rem; color:var(--text-2); line-height:1.65; }
+/* curriculum */
+.op-modules { max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:12px; }
+.op-mod { display:flex; gap:24px; align-items:baseline; border:0; border-top:1px solid var(--border); border-radius:0; background:none; padding:24px 0; }
+.op-modules { gap:0; border-bottom:1px solid var(--border); }
+.op-mod-num { font-family:var(--font-body); font-size:0.74rem; font-weight:600; letter-spacing:0.16em; color:var(--text-3); line-height:1.6; min-width:34px; }
+.op-mod-body h3 { font-family:var(--font-display); font-size:1.05rem; font-weight:700; color:var(--text); margin-bottom:6px; letter-spacing:-0.02em; }
+.op-mod-body p { font-size:0.88rem; color:var(--text-2); line-height:1.6; }
+.op-lock { display:inline-block; margin-left:10px; font-size:0.62rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--blue); border:1px solid rgba(45,99,216,0.4); border-radius:100px; padding:2px 9px; vertical-align:middle; white-space:nowrap; }
+.op-mod.is-lifetime .op-mod-num { color:var(--blue); }
+.op-legend { text-align:center; font-size:0.82rem; color:var(--text-3); margin-top:28px; }
+/* pricing */
+.op-price-wrap { max-width:460px; margin:0 auto; }
+.op-price-card { position:relative; border:0; border-top:2px solid var(--blue); border-radius:0; background:none; padding:38px 0 0; text-align:left; }
+.op-price-badge { display:block; margin-bottom:16px; color:var(--blue); font-size:0.68rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; }
+.op-price-was { font-size:1.05rem; color:var(--text-3); text-decoration:line-through; margin-bottom:4px; }
+.op-price-row { display:flex; align-items:flex-start; gap:2px; }
+.op-price-dollar { font-family:var(--font-display); font-size:1.6rem; font-weight:700; color:var(--text-2); margin-top:10px; }
+.op-price-num { font-family:var(--font-display); font-size:4.2rem; font-weight:800; letter-spacing:-0.05em; color:var(--text); line-height:1; }
+.op-price-period { font-size:0.9rem; color:var(--text-3); margin-top:8px; }
+.op-price-list { list-style:none; padding:0; margin:26px 0 30px; text-align:left; display:flex; flex-direction:column; gap:11px; }
+.op-price-list li { display:flex; align-items:flex-start; gap:10px; font-size:0.9rem; color:var(--text-2); }
+.op-price-list .op-li { display:block; min-width:0; }
+.op-price-list .ic { flex-shrink:0; margin-top:3px; }
+.op-urgency { font-size:0.8rem; color:var(--blue); font-weight:600; margin-top:16px; }
+/* faq (reuse .faq-* from style.css if present, else define) */
+.op-faq { max-width:680px; margin:0 auto; display:flex; flex-direction:column; border-top:1px solid var(--border); }
+.op-faq-item { border-bottom:1px solid var(--border); }
+.op-faq-item:last-child { border-bottom:none; }
+.op-faq-q { width:100%; background:none; border:none; color:var(--text); text-align:left; padding:22px 0; font-family:var(--font-body); font-size:0.95rem; font-weight:500; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.op-faq-q:hover { color:var(--blue); }
+.op-faq-icon { width:18px; height:18px; flex-shrink:0; color:var(--text-3); transition:transform 0.3s var(--ease); }
+.op-faq-item.open .op-faq-icon { transform:rotate(45deg); }
+.op-faq-a { display:none; }
+.op-faq-item.open .op-faq-a { display:block; }
+.op-faq-a p { font-size:0.88rem; color:var(--text-2); line-height:1.75; padding:0 0 22px; max-width:68ch; }
+.op-section { padding:96px 0; }
+.op-section-tight { padding:72px 0; }
+</style>
+
+<style>
+/* free-course page: long-form reading styles, everything else comes from course.html's shell */
+.fc-wrap { max-width:720px; margin:0 auto; }
+.fc-chapter { padding:84px 0 28px; border-top:1px solid var(--border); }
+.fc-chapter.first { border-top:0; padding-top:24px; }
+.fc-chip { display:inline-flex; align-items:center; gap:10px; font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--blue); margin-bottom:14px; }
+.fc-chip .free { border:1px solid rgba(45,99,216,0.4); border-radius:100px; padding:2px 9px; font-size:0.62rem; letter-spacing:0.14em; }
+.fc-chapter h2 { font-family:var(--font-display); font-size:clamp(2rem,4.4vw,3rem); font-weight:800; letter-spacing:-0.04em; color:var(--text); margin-bottom:22px; line-height:1.08; }
+.fc-chapter h3 { font-family:var(--font-display); font-size:1.25rem; font-weight:700; letter-spacing:-0.02em; color:var(--text); margin:44px 0 12px; }
+.fc-chapter p, .fc-chapter li { font-size:1.04rem; line-height:1.78; color:var(--text-2); }
+.fc-chapter p { margin:0 0 18px; }
+.fc-chapter strong { color:var(--text); font-weight:600; }
+.fc-chapter ul, .fc-chapter ol { margin:0 0 22px; padding-left:22px; display:flex; flex-direction:column; gap:10px; }
+.fc-chapter ul { list-style:disc; }
+.fc-chapter ol { list-style:decimal; }
+.fc-chapter li::marker { color:var(--text-3); }
+.fc-chapter a { color:var(--blue); }
+.fc-chapter p.fc-lead { font-size:1.16rem; color:var(--text); }
+.fc-chapter code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:0.92em; color:var(--text); background:var(--bg-2); border:1px solid var(--border); border-radius:6px; padding:1px 6px; }
+.fc-code { background:var(--bg-2); border:1px solid var(--border); border-radius:10px; padding:18px 20px; margin:0 0 22px; overflow-x:auto; }
+.fc-chapter .fc-code code { background:none; border:0; padding:0; font-size:0.9rem; line-height:1.9; white-space:pre; display:block; }
+.fc-call { border-top:2px solid var(--blue); padding:20px 0 4px; margin:34px 0 8px; }
+.fc-call .tag { display:block; font-size:0.7rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--blue); margin-bottom:10px; }
+.fc-call p { color:var(--text); }
+.fc-next-note { text-align:center; font-size:0.9rem; color:var(--text-3); margin-top:28px; }
+.fc-next-note a { color:var(--blue); font-weight:600; }
+@media (max-width:600px){ .fc-chapter { padding-top:64px; } .fc-chapter p, .fc-chapter li { font-size:1rem; } }
+</style>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xozvrx8hnl");
+  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "OPERATOR, free preview: Chapters 0 and 1", "description": "Read the first two chapters of OPERATOR free. Set up your machine, run your first AI session, and learn the vibe coding loop. No email, no card.", "url": "https://thestaleysocial.com/free-course.html", "isAccessibleForFree": true, "provider": {"@type": "Organization", "name": "The Staley Social", "url": "https://thestaleysocial.com/"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://thestaleysocial.com/"}, {"@type": "ListItem", "position": 2, "name": "OPERATOR Course", "item": "https://thestaleysocial.com/course.html"}, {"@type": "ListItem", "position": 3, "name": "Free chapters", "item": "https://thestaleysocial.com/free-course.html"}]}</script>
+</head>
+<body class="page-flat">
+  <!-- NAV -->
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/os.html">Software</a>
+        <a href="/services.html">Services</a>
+        <a href="/results.html">Results</a>
+        <a href="/work.html">Work</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/blog/">Blog</a>
+        <a href="/course.html" class="active">Course</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#pricing" class="btn btn-primary btn-sm" onclick="if(window.gtag)gtag('event','course_cta_click',{location:'free_nav'});">Get OPERATOR</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="/">Home</a>
+    <a href="/os.html">Software</a>
+    <a href="/services.html">Services</a>
+    <a href="/results.html">Results</a>
+    <a href="/work.html">Work</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/blog/">Blog</a>
+    <a href="/course.html">Course</a>
+    <a href="/contact.html">Contact</a>
+
+    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
+    <a href="tel:+18166528233" style="text-align:center;font-size:0.75rem;color:var(--text-2);">(816) 652-8233</a>
+  </div>
+
+
+  
+  <!-- HERO -->
+  <section class="op-section" style="padding-top:calc(var(--nav-h) + 72px); text-align:center;">
+    <div class="container">
+      <div class="op-eyebrow reveal">OPERATOR, free preview</div>
+      <h1 class="op-hero-title reveal">Your first two chapters are <span class="accent">free</span>.</h1>
+      <p class="op-hero-sub reveal">This is the start of my OPERATOR course, the one that teaches how I built a personal AI that runs my life and my business. Chapter 0 gets your machine ready. Chapter 1 teaches the conversation loop everything else sits on. No email, no card, no catch.</p>
+      <div class="reveal" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:18px;">
+        <a href="#ch0" class="btn btn-primary btn-lg" onclick="if(window.gtag)gtag('event','free_course_cta_click',{location:'hero'});">Start Chapter 0 <span style="font-size:1.1em;">&darr;</span></a>
+        <a href="/course.html" class="btn btn-secondary btn-lg">See the full course</a>
+      </div>
+      <div class="op-hero-note reveal"><b>Read both in one sitting,</b> then do the two build-this-now exercises. Want the rest? The full course is $25 for the current build, or $50 for lifetime.</div>
+      <div class="op-trust reveal">
+        <div><div class="op-trust-num"><span class="accent">2</span></div><div class="op-trust-label">Free chapters</div></div>
+        <div><div class="op-trust-num">0</div><div class="op-trust-label">Coding experience needed</div></div>
+        <div><div class="op-trust-num">$0</div><div class="op-trust-label">To start reading</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 00 -->
+  <section class="fc-chapter first" id="ch0">
+    <div class="container"><div class="fc-wrap">
+      <div class="fc-chip">Chapter 00 <span class="free">Free</span></div>
+      <h2>Set up your machine</h2>
+      <p class="fc-lead">You need three things: a computer, a terminal, and an AI coding tool. That's it. If the word "terminal" makes you nervous, good. By the end of this chapter it won't.</p>
+
+      <h3>The stack, and what it costs</h3>
+      <ul>
+        <li><strong>Your computer (Mac or Windows).</strong> Nothing special. What you already own is fine.</li>
+        <li><strong>The terminal.</strong> On Mac it's an app literally called Terminal. On Windows, install Windows Terminal from the Store. It's a text box where you type commands instead of clicking buttons. That's the whole mystery.</li>
+        <li><strong>Claude Code.</strong> This is the AI that writes, runs, and fixes code by talking to you. It's what ARIS is built on. Roughly $20/month to start, and you can do a lot on the entry tier.</li>
+      </ul>
+      <p><strong>Total to start:</strong> the price of one AI subscription. You can build real, deployed things at that level before spending another dollar.</p>
+
+      <h3>Getting Claude Code running</h3>
+      <p>Open your terminal and install it (the current one-line install command is on <a href="https://claude.com/claude-code" target="_blank" rel="noopener">claude.com/claude-code</a>, I'm pointing you there instead of pasting a command that'll be stale in a month). Then type <code>claude</code> and hit enter. You're in. It'll ask you to log in the first time.</p>
+
+      <h3>The only terminal commands you actually need</h3>
+      <div class="fc-code"><code>cd my-folder      # "change directory", go into a folder
+ls                # list what's in the current folder
+mkdir projects    # make a new folder called projects
+claude            # start the AI</code></div>
+      <p>That's genuinely most of it. When you don't know a command, ask Claude Code itself. "How do I get back to my home folder?" is a valid thing to type at it.</p>
+
+      <div class="fc-call">
+        <span class="tag">Build this now</span>
+        <p>Make a folder called <code>operator</code>, <code>cd</code> into it, run <code>claude</code>, and type: "Explain what folder we're in right now and what's in it." You just had your first working session. That's the whole loop, everything else is bigger versions of this.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- CHAPTER 01 -->
+  <section class="fc-chapter" id="ch1">
+    <div class="container"><div class="fc-wrap">
+      <div class="fc-chip">Chapter 01 <span class="free">Free</span></div>
+      <h2>How to actually vibe code</h2>
+      <p class="fc-lead">Vibe coding is not "the AI reads your mind." It's a conversation loop, and there's a skill to running it well. Master this and everything else in the course is just applying it to bigger targets.</p>
+
+      <h3>The loop</h3>
+      <ol>
+        <li><strong>Describe the outcome, not the code.</strong> "I want a page that shows my daily tasks in a list" beats "write a React component with a useState array."</li>
+        <li><strong>Let it work.</strong> It'll write files, run things, show you results.</li>
+        <li><strong>Look at what came back.</strong> Did it do the thing? Run it and see.</li>
+        <li><strong>Correct in plain English.</strong> "The list works but I want newest on top" is a complete, useful instruction.</li>
+        <li><strong>Repeat until it's right.</strong></li>
+      </ol>
+
+      <h3>How to describe what you want</h3>
+      <p>The gap between a bad result and a great one is almost always the prompt. Three habits that fix 90% of it:</p>
+      <ul>
+        <li><strong>Give context first.</strong> "I'm building a personal dashboard. It's just for me, runs on my laptop." Now every answer is aimed correctly.</li>
+        <li><strong>Say what "done" looks like.</strong> "Done means I can open it in my browser and see today's date." A clear finish line means it knows when to stop.</li>
+        <li><strong>One thing at a time.</strong> Don't ask for ten features in one message. Ask for one, verify it, then the next. This is the single biggest quality lever.</li>
+      </ul>
+
+      <h3>When it breaks (it will)</h3>
+      <p>Errors are not failure, they're information. When something breaks: copy the error and paste it straight back to the AI with "this broke, fix it." You do not need to understand the error. That's the entire trick that makes non-coders dangerous now. Read the error only well enough to notice if it's saying the same thing twice, which means the current approach is stuck and you should say "try a completely different approach."</p>
+
+      <div class="fc-call">
+        <span class="tag">The rule I live by</span>
+        <p>If it fails the same way two or three times, stop iterating and change the approach entirely. Repeating a broken plan louder never works. This one rule will save you more time than any prompt trick.</p>
+      </div>
+
+      <div class="fc-call">
+        <span class="tag">Build this now</span>
+        <p>Ask Claude Code to build "a single HTML page that shows a random motivational quote and a button to get a new one." Get it working in your browser. Then change one thing about it with a plain-English instruction. You just ran the full loop, including a revision.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- WHAT COMES NEXT -->
+  <section class="op-section" style="background:var(--bg-2);">
+    <div class="container">
+      <div class="op-head reveal">
+        <span class="tag">What comes next</span>
+        <h2>Chapter 2 is where it gets real</h2>
+        <p>You build and deploy a live website to the internet in your first session. After that: memory, agents, loops, and pointing it all at a business. Here is the rest of the outline.</p>
+      </div>
+      <div class="op-modules">
+        <div class="op-mod reveal"><div class="op-mod-num">02</div><div class="op-mod-body"><h3>Ship something real, today</h3><p>Build and deploy a live website to the internet in your first session. Proof that this works before we go deeper.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">03</div><div class="op-mod-body"><h3>Give your AI a memory</h3><p>The single trick that turns a chatbot into an assistant that knows you. Memory files, the CLAUDE.md pattern, and how ARIS remembers across every session.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">04</div><div class="op-mod-body"><h3>Build your first agent</h3><p>Delegation. Spinning up sub-agents with their own focus and context. When to use one, when not to, and how they keep quality high.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">05</div><div class="op-mod-body"><h3>Design a loop that runs itself</h3><p>The core idea behind ARIS. The six parts every loop needs, and how to schedule work that happens without you touching it.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">06</div><div class="op-mod-body"><h3>Connect it to the world</h3><p>APIs, MCP, and browser automation in plain English. Give your AI hands so it can act in your real accounts and tools.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">07</div><div class="op-mod-body"><h3>Point it at your business</h3><p>The real automations behind my agency: outreach, content, and CRM. Steal the patterns and aim them at whatever you do for money.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">08</div><div class="op-mod-body"><h3>Architect your own ARIS</h3><p>Put the pieces together into one system. The three-layer design (knowledge, workflows, loops) that everything above snaps into.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">09</div><div class="op-mod-body"><h3>Turn it into income</h3><p>How to package what you built and sell it, exactly like this course. The meta-chapter: you're inside the playbook right now.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">10</div><div class="op-mod-body"><h3>Templates and files</h3><p>My real CLAUDE.md template, loop design template, and the starter prompts I use for every new build.</p></div></div>
+      </div>
+      <p class="fc-next-note">Chapters 11 and up, plus the private repo, come with the $50 lifetime option. <a href="/course.html#curriculum">See the full outline</a></p>
+    </div>
+  </section>
+
+  <section class="op-section" id="pricing" style="background:var(--bg-2);">
+    <div class="container">
+      <div class="op-head reveal">
+        <span class="tag">Get access</span>
+        <h2>One course, two ways to buy it</h2>
+        <p>Same course either way. Take the current build, or take lifetime and get every chapter I add. No subscription either way.</p>
+      </div>
+      <div class="op-price-wrap reveal" style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;align-items:stretch;">
+        <div class="op-price-card" style="flex:1;min-width:280px;max-width:360px;">
+          <div class="op-price-badge">Current build, chapters 00 to 10</div>
+          <div class="op-price-row">
+            <span class="op-price-dollar">$</span>
+            <span class="op-price-num">25</span>
+            <span class="op-price-period">one time</span>
+          </div>
+          <ul class="op-price-list">
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Chapters 00 to 10, unlocked the moment you buy</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">My real projects and open source code, yours to copy</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Chapter 10: fill in the blank templates and prompts</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">The course exactly as it stands today</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">One payment. No subscription, ever</span></li>
+          </ul>
+          <a href="https://square.link/u/Z5EHwS8t" class="btn btn-secondary btn-lg" style="width:100%; justify-content:center;" onclick="if(window.gtag)gtag('event','course_purchase_click',{location:'free_page',tier:'build'});">Get the build for $25 <span style="font-size:1.1em;">&rarr;</span></a>
+          <p style="font-size:0.74rem; color:var(--text-3); margin-top:14px;">Secure checkout by Square. Access delivered the moment you pay.</p>
+        </div>
+        <div class="op-price-card" style="flex:1;min-width:280px;max-width:360px;">
+          <div class="op-price-badge">Lifetime, the whole course as it grows</div>
+          <div class="op-price-row">
+            <span class="op-price-dollar">$</span>
+            <span class="op-price-num">50</span>
+            <span class="op-price-period">one time</span>
+          </div>
+          <ul class="op-price-list">
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Chapters 00 to 10, everything in the current build</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li"><strong>Chapters 11 to 16.</strong> The advanced patterns and the exact fixes for walls I hit, written up as later chapters of the same course</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li"><strong>Chapter 17.</strong> A private GitHub repo invite, with read-only access to a curated copy of the ARIS build: the agent patterns, loops, memory structure and skills. Send your GitHub username after checkout.</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Every new chapter and video version I add later, no extra charge</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Locks in this price forever</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">One payment. No subscription, ever</span></li>
+          </ul>
+          <a href="https://square.link/u/p16XWFAG" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" onclick="if(window.gtag)gtag('event','course_purchase_click',{location:'free_page',tier:'lifetime'});">Get lifetime for $50 <span style="font-size:1.1em;">&rarr;</span></a>
+          <p style="font-size:0.74rem; color:var(--text-3); margin-top:14px;">Secure checkout by Square. Access delivered the moment you pay.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>The Staley Social</h3>
+          <p>Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Product</h4><ul><li><a href="course.html">OPERATOR course</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="os.html">Staley OS</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="results.html">Results</a></li><li><a href="work.html">Work</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><span style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Staley Social LLC. All rights reserved.</p>
+        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=5"></script>
+  <script>
+    document.querySelectorAll('.op-faq-q').forEach(function(btn){
+      btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });
+    });
+  </script>
+  <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_901c8ea583cc41d3bc52d54eaee00e34"></script>
+</body>
+</html>

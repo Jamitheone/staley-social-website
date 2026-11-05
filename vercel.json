@@ -5,6 +5,10 @@
       "destination": "/start.html"
     },
     {
+      "source": "/free-course",
+      "destination": "/free-course.html"
+    },
+    {
       "source": "/os",
       "destination": "/os.html"
     },
