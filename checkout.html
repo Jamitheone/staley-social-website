@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Start your Staley OS plan. One quick step, then secure checkout.">
+  <title>Start your plan | The Staley Social</title>
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/logos/favicon.png" type="image/png">
+  <meta name="theme-color" content="#090910">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB8CM3TL22"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GB8CM3TL22');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/flat.css?v=3">
+  <style>
+    .co-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+    .co-card { max-width: 460px; width: 100%; }
+    .co-logo { display: inline-flex; align-items: center; gap: 8px; color: var(--text); text-decoration: none; font-weight: 700; margin-bottom: 36px; }
+    .co-logo .nav-logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--blue); display: inline-block; }
+    .co-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+    .co-plan { font-family: var(--font-display); font-size: 1.9rem; font-weight: 800; letter-spacing: -0.03em; color: var(--text); line-height: 1.1; margin-bottom: 4px; }
+    .co-price { font-size: 1rem; color: var(--text-2); margin-bottom: 6px; }
+    .co-note { font-size: 0.85rem; color: var(--text-3); margin-bottom: 28px; }
+    .co-field { margin-bottom: 16px; }
+    .co-field label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-2); margin-bottom: 6px; }
+    .co-field input { width: 100%; padding: 13px 14px; border-radius: 3px; border: 1px solid var(--border); background: var(--bg-2, rgba(255,255,255,0.03)); color: var(--text); font-family: var(--font-body); font-size: 1rem; }
+    .co-field input:focus { outline: none; border-color: var(--blue); }
+    .co-hp { position: absolute; left: -9999px; }
+    .co-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 16px 24px; border: 0; border-radius: 3px; background: var(--blue); color: #fff; font-family: var(--font-body); font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s ease; margin-top: 6px; }
+    .co-btn:hover { background: #3D73E8; }
+    .co-btn[disabled] { opacity: 0.6; cursor: default; }
+    .co-secure { text-align: center; font-size: 0.78rem; color: var(--text-3); margin-top: 16px; }
+    .co-err { color: #ff6b6b; font-size: 0.85rem; margin-top: 12px; min-height: 1em; }
+  </style>
+</head>
+<body class="page-flat">
+  <div class="co-wrap">
+    <div class="co-card">
+      <a href="/" class="co-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
+      <div class="co-eyebrow">Start your plan</div>
+      <div class="co-plan" id="co-plan">Staley OS</div>
+      <div class="co-price" id="co-price">$197/mo</div>
+      <div class="co-note">No setup fee. Cancel anytime. One quick step, then secure checkout.</div>
+      <form id="co-form" novalidate>
+        <div class="co-field"><label for="co-first">First name</label><input id="co-first" name="firstName" autocomplete="given-name" required></div>
+        <div class="co-field"><label for="co-email">Work email</label><input id="co-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="co-field"><label for="co-biz">Business name</label><input id="co-biz" name="business" autocomplete="organization"></div>
+        <input class="co-hp" tabindex="-1" autocomplete="off" name="honey" aria-hidden="true">
+        <button class="co-btn" id="co-btn" type="submit">Continue to secure checkout <span style="font-size:1.1em;">&rarr;</span></button>
+        <div class="co-err" id="co-err"></div>
+      </form>
+      <div class="co-secure">Secure payment handled by Square.</div>
+    </div>
+  </div>
+
+  <script src="checkout-config.js"></script>
+  <script>
+    (function () {
+      var C = window.CheckoutConfig;
+      var params = new URLSearchParams(location.search);
+      var tier = C.pickTier(params.get('tier'));
+      var utm = C.sanitizeUtm(params.get('utm_source') || params.get('ref') || '');
+      // first-touch: keep the utm from the very first page in this browser if we have one
+      try {
+        if (utm) localStorage.setItem('tss_first_src', localStorage.getItem('tss_first_src') || utm);
+        utm = localStorage.getItem('tss_first_src') || utm;
+      } catch (e) {}
+      document.getElementById('co-plan').textContent = C.TIERS[tier].name;
+      document.getElementById('co-price').textContent = C.TIERS[tier].price;
+      var square = C.SQUARE[tier];
+
+      var form = document.getElementById('co-form');
+      var btn = document.getElementById('co-btn');
+      var err = document.getElementById('co-err');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        err.textContent = '';
+        var fd = new FormData(form);
+        if (fd.get('honey')) return; // bot
+        var firstName = (fd.get('firstName') || '').trim();
+        var email = (fd.get('email') || '').trim();
+        if (!firstName || !email || email.indexOf('@') < 1) { err.textContent = 'Add your first name and a valid email.'; return; }
+        btn.disabled = true; btn.textContent = 'One sec...';
+        gtag('event', 'checkout_start', { tier: tier });
+        var payload = { firstName: firstName, email: email, business: (fd.get('business') || '').trim(), tier: tier, utm: utm };
+        // Capture the lead, then always hand off to Square (never trap the buyer if CRM hiccups).
+        fetch('/api/start-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+          .catch(function () {})
+          .finally(function () { window.location.href = square; });
+      });
+    })();
+  </script>
+</body>
+</html>
