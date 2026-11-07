@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Focal, the Mac app that makes you take the break</title>
+<meta name="description" content="Focal blurs your screen when you have worked past your block. It counts only the time you are at the keyboard. One time 29 dollars. Local only. Mac.">
+<style>
+  :root{
+    --bg:#0c0e13; --panel:#12151d; --line:#1e2330; --ink:#eef1f6; --muted:#9aa3b2;
+    --accent:#5b8cff; --accent-soft:#1a2440; --ok:#6fd1a6; --radius:16px;
+    --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  a{color:inherit}
+  .btn{display:inline-block;padding:14px 22px;border-radius:12px;font-weight:600;text-decoration:none;font-size:15px;border:1px solid transparent;transition:transform .12s ease,background .12s ease}
+  .btn:active{transform:translateY(1px)}
+  .btn-buy{background:var(--accent);color:#fff}
+  .btn-buy:hover{background:#6f9bff}
+  .btn-ghost{border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:#2c3446;background:#10131b}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(12,14,19,.8);backdrop-filter:blur(10px);z-index:5}
+  header .wrap{display:flex;align-items:center;justify-content:space-between}
+  .logo{font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+  .dot{width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#9ab6ff,var(--accent));box-shadow:0 0 18px var(--accent)}
+  .hero{padding:96px 0 64px;text-align:center}
+  .hero h1{font-size:clamp(34px,6vw,60px);line-height:1.04;letter-spacing:-.03em;margin:0 0 20px;font-weight:700}
+  .hero p.sub{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:620px;margin:0 auto 34px}
+  .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .price-note{color:var(--muted);font-size:13px;margin-top:16px}
+  .frame{margin:56px auto 0;max-width:760px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:0;overflow:hidden}
+  .frame .bar{display:flex;gap:7px;padding:13px 16px;border-bottom:1px solid var(--line)}
+  .frame .bar i{width:11px;height:11px;border-radius:50%;background:#2a3042;display:block}
+  .blurdemo{position:relative;padding:48px 24px;text-align:left;background:linear-gradient(180deg,#141823,#0f121a)}
+  .blurdemo .lines span{display:block;height:11px;border-radius:6px;background:#232a3a;margin:0 0 12px}
+  .blurdemo .lines span:nth-child(odd){width:86%}
+  .blurdemo .lines span:nth-child(even){width:64%}
+  .blurdemo .over{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:rgba(10,12,18,.46);backdrop-filter:blur(6px);text-align:center;padding:20px}
+  .blurdemo .over b{font-size:18px}
+  .blurdemo .over span{color:var(--muted);font-size:14px;max-width:360px}
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(24px,4vw,34px);letter-spacing:-.02em;margin:0 0 10px;text-align:center}
+  .lede{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 40px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .card h3{margin:0 0 8px;font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:14.5px}
+  .pricing{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px;margin:0 auto}
+  .tier{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column}
+  .tier.paid{border-color:#2d3c66;background:linear-gradient(180deg,#12182a,#0f121a)}
+  .tier .tag{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .tier .amt{font-size:40px;font-weight:700;letter-spacing:-.02em;margin:6px 0 2px}
+  .tier .amt small{font-size:15px;color:var(--muted);font-weight:500}
+  .tier ul{list-style:none;padding:0;margin:18px 0 24px;flex:1}
+  .tier li{padding:7px 0 7px 26px;position:relative;color:var(--muted);font-size:14.5px}
+  .tier li:before{content:"";position:absolute;left:0;top:13px;width:7px;height:7px;border-radius:50%;background:var(--ok)}
+  .tier .btn{text-align:center}
+  .trust{text-align:center}
+  .trust .pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:9px 16px;color:var(--muted);font-size:13.5px;margin:6px}
+  footer{padding:48px 0 64px;border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:13px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<!-- STAGED, not published. Placeholders to fill by Jameson: https://thestaleysocial.com/downloads/FocalLite-1.0.0.dmg, https://square.link/u/4CWhR6fY. Price (29 or 49) is his call. -->
+<header><div class="wrap">
+  <div class="logo"><span class="dot"></span> Focal</div>
+  <a class="btn btn-ghost" href="#buy">Get Focal</a>
+</div></header>
+
+<div class="hero wrap">
+  <h1>You will not take the break.<br>Focal makes you.</h1>
+  <p class="sub">A timer is easy to ignore. Focal blurs your whole screen once you have worked past your block, and it only counts time you are at the keyboard. Take your break and it clears. For Mac.</p>
+  <div class="cta-row">
+    <a class="btn btn-buy" href="#buy">Get Focal, 29 dollars once</a>
+    <a class="btn btn-ghost" href="#free">Try the free timer</a>
+  </div>
+  <div class="price-note">One time payment. No subscription. Works offline.</div>
+
+  <div class="frame">
+    <div class="bar"><i></i><i></i><i></i></div>
+    <div class="blurdemo">
+      <div class="lines"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="over">
+        <b>You worked 11 min past your 50 min block.</b>
+        <span>Step away for 5 min.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="how"><div class="wrap">
+  <h2>It works because you cannot ignore it</h2>
+  <p class="lede">Most focus apps nag you. Focal changes what is on the screen, so the break is the path of least resistance.</p>
+  <div class="grid">
+    <div class="card"><h3>Blur, not a popup</h3><p>After your work block the screen eases into a blur in five steps. Time only counts while you are using the keyboard or mouse, and a short pause of up to two minutes still counts as working.</p></div>
+    <div class="card"><h3>It learns your day</h3><p>With the paid unlock, block and break lengths follow how long you have been up and how much focus you have done today, so hour one and hour six are not treated the same. The shape is a popular work-rhythm model, not a clinically validated one.</p></div>
+    <div class="card"><h3>It knows when to back off</h3><p>While your microphone is on, or Zoom, Teams or FaceTime is in front, Focal pauses itself. One menu click pauses it for an hour when you truly cannot stop.</p></div>
+    <div class="card"><h3>Override, with a reason</h3><p>Need to push through? Type why, at least 15 characters. A 20 second cooldown and two overrides a day keep it honest. Each one buys 15 minutes and is logged on your Mac only.</p></div>
+    <div class="card"><h3>Every display</h3><p>One monitor or three, the blur covers all of them at once, so there is no clean screen to escape to.</p></div>
+    <div class="card"><h3>Quiet by design</h3><p>A menu bar icon and a settings window. Set your lengths once and forget it is there until you need the break.</p></div>
+  </div>
+</div></section>
+
+<section id="buy"><div class="wrap">
+  <h2>Simple price</h2>
+  <p class="lede">Pay once, own it. The free version does the blur, the pause and the override. The 29 dollar unlock adds lengths that adapt to your day.</p>
+  <div class="pricing">
+    <div class="tier" id="free">
+      <div class="tag">Free</div>
+      <div class="amt">0 <small>forever</small></div>
+      <ul>
+        <li>Fixed work and break lengths you set</li>
+        <li>Gradual blur on every display</li>
+        <li>Auto pause on calls, pause for an hour</li>
+        <li>Typed override, capped per day</li>
+        <li>Local only, nothing leaves your Mac</li>
+      </ul>
+      <a class="btn btn-ghost" href="https://thestaleysocial.com/downloads/FocalLite-1.0.0.dmg" data-focal="download-free">Download free</a>
+    </div>
+    <div class="tier paid">
+      <div class="tag">Focal, full</div>
+      <div class="amt">29 <small>one time</small></div>
+      <ul>
+        <li>Everything in free</li>
+        <li>Adaptive block and break lengths</li>
+        <li>Longer breaks after a heavy focus day</li>
+        <li>One time payment, no subscription</li>
+        <li>License key checks offline, no account</li>
+      </ul>
+      <a class="btn btn-buy" href="https://square.link/u/4CWhR6fY" data-focal="buy-stripe">Get Focal, 29 dollars</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="trust"><div class="wrap trust">
+  <h2>Your screen stays yours</h2>
+  <p class="lede">Focal checks how long since your last key or click, whether your microphone is on, and which app is in front, only to time your block and spare your calls. No camera, no screen reading, no keystroke content, no network. Nothing leaves your Mac.</p>
+  <div>
+    <span class="pill">Local only</span>
+    <span class="pill">No account</span>
+    <span class="pill">No tracking</span>
+    <!-- add a signed and notarized pill only after Developer ID signing and notarization are done -->
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  Focal is made by The Staley Social. Questions, email jameson@thestaleysocial.com.
+</div></footer>
+</body>
+</html>
