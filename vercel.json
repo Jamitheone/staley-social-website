@@ -59,6 +59,14 @@
     {
       "source": "/riderlab/delete-account",
       "destination": "/riderlab/delete-account.html"
+    },
+    {
+      "source": "/:app/privacy",
+      "destination": "/:app/privacy.html"
+    },
+    {
+      "source": "/:app/support",
+      "destination": "/:app/support.html"
     }
   ],
   "headers": [
