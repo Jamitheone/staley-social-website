@@ -50,21 +50,35 @@ export default async function handler(req, res) {
     }).catch(() => {}); // phone is best-effort
   }
 
-  // drop the lead into the Marketing Pipeline as a New Lead card — best-effort
+  // drop the lead into the Marketing Pipeline as a New Lead card. The contact is already saved, so a
+  // failed card never fails the request, but it must not vanish: retry once, then tag the contact
+  // `card-failed` (findable in GHL) and log it. ponytail: no alert channel, the tag is the alert.
   if (contactId) {
-    await fetch(`${base}/opportunities/`, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify({
-        locationId: process.env.GHL_TSS_LOCATION_ID,
-        pipelineId: 'Ijv8HR88X8QFjaOayxKF', // Marketing Pipeline
-        pipelineStageId: '7c70932c-8991-4857-afcb-86136fb17cb8', // New Lead
-        contactId,
-        name: `${business} - Website Audit`,
-        status: 'open',
-        source: 'Website Audit Request',
-      }),
-    }).catch(() => {});
+    const card = JSON.stringify({
+      locationId: process.env.GHL_TSS_LOCATION_ID,
+      pipelineId: 'Ijv8HR88X8QFjaOayxKF', // Marketing Pipeline
+      pipelineStageId: '7c70932c-8991-4857-afcb-86136fb17cb8', // New Lead
+      contactId,
+      name: `${business} - Website Audit`,
+      status: 'open',
+      source: 'Website Audit Request',
+    });
+    let cardOk = false;
+    for (let attempt = 0; attempt < 2 && !cardOk; attempt++) {
+      try {
+        const r = await fetch(`${base}/opportunities/`, { method: 'POST', headers, body: card });
+        // a repeat submission from the same contact already has its open card
+        cardOk = r.ok || (await r.text()).includes('duplicate opportunity');
+      } catch (e) { /* network blip, retry */ }
+    }
+    if (!cardOk) {
+      console.error('GHL pipeline card failed after retry, tagging card-failed', contactId);
+      await fetch(`${base}/contacts/${contactId}/tags`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ tags: ['card-failed'] }),
+      }).catch(() => {});
+    }
   }
 
   return res.status(200).json({ ok: true, contactId });
