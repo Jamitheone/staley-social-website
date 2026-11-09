@@ -63,6 +63,14 @@
     {
       "source": "/focal-lite",
       "destination": "/focal-lite.html"
+    },
+    {
+      "source": "/:app/privacy",
+      "destination": "/:app/privacy.html"
+    },
+    {
+      "source": "/:app/support",
+      "destination": "/:app/support.html"
     }
   ],
   "headers": [
