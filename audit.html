@@ -296,7 +296,9 @@
           phone: form['phone'].value,
           honey: form['_honey'].value,
           // ponytail: ?ref=<slug> on the share link is the whole attribution system
-          ref: new URLSearchParams(window.location.search).get('ref') || ''
+          // falls back to the first-touch slug js/main.js stored if they landed on another page first
+          ref: new URLSearchParams(window.location.search).get('ref') ||
+            (function () { try { return localStorage.getItem('tss_first_ref') || ''; } catch (e) { return ''; } })()
         };
         // email notify (browser → formsubmit) — fire and forget
         fetch('https://formsubmit.co/ajax/thestaleysocial@gmail.com', {
@@ -332,7 +334,7 @@
       });
     });
   </script>
-  <script defer src="js/main.js?v=5"></script>
+  <script defer src="js/main.js?v=7"></script>
   <script
     src="https://link.msgsndr.com/js/external-tracking.js"
     data-tracking-id="tk_901c8ea583cc41d3bc52d54eaee00e34"

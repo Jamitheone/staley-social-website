@@ -4,6 +4,19 @@
    nav behavior, FAQ, mobile menu
    ============================================ */
 
+// ─── First-touch attribution ───
+// A visitor who lands on ANY page with ?ref=<slug> (client referral) or ?utm_source= keeps it
+// all the way to checkout.html and the audit form, which read these two keys. First touch wins.
+(function () {
+  try {
+    var q = new URLSearchParams(location.search);
+    var clean = function (s) { return (s || '').replace(/[^a-z0-9_-]/gi, '').slice(0, 40); };
+    var ref = clean(q.get('ref')), src = ref || clean(q.get('utm_source'));
+    if (ref && !localStorage.getItem('tss_first_ref')) localStorage.setItem('tss_first_ref', ref);
+    if (src && !localStorage.getItem('tss_first_src')) localStorage.setItem('tss_first_src', src);
+  } catch (e) { /* private mode: attribution is best effort */ }
+})();
+
 // ─── Motion preference (respected throughout) ───
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

@@ -74,6 +74,12 @@
         if (utm) localStorage.setItem('tss_first_src', localStorage.getItem('tss_first_src') || utm);
         utm = localStorage.getItem('tss_first_src') || utm;
       } catch (e) {}
+      // client referral slug (?ref=), kept apart from campaign utm so the CRM can tag it as a referral
+      var ref = C.sanitizeUtm(params.get('ref') || '');
+      try {
+        if (ref) localStorage.setItem('tss_first_ref', localStorage.getItem('tss_first_ref') || ref);
+        ref = localStorage.getItem('tss_first_ref') || ref;
+      } catch (e) {}
       document.getElementById('co-plan').textContent = C.TIERS[tier].name;
       document.getElementById('co-price').textContent = C.TIERS[tier].price;
       var square = C.SQUARE[tier];
@@ -91,7 +97,7 @@
         if (!firstName || !email || email.indexOf('@') < 1) { err.textContent = 'Add your first name and a valid email.'; return; }
         btn.disabled = true; btn.textContent = 'One sec...';
         gtag('event', 'checkout_start', { tier: tier });
-        var payload = { firstName: firstName, email: email, business: (fd.get('business') || '').trim(), tier: tier, utm: utm };
+        var payload = { firstName: firstName, email: email, business: (fd.get('business') || '').trim(), tier: tier, utm: utm, ref: ref };
         // Capture the lead, then always hand off to Square (never trap the buyer if CRM hiccups).
         fetch('/api/start-lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
           .catch(function () {})

@@ -4,7 +4,7 @@
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
 
-  const { firstName, lastName, email, business, phone, honey, tier, utm } = req.body || {};
+  const { firstName, lastName, email, business, phone, honey, tier, utm, ref } = req.body || {};
   if (honey) return res.status(200).json({ ok: true }); // bot
   if (!firstName || !email) {
     return res.status(400).json({ error: 'Missing required fields' });
@@ -20,8 +20,12 @@ export default async function handler(req, res) {
     'Content-Type': 'application/json',
   };
 
+  // client referral slug: same sanitize + tags as audit-lead.js, so one tag search finds every referral
+  const referrer = typeof ref === 'string' ? ref.replace(/[^a-z0-9-]/gi, '').slice(0, 32) : '';
+
   const tags = ['self-serve-signup', `tier-${t}`];
   if (src) tags.push(`src-${src}`);
+  if (referrer) tags.push('referral', `referred-by-${referrer}`);
 
   const upsert = await fetch(`${base}/contacts/upsert`, {
     method: 'POST',
@@ -32,7 +36,7 @@ export default async function handler(req, res) {
       lastName: lastName || '',
       email,
       companyName: business || '',
-      source: src ? `Self-Serve (${src})` : 'Self-Serve Signup',
+      source: referrer ? `Referral: ${referrer}` : src ? `Self-Serve (${src})` : 'Self-Serve Signup',
       tags,
     }),
   });
