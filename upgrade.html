@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Your plan | Staley OS</title>
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <meta name="theme-color" content="#090910">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB8CM3TL22"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GB8CM3TL22');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/flat.css?v=3">
+  <style>
+    .up-wrap { max-width: 980px; margin: 0 auto; padding: 48px 20px 64px; }
+    .up-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+    .up-h1 { font-family: var(--font-display); font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; color: var(--text); margin: 0 0 28px; max-width: 22ch; }
+    .up-label { font-size: 0.82rem; font-weight: 600; color: var(--text-2); margin: 28px 0 12px; }
+    .up-card { border: 1px solid var(--border); border-radius: 6px; padding: 22px; }
+    .up-free { border-color: var(--blue); }
+    .up-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+    .up-name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; color: var(--text); }
+    .up-price { color: var(--text-2); margin: 2px 0 14px; }
+    .up-list { list-style: none; margin: 0; padding: 0; }
+    .up-list li { display: flex; gap: 10px; padding: 6px 0; color: var(--text-2); font-size: 0.95rem; line-height: 1.35; }
+    .up-list li span:first-child { flex: none; width: 1.2em; }
+    .up-btn { display: block; text-align: center; margin-top: 18px; padding: 13px 18px; border-radius: 3px; background: var(--blue); color: #fff; font-weight: 600; text-decoration: none; }
+    .up-btn:hover { background: #3D73E8; }
+    .up-foot { color: var(--text-3); font-size: 0.85rem; margin-top: 28px; }
+  </style>
+</head>
+<body class="page-flat">
+  <main class="up-wrap">
+    <div class="up-eyebrow" data-t="eyebrow"></div>
+    <h1 class="up-h1" data-t="h1"></h1>
+
+    <div class="up-label" data-t="freeLabel"></div>
+    <div class="up-card up-free"><ul class="up-list" id="up-free"></ul></div>
+
+    <div class="up-label" data-t="lockedLabel"></div>
+    <div class="up-grid" id="up-tiers"></div>
+
+    <p class="up-foot" data-t="foot"></p>
+  </main>
+
+  <script src="checkout-config.js"></script>
+  <script>
+    // The native paywall: what is free vs what unlocks, per tier. Opened from the locked
+    // sidebar link inside each client's Staley OS. ?c=<client> tags the click, ?lang=ru for Russian.
+    // ponytail: copy lives in this one dict; tier names and prices come from checkout-config.js
+    // so the money path cannot drift. Move to per-client plan state when we have our own accounts DB.
+    var COPY = {
+      en: {
+        eyebrow: 'Your Staley OS plan: Free',
+        h1: 'Your posts run on autopilot. Here is what you can switch on next.',
+        freeLabel: 'Included free',
+        free: ['Automatic posting to your socials, every day', 'Your Staley OS account'],
+        lockedLabel: 'Ready to unlock',
+        unlock: 'Unlock ',
+        foot: 'No setup fee. No contract. Cancel anytime.',
+        tiers: {
+          '197': ['Reply to every new lead in 60 seconds, by text and email', 'See every call and where it came from', 'Automatic follow-ups and review requests', 'Every contact tracked in one place'],
+          '397': ['Everything in Starter', 'Email campaigns to your whole list', 'Landing pages and a website builder', 'Workflows and paid memberships', 'Full reports'],
+          '797': ['Everything in Growth', 'Seats for your team', 'Advanced automations', 'Documents, contracts and a community space', 'Priority support']
+        }
+      },
+      ru: {
+        eyebrow: 'Ваш тариф Staley OS: бесплатный',
+        h1: 'Ваши посты выходят автоматически. Вот что можно подключить дальше.',
+        freeLabel: 'Входит бесплатно',
+        free: ['Автоматическая публикация в ваших соцсетях каждый день', 'Ваш аккаунт Staley OS'],
+        lockedLabel: 'Можно открыть',
+        unlock: 'Открыть ',
+        foot: 'Без платы за подключение. Без контракта. Отмена в любой момент.',
+        tiers: {
+          '197': ['Ответ каждому новому клиенту за 60 секунд, по SMS и email', 'Все звонки и откуда они пришли', 'Автоматические напоминания и запросы отзывов', 'Все контакты в одном месте'],
+          '397': ['Все из Starter', 'Email-рассылки по всей вашей базе', 'Лендинги и конструктор сайтов', 'Автоматизации и платные подписки', 'Полные отчеты'],
+          '797': ['Все из Growth', 'Доступы для команды', 'Продвинутые автоматизации', 'Документы, договоры и сообщество', 'Приоритетная поддержка']
+        }
+      }
+    };
+    (function () {
+      var C = window.CheckoutConfig;
+      var q = new URLSearchParams(location.search);
+      var lang = q.get('lang') === 'ru' ? 'ru' : 'en';
+      var client = C.sanitizeUtm(q.get('c') || '');
+      var T = COPY[lang];
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-t]').forEach(function (el) { el.textContent = T[el.dataset.t]; });
+
+      function li(mark, text) {
+        var e = document.createElement('li'), m = document.createElement('span'), s = document.createElement('span');
+        m.textContent = mark; s.textContent = text; e.append(m, s); return e;
+      }
+      var free = document.getElementById('up-free');
+      T.free.forEach(function (f) { free.append(li('✓', f)); });
+
+      var grid = document.getElementById('up-tiers');
+      Object.keys(C.TIERS).forEach(function (tier) {
+        var card = document.createElement('div'); card.className = 'up-card';
+        var name = document.createElement('div'); name.className = 'up-name'; name.textContent = C.TIERS[tier].name;
+        var price = document.createElement('div'); price.className = 'up-price'; price.textContent = C.TIERS[tier].price;
+        var ul = document.createElement('ul'); ul.className = 'up-list';
+        T.tiers[tier].forEach(function (f) { ul.append(li('🔒', f)); });
+        var a = document.createElement('a'); a.className = 'up-btn';
+        a.href = '/checkout.html?tier=' + tier + '&utm_source=inapp' + (client ? '_' + client : '');
+        a.target = '_blank'; a.rel = 'noopener'; // we render inside the Staley OS iframe; checkout needs its own tab
+        a.textContent = T.unlock + C.TIERS[tier].name;
+        a.addEventListener('click', function () { gtag('event', 'paywall_click', { tier: tier, client: client }); });
+        card.append(name, price, ul, a); grid.append(card);
+      });
+      gtag('event', 'paywall_view', { client: client, lang: lang });
+    })();
+  </script>
+</body>
+</html>
