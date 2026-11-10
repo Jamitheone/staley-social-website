@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thanks, here is your kit</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Tracker Kit makes a clean progress page for your bike build. Stages, parts, costs and a percent ring. Four themes. Works offline. No accounts, no tracking. 19 dollars once.">
+<style>
+  :root{
+    --bg:#0c0e13; --panel:#12151d; --line:#1e2330; --ink:#eef1f6; --muted:#9aa3b2;
+    --accent:#e8a33d; --accent-soft:#3a2a10; --ok:#6fd1a6; --radius:16px;
+    --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  a{color:inherit}
+  .btn{display:inline-block;padding:14px 22px;border-radius:12px;font-weight:600;text-decoration:none;font-size:15px;border:1px solid transparent;transition:transform .12s ease,background .12s ease}
+  .btn:active{transform:translateY(1px)}
+  .btn-buy{background:var(--accent);color:#1a1205}
+  .btn-buy:hover{background:#f0b55a}
+  .btn-ghost{border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:#2c3446;background:#10131b}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(12,14,19,.8);backdrop-filter:blur(10px);z-index:5}
+  header .wrap{display:flex;align-items:center;justify-content:space-between}
+  .logo{font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+  .dot{width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffd28a,var(--accent));box-shadow:0 0 18px var(--accent)}
+  .hero{padding:96px 0 64px;text-align:center}
+  .hero h1{font-size:clamp(34px,6vw,60px);line-height:1.04;letter-spacing:-.03em;margin:0 0 20px;font-weight:700}
+  .hero p.sub{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:620px;margin:0 auto 34px}
+  .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .price-note{color:var(--muted);font-size:13px;margin-top:16px}
+  .frame{margin:56px auto 0;max-width:760px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:0;overflow:hidden}
+  .frame .bar{display:flex;gap:7px;padding:13px 16px;border-bottom:1px solid var(--line)}
+  .frame .bar i{width:11px;height:11px;border-radius:50%;background:#2a3042;display:block}
+  .blurdemo{position:relative;padding:48px 24px;text-align:left;background:linear-gradient(180deg,#141823,#0f121a)}
+  .blurdemo .lines span{display:block;height:11px;border-radius:6px;background:#232a3a;margin:0 0 12px}
+  .blurdemo .lines span:nth-child(odd){width:86%}
+  .blurdemo .lines span:nth-child(even){width:64%}
+  .blurdemo .over{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:rgba(10,12,18,.46);backdrop-filter:blur(6px);text-align:center;padding:20px}
+  .blurdemo .over b{font-size:18px}
+  .blurdemo .over span{color:var(--muted);font-size:14px;max-width:360px}
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(24px,4vw,34px);letter-spacing:-.02em;margin:0 0 10px;text-align:center}
+  .lede{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 40px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .card h3{margin:0 0 8px;font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:14.5px}
+  .pricing{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px;margin:0 auto}
+  .tier{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column}
+  .tier.paid{border-color:#2d3c66;background:linear-gradient(180deg,#12182a,#0f121a)}
+  .tier .tag{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .tier .amt{font-size:40px;font-weight:700;letter-spacing:-.02em;margin:6px 0 2px}
+  .tier .amt small{font-size:15px;color:var(--muted);font-weight:500}
+  .tier ul{list-style:none;padding:0;margin:18px 0 24px;flex:1}
+  .tier li{padding:7px 0 7px 26px;position:relative;color:var(--muted);font-size:14.5px}
+  .tier li:before{content:"";position:absolute;left:0;top:13px;width:7px;height:7px;border-radius:50%;background:var(--ok)}
+  .tier .btn{text-align:center}
+  .trust{text-align:center}
+  .trust .pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:9px 16px;color:var(--muted);font-size:13.5px;margin:6px}
+  footer{padding:48px 0 64px;border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:13px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="hero wrap">
+  <h1>Thanks, here is your kit</h1>
+  <p class="sub">Your purchase went through. Download the zip, unzip it, and double click any theme to open it. The README inside covers making it yours.</p>
+  <div class="cta-row">
+    <a class="btn btn-buy" href="https://thestaleysocial.com/downloads/TrackerKit-1.0.zip">Download Tracker Kit</a>
+  </div>
+  <div class="price-note">TrackerKit-1.0.zip</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tracker Kit, a bike build progress page you host anywhere</title>
+<meta name="description" content="Tracker Kit makes a clean progress page for your bike build. Stages, parts, costs and a percent ring. Four themes. Works offline. No accounts, no tracking. 19 dollars once.">
+<link rel="canonical" href="https://thestaleysocial.com/tracker-kit">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Staley Social">
+<meta property="og:title" content="Tracker Kit, a bike build progress page you host anywhere">
+<meta property="og:description" content="Tracker Kit makes a clean progress page for your bike build. Stages, parts, costs and a percent ring. Four themes. Works offline. No accounts, no tracking. 19 dollars once.">
+<meta property="og:url" content="https://thestaleysocial.com/tracker-kit">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tracker Kit, a bike build progress page you host anywhere">
+<meta name="twitter:description" content="Tracker Kit makes a clean progress page for your bike build. Stages, parts, costs and a percent ring. Four themes. Works offline. No accounts, no tracking. 19 dollars once.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Tracker Kit","description":"Tracker Kit makes a clean progress page for your bike build. Stages, parts, costs and a percent ring. Four themes. Works offline. No accounts, no tracking. 19 dollars once.","url":"https://thestaleysocial.com/tracker-kit","offers":{"@type":"Offer","price":"19.00","priceCurrency":"USD","availability":"https://schema.org/InStock"},"brand":{"@type":"Organization","name":"The Staley Social","url":"https://thestaleysocial.com"}}</script>
+<style>
+  :root{
+    --bg:#0c0e13; --panel:#12151d; --line:#1e2330; --ink:#eef1f6; --muted:#9aa3b2;
+    --accent:#e8a33d; --accent-soft:#3a2a10; --ok:#6fd1a6; --radius:16px;
+    --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  a{color:inherit}
+  .btn{display:inline-block;padding:14px 22px;border-radius:12px;font-weight:600;text-decoration:none;font-size:15px;border:1px solid transparent;transition:transform .12s ease,background .12s ease}
+  .btn:active{transform:translateY(1px)}
+  .btn-buy{background:var(--accent);color:#1a1205}
+  .btn-buy:hover{background:#f0b55a}
+  .btn-ghost{border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:#2c3446;background:#10131b}
+  header{padding:22px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(12,14,19,.8);backdrop-filter:blur(10px);z-index:5}
+  header .wrap{display:flex;align-items:center;justify-content:space-between}
+  .logo{font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+  .dot{width:14px;height:14px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffd28a,var(--accent));box-shadow:0 0 18px var(--accent)}
+  .hero{padding:96px 0 64px;text-align:center}
+  .hero h1{font-size:clamp(34px,6vw,60px);line-height:1.04;letter-spacing:-.03em;margin:0 0 20px;font-weight:700}
+  .hero p.sub{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:620px;margin:0 auto 34px}
+  .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .price-note{color:var(--muted);font-size:13px;margin-top:16px}
+  .frame{margin:56px auto 0;max-width:760px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:0;overflow:hidden}
+  .frame .bar{display:flex;gap:7px;padding:13px 16px;border-bottom:1px solid var(--line)}
+  .frame .bar i{width:11px;height:11px;border-radius:50%;background:#2a3042;display:block}
+  .blurdemo{position:relative;padding:48px 24px;text-align:left;background:linear-gradient(180deg,#141823,#0f121a)}
+  .blurdemo .lines span{display:block;height:11px;border-radius:6px;background:#232a3a;margin:0 0 12px}
+  .blurdemo .lines span:nth-child(odd){width:86%}
+  .blurdemo .lines span:nth-child(even){width:64%}
+  .blurdemo .over{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:rgba(10,12,18,.46);backdrop-filter:blur(6px);text-align:center;padding:20px}
+  .blurdemo .over b{font-size:18px}
+  .blurdemo .over span{color:var(--muted);font-size:14px;max-width:360px}
+  section{padding:64px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(24px,4vw,34px);letter-spacing:-.02em;margin:0 0 10px;text-align:center}
+  .lede{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 40px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+  .card h3{margin:0 0 8px;font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:14.5px}
+  .pricing{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:720px;margin:0 auto}
+  .tier{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column}
+  .tier.paid{border-color:#2d3c66;background:linear-gradient(180deg,#12182a,#0f121a)}
+  .tier .tag{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+  .tier .amt{font-size:40px;font-weight:700;letter-spacing:-.02em;margin:6px 0 2px}
+  .tier .amt small{font-size:15px;color:var(--muted);font-weight:500}
+  .tier ul{list-style:none;padding:0;margin:18px 0 24px;flex:1}
+  .tier li{padding:7px 0 7px 26px;position:relative;color:var(--muted);font-size:14.5px}
+  .tier li:before{content:"";position:absolute;left:0;top:13px;width:7px;height:7px;border-radius:50%;background:var(--ok)}
+  .tier .btn{text-align:center}
+  .trust{text-align:center}
+  .trust .pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:9px 16px;color:var(--muted);font-size:13.5px;margin:6px}
+  footer{padding:48px 0 64px;border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:13px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="logo"><span class="dot"></span> Tracker Kit</div>
+  <a class="btn btn-ghost" href="#buy">Get the kit</a>
+</div></header>
+
+<div class="hero wrap">
+  <h1>Show your bike build,<br>stage by stage.</h1>
+  <p class="sub">A clean progress page for your build. Stages, parts, costs and a live percent ring. Four themes, one file each. Opens in any browser and works offline.</p>
+  <div class="cta-row">
+    <a class="btn btn-buy" href="https://square.link/u/ooAtoEtZ">Get Tracker Kit, 19 dollars once</a>
+  </div>
+  <div class="price-note">One time payment. No subscription. No account.</div>
+
+  <div class="frame">
+    <div class="bar"><i></i><i></i><i></i></div>
+    <div class="blurdemo">
+      <div class="lines"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="over">
+        <b>Build 62 percent complete</b>
+        <span>Frame done. Engine in progress. Paint next.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="how"><div class="wrap">
+  <h2>Edit one file, run one command</h2>
+  <p class="lede">Put your bike, stages and parts in a single JSON file. One command writes a finished page you can open, share or host.</p>
+  <div class="grid">
+    <div class="card"><h3>Four themes</h3><p>HUD, Stealth, Chrome and Classic. Pick the one that fits the bike. Each theme is one self contained file.</p></div>
+    <div class="card"><h3>Stages and parts</h3><p>Mark each stage done, active or to do. List parts with costs and the page adds up what you have spent.</p></div>
+    <div class="card"><h3>Live percent ring</h3><p>The ring fills as stages finish, so anyone who opens the page sees how far along the build is.</p></div>
+    <div class="card"><h3>Works offline</h3><p>Double click the file and it opens in your browser. No server, no install, nothing to sign in to.</p></div>
+    <div class="card"><h3>All original design</h3><p>No third party logos, fonts or images. The layout, styles and code are ours, and the kit is yours to use.</p></div>
+    <div class="card"><h3>Plain Python</h3><p>Python 3 is only needed if you want to regenerate pages. No packages to install.</p></div>
+  </div>
+</div></section>
+
+<section id="buy"><div class="wrap">
+  <h2>Simple price</h2>
+  <p class="lede">Pay once and the kit is yours. All four themes, the example build and the generator are included.</p>
+  <div class="pricing" style="grid-template-columns:1fr;max-width:420px">
+    <div class="tier paid">
+      <div class="tag">Tracker Kit 1.0</div>
+      <div class="amt">19 <small>one time</small></div>
+      <ul>
+        <li>4 themes: HUD, Stealth, Chrome, Classic</li>
+        <li>Example build to copy from</li>
+        <li>Generator script, edit JSON and run</li>
+        <li>No subscription, no account</li>
+        <li>Nothing tracked, nothing phones home</li>
+      </ul>
+      <a class="btn btn-buy" href="https://square.link/u/ooAtoEtZ">Get Tracker Kit, 19 dollars</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="trust"><div class="wrap trust">
+  <h2>Your build stays yours</h2>
+  <p class="lede">The pages are plain files with no scripts that call out. Nothing is collected about you or your visitors.</p>
+  <div>
+    <span class="pill">Works offline</span>
+    <span class="pill">No account</span>
+    <span class="pill">No tracking</span>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  Tracker Kit is made by The Staley Social.
+</div></footer>
+</body>
+</html>

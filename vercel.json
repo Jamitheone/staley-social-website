@@ -71,6 +71,14 @@
     {
       "source": "/:app/support",
       "destination": "/:app/support.html"
+    },
+    {
+      "source": "/tracker-kit",
+      "destination": "/tracker-kit.html"
+    },
+    {
+      "source": "/tracker-kit-thanks",
+      "destination": "/tracker-kit-thanks.html"
     }
   ],
   "headers": [
