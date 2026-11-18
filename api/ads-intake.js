@@ -1,3 +1,4 @@
+import { storeLead, isTest, crmUpsert } from './_own.js';
 // Vercel serverless: Staley OS ads-intake form → TSS GHL sub-account.
 // Sent AFTER a client says yes to ads. Creates/updates the contact, attaches ALL
 // questionnaire answers as an ADS INTAKE note, drops a card into the Marketing
@@ -81,10 +82,15 @@ export default async function handler(req, res) {
     'Content-Type': 'application/json',
   };
 
+  // our own store first (runs alongside GHL), GHL is the second copy
+  const storing = storeLead('ads-intake', { contactName, email, phone, business, answers });
+  if (isTest(email)) {
+    const stored = await storing;
+    return res.status(stored ? 200 : 502).json({ ok: stored, stored, test: true });
+  }
+
   // upsert WITHOUT phone (GHL dedupes by phone — /ghl manual §5), PUT phone after
-  const upsert = await fetch(`${base}/contacts/upsert`, {
-    method: 'POST', headers,
-    body: JSON.stringify({
+  const upsert = await crmUpsert(`${base}/contacts/upsert`, headers, {
       locationId: process.env.GHL_TSS_LOCATION_ID,
       firstName: firstName || business,
       lastName: rest.join(' '),
@@ -92,12 +98,13 @@ export default async function handler(req, res) {
       companyName: business,
       source: 'Ads Intake Form',
       tags: ['ads-intake', 'ads-ready'],
-    }),
-  });
-  const data = await upsert.json();
+    });
+  const data = upsert.data;
+  const stored = await storing;
   if (!upsert.ok) {
-    console.error('GHL upsert failed', upsert.status, data);
-    return res.status(502).json({ error: 'CRM error' });
+    console.error('GHL upsert failed', upsert.status, data, stored ? 'kept in our own store' : 'LEAD LOST: neither store took it', email);
+    if (!stored) return res.status(502).json({ error: 'CRM error' });
+    return res.status(200).json({ ok: true, stored, crm: false });
   }
   const contactId = data.contact && data.contact.id;
 
@@ -157,5 +164,5 @@ export default async function handler(req, res) {
     }).catch(() => {});
   }
 
-  return res.status(200).json({ ok: true, contactId });
+  return res.status(200).json({ ok: true, stored, contactId });
 }

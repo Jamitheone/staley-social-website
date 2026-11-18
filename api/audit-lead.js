@@ -1,3 +1,4 @@
+import { storeLead, isTest, crmUpsert } from './_own.js';
 // Vercel serverless: audit form → TSS GHL sub-account contact + Marketing Pipeline card.
 // Email notify is done client-side (browser → formsubmit); formsubmit 403s server-side POSTs.
 export default async function handler(req, res) {
@@ -18,11 +19,15 @@ export default async function handler(req, res) {
     'Content-Type': 'application/json',
   };
 
+  // our own store first (runs alongside GHL), GHL is the second copy
+  const storing = storeLead('audit', { firstName, lastName, email, business, website, phone, ref: referrer });
+  if (isTest(email)) {
+    const stored = await storing;
+    return res.status(stored ? 200 : 502).json({ ok: stored, stored, test: true });
+  }
+
   // ponytail: upsert WITHOUT phone (GHL dedupes by phone — see /ghl manual §5), then PUT phone after
-  const upsert = await fetch(`${base}/contacts/upsert`, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({
+  const upsert = await crmUpsert(`${base}/contacts/upsert`, headers, {
       locationId: process.env.GHL_TSS_LOCATION_ID,
       firstName,
       lastName: lastName || '',
@@ -33,12 +38,13 @@ export default async function handler(req, res) {
       tags: referrer
         ? ['website-audit-request', 'referral', `referred-by-${referrer}`]
         : ['website-audit-request'],
-    }),
-  });
-  const data = await upsert.json();
+    });
+  const data = upsert.data;
+  const stored = await storing;
   if (!upsert.ok) {
-    console.error('GHL upsert failed', upsert.status, data);
-    return res.status(502).json({ error: 'CRM error' });
+    console.error('GHL upsert failed', upsert.status, data, stored ? 'kept in our own store' : 'LEAD LOST: neither store took it', email);
+    if (!stored) return res.status(502).json({ error: 'CRM error' });
+    return res.status(200).json({ ok: true, stored, crm: false });
   }
 
   const contactId = data.contact && data.contact.id;
@@ -81,5 +87,5 @@ export default async function handler(req, res) {
     }
   }
 
-  return res.status(200).json({ ok: true, contactId });
+  return res.status(200).json({ ok: true, stored, contactId });
 }

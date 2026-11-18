@@ -1,3 +1,4 @@
+import { storeLead, isTest, crmUpsert } from './_own.js';
 // Vercel serverless: self-serve checkout on-ramp. Captures the signup as a GHL contact
 // BEFORE handing off to Square, so no payer is anonymous and abandoned carts are nurture-able.
 // Clone of audit-lead.js, relaxed (no website), tagged self-serve-signup + tier + first-touch utm.
@@ -27,10 +28,14 @@ export default async function handler(req, res) {
   if (src) tags.push(`src-${src}`);
   if (referrer) tags.push('referral', `referred-by-${referrer}`);
 
-  const upsert = await fetch(`${base}/contacts/upsert`, {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({
+  // our own store first (runs alongside GHL), GHL is the second copy
+  const storing = storeLead('start', { firstName, lastName, email, business, phone, tier: t, utm: src, ref: referrer });
+  if (isTest(email)) {
+    const stored = await storing;
+    return res.status(stored ? 200 : 502).json({ ok: stored, stored, test: true });
+  }
+
+  const upsert = await crmUpsert(`${base}/contacts/upsert`, headers, {
       locationId: process.env.GHL_TSS_LOCATION_ID,
       firstName,
       lastName: lastName || '',
@@ -38,12 +43,13 @@ export default async function handler(req, res) {
       companyName: business || '',
       source: referrer ? `Referral: ${referrer}` : src ? `Self-Serve (${src})` : 'Self-Serve Signup',
       tags,
-    }),
-  });
-  const data = await upsert.json();
+    });
+  const data = upsert.data;
+  const stored = await storing;
   if (!upsert.ok) {
-    console.error('GHL upsert failed', upsert.status, data);
-    return res.status(502).json({ error: 'CRM error' });
+    console.error('GHL upsert failed', upsert.status, data, stored ? 'kept in our own store' : 'LEAD LOST: neither store took it', email);
+    // never block the checkout: Square still collects the buyer's email at payment
+    return res.status(200).json({ ok: true, stored, crm: false });
   }
 
   const contactId = data.contact && data.contact.id;
@@ -68,5 +74,5 @@ export default async function handler(req, res) {
     }).catch(() => {});
   }
 
-  return res.status(200).json({ ok: true, contactId });
+  return res.status(200).json({ ok: true, stored, contactId });
 }
