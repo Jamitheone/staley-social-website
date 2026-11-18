@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARIS Arena</title>
+<link rel="stylesheet" href="hud.css">
+</head>
+<body>
+<header id="top">
+  <div class="brand">ARIS ARENA</div>
+  <div id="clock" class="clock" aria-label="Game clock">0:00</div>
+  <div id="hud" class="hud" aria-label="Resources"></div>
+</header>
+<div id="app">
+  <section id="stage">
+    <canvas id="map" tabindex="0" aria-label="Battlefield"></canvas>
+    <canvas id="mini" width="128" height="128" aria-label="Minimap"></canvas>
+    <div id="banner" hidden></div>
+  </section>
+  <aside id="side">
+    <section>
+      <h2>Play</h2>
+      <div class="row">
+        <button id="pp" class="wide">Play</button>
+        <button id="back10" title="Rewind 10 game seconds">-10s</button>
+      </div>
+      <div class="row speeds" id="speeds"></div>
+      <label class="scrub">Time <input id="scrub" type="range" min="0" max="1" step="1" value="0" aria-label="Game time"><span id="scrubv">0:00</span></label>
+      <div class="row">
+        <label>Seed <input id="seed" type="number" value="7" min="1" max="999999"></label>
+        <button id="restart">Restart</button>
+      </div>
+    </section>
+    <section>
+      <h2>Mode</h2>
+      <div class="row">
+        <button id="mStudy" class="on">Study</button>
+        <button id="mPlay">Play</button>
+      </div>
+      <div class="row"><label>Side 1 <select id="s0"></select></label></div>
+      <div class="row"><label>Side 2 <select id="s1"></select></label></div>
+      <div class="row">
+        <label class="chk"><input type="checkbox" id="assist" checked> Macro assist (workers, supply, surge run for you)</label>
+      </div>
+      <p class="hint" id="modehint"></p>
+    </section>
+    <section>
+      <h2>View</h2>
+      <div class="row">
+        <label class="chk"><input type="checkbox" id="fog"> Fog of war</label>
+        <label class="chk"><input type="checkbox" id="names"> Flavor names</label>
+      </div>
+      <div class="row"><button id="graphsBtn">Graphs</button></div>
+    </section>
+    <section>
+      <h2>Study tools</h2>
+      <div class="row">
+        <button id="saveReplay">Save replay</button>
+        <label class="filebtn">Load replay<input type="file" id="replayfile" accept=".json,application/json" hidden></label>
+        <button id="csvBtn">Graphs CSV</button>
+      </div>
+      <p class="hint">A replay is the seed, both strategies and your orders: a small JSON file that re-simulates to the same state hash.</p>
+      <div class="row"><label>What if, side 1 step <select id="wiStep"></select></label></div>
+      <div class="row"><label>now fires at supply <input id="wiSupply" type="number" min="1" max="200" value="18"></label><button id="wiRun">Run</button></div>
+      <pre id="whatif" class="mono" aria-live="polite"></pre>
+    </section>
+    <section id="selsec">
+      <h2>Selection</h2>
+      <div id="sel" class="mono">nothing selected</div>
+    </section>
+    <section id="playsec" hidden>
+      <h2>Build (select a worker, then click or press the key)</h2>
+      <div id="builds" class="grid"></div>
+      <h2>Train</h2>
+      <div id="trains" class="grid"></div>
+    </section>
+    <section>
+      <h2>Build order, as it happened</h2>
+      <div class="two" id="timeline"></div>
+    </section>
+    <section>
+      <h2>Keys</h2>
+      <p class="hint">Left click or drag to select. Right click: move, attack, or set a rally point on a selected building. A then click: attack-move. K: bombard toggle. X: surge the selected building. Esc: cancel. Arrow keys or middle drag: pan. Wheel: zoom. Minimap click: jump.</p>
+    </section>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+  </aside>
+</div>
+<div id="graphwrap" hidden>
+  <div class="gbox"><button id="gclose" class="x" aria-label="Close graphs">Close</button><canvas id="graphs" width="900" height="520"></canvas></div>
+</div>
+<script src="src/core.js"></script>
+<script src="src/tech.js"></script>
+<script src="src/econ.js"></script>
+<script src="src/orders.js"></script>
+<script src="src/buildorder.js"></script>
+<script src="src/combat.js"></script>
+<script src="src/bot.js"></script>
+<script src="src/study.js"></script>
+<script src="data.js"></script>
+<script src="viewer.js"></script>
+</body>
+</html>
