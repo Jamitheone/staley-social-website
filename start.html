@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Answer 3 quick questions and we'll show you exactly where to start with The Staley Social. Software, done-for-you, or reselling.">
-  <title>Find your plan | The Staley Social</title>
+  <meta data-es-content="Responde 3 preguntas rápidas y te mostramos exactamente por dónde empezar con The Staley Social. Software, hecho por nosotros o reventa." name="description" content="Answer 3 quick questions and we'll show you exactly where to start with The Staley Social. Software, done-for-you, or reselling.">
+  <title data-es="Encuentra tu plan | The Staley Social">Find your plan | The Staley Social</title>
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="assets/logos/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <link rel="stylesheet" href="css/flat.css?v=3">
 <style>
 
@@ -99,6 +99,12 @@
 @media (max-width: 820px) { .browse-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
   .browse-card { border-right: 0; border-bottom: 1px solid var(--border); padding: 26px 0; }
   .browse-card:not(:first-child) { padding-left: 0; } }
+.quiz-back { min-height: 44px; padding: 0 12px 0 0; }
+.result-restart { min-height: 44px; }
+.quiz-back:focus-visible, .result-restart:focus-visible, .browse-cta:focus-visible, .result-cta:focus-visible, .quiz-q:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.quiz-q:focus { outline: none; }
+.result-secondary a { display: inline-block; padding: 12px 2px; }
+@media (max-width: 640px) { .start-wrap { padding: 96px 0 56px; } .quiz-opt { gap: 14px; } }
 </style>
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
@@ -114,40 +120,56 @@
 </script>
 </head>
 <body class="page-flat">
-  <a href="#main-content" class="skip-link">Skip to content</a>
+  <a href="#main-content" class="skip-link" data-es="Saltar al contenido">Skip to content</a>
 
   <nav class="nav" id="main-nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/os.html">Software</a>
-        <a href="/services.html">Services</a>
-        <a href="/results.html">Results</a>
-        <a href="/work.html">Work</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/blog/">Blog</a>
-        <a href="/course.html">Course</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/" data-es="Inicio">Home</a>
+        <a href="/os.html" data-es="Software">Software</a>
+        <a href="/services.html" data-es="Servicios">Services</a>
+        <a href="/results.html" data-es="Resultados">Results</a>
+        <a href="/work.html" data-es="Trabajos">Work</a>
+        <a href="/pricing.html" data-es="Precios">Pricing</a>
+        <a href="/blog/" data-es="Blog">Blog</a>
+        <a href="/course.html" data-es="Curso">Course</a>
+        <a href="/contact.html" data-es="Contacto">Contact</a>
       </div>
-      <div class="nav-cta">
-        <a href="os.html" class="btn btn-primary btn-sm">Start free</a>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <div class="nav-cta" data-keep-cta>
+        <div class="lang" role="group" aria-label="Language" data-es-aria-label="Idioma">
+          <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+          <label class="sr-only" for="more-lang" data-es="Más idiomas">More languages</label>
+          <select id="more-lang" translate="no">
+            <option value="" data-es="Más">More</option>
+            <optgroup label="Machine translated" data-es-label="Traducción automática">
+              <option value="pt">Português</option><option value="fr">Français</option>
+              <option value="de">Deutsch</option><option value="it">Italiano</option>
+              <option value="tl">Tagalog</option><option value="vi">Tiếng Việt</option>
+              <option value="zh-CN">中文</option><option value="ja">日本語</option>
+              <option value="ko">한국어</option><option value="ar">العربية</option>
+              <option value="hi">हिन्दी</option><option value="ru">Русский</option>
+            </optgroup>
+          </select>
+        </div>
+        <a href="os.html" class="btn btn-primary btn-sm" data-es="Empieza gratis">Start free</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" data-es-aria-label="Abrir o cerrar menú"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
   <div class="nav-mobile" id="nav-mobile">
-    <a href="/">Home</a>
-    <a href="/os.html">Software</a>
-    <a href="/services.html">Services</a>
-    <a href="/results.html">Results</a>
-    <a href="/work.html">Work</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/blog/">Blog</a>
-    <a href="/course.html">Course</a>
-    <a href="/contact.html">Contact</a>
+    <a href="/" data-es="Inicio">Home</a>
+    <a href="/os.html" data-es="Software">Software</a>
+    <a href="/services.html" data-es="Servicios">Services</a>
+    <a href="/results.html" data-es="Resultados">Results</a>
+    <a href="/work.html" data-es="Trabajos">Work</a>
+    <a href="/pricing.html" data-es="Precios">Pricing</a>
+    <a href="/blog/" data-es="Blog">Blog</a>
+    <a href="/course.html" data-es="Curso">Course</a>
+    <a href="/contact.html" data-es="Contacto">Contact</a>
 
-    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
+    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;" data-es="Agenda una llamada gratis">Book a free call</a>
     <a href="tel:+18166528233" style="text-align:center;font-size:0.75rem;color:var(--text-2);">(816) 652-8233</a>
   </div>
 
@@ -159,57 +181,57 @@
         <!-- PROGRESS -->
         <div class="quiz-progress" id="quizProgress">
           <div class="quiz-bar"><div class="quiz-bar-fill" id="quizBarFill"></div></div>
-          <div class="quiz-step-num" id="quizStepNum">Question 1 of 3</div>
+          <div class="quiz-step-num" id="quizStepNum" data-es="Pregunta 1 de 3">Question 1 of 3</div>
         </div>
 
         <!-- STEP 1 -->
         <div class="quiz-step active" data-step="1">
-          <h1 class="quiz-q">Let's find where you should start.</h1>
-          <p class="quiz-sub">30 seconds. Answer 3 questions and we'll point you to the exact plan that fits. First up, which sounds like you?</p>
+          <h1 class="quiz-q" data-es="Encontremos por dónde debes empezar.">Let's find where you should start.</h1>
+          <p class="quiz-sub" data-es="30 segundos. Responde 3 preguntas y te llevamos al plan exacto para ti. Primero, ¿cuál suena como tú?">30 seconds. Answer 3 questions and we'll point you to the exact plan that fits. First up, which sounds like you?</p>
           <div class="quiz-options">
             <button class="quiz-opt" data-key="who" data-val="local">
               <span class="quiz-opt-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg></span>
-              <span class="quiz-opt-text"><b>I run a local business</b><span>Service business, shop, clinic, contractor</span></span>
+              <span class="quiz-opt-text"><b data-es="Tengo un negocio local">I run a local business</b><span data-es="Negocio de servicios, tienda, clínica, contratista">Service business, shop, clinic, contractor</span></span>
             </button>
             <button class="quiz-opt" data-key="who" data-val="creator">
               <span class="quiz-opt-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span>
-              <span class="quiz-opt-text"><b>I'm a creator or coach</b><span>Audience, offers, courses, personal brand</span></span>
+              <span class="quiz-opt-text"><b data-es="Soy creador o coach">I'm a creator or coach</b><span data-es="Audiencia, ofertas, cursos, marca personal">Audience, offers, courses, personal brand</span></span>
             </button>
             <button class="quiz-opt" data-key="who" data-val="agency">
               <span class="quiz-opt-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></span>
-              <span class="quiz-opt-text"><b>I'm a marketer or agency</b><span>I have clients, or I want to</span></span>
+              <span class="quiz-opt-text"><b data-es="Soy especialista en marketing o agencia">I'm a marketer or agency</b><span data-es="Tengo clientes, o quiero tenerlos">I have clients, or I want to</span></span>
             </button>
           </div>
         </div>
 
         <!-- STEP 2 -->
         <div class="quiz-step" data-step="2">
-          <h2 class="quiz-q">What's the biggest thing costing you right now?</h2>
-          <p class="quiz-sub">Pick the one that stings the most.</p>
+          <h2 class="quiz-q" data-es="¿Qué es lo que más te está costando ahora mismo?">What's the biggest thing costing you right now?</h2>
+          <p class="quiz-sub" data-es="Elige el que más duele.">Pick the one that stings the most.</p>
           <div class="quiz-options" id="step2Options"><!-- filled by JS based on step 1 --></div>
-          <button class="quiz-back" onclick="quizBack()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+          <button type="button" class="quiz-back" onclick="quizBack()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> <span data-es="Atrás">Back</span></button>
         </div>
 
         <!-- STEP 3 -->
         <div class="quiz-step" data-step="3">
-          <h2 class="quiz-q">Do you want to run it, or have us run it?</h2>
-          <p class="quiz-sub">No wrong answer. It just changes what we show you.</p>
+          <h2 class="quiz-q" data-es="¿Quieres manejarlo tú o que lo manejemos nosotros?">Do you want to run it, or have us run it?</h2>
+          <p class="quiz-sub" data-es="No hay respuesta incorrecta. Solo cambia lo que te mostramos.">No wrong answer. It just changes what we show you.</p>
           <div class="quiz-options">
             <button class="quiz-opt" data-key="how" data-val="diy">
               <span class="quiz-opt-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span>
-              <span class="quiz-opt-text"><b>I'll run it myself</b><span>Give me the software, I've got this</span></span>
+              <span class="quiz-opt-text"><b data-es="Lo manejaré yo mismo">I'll run it myself</b><span data-es="Dame el software, yo me encargo">Give me the software, I've got this</span></span>
             </button>
             <button class="quiz-opt" data-key="how" data-val="dfy">
               <span class="quiz-opt-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span>
-              <span class="quiz-opt-text"><b>Run it for me</b><span>I want a team handling it, one invoice</span></span>
+              <span class="quiz-opt-text"><b data-es="Que lo manejen por mí">Run it for me</b><span data-es="Quiero un equipo a cargo, una sola factura">I want a team handling it, one invoice</span></span>
             </button>
           </div>
-          <button class="quiz-back" onclick="quizBack()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+          <button type="button" class="quiz-back" onclick="quizBack()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> <span data-es="Atrás">Back</span></button>
         </div>
 
         <!-- RESULT -->
         <div class="quiz-result" id="quizResult">
-          <div class="result-eyebrow" id="resultEyebrow">Your match</div>
+          <div class="result-eyebrow" id="resultEyebrow" data-es="Tu mejor opción">Your match</div>
           <div class="result-card">
             <div class="result-name" id="resultName"></div>
             <div class="result-price" id="resultPrice"></div>
@@ -217,7 +239,7 @@
             <a href="#" class="result-cta" id="resultCta"></a>
             <p class="result-secondary" id="resultSecondary"></p>
           </div>
-          <button class="quiz-restart" onclick="quizRestart()">Start over</button>
+          <button type="button" class="result-restart" onclick="quizRestart()" data-es="Empezar de nuevo">Start over</button>
         </div>
 
       </div>
@@ -228,45 +250,45 @@
   <section class="section browse">
     <div class="container">
       <div class="browse-head reveal">
-        <h2>Or just browse everything</h2>
-        <p>Know what you want? Pick it and go.</p>
+        <h2 data-es="O simplemente explora todo">Or just browse everything</h2>
+        <p data-es="¿Sabes lo que quieres? Elígelo y listo.">Know what you want? Pick it and go.</p>
       </div>
       <div class="browse-grid">
         <div class="browse-card feat reveal">
-          <div class="browse-tag">Most popular</div>
-          <div class="browse-price">$197<small>/mo</small></div>
-          <div class="browse-desc"><b>Staley OS Software.</b> CRM, 60-second speed-to-lead, call tracking, automations, dashboard. Run it yourself.</div>
-          <a href="/checkout.html?tier=197" class="browse-cta primary" onclick="gtag('event','checkout_click',{location:'start_browse'});">Get started →</a>
+          <div class="browse-tag" data-es="El más popular">Most popular</div>
+          <div class="browse-price" data-es="$197<small>/mes</small>">$197<small>/mo</small></div>
+          <div class="browse-desc" data-es="<b>Software Staley OS.</b> CRM, respuesta en 60 segundos, seguimiento de llamadas, automatizaciones, panel. Tú lo manejas."><b>Staley OS Software.</b> CRM, 60-second speed-to-lead, call tracking, automations, dashboard. Run it yourself.</div>
+          <a href="/checkout.html?tier=197" class="browse-cta primary" onclick="gtag('event','checkout_click',{location:'start_browse'});" data-es="Empieza ya →">Get started →</a>
         </div>
         <div class="browse-card reveal">
-          <div class="browse-tag">Done-for-you</div>
-          <div class="browse-price">$750<small>/mo</small></div>
-          <div class="browse-desc"><b>Ads OS.</b> We run your Google or Meta ads. Setup, tracking, reporting, strategy calls. One channel, done right.</div>
-          <a href="contact.html#book" class="browse-cta outline">Book a call →</a>
+          <div class="browse-tag" data-es="Hecho por nosotros">Done-for-you</div>
+          <div class="browse-price" data-es="$750<small>/mes</small>">$750<small>/mo</small></div>
+          <div class="browse-desc" data-es="<b>Ads OS.</b> Manejamos tus anuncios de Google o Meta. Configuración, seguimiento, reportes, llamadas de estrategia. Un canal, bien hecho."><b>Ads OS.</b> We run your Google or Meta ads. Setup, tracking, reporting, strategy calls. One channel, done right.</div>
+          <a href="contact.html#book" class="browse-cta outline" data-es="Agenda una llamada →">Book a call →</a>
         </div>
         <div class="browse-card reveal">
-          <div class="browse-tag">Everything</div>
-          <div class="browse-price">$1,200<small>/mo</small></div>
-          <div class="browse-desc"><b>Full OS.</b> Software + ads + social + website + reputation. Your whole marketing department, one invoice.</div>
-          <a href="contact.html#book" class="browse-cta outline">Book a call →</a>
+          <div class="browse-tag" data-es="Todo">Everything</div>
+          <div class="browse-price" data-es="$1,200<small>/mes</small>">$1,200<small>/mo</small></div>
+          <div class="browse-desc" data-es="<b>Full OS.</b> Software + anuncios + redes sociales + sitio web + reputación. Todo tu departamento de marketing, una sola factura."><b>Full OS.</b> Software + ads + social + website + reputation. Your whole marketing department, one invoice.</div>
+          <a href="contact.html#book" class="browse-cta outline" data-es="Agenda una llamada →">Book a call →</a>
         </div>
         <div class="browse-card reveal">
-          <div class="browse-tag">Door opener</div>
-          <div class="browse-price">$297<small> once</small></div>
-          <div class="browse-desc"><b>Quick Audit.</b> We find exactly where you're losing leads on a live screen share. Applies toward month 1.</div>
-          <a href="audit.html" class="browse-cta outline">Book the audit →</a>
+          <div class="browse-tag" data-es="Para empezar">Door opener</div>
+          <div class="browse-price" data-es="$297<small> pago único</small>">$297<small> once</small></div>
+          <div class="browse-desc" data-es="<b>Quick Audit.</b> Encontramos exactamente dónde pierdes prospectos, en vivo compartiendo pantalla. Se aplica al mes 1."><b>Quick Audit.</b> We find exactly where you're losing leads on a live screen share. Applies toward month 1.</div>
+          <a href="audit.html" class="browse-cta outline" data-es="Agenda la auditoría →">Book the audit →</a>
         </div>
         <div class="browse-card reveal">
-          <div class="browse-tag">For marketers</div>
-          <div class="browse-price">Resell<small> it</small></div>
-          <div class="browse-desc"><b>Reseller program.</b> Rebrand the platform as your own software, set your price, keep the margin. Recurring revenue, no code.</div>
-          <a href="contact.html#book" class="browse-cta outline">Book a call →</a>
+          <div class="browse-tag" data-es="Para especialistas en marketing">For marketers</div>
+          <div class="browse-price" data-es="Revéndelo">Resell<small> it</small></div>
+          <div class="browse-desc" data-es="<b>Programa de revendedores.</b> Ponle tu marca a la plataforma como si fuera tu software, fija tu precio y quédate con el margen. Ingresos recurrentes, sin código."><b>Reseller program.</b> Rebrand the platform as your own software, set your price, keep the margin. Recurring revenue, no code.</div>
+          <a href="contact.html#book" class="browse-cta outline" data-es="Agenda una llamada →">Book a call →</a>
         </div>
         <div class="browse-card reveal">
-          <div class="browse-tag">Not sure?</div>
-          <div class="browse-price">Free</div>
-          <div class="browse-desc"><b>Talk to a human.</b> 15 minutes, no pitch. Tell us your situation and we'll tell you the honest best move.</div>
-          <a href="contact.html#book" class="browse-cta outline">Book a call →</a>
+          <div class="browse-tag" data-es="¿No estás seguro?">Not sure?</div>
+          <div class="browse-price" data-es="Gratis">Free</div>
+          <div class="browse-desc" data-es="<b>Habla con una persona.</b> 15 minutos, sin discurso de ventas. Cuéntanos tu situación y te decimos con honestidad cuál es la mejor jugada."><b>Talk to a human.</b> 15 minutes, no pitch. Tell us your situation and we'll tell you the honest best move.</div>
+          <a href="contact.html#book" class="browse-cta outline" data-es="Agenda una llamada →">Book a call →</a>
         </div>
       </div>
     </div>
@@ -277,30 +299,31 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>The Staley Social</h3>
-          <p>Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
+          <h3 data-es="The Staley Social">The Staley Social</h3>
+          <p data-es="La agencia de marketing digital integral de Kansas City. Resultados garantizados por escrito.">Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
           <div class="footer-social">
             <a href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
             <a href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
             <a href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
           </div>
         </div>
-        <div class="footer-col"><h4>Product</h4><ul>
-            <li><a href="course.html">OPERATOR course</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="os.html">Staley OS</a></li><li><a href="start.html">Find your plan</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="results.html">Results</a></li><li><a href="work.html">Work</a></li></ul></div>
-        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="/jameson-staley">Jameson Staley</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><span style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
+        <div class="footer-col"><h4 data-es="Producto">Product</h4><ul>
+            <li><a href="course.html" data-es="Curso OPERATOR">OPERATOR course</a></li><li><a href="visualizer-drops.html" data-es="Visualizer Drops">Visualizer Drops</a></li><li><a href="os.html" data-es="Staley OS">Staley OS</a></li><li><a href="start.html" data-es="Encuentra tu plan">Find your plan</a></li><li><a href="pricing.html" data-es="Precios">Pricing</a></li><li><a href="results.html" data-es="Resultados">Results</a></li><li><a href="work.html" data-es="Trabajos">Work</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Empresa">Company</h4><ul><li><a href="about.html" data-es="Quiénes somos">About</a></li><li><a href="/jameson-staley">Jameson Staley</a></li><li><a href="services.html" data-es="Servicios">Services</a></li><li><a href="contact.html" data-es="Contacto">Contact</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Contacto">Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com" data-es="jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><span style="color:var(--text-3);" data-es="Kansas City, MO">Kansas City, MO</span></li></ul></div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Staley Social LLC. All rights reserved.</p>
-        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
+        <p data-es="&copy; 2026 The Staley Social LLC. Todos los derechos reservados.">&copy; 2026 The Staley Social LLC. All rights reserved.</p>
+        <p data-es="Hecho en Kansas City. <a href=&quot;privacy.html&quot;>Política de privacidad</a> &amp;middot; <a href=&quot;terms.html&quot;>Términos</a>">Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </footer>
 
-  <script defer src="js/main.js?v=7"></script>
+  <script defer src="js/main.js?v=9"></script>
   <script>
   (function(){
     var TRIAL = "/checkout.html?tier=197";
+    function isEs(){ return document.documentElement.lang === 'es'; }
     var BOOK = "contact.html#book";
     var answers = {};
     var current = 1;
@@ -308,31 +331,33 @@
     // Step-2 option sets keyed by "who"
     var step2 = {
       local: [
-        {val:'slow', b:"Leads go cold before I call back", s:"I lose jobs to whoever answers first"},
-        {val:'traffic', b:"Not enough leads coming in", s:"My phone doesn't ring enough"},
-        {val:'manual', b:"I do everything manually", s:"Five tabs, a spreadsheet, and no time"}
+        {val:'slow', b:"Leads go cold before I call back", s:"I lose jobs to whoever answers first", be:"Los prospectos se enfrían antes de que yo devuelva la llamada", se:"Pierdo trabajos con quien contesta primero"},
+        {val:'traffic', b:"Not enough leads coming in", s:"My phone doesn't ring enough", be:"No me llegan suficientes prospectos", se:"Mi teléfono no suena lo suficiente"},
+        {val:'manual', b:"I do everything manually", s:"Five tabs, a spreadsheet, and no time", be:"Hago todo a mano", se:"Cinco pestañas, una hoja de cálculo y sin tiempo"}
       ],
       creator: [
-        {val:'traffic', b:"Attention doesn't turn into money", s:"Views, but no sales or bookings"},
-        {val:'manual', b:"I have no system behind the content", s:"Leads slip through, no follow-up"},
-        {val:'resell', b:"I want to sell software to my audience", s:"Recurring income, not one-off launches"}
+        {val:'traffic', b:"Attention doesn't turn into money", s:"Views, but no sales or bookings", be:"La atención no se convierte en dinero", se:"Vistas, pero sin ventas ni citas"},
+        {val:'manual', b:"I have no system behind the content", s:"Leads slip through, no follow-up", be:"No tengo un sistema detrás del contenido", se:"Los prospectos se escapan, sin seguimiento"},
+        {val:'resell', b:"I want to sell software to my audience", s:"Recurring income, not one-off launches", be:"Quiero venderle software a mi audiencia", se:"Ingresos recurrentes, no lanzamientos de una sola vez"}
       ],
       agency: [
-        {val:'resell', b:"I want to resell software as my own", s:"Recurring revenue, my brand, my price"},
-        {val:'manual', b:"My clients' follow-up is a mess", s:"I need one system to run them all"},
-        {val:'traffic', b:"I need more of my own leads", s:"Grow my own book of business"}
+        {val:'resell', b:"I want to resell software as my own", s:"Recurring revenue, my brand, my price", be:"Quiero revender software como propio", se:"Ingresos recurrentes, mi marca, mi precio"},
+        {val:'manual', b:"My clients' follow-up is a mess", s:"I need one system to run them all", be:"El seguimiento de mis clientes es un desastre", se:"Necesito un solo sistema para manejarlos a todos"},
+        {val:'traffic', b:"I need more of my own leads", s:"Grow my own book of business", be:"Necesito más prospectos propios", se:"Hacer crecer mi propia cartera de clientes"}
       ]
     };
 
     function setProgress(step){
       document.getElementById('quizBarFill').style.width = (step/3*100)+'%';
-      document.getElementById('quizStepNum').textContent = 'Question '+step+' of 3';
+      document.getElementById('quizStepNum').textContent = isEs() ? 'Pregunta '+step+' de 3' : 'Question '+step+' of 3';
     }
+    function focusHead(el){ if (!el) return; el.setAttribute('tabindex','-1'); try { el.focus({preventScroll:true}); } catch(e){} }
     function show(step){
       document.querySelectorAll('.quiz-step').forEach(function(s){ s.classList.remove('active'); });
       var el = document.querySelector('.quiz-step[data-step="'+step+'"]');
       if(el) el.classList.add('active');
       current = step; setProgress(step);
+      if (step > 1 || answers.who) focusHead(el && el.querySelector('.quiz-q'));
     }
     function buildStep2(){
       var opts = step2[answers.who] || step2.local;
@@ -341,7 +366,7 @@
       opts.forEach(function(o){
         var btn = document.createElement('button');
         btn.className = 'quiz-opt'; btn.setAttribute('data-key','problem'); btn.setAttribute('data-val',o.val);
-        btn.innerHTML = '<span class="quiz-opt-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></span><span class="quiz-opt-text"><b>'+o.b+'</b><span>'+o.s+'</span></span>';
+        btn.innerHTML = '<span class="quiz-opt-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></span><span class="quiz-opt-text"><b>'+(isEs()?o.be:o.b)+'</b><span>'+(isEs()?o.se:o.s)+'</span></span>';
         btn.addEventListener('click', function(){ pick('problem', o.val); });
         wrap.appendChild(btn);
       });
@@ -354,38 +379,45 @@
       if (problem === 'resell' || (who === 'agency' && how !== 'diy')) {
         return { name:'Reseller Program', price:'You set the price. Keep the margin.', eyebrow:'Your match',
           why:'You want recurring revenue, not another retainer treadmill. Rebrand our platform as your own software, set your pricing, and keep 70 to 85 percent margin. We set the whole thing up. No code.',
-          cta:'Book your reseller call', href:BOOK, sec:'15 minutes, no pitch. We map out your offer and pricing.' };
+          cta:'Book your reseller call', href:BOOK, sec:'15 minutes, no pitch. We map out your offer and pricing.', es:{ name:'Programa de revendedores', price:'Tú fijas el precio. Te quedas con el margen.', eyebrow:'Tu mejor opción', why:'Quieres ingresos recurrentes, no otra cinta de correr de retainers. Ponle tu marca a nuestra plataforma como si fuera tu software, fija tus precios y quédate con 70 a 85 por ciento de margen. Nosotros armamos todo. Sin código.', cta:'Agenda tu llamada de revendedor', sec:'15 minutos, sin discurso de ventas. Armamos tu oferta y tus precios.' } };
       }
       // DIY software
       if (how === 'diy') {
         return { name:'Staley OS', price:'Starts at $197/mo', eyebrow:'Your match',
           why:'You want to run it yourself, and this is the fastest win. Your leads, calls, pipeline, and reviews in one dashboard, with a text going out to every new inquiry in 60 seconds. Starts at $197/mo, cancel anytime.',
-          cta:'Get started', href:TRIAL, sec:'Cancel anytime. Or <a href="'+BOOK+'">book a call first</a>.' };
+          cta:'Get started', href:TRIAL, sec:'Cancel anytime. Or <a href="'+BOOK+'">book a call first</a>.', es:{ name:'Staley OS', price:'Desde $197/mes', eyebrow:'Tu mejor opción', why:'Quieres manejarlo tú mismo, y este es el triunfo más rápido. Tus prospectos, llamadas, pipeline y reseñas en un solo panel, con un mensaje de texto a cada nueva consulta en 60 segundos. Desde $197/mes, cancela cuando quieras.', cta:'Empieza ya', sec:'Cancela cuando quieras. O <a href="'+BOOK+'">agenda una llamada primero</a>.' } };
       }
       // Done-for-you paths
       if (problem === 'traffic') {
         return { name:'Ads OS', price:'$750/mo, no setup fee', eyebrow:'Your match',
           why:'The problem is volume, so the fix is traffic. We run your Google or Meta ads end to end, track every lead to real revenue, and report on what is working. One channel, done right.',
-          cta:'Book your strategy call', href:BOOK, sec:'Not ready? <a href="os.html">Start with the software instead</a>.' };
+          cta:'Book your strategy call', href:BOOK, sec:'Not ready? <a href="os.html">Start with the software instead</a>.', es:{ name:'Ads OS', price:'$750/mes, sin cargo de configuración', eyebrow:'Tu mejor opción', why:'El problema es el volumen, así que la solución es tráfico. Manejamos tus anuncios de Google o Meta de principio a fin, rastreamos cada prospecto hasta el ingreso real y te reportamos qué está funcionando. Un canal, bien hecho.', cta:'Agenda tu llamada de estrategia', sec:'¿No estás listo? <a href="os.html">Empieza con el software</a>.' } };
       }
       // manual / run-it-all
       return { name:'Full OS', price:'$1,200/mo, one flat invoice', eyebrow:'Your match',
         why:'You want it all handled. Software plus ads plus social plus website plus reputation, under one invoice, for less than a junior hire. We run the machine and tell you what is working every month.',
-        cta:'Book your strategy call', href:BOOK, sec:'Want to test the software first? <a href="os.html">Try Staley OS free</a>.' };
+        cta:'Book your strategy call', href:BOOK, sec:'Want to test the software first? <a href="os.html">Try Staley OS free</a>.', es:{ name:'Full OS', price:'$1,200/mes, una sola factura', eyebrow:'Tu mejor opción', why:'Quieres que todo esté resuelto. Software más anuncios más redes sociales más sitio web más reputación, en una sola factura, por menos que un empleado junior. Nosotros manejamos la máquina y te decimos cada mes qué está funcionando.', cta:'Agenda tu llamada de estrategia', sec:'¿Quieres probar primero el software? <a href="os.html">Prueba Staley OS</a>.' } };
     }
-    function showResult(){
-      var r = recommend();
-      document.getElementById('quizProgress').style.display = 'none';
-      document.querySelectorAll('.quiz-step').forEach(function(s){ s.classList.remove('active'); });
+    var lastRec = null;
+    function renderResult(){
+      if (!lastRec) return;
+      var r = isEs() ? lastRec.es : lastRec;
       document.getElementById('resultEyebrow').textContent = r.eyebrow;
       document.getElementById('resultName').textContent = r.name;
       document.getElementById('resultPrice').textContent = r.price;
       document.getElementById('resultWhy').textContent = r.why;
       var cta = document.getElementById('resultCta');
-      cta.textContent = r.cta; cta.href = r.href;
-      cta.onclick = function(){ gtag('event','quiz_result_cta',{plan:r.name}); };
+      cta.textContent = r.cta; cta.href = lastRec.href;
       document.getElementById('resultSecondary').innerHTML = r.sec;
+    }
+    function showResult(){
+      var r = recommend(); lastRec = r;
+      document.getElementById('quizProgress').style.display = 'none';
+      document.querySelectorAll('.quiz-step').forEach(function(s){ s.classList.remove('active'); });
+      renderResult();
+      document.getElementById('resultCta').onclick = function(){ gtag('event','quiz_result_cta',{plan:r.name}); };
       document.getElementById('quizResult').classList.add('active');
+      focusHead(document.getElementById('resultName'));
       gtag('event','quiz_complete',{plan:r.name, who:answers.who, problem:answers.problem, how:answers.how});
     }
 
@@ -397,7 +429,7 @@
     }
     window.quizBack = function(){ if (current > 1) show(current-1); };
     window.quizRestart = function(){
-      answers = {}; current = 1;
+      answers = {}; current = 1; lastRec = null;
       document.getElementById('quizResult').classList.remove('active');
       document.getElementById('quizProgress').style.display = 'flex';
       show(1);
@@ -410,6 +442,12 @@
       btn.addEventListener('click', function(){ pick(key, val); });
     });
     setProgress(1);
+    // main.js flips <html lang>; re-render the JS-built strings when it does
+    new MutationObserver(function(){
+      setProgress(current);
+      if (answers.who && document.getElementById('step2Options').children.length) buildStep2();
+      renderResult();
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   })();
   </script>
   <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_901c8ea583cc41d3bc52d54eaee00e34"></script>

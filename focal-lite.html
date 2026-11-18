@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Focal, the Mac app that makes you take the break</title>
-<meta name="description" content="Focal blurs your screen when you have worked past your block. It counts only the time you are at the keyboard. One time 29 dollars. Local only. Mac.">
+<title data-es="Focal, la app para Mac que te obliga a tomar el descanso">Focal, the Mac app that makes you take the break</title>
+<meta name="description" content="Focal blurs your screen when you have worked past your block. It counts only the time you are at the keyboard. One time 29 dollars. Local only. Mac." data-es-content="Focal difumina tu pantalla cuando te pasas de tu bloque de trabajo. Solo cuenta el tiempo que estás en el teclado. 29 dólares, un solo pago. Solo local. Mac.">
 <link rel="canonical" href="https://thestaleysocial.com/focal-lite">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Staley Social">
-<meta property="og:title" content="Focal, the Mac app that makes you take the break">
-<meta property="og:description" content="Focal blurs your screen when you have worked past your block. It counts only the time you are at the keyboard. One time 29 dollars. Local only. Mac.">
+<meta property="og:title" content="Focal, the Mac app that makes you take the break" data-es-content="Focal, la app para Mac que te obliga a tomar el descanso">
+<meta property="og:description" content="Focal blurs your screen when you have worked past your block. It counts only the time you are at the keyboard. One time 29 dollars. Local only. Mac." data-es-content="Focal difumina tu pantalla cuando te pasas de tu bloque de trabajo. Solo cuenta el tiempo que estás en el teclado. 29 dólares, un solo pago. Solo local. Mac.">
 <meta property="og:url" content="https://thestaleysocial.com/focal-lite">
 <meta property="og:image" content="https://thestaleysocial.com/assets/focal-og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Focal, the Mac app that makes you take the break">
-<meta name="twitter:description" content="Focal blurs your screen when you have worked past your block. It counts only the time you are at the keyboard. One time 29 dollars. Local only. Mac.">
+<meta name="twitter:title" content="Focal, the Mac app that makes you take the break" data-es-content="Focal, la app para Mac que te obliga a tomar el descanso">
+<meta name="twitter:description" content="Focal blurs your screen when you have worked past your block. It counts only the time you are at the keyboard. One time 29 dollars. Local only. Mac." data-es-content="Focal difumina tu pantalla cuando te pasas de tu bloque de trabajo. Solo cuenta el tiempo que estás en el teclado. 29 dólares, un solo pago. Solo local. Mac.">
 <meta name="twitter:image" content="https://thestaleysocial.com/assets/focal-og.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Focal Lite","operatingSystem":"macOS","applicationCategory":"ProductivityApplication","description":"Focal blurs your screen when you have worked past your block. It counts only the time you are at the keyboard. One time 29 dollars. Local only. Mac.","url":"https://thestaleysocial.com/focal-lite","image":"https://thestaleysocial.com/assets/focal-og.png","offers":{"@type":"Offer","price":"29.00","priceCurrency":"USD","availability":"https://schema.org/InStock"},"publisher":{"@type":"Organization","name":"The Staley Social","url":"https://thestaleysocial.com"}}</script>
 <style>
@@ -32,7 +32,7 @@
   a{color:inherit}
   .btn{display:inline-block;padding:14px 22px;border-radius:12px;font-weight:600;text-decoration:none;font-size:15px;border:1px solid transparent;transition:transform .12s ease,background .12s ease}
   .btn:active{transform:translateY(1px)}
-  .btn-buy{background:var(--accent);color:#fff}
+  .btn-buy{background:var(--accent);color:#07101f}
   .btn-buy:hover{background:#6f9bff}
   .btn-ghost{border-color:var(--line);color:var(--ink)}
   .btn-ghost:hover{border-color:#2c3446;background:#10131b}
@@ -76,93 +76,128 @@
   .trust .pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:9px 16px;color:var(--muted);font-size:13.5px;margin:6px}
   footer{padding:48px 0 64px;border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:13px}
   @media(max-width:720px){.grid{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}}
+
+  /* a11y + language switch */
+  html{scroll-padding-top:88px}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  header{padding:12px 0}
+  header .wrap{gap:12px}
+  .hdr-r{display:flex;align-items:center;gap:8px}
+  .btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;text-align:center}
+  a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .lang{display:inline-flex;align-items:center;gap:2px}
+  .lang button,.lang select{min-height:44px;min-width:44px;padding:0 10px;font:inherit;font-size:.78rem;font-weight:600;letter-spacing:.04em;color:var(--muted);background-color:transparent;border:1px solid transparent;border-radius:8px;cursor:pointer;touch-action:manipulation}
+  .lang button:hover,.lang select:hover{color:var(--ink)}
+  .lang button[aria-pressed="true"]{color:var(--ink);border-color:var(--line);background-color:rgba(255,255,255,.06)}
+  .lang select{max-width:76px;background-color:var(--panel);color:var(--muted);border-color:var(--line)}
+  .lang-corner{position:absolute;top:12px;right:16px;z-index:5}
+  @media(max-width:560px){header .wrap{padding:0 14px}.lang button,.lang select{padding:0 6px;min-width:44px}.lang select{max-width:60px}.hdr-r{gap:4px}.logo .lt{display:none}header .btn{padding:0 14px}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
-<!-- STAGED, not published. Placeholders to fill by Jameson: https://thestaleysocial.com/downloads/FocalLite-1.0.0.dmg, https://square.link/u/4CWhR6fY. Price (29 or 49) is his call. -->
 <header><div class="wrap">
-  <div class="logo"><span class="dot"></span> Focal</div>
-  <a class="btn btn-ghost" href="#buy">Get Focal</a>
+  <div class="logo"><span class="dot" aria-hidden="true"></span> <span class="lt">Focal</span></div>
+  <div class="hdr-r">
+  <div class="lang" role="group" aria-label="Language" data-es-aria-label="Idioma">
+    <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+    <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+    <label class="sr-only" for="more-lang" data-es="Más idiomas">More languages</label>
+    <select id="more-lang" translate="no">
+      <option value="" data-es="Más">More</option>
+      <optgroup label="Machine translated" data-es-label="Traducción automática">
+        <option value="pt">Português</option><option value="fr">Français</option>
+        <option value="de">Deutsch</option><option value="it">Italiano</option>
+        <option value="tl">Tagalog</option><option value="vi">Tiếng Việt</option>
+        <option value="zh-CN">中文</option><option value="ja">日本語</option>
+        <option value="ko">한국어</option><option value="ar">العربية</option>
+        <option value="hi">हिन्दी</option><option value="ru">Русский</option>
+      </optgroup>
+    </select>
+  </div>
+  <a class="btn btn-ghost" href="#buy" data-es="Obtén Focal">Get Focal</a>
+  </div>
 </div></header>
 
 <div class="hero wrap">
-  <h1>You will not take the break.<br>Focal makes you.</h1>
-  <p class="sub">A timer is easy to ignore. Focal blurs your whole screen once you have worked past your block, and it only counts time you are at the keyboard. Take your break and it clears. For Mac.</p>
+  <h1 data-es="No te tomarás el descanso.<br>Focal te obliga.">You will not take the break.<br>Focal makes you.</h1>
+  <p class="sub" data-es="Un temporizador es fácil de ignorar. Focal difumina toda tu pantalla cuando te pasas de tu bloque de trabajo, y solo cuenta el tiempo que estás en el teclado. Toma tu descanso y se despeja. Para Mac.">A timer is easy to ignore. Focal blurs your whole screen once you have worked past your block, and it only counts time you are at the keyboard. Take your break and it clears. For Mac.</p>
   <div class="cta-row">
-    <a class="btn btn-buy" href="#buy">Get Focal, 29 dollars once</a>
-    <a class="btn btn-ghost" href="#free">Try the free timer</a>
+    <a class="btn btn-buy" href="#buy" data-es="Obtén Focal, 29 dólares, pago único">Get Focal, 29 dollars once</a>
+    <a class="btn btn-ghost" href="#free" data-es="Prueba el temporizador gratis">Try the free timer</a>
   </div>
-  <div class="price-note">One time payment. No subscription. Works offline.</div>
+  <div class="price-note" data-es="Pago único. Sin suscripción. Funciona sin conexión.">One time payment. No subscription. Works offline.</div>
 
-  <div class="frame">
+  <div class="frame" aria-hidden="true">
     <div class="bar"><i></i><i></i><i></i></div>
     <div class="blurdemo">
       <div class="lines"><span></span><span></span><span></span><span></span><span></span><span></span></div>
       <div class="over">
-        <b>You worked 11 min past your 50 min block.</b>
-        <span>Step away for 5 min.</span>
+        <b data-es="Trabajaste 11 min más de tu bloque de 50 min.">You worked 11 min past your 50 min block.</b>
+        <span data-es="Aléjate 5 min.">Step away for 5 min.</span>
       </div>
     </div>
   </div>
 </div>
 
 <section id="how"><div class="wrap">
-  <h2>It works because you cannot ignore it</h2>
-  <p class="lede">Most focus apps nag you. Focal changes what is on the screen, so the break is the path of least resistance.</p>
+  <h2 data-es="Funciona porque no puedes ignorarlo">It works because you cannot ignore it</h2>
+  <p class="lede" data-es="La mayoría de las apps de enfoque solo te insisten. Focal cambia lo que hay en pantalla, así que descansar es el camino más fácil.">Most focus apps nag you. Focal changes what is on the screen, so the break is the path of least resistance.</p>
   <div class="grid">
-    <div class="card"><h3>Blur, not a popup</h3><p>After your work block the screen eases into a blur in five steps. Time only counts while you are using the keyboard or mouse, and a short pause of up to two minutes still counts as working.</p></div>
-    <div class="card"><h3>It learns your day</h3><p>With the paid unlock, block and break lengths follow how long you have been up and how much focus you have done today, so hour one and hour six are not treated the same. The shape is a popular work-rhythm model, not a clinically validated one.</p></div>
-    <div class="card"><h3>It knows when to back off</h3><p>While your microphone is on, or Zoom, Teams or FaceTime is in front, Focal pauses itself. One menu click pauses it for an hour when you truly cannot stop.</p></div>
-    <div class="card"><h3>Override, with a reason</h3><p>Need to push through? Type why, at least 15 characters. A 20 second cooldown and two overrides a day keep it honest. Each one buys 15 minutes and is logged on your Mac only.</p></div>
-    <div class="card"><h3>Every display</h3><p>One monitor or three, the blur covers all of them at once, so there is no clean screen to escape to.</p></div>
-    <div class="card"><h3>Quiet by design</h3><p>A menu bar icon and a settings window. Set your lengths once and forget it is there until you need the break.</p></div>
+    <div class="card"><h3 data-es="Difuminado, no una ventana emergente">Blur, not a popup</h3><p data-es="Después de tu bloque de trabajo, la pantalla se difumina poco a poco en cinco pasos. El tiempo solo cuenta mientras usas el teclado o el mouse, y una pausa corta de hasta dos minutos sigue contando como trabajo.">After your work block the screen eases into a blur in five steps. Time only counts while you are using the keyboard or mouse, and a short pause of up to two minutes still counts as working.</p></div>
+    <div class="card"><h3 data-es="Aprende de tu día">It learns your day</h3><p data-es="Con el desbloqueo de pago, la duración de los bloques y los descansos sigue cuánto tiempo llevas despierto y cuánto enfoque has acumulado hoy, así que la hora uno y la hora seis no se tratan igual. El modelo es un esquema popular de ritmo de trabajo, no uno validado clínicamente.">With the paid unlock, block and break lengths follow how long you have been up and how much focus you have done today, so hour one and hour six are not treated the same. The shape is a popular work-rhythm model, not a clinically validated one.</p></div>
+    <div class="card"><h3 data-es="Sabe cuándo retirarse">It knows when to back off</h3><p data-es="Mientras tu micrófono esté encendido, o Zoom, Teams o FaceTime estén al frente, Focal se pausa solo. Un clic en el menú lo pausa por una hora cuando de verdad no puedes parar.">While your microphone is on, or Zoom, Teams or FaceTime is in front, Focal pauses itself. One menu click pauses it for an hour when you truly cannot stop.</p></div>
+    <div class="card"><h3 data-es="Omitir, con un motivo">Override, with a reason</h3><p data-es="¿Necesitas seguir? Escribe por qué, mínimo 15 caracteres. Una espera de 20 segundos y dos omisiones al día lo mantienen honesto. Cada una te da 15 minutos y se registra solo en tu Mac.">Need to push through? Type why, at least 15 characters. A 20 second cooldown and two overrides a day keep it honest. Each one buys 15 minutes and is logged on your Mac only.</p></div>
+    <div class="card"><h3 data-es="Todas las pantallas">Every display</h3><p data-es="Un monitor o tres, el difuminado los cubre todos a la vez, así que no hay una pantalla limpia a la que escapar.">One monitor or three, the blur covers all of them at once, so there is no clean screen to escape to.</p></div>
+    <div class="card"><h3 data-es="Discreta por diseño">Quiet by design</h3><p data-es="Un ícono en la barra de menús y una ventana de ajustes. Configura tus tiempos una vez y olvídate de que está ahí hasta que necesites el descanso.">A menu bar icon and a settings window. Set your lengths once and forget it is there until you need the break.</p></div>
   </div>
 </div></section>
 
 <section id="buy"><div class="wrap">
-  <h2>Simple price</h2>
-  <p class="lede">Pay once, own it. The free version does the blur, the pause and the override. The 29 dollar unlock adds lengths that adapt to your day.</p>
+  <h2 data-es="Un precio simple">Simple price</h2>
+  <p class="lede" data-es="Paga una vez y es tuyo. La versión gratis incluye el difuminado, la pausa y la omisión. El desbloqueo de 29 dólares agrega tiempos que se adaptan a tu día.">Pay once, own it. The free version does the blur, the pause and the override. The 29 dollar unlock adds lengths that adapt to your day.</p>
   <div class="pricing">
     <div class="tier" id="free">
-      <div class="tag">Free</div>
-      <div class="amt">0 <small>forever</small></div>
+      <div class="tag" data-es="Gratis">Free</div>
+      <div class="amt">$0 <small data-es="para siempre">forever</small></div>
       <ul>
-        <li>Fixed work and break lengths you set</li>
-        <li>Gradual blur on every display</li>
-        <li>Auto pause on calls, pause for an hour</li>
-        <li>Typed override, capped per day</li>
-        <li>Local only, nothing leaves your Mac</li>
+        <li data-es="Tiempos de trabajo y descanso fijos que tú defines">Fixed work and break lengths you set</li>
+        <li data-es="Difuminado gradual en todas las pantallas">Gradual blur on every display</li>
+        <li data-es="Pausa automática en llamadas, pausa por una hora">Auto pause on calls, pause for an hour</li>
+        <li data-es="Omisión escrita, con límite diario">Typed override, capped per day</li>
+        <li data-es="Solo local, nada sale de tu Mac">Local only, nothing leaves your Mac</li>
       </ul>
-      <a class="btn btn-ghost" href="https://thestaleysocial.com/downloads/FocalLite-1.0.0.dmg" data-focal="download-free">Download free</a>
+      <a class="btn btn-ghost" href="/downloads/FocalLite-1.0.0.dmg" data-focal="download-free" data-es="Descargar gratis">Download free</a>
     </div>
     <div class="tier paid">
-      <div class="tag">Focal, full</div>
-      <div class="amt">29 <small>one time</small></div>
+      <div class="tag" data-es="Focal, completo">Focal, full</div>
+      <div class="amt">$29 <small data-es="pago único">one time</small></div>
       <ul>
-        <li>Everything in free</li>
-        <li>Adaptive block and break lengths</li>
-        <li>Longer breaks after a heavy focus day</li>
-        <li>One time payment, no subscription</li>
-        <li>License key checks offline, no account</li>
+        <li data-es="Todo lo de la versión gratis">Everything in free</li>
+        <li data-es="Bloques y descansos adaptativos">Adaptive block and break lengths</li>
+        <li data-es="Descansos más largos tras un día de mucho enfoque">Longer breaks after a heavy focus day</li>
+        <li data-es="Pago único, sin suscripción">One time payment, no subscription</li>
+        <li data-es="La clave de licencia se verifica sin conexión, sin cuenta">License key checks offline, no account</li>
       </ul>
-      <a class="btn btn-buy" href="https://square.link/u/4CWhR6fY" data-focal="buy-stripe">Get Focal, 29 dollars</a>
+      <a class="btn btn-buy" href="https://square.link/u/4CWhR6fY" data-focal="buy-stripe" data-es="Obtén Focal, 29 dólares">Get Focal, 29 dollars</a>
     </div>
   </div>
 </div></section>
 
 <section id="trust"><div class="wrap trust">
-  <h2>Your screen stays yours</h2>
-  <p class="lede">Focal checks how long since your last key or click, whether your microphone is on, and which app is in front, only to time your block and spare your calls. No camera, no screen reading, no keystroke content, no network. Nothing leaves your Mac.</p>
+  <h2 data-es="Tu pantalla sigue siendo tuya">Your screen stays yours</h2>
+  <p class="lede" data-es="Focal revisa cuánto tiempo pasó desde tu última tecla o clic, si tu micrófono está encendido y qué app está al frente, solo para medir tu bloque y respetar tus llamadas. Sin cámara, sin leer la pantalla, sin contenido de las teclas, sin red. Nada sale de tu Mac.">Focal checks how long since your last key or click, whether your microphone is on, and which app is in front, only to time your block and spare your calls. No camera, no screen reading, no keystroke content, no network. Nothing leaves your Mac.</p>
   <div>
-    <span class="pill">Local only</span>
-    <span class="pill">No account</span>
-    <span class="pill">No tracking</span>
+    <span class="pill" data-es="Solo local">Local only</span>
+    <span class="pill" data-es="Sin cuenta">No account</span>
+    <span class="pill" data-es="Sin rastreo">No tracking</span>
     <!-- add a signed and notarized pill only after Developer ID signing and notarization are done -->
   </div>
 </div></section>
 
 <footer><div class="wrap">
-  Focal is made by The Staley Social. Questions, email jameson@thestaleysocial.com.
+  <span data-es="Focal lo hace The Staley Social. Preguntas, escribe a <a href=&quot;mailto:jameson@thestaleysocial.com&quot;>jameson@thestaleysocial.com</a>.">Focal is made by The Staley Social. Questions, email <a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a>.</span>
 </div></footer>
+<script src="js/main.js?v=9" defer></script>
 </body>
 </html>

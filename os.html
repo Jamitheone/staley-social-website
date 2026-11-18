@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Staley OS: run your business on one platform. Lead CRM, 60-second speed-to-lead, call tracking, automations, live dashboard. From $197/mo, cancel anytime.">
-  <title>Staley OS | One platform to run your business</title>
+  <meta data-es-content="Staley OS: maneja tu negocio en una sola plataforma. CRM de prospectos, respuesta en 60 segundos, seguimiento de llamadas, automatizaciones y panel en vivo. Desde $197/mes, cancela cuando quieras." name="description" content="Staley OS: run your business on one platform. Lead CRM, 60-second speed-to-lead, call tracking, automations, live dashboard. From $197/mo, cancel anytime.">
+  <title data-es="Staley OS | Una plataforma para manejar tu negocio">Staley OS | One platform to run your business</title>
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="assets/logos/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <link rel="stylesheet" href="css/flat.css?v=3">
   <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
 <script type="application/ld+json">
@@ -162,6 +162,11 @@
 @media (max-width: 640px) {
   .os-hero { padding: 100px 0 56px; }
 }
+.os-inline-link { color: #5B8EF0; text-decoration: underline; text-underline-offset: 3px; display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; margin-left: 4px; }
+.os-inline-link--muted { color: var(--text-2); margin-left: 0; }
+.os-inline-link:focus-visible, .faq-q:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.faq-q { min-height: 44px; }
+@media (max-width: 640px) { .os-price-num, .os-tier-grid .os-price-num { font-size: 3rem; } .os-hero-title { max-width: none; } }
 </style>
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
@@ -176,42 +181,58 @@
 </script>
 </head>
 <body class="page-flat">
-  <a href="#main-content" class="skip-link">Skip to content</a>
+  <a href="#main-content" class="skip-link" data-es="Saltar al contenido">Skip to content</a>
 
   <!-- NAV -->
   <nav class="nav" id="main-nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/os.html" class="active">Software</a>
-        <a href="/services.html">Services</a>
-        <a href="/results.html">Results</a>
-        <a href="/work.html">Work</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/blog/">Blog</a>
-        <a href="/course.html">Course</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/" data-es="Inicio">Home</a>
+        <a href="/os.html" class="active" data-es="Software">Software</a>
+        <a href="/services.html" data-es="Servicios">Services</a>
+        <a href="/results.html" data-es="Resultados">Results</a>
+        <a href="/work.html" data-es="Trabajos">Work</a>
+        <a href="/pricing.html" data-es="Precios">Pricing</a>
+        <a href="/blog/" data-es="Blog">Blog</a>
+        <a href="/course.html" data-es="Curso">Course</a>
+        <a href="/contact.html" data-es="Contacto">Contact</a>
       </div>
-      <div class="nav-cta">
+      <div class="nav-cta" data-keep-cta>
+        <div class="lang" role="group" aria-label="Language" data-es-aria-label="Idioma">
+          <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+          <label class="sr-only" for="more-lang" data-es="Más idiomas">More languages</label>
+          <select id="more-lang" translate="no">
+            <option value="" data-es="Más">More</option>
+            <optgroup label="Machine translated" data-es-label="Traducción automática">
+              <option value="pt">Português</option><option value="fr">Français</option>
+              <option value="de">Deutsch</option><option value="it">Italiano</option>
+              <option value="tl">Tagalog</option><option value="vi">Tiếng Việt</option>
+              <option value="zh-CN">中文</option><option value="ja">日本語</option>
+              <option value="ko">한국어</option><option value="ar">العربية</option>
+              <option value="hi">हिन्दी</option><option value="ru">Русский</option>
+            </optgroup>
+          </select>
+        </div>
         <a href="tel:+18166528233" class="nav-phone" style="font-size:0.82rem;font-weight:500;color:var(--text-3);white-space:nowrap;">(816) 652-8233</a>
         <a href="/checkout.html?tier=197" class="btn btn-primary btn-sm" onclick="gtag('event','checkout_click',{location:'os_nav'});">Get started</a>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" data-es-aria-label="Abrir o cerrar menú"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
   <div class="nav-mobile" id="nav-mobile">
-    <a href="/">Home</a>
-    <a href="/os.html">Software</a>
-    <a href="/services.html">Services</a>
-    <a href="/results.html">Results</a>
-    <a href="/work.html">Work</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/blog/">Blog</a>
-    <a href="/course.html">Course</a>
-    <a href="/contact.html">Contact</a>
+    <a href="/" data-es="Inicio">Home</a>
+    <a href="/os.html" data-es="Software">Software</a>
+    <a href="/services.html" data-es="Servicios">Services</a>
+    <a href="/results.html" data-es="Resultados">Results</a>
+    <a href="/work.html" data-es="Trabajos">Work</a>
+    <a href="/pricing.html" data-es="Precios">Pricing</a>
+    <a href="/blog/" data-es="Blog">Blog</a>
+    <a href="/course.html" data-es="Curso">Course</a>
+    <a href="/contact.html" data-es="Contacto">Contact</a>
 
-    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
+    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;" data-es="Agenda una llamada gratis">Book a free call</a>
     <a href="tel:+18166528233" style="text-align:center;font-size:0.75rem;color:var(--text-2);">(816) 652-8233</a>
   </div>
 
@@ -220,21 +241,21 @@
   <!-- HERO -->
   <section class="os-hero">
     <div class="container">
-      <div class="os-hero-eyebrow">Now self-serve. Live in 5 minutes.</div>
-      <h1 class="os-hero-title">Run your whole business on <span class="accent">one platform</span>.</h1>
-      <p class="os-hero-sub">Your leads, calls, pipeline, follow-up, and reviews in one dashboard. New inquiries get a text back in 60 seconds, automatically. Stop stitching together five tools and a spreadsheet.</p>
+      <div class="os-hero-eyebrow" data-es="Ahora en autoservicio. En marcha en 5 minutos.">Now self-serve. Live in 5 minutes.</div>
+      <h1 class="os-hero-title" data-es="Maneja todo tu negocio en <span class=&quot;accent&quot;>una sola plataforma</span>.">Run your whole business on <span class="accent">one platform</span>.</h1>
+      <p class="os-hero-sub" data-es="Tus prospectos, llamadas, pipeline, seguimiento y reseñas en un solo panel. Cada consulta nueva recibe un mensaje de texto en 60 segundos, de forma automática. Deja de juntar cinco herramientas y una hoja de cálculo.">Your leads, calls, pipeline, follow-up, and reviews in one dashboard. New inquiries get a text back in 60 seconds, automatically. Stop stitching together five tools and a spreadsheet.</p>
       <div class="os-hero-cta reveal">
         <div class="os-hero-actions">
-          <a href="/checkout.html?tier=197" class="btn btn-primary btn-lg" onclick="gtag('event','checkout_click',{location:'os_hero'});">Get started, $197/mo <span style="font-size:1.1em;">→</span></a>
+          <a href="/checkout.html?tier=197" class="btn btn-primary btn-lg" onclick="gtag('event','checkout_click',{location:'os_hero'});" data-es="Empieza ya, $197/mes <span style=&quot;font-size:1.1em;&quot;>→</span>">Get started, $197/mo <span style="font-size:1.1em;">→</span></a>
         </div>
-        <div class="os-hero-note"><b>Starts at $197/mo.</b> No setup fee. Cancel anytime.</div>
-        <div class="os-hero-note" style="margin-top:2px;">Not sure this is the right fit? <a href="start.html" style="color:#5B8EF0;text-decoration:underline;text-underline-offset:3px;margin-left:4px;">Take the 30-second quiz →</a></div>
+        <div class="os-hero-note" data-es="<b>Desde $197/mes.</b> Sin cargo de configuración. Cancela cuando quieras."><b>Starts at $197/mo.</b> No setup fee. Cancel anytime.</div>
+        <div class="os-hero-note" style="margin-top:2px;" data-es="¿No estás seguro de que sea para ti? <a href=&quot;start.html&quot; class=&quot;os-inline-link&quot;>Haz el cuestionario de 30 segundos →</a>">Not sure this is the right fit? <a href="start.html" class="os-inline-link">Take the 30-second quiz →</a></div>
       </div>
       <div class="os-trust reveal">
-        <div class="os-trust-item"><div class="os-trust-num"><span class="accent">60</span>s</div><div class="os-trust-label">Speed-to-lead response</div></div>
-        <div class="os-trust-item"><div class="os-trust-num"><span class="accent">2x</span></div><div class="os-trust-label">More closed from the same ads</div></div>
-        <div class="os-trust-item"><div class="os-trust-num"><span class="accent">1</span></div><div class="os-trust-label">Dashboard, not five tabs</div></div>
-        <div class="os-trust-item"><div class="os-trust-num">$<span class="accent">0</span></div><div class="os-trust-label">Setup fee</div></div>
+        <div class="os-trust-item"><div class="os-trust-num"><span class="accent">60</span>s</div><div class="os-trust-label" data-es="Velocidad de respuesta a prospectos">Speed-to-lead response</div></div>
+        <div class="os-trust-item"><div class="os-trust-num"><span class="accent">2x</span></div><div class="os-trust-label" data-es="Más cierres con los mismos anuncios">More closed from the same ads</div></div>
+        <div class="os-trust-item"><div class="os-trust-num"><span class="accent">1</span></div><div class="os-trust-label" data-es="Un panel, no cinco pestañas">Dashboard, not five tabs</div></div>
+        <div class="os-trust-item"><div class="os-trust-num">$<span class="accent">0</span></div><div class="os-trust-label" data-es="Cargo de configuración">Setup fee</div></div>
       </div>
     </div>
   </section>
@@ -243,39 +264,39 @@
   <section class="section">
     <div class="container">
       <div class="os-head reveal">
-        <h2>Everything to catch and close a lead</h2>
-        <p>The tools a growing business actually needs, in one login. No integrations to babysit.</p>
+        <h2 data-es="Todo para captar y cerrar un prospecto">Everything to catch and close a lead</h2>
+        <p data-es="Las herramientas que un negocio en crecimiento realmente necesita, en un solo acceso. Sin integraciones que vigilar.">The tools a growing business actually needs, in one login. No integrations to babysit.</p>
       </div>
       <div class="os-features">
         <div class="os-feature reveal">
           <div class="os-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-          <h3>Lead CRM</h3>
-          <p>Every contact tracked from first touch to closed. Nothing falls through the cracks, no spreadsheet required.</p>
+          <h3 data-es="CRM de prospectos">Lead CRM</h3>
+          <p data-es="Cada contacto con seguimiento desde el primer toque hasta el cierre. Nada se pierde, sin hojas de cálculo.">Every contact tracked from first touch to closed. Nothing falls through the cracks, no spreadsheet required.</p>
         </div>
         <div class="os-feature reveal">
           <div class="os-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-          <h3>60-second speed-to-lead</h3>
-          <p>The moment someone inquires, they get an automatic text and email. You win the jobs your competitors are too slow to answer.</p>
+          <h3 data-es="Respuesta en 60 segundos">60-second speed-to-lead</h3>
+          <p data-es="En el momento en que alguien consulta, recibe un texto y un correo automáticos. Ganas los trabajos que tu competencia tarda demasiado en contestar.">The moment someone inquires, they get an automatic text and email. You win the jobs your competitors are too slow to answer.</p>
         </div>
         <div class="os-feature reveal">
           <div class="os-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.75 1.18 2 2 0 012.73 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <h3>Call tracking</h3>
-          <p>Know which ad, post, or page drove every phone call. Stop guessing where your leads come from.</p>
+          <h3 data-es="Seguimiento de llamadas">Call tracking</h3>
+          <p data-es="Sabe qué anuncio, publicación o página generó cada llamada. Deja de adivinar de dónde vienen tus prospectos.">Know which ad, post, or page drove every phone call. Stop guessing where your leads come from.</p>
         </div>
         <div class="os-feature reveal">
           <div class="os-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
-          <h3>Live dashboard</h3>
-          <p>Leads, calls, revenue, and pipeline in one view, 24/7. Open it on your phone between jobs.</p>
+          <h3 data-es="Panel en vivo">Live dashboard</h3>
+          <p data-es="Prospectos, llamadas, ingresos y pipeline en una sola vista, las 24 horas. Ábrelo en tu teléfono entre un trabajo y otro.">Leads, calls, revenue, and pipeline in one view, 24/7. Open it on your phone between jobs.</p>
         </div>
         <div class="os-feature reveal">
           <div class="os-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 8l8 5 8-5"/></svg></div>
-          <h3>Pipeline automations</h3>
-          <p>Follow-up sequences that run themselves. Nudge cold leads, book calls, and request reviews without lifting a finger.</p>
+          <h3 data-es="Automatizaciones del pipeline">Pipeline automations</h3>
+          <p data-es="Secuencias de seguimiento que funcionan solas. Reactiva prospectos fríos, agenda llamadas y pide reseñas sin mover un dedo.">Follow-up sequences that run themselves. Nudge cold leads, book calls, and request reviews without lifting a finger.</p>
         </div>
         <div class="os-feature reveal">
           <div class="os-feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20a8 8 0 100-16 8 8 0 000 16z"/><path d="M12 8v4l3 2"/></svg></div>
-          <h3>Reviews on autopilot</h3>
-          <p>Automatically ask happy customers for a Google review at the perfect moment. Build the reputation that wins the next lead.</p>
+          <h3 data-es="Reseñas en piloto automático">Reviews on autopilot</h3>
+          <p data-es="Pide automáticamente una reseña de Google a tus clientes satisfechos en el momento justo. Construye la reputación que gana al siguiente prospecto.">Automatically ask happy customers for a Google review at the perfect moment. Build the reputation that wins the next lead.</p>
         </div>
       </div>
     </div>
@@ -285,24 +306,24 @@
   <section class="section" style="padding-top:32px;">
     <div class="container">
       <div class="os-head reveal">
-        <h2>Built for anyone with leads to win</h2>
-        <p>Whether you close them yourself or sell the software to others.</p>
+        <h2 data-es="Hecho para todo el que tiene prospectos que ganar">Built for anyone with leads to win</h2>
+        <p data-es="Ya sea que los cierres tú mismo o que le vendas el software a otros.">Whether you close them yourself or sell the software to others.</p>
       </div>
       <div class="os-audience">
         <div class="os-aud-card reveal">
-          <div class="os-aud-tag">Local business owners</div>
-          <h3>Stop losing jobs to slow follow-up</h3>
-          <p>Every lead, call, and review in one place. Respond in 60 seconds, book more from the ad budget you already spend, and never chase a spreadsheet again.</p>
+          <div class="os-aud-tag" data-es="Dueños de negocios locales">Local business owners</div>
+          <h3 data-es="Deja de perder trabajos por un seguimiento lento">Stop losing jobs to slow follow-up</h3>
+          <p data-es="Cada prospecto, llamada y reseña en un solo lugar. Responde en 60 segundos, consigue más citas con el presupuesto de anuncios que ya gastas y no vuelvas a perseguir una hoja de cálculo.">Every lead, call, and review in one place. Respond in 60 seconds, book more from the ad budget you already spend, and never chase a spreadsheet again.</p>
         </div>
         <div class="os-aud-card reveal">
-          <div class="os-aud-tag">Creators &amp; coaches</div>
-          <h3>Turn attention into signups</h3>
-          <p>Capture leads from your link in bio, sell your offers, and automate the follow-up. One platform runs the business behind the content.</p>
+          <div class="os-aud-tag" data-es="Creadores y coaches">Creators &amp; coaches</div>
+          <h3 data-es="Convierte la atención en registros">Turn attention into signups</h3>
+          <p data-es="Capta prospectos desde el enlace de tu bio, vende tus ofertas y automatiza el seguimiento. Una sola plataforma maneja el negocio detrás del contenido.">Capture leads from your link in bio, sell your offers, and automate the follow-up. One platform runs the business behind the content.</p>
         </div>
         <div class="os-aud-card reveal">
-          <div class="os-aud-tag">Agencies &amp; marketers</div>
-          <h3>Resell it under your own brand</h3>
-          <p>Rebrand the platform as your own software, set your price, and stack recurring revenue. Software margins, no code, no dev team. Ask us about the reseller program.</p>
+          <div class="os-aud-tag" data-es="Agencias y especialistas en marketing">Agencies &amp; marketers</div>
+          <h3 data-es="Revéndelo con tu propia marca">Resell it under your own brand</h3>
+          <p data-es="Ponle tu marca a la plataforma como si fuera tu software, fija tu precio y acumula ingresos recurrentes. Márgenes de software, sin código, sin equipo de desarrollo. Pregúntanos por el programa de revendedores.">Rebrand the platform as your own software, set your price, and stack recurring revenue. Software margins, no code, no dev team. Ask us about the reseller program.</p>
         </div>
       </div>
     </div>
@@ -312,94 +333,94 @@
   <section class="section" style="padding-top:32px;" id="start">
     <div class="container">
       <div class="os-head reveal">
-        <h2>Pick a plan</h2>
-        <p>No setup fee. No contract. Month to month, cancel in two clicks.</p>
+        <h2 data-es="Elige un plan">Pick a plan</h2>
+        <p data-es="Sin cargo de configuración. Sin contrato. Mes a mes, cancela en dos clics.">No setup fee. No contract. Month to month, cancel in two clicks.</p>
       </div>
       <div class="os-tier-grid reveal">
         <div class="os-price-card">
           <div class="os-tier-name">Starter OS</div>
-          <div class="os-price-badge">Most popular</div>
+          <div class="os-price-badge" data-es="El más popular">Most popular</div>
           <div class="os-price-block">
             <span class="os-price-dollar">$</span>
             <span class="os-price-num">197</span>
-            <span class="os-price-period">/mo</span>
+            <span class="os-price-period" data-es="/mes">/mo</span>
           </div>
-          <div class="os-price-trial">$197/mo</div>
+          <div class="os-price-trial" data-es="$197/mes">$197/mo</div>
           <ul class="os-price-list">
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Lead CRM + full contact tracking</li>
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>60-second speed-to-lead (SMS + email)</li>
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Call tracking + live dashboard</li>
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Pipeline automations + review requests</li>
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Professional email + software tools</li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="CRM de prospectos + seguimiento completo de contactos">Lead CRM + full contact tracking</span></li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="Respuesta en 60 segundos (SMS + correo)">60-second speed-to-lead (SMS + email)</span></li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="Seguimiento de llamadas + panel en vivo">Call tracking + live dashboard</span></li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="Automatizaciones del pipeline + solicitudes de reseñas">Pipeline automations + review requests</span></li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="Correo profesional + herramientas de software">Professional email + software tools</span></li>
           </ul>
-          <a href="/checkout.html?tier=197" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" onclick="gtag('event','checkout_click',{location:'os_pricing_197'});">Get started <span style="font-size:1.1em;">→</span></a>
+          <a href="/checkout.html?tier=197" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" onclick="gtag('event','checkout_click',{location:'os_pricing_197'});" data-es="Empieza ya <span style=&quot;font-size:1.1em;&quot;>→</span>">Get started <span style="font-size:1.1em;">→</span></a>
         </div>
         <div class="os-price-card">
           <div class="os-tier-name">Growth OS</div>
-          <div class="os-price-badge neutral">Month to month</div>
+          <div class="os-price-badge neutral" data-es="Mes a mes">Month to month</div>
           <div class="os-price-block">
             <span class="os-price-dollar">$</span>
             <span class="os-price-num">397</span>
-            <span class="os-price-period">/mo</span>
+            <span class="os-price-period" data-es="/mes">/mo</span>
           </div>
-          <div class="os-price-trial">$397/mo</div>
+          <div class="os-price-trial" data-es="$397/mes">$397/mo</div>
           <ul class="os-price-list">
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Everything in Starter</li>
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Email marketing + campaigns</li>
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Funnels + website builder</li>
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Workflow automations + memberships</li>
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Full reporting suite</li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="Todo lo de Starter">Everything in Starter</span></li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="Email marketing + campañas">Email marketing + campaigns</span></li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="Embudos + creador de sitios web">Funnels + website builder</span></li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="Automatizaciones de flujos + membresías">Workflow automations + memberships</span></li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="Suite completa de reportes">Full reporting suite</span></li>
           </ul>
-          <a href="/checkout.html?tier=397" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" onclick="gtag('event','checkout_click',{location:'os_pricing_397'});">Get started <span style="font-size:1.1em;">→</span></a>
+          <a href="/checkout.html?tier=397" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" onclick="gtag('event','checkout_click',{location:'os_pricing_397'});" data-es="Empieza ya <span style=&quot;font-size:1.1em;&quot;>→</span>">Get started <span style="font-size:1.1em;">→</span></a>
         </div>
         <div class="os-price-card">
           <div class="os-tier-name">Command OS</div>
-          <div class="os-price-badge neutral">Month to month</div>
+          <div class="os-price-badge neutral" data-es="Mes a mes">Month to month</div>
           <div class="os-price-block">
             <span class="os-price-dollar">$</span>
             <span class="os-price-num">797</span>
-            <span class="os-price-period">/mo</span>
+            <span class="os-price-period" data-es="/mes">/mo</span>
           </div>
-          <div class="os-price-trial">$797/mo</div>
+          <div class="os-price-trial" data-es="$797/mes">$797/mo</div>
           <ul class="os-price-list">
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Everything in Growth</li>
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Team seats + user permissions</li>
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Advanced automations at scale</li>
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Documents, contracts + communities</li>
-            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Priority support</li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="Todo lo de Growth">Everything in Growth</span></li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="Cuentas de equipo + permisos de usuario">Team seats + user permissions</span></li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="Automatizaciones avanzadas a escala">Advanced automations at scale</span></li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="Documentos, contratos + comunidades">Documents, contracts + communities</span></li>
+            <li><span class="ic"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span data-es="Soporte prioritario">Priority support</span></li>
           </ul>
-          <a href="/checkout.html?tier=797" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" onclick="gtag('event','checkout_click',{location:'os_pricing_797'});">Get started <span style="font-size:1.1em;">→</span></a>
+          <a href="/checkout.html?tier=797" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" onclick="gtag('event','checkout_click',{location:'os_pricing_797'});" data-es="Empieza ya <span style=&quot;font-size:1.1em;&quot;>→</span>">Get started <span style="font-size:1.1em;">→</span></a>
         </div>
       </div>
-      <p style="text-align:center;font-size:0.78rem;color:var(--text-3);margin-top:22px;">Need it done for you instead? <a href="pricing.html" style="color:var(--text-2);text-decoration:underline;">See managed plans</a>.</p>
+      <p style="text-align:center;font-size:0.78rem;color:var(--text-3);margin-top:22px;" data-es="¿Prefieres que lo hagamos por ti? <a href=&quot;pricing.html&quot; class=&quot;os-inline-link os-inline-link--muted&quot;>Ve los planes administrados</a>.">Need it done for you instead? <a href="pricing.html" class="os-inline-link os-inline-link--muted">See managed plans</a>.</p>
     </div>
   </section>
 
   <!-- FAQ -->
   <section class="section" style="padding-top:32px;">
     <div class="container">
-      <div class="os-head reveal"><h2>Questions</h2></div>
+      <div class="os-head reveal"><h2 data-es="Preguntas">Questions</h2></div>
       <div class="os-faq reveal">
         <div class="faq-list">
           <div class="faq-item">
-            <button class="faq-q">How does billing work? <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-            <div class="faq-a"><p>Plans start at $197/mo, billed monthly through Square. No setup fee and no contract. Cancel anytime and you are not billed again.</p></div>
+            <button type="button" class="faq-q"><span data-es="¿Cómo funciona la facturación?">How does billing work?</span> <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            <div class="faq-a"><p data-es="Los planes empiezan en $197/mes, facturados mensualmente a través de Square. Sin cargo de configuración y sin contrato. Cancela cuando quieras y no se te vuelve a cobrar.">Plans start at $197/mo, billed monthly through Square. No setup fee and no contract. Cancel anytime and you are not billed again.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">How fast can I be up and running? <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-            <div class="faq-a"><p>Your account is provisioned the moment you sign up. Most people have their dashboard and speed-to-lead live within the first few minutes.</p></div>
+            <button type="button" class="faq-q"><span data-es="¿Qué tan rápido puedo empezar?">How fast can I be up and running?</span> <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            <div class="faq-a"><p data-es="Tu cuenta se crea en el momento en que te registras. La mayoría de las personas tienen su panel y la respuesta en 60 segundos funcionando en los primeros minutos.">Your account is provisioned the moment you sign up. Most people have their dashboard and speed-to-lead live within the first few minutes.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">Can I cancel? <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-            <div class="faq-a"><p>Anytime, in two clicks, no phone call required. There is no contract and no setup fee.</p></div>
+            <button type="button" class="faq-q"><span data-es="¿Puedo cancelar?">Can I cancel?</span> <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            <div class="faq-a"><p data-es="Cuando quieras, en dos clics, sin necesidad de llamar por teléfono. No hay contrato ni cargo de configuración.">Anytime, in two clicks, no phone call required. There is no contract and no setup fee.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">I want it managed for me, not DIY. <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-            <div class="faq-a"><p>We offer done-for-you plans that add ads, social, and a website on top of the software. <a href="pricing.html" style="color:var(--blue);text-decoration:underline;">See the managed plans</a> or <a href="contact.html#book" style="color:var(--blue);text-decoration:underline;">book a call</a>.</p></div>
+            <button type="button" class="faq-q"><span data-es="Quiero que lo manejen por mí, no hacerlo yo.">I want it managed for me, not DIY.</span> <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            <div class="faq-a"><p data-es="Ofrecemos planes hechos por nosotros que suman anuncios, redes sociales y un sitio web al software. <a href=&quot;pricing.html&quot; style=&quot;color:var(--blue);text-decoration:underline;&quot;>Ve los planes administrados</a> o <a href=&quot;contact.html#book&quot; style=&quot;color:var(--blue);text-decoration:underline;&quot;>agenda una llamada</a>.">We offer done-for-you plans that add ads, social, and a website on top of the software. <a href="pricing.html" style="color:var(--blue);text-decoration:underline;">See the managed plans</a> or <a href="contact.html#book" style="color:var(--blue);text-decoration:underline;">book a call</a>.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">Can I resell the software to my own clients? <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-            <div class="faq-a"><p>Yes. We run a reseller program where you rebrand the platform as your own and set your own pricing. <a href="contact.html#book" style="color:var(--blue);text-decoration:underline;">Book a call</a> and ask about reselling.</p></div>
+            <button type="button" class="faq-q"><span data-es="¿Puedo revender el software a mis propios clientes?">Can I resell the software to my own clients?</span> <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            <div class="faq-a"><p data-es="Sí. Tenemos un programa de revendedores donde le pones tu marca a la plataforma y fijas tus propios precios. <a href=&quot;contact.html#book&quot; style=&quot;color:var(--blue);text-decoration:underline;&quot;>Agenda una llamada</a> y pregunta por la reventa.">Yes. We run a reseller program where you rebrand the platform as your own and set your own pricing. <a href="contact.html#book" style="color:var(--blue);text-decoration:underline;">Book a call</a> and ask about reselling.</p></div>
           </div>
         </div>
       </div>
@@ -410,9 +431,9 @@
   <section class="os-final">
     <div class="container">
       <div class="os-final-inner reveal">
-        <h2>Your next lead is worth more than $197.</h2>
-        <p>Get started, connect your number, and watch the first inquiry get a reply in 60 seconds. Month to month, cancel anytime.</p>
-        <a href="/checkout.html?tier=197" class="btn btn-primary btn-lg" onclick="gtag('event','checkout_click',{location:'os_final'});">Get started, $197/mo <span style="font-size:1.1em;">→</span></a>
+        <h2 data-es="Tu próximo prospecto vale más que $197.">Your next lead is worth more than $197.</h2>
+        <p data-es="Empieza, conecta tu número y mira cómo la primera consulta recibe respuesta en 60 segundos. Mes a mes, cancela cuando quieras.">Get started, connect your number, and watch the first inquiry get a reply in 60 seconds. Month to month, cancel anytime.</p>
+        <a href="/checkout.html?tier=197" class="btn btn-primary btn-lg" onclick="gtag('event','checkout_click',{location:'os_final'});" data-es="Empieza ya, $197/mes <span style=&quot;font-size:1.1em;&quot;>→</span>">Get started, $197/mo <span style="font-size:1.1em;">→</span></a>
       </div>
     </div>
   </section>
@@ -424,27 +445,27 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>The Staley Social</h3>
-          <p>Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
+          <h3 data-es="The Staley Social">The Staley Social</h3>
+          <p data-es="La agencia de marketing digital integral de Kansas City. Resultados garantizados por escrito.">Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
           <div class="footer-social">
             <a href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
             <a href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
             <a href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
           </div>
         </div>
-        <div class="footer-col"><h4>Product</h4><ul>
-            <li><a href="course.html">OPERATOR course</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="blog-autopilot.html">Blog Autopilot</a></li><li><a href="os.html">Staley OS</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="results.html">Results</a></li><li><a href="work.html">Work</a></li><li><a href="contact.html#book">Book a call</a></li></ul></div>
-        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="/jameson-staley">Jameson Staley</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><span style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
+        <div class="footer-col"><h4 data-es="Producto">Product</h4><ul>
+            <li><a href="course.html" data-es="Curso OPERATOR">OPERATOR course</a></li><li><a href="visualizer-drops.html" data-es="Visualizer Drops">Visualizer Drops</a></li><li><a href="blog-autopilot.html" data-es="Blog Autopilot">Blog Autopilot</a></li><li><a href="os.html" data-es="Staley OS">Staley OS</a></li><li><a href="pricing.html" data-es="Precios">Pricing</a></li><li><a href="results.html" data-es="Resultados">Results</a></li><li><a href="work.html" data-es="Trabajos">Work</a></li><li><a href="contact.html#book" data-es="Agenda una llamada">Book a call</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Empresa">Company</h4><ul><li><a href="about.html" data-es="Quiénes somos">About</a></li><li><a href="/jameson-staley">Jameson Staley</a></li><li><a href="services.html" data-es="Servicios">Services</a></li><li><a href="contact.html" data-es="Contacto">Contact</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Contacto">Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com" data-es="jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><span style="color:var(--text-3);" data-es="Kansas City, MO">Kansas City, MO</span></li></ul></div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Staley Social LLC. All rights reserved.</p>
-        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
+        <p data-es="&copy; 2026 The Staley Social LLC. Todos los derechos reservados.">&copy; 2026 The Staley Social LLC. All rights reserved.</p>
+        <p data-es="Hecho en Kansas City. <a href=&quot;privacy.html&quot;>Política de privacidad</a> &amp;middot; <a href=&quot;terms.html&quot;>Términos</a>">Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </footer>
 
-  <script defer src="js/main.js?v=7"></script>
+  <script defer src="js/main.js?v=9"></script>
   <script>
     // FAQ accordion lives in main.js. A duplicate handler here fired on the same
     // click and toggled the item straight back shut, so the FAQ did nothing.

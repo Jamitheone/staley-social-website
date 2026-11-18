@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order a Visualizer Drop | The Staley Social</title>
+  <title data-es="Pide tu Visualizer Drop | The Staley Social">Order a Visualizer Drop | The Staley Social</title>
   <link rel="canonical" href="https://thestaleysocial.com/visualizer-drops-order.html">
   <meta name="robots" content="noindex">
-  <meta name="description" content="Order a beat-synced 3D visualizer for your track. Pay, send the audio link, get your video in 48 hours.">
-  <meta property="og:title" content="Order a Visualizer Drop | The Staley Social">
-  <meta property="og:description" content="Order a beat-synced 3D visualizer for your track. Pay, send the audio link, get your video in 48 hours.">
+  <meta name="description" content="Order a beat-synced 3D visualizer for your track. Pay, send the audio link, get your video in 48 hours." data-es-content="Pide un visualizador 3D sincronizado al ritmo para tu pista. Paga, envía el enlace del audio y recibe tu video en 48 horas.">
+  <meta property="og:title" content="Order a Visualizer Drop | The Staley Social" data-es-content="Pide tu Visualizer Drop | The Staley Social">
+  <meta property="og:description" content="Order a beat-synced 3D visualizer for your track. Pay, send the audio link, get your video in 48 hours." data-es-content="Pide un visualizador 3D sincronizado al ritmo para tu pista. Paga, envía el enlace del audio y recibe tu video en 48 horas.">
   <meta property="og:url" content="https://thestaleysocial.com/visualizer-drops-order.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Staley Social">
@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB8CM3TL22"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GB8CM3TL22');</script>
-  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <link rel="stylesheet" href="css/flat.css?v=3">
 <style>
 
@@ -89,6 +89,12 @@
 .vo-err { color:#ff8a8a; font-size:0.85rem; margin-top:12px; min-height:1.2em; }
 .vo-done { text-align:center; padding:40px 0 0; }
 .hide { display:none !important; }
+.vo-field .q { display:block; font-size:0.88rem; font-weight:600; color:var(--text); margin-bottom:8px; }
+.vo-field input:focus-visible, .vo-field textarea:focus-visible { outline:2px solid var(--blue); outline-offset:2px; }
+.vo-check input { width:22px; height:22px; flex-shrink:0; margin-top:2px; accent-color:var(--blue); }
+.vo-check { min-height:44px; }
+.vo-choice span { min-height:48px; }
+@media(max-width:640px){ .vo-wrap{padding:0 16px} .vo-choice{min-width:0} .vo-step{padding:26px 0} }
 
 </style>
 </head>
@@ -98,91 +104,107 @@
     <div class="nav-inner">
       <a href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
       <div class="nav-links">
-        <a href="/">Home</a>
+        <a href="/" data-es="Inicio">Home</a>
         <a href="/os.html">Software</a>
-        <a href="/services.html">Services</a>
-        <a href="/results.html">Results</a>
-        <a href="/work.html">Work</a>
-        <a href="/pricing.html">Pricing</a>
+        <a href="/services.html" data-es="Servicios">Services</a>
+        <a href="/results.html" data-es="Resultados">Results</a>
+        <a href="/work.html" data-es="Trabajos">Work</a>
+        <a href="/pricing.html" data-es="Precios">Pricing</a>
         <a href="/blog/">Blog</a>
-        <a href="/course.html">Course</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/course.html" data-es="Curso">Course</a>
+        <a href="/contact.html" data-es="Contacto">Contact</a>
       </div>
-      <div class="nav-cta">
-        <a href="visualizer-drops-order.html" class="btn btn-primary btn-sm">Order a drop</a>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <div class="nav-cta" data-keep-cta>
+        <div class="lang" role="group" aria-label="Language" data-es-aria-label="Idioma">
+          <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+          <label class="sr-only" for="more-lang" data-es="Más idiomas">More languages</label>
+          <select id="more-lang" translate="no">
+            <option value="" data-es="Más">More</option>
+            <optgroup label="Machine translated" data-es-label="Traducción automática">
+              <option value="pt">Português</option><option value="fr">Français</option>
+              <option value="de">Deutsch</option><option value="it">Italiano</option>
+              <option value="tl">Tagalog</option><option value="vi">Tiếng Việt</option>
+              <option value="zh-CN">中文</option><option value="ja">日本語</option>
+              <option value="ko">한국어</option><option value="ar">العربية</option>
+              <option value="hi">हिन्दी</option><option value="ru">Русский</option>
+            </optgroup>
+          </select>
+        </div>
+        <a href="visualizer-drops-order.html" class="btn btn-primary btn-sm" data-es="Pedir un Drop">Order a drop</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" data-es-aria-label="Abrir o cerrar menú"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
   <div class="nav-mobile" id="nav-mobile">
-    <a href="/">Home</a>
+    <a href="/" data-es="Inicio">Home</a>
     <a href="/os.html">Software</a>
-    <a href="/services.html">Services</a>
-    <a href="/results.html">Results</a>
-    <a href="/work.html">Work</a>
-    <a href="/pricing.html">Pricing</a>
+    <a href="/services.html" data-es="Servicios">Services</a>
+    <a href="/results.html" data-es="Resultados">Results</a>
+    <a href="/work.html" data-es="Trabajos">Work</a>
+    <a href="/pricing.html" data-es="Precios">Pricing</a>
     <a href="/blog/">Blog</a>
-    <a href="/course.html">Course</a>
-    <a href="/contact.html">Contact</a>
+    <a href="/course.html" data-es="Curso">Course</a>
+    <a href="/contact.html" data-es="Contacto">Contact</a>
 
-    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
+    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;" data-es="Agenda una llamada gratis">Book a free call</a>
     <a href="tel:+18166528233" style="text-align:center;font-size:0.75rem;color:var(--text-2);">(816) 652-8233</a>
   </div>
 
   <section class="vd-tight" style="padding-top:calc(var(--nav-h) + 56px); text-align:center;">
     <div class="container">
       <span class="vd-eyebrow">Visualizer Drops</span>
-      <h1 class="vd-title" style="font-size:clamp(2.2rem,5vw,3.4rem);max-width:18ch;">Order your video</h1>
-      <p class="vd-sub" style="margin-bottom:0;">Two quick steps. We start the 48 hour clock when both are in.</p>
+      <h1 class="vd-title" style="font-size:clamp(2.2rem,5vw,3.4rem);max-width:18ch;" data-es="Pide tu video">Order your video</h1>
+      <p class="vd-sub" style="margin-bottom:0;" data-es="Dos pasos rápidos. Empezamos a contar las 48 horas cuando llegan ambos.">Two quick steps. We start the 48 hour clock when both are in.</p>
     </div>
   </section>
 
   <div class="vo-wrap" id="orderwrap">
     <div class="vo-step">
-      <span class="vd-step-num">Step 1</span>
-      <h2>Pick a plan and pay</h2>
-      <p class="sub">One payment through Square. It opens in a new tab, then come back here for step 2.</p>
-      <div class="vo-choices" id="plans">
-        <label class="vo-choice"><input type="radio" name="planpick" value="single" checked><span><b style="color:var(--text)">1 video, $49</b><br>one track</span></label>
-        <label class="vo-choice"><input type="radio" name="planpick" value="bundle3"><span><b style="color:var(--text)">3 videos, $120</b><br>$40 each, three tracks</span></label>
+      <span class="vd-step-num" data-es="Paso 1">Step 1</span>
+      <h2 data-es="Elige un plan y paga">Pick a plan and pay</h2>
+      <p class="sub" data-es="Un solo pago con Square. Se abre en una pestaña nueva; después vuelve aquí para el paso 2.">One payment through Square. It opens in a new tab, then come back here for step 2.</p>
+      <div class="vo-choices" id="plans" role="radiogroup" aria-label="Plan" data-es-aria-label="Plan">
+        <label class="vo-choice"><input type="radio" name="planpick" value="single" checked><span data-es="<b style=&quot;color:var(--text)&quot;>1 video, $49</b><br>una pista"><b style="color:var(--text)">1 video, $49</b><br>one track</span></label>
+        <label class="vo-choice"><input type="radio" name="planpick" value="bundle3"><span data-es="<b style=&quot;color:var(--text)&quot;>3 videos, $120</b><br>$40 cada uno, tres pistas"><b style="color:var(--text)">3 videos, $120</b><br>$40 each, three tracks</span></label>
       </div>
       <p style="margin-top:20px;"><a id="paybtn" href="https://square.link/u/RHOUaQai" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" onclick="if(window.gtag)gtag('event','visdrop_pay_click');">Pay $49 with Square <span style="font-size:1.1em;">&rarr;</span></a></p>
     </div>
 
     <form class="vo-step" id="form" novalidate>
       <input type="text" name="_honey" id="honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
-      <span class="vd-step-num">Step 2</span>
-      <h2>Tell us about the track</h2>
-      <p class="sub">Use the same email you paid with, so we can match your payment.</p>
-      <div class="vo-field"><label class="q" for="artist">Artist name</label><input type="text" id="artist" maxlength="40" required placeholder="As it should appear on screen"></div>
-      <div class="vo-field"><label class="q" for="title">Track title</label><input type="text" id="title" maxlength="60" required></div>
-      <div class="vo-field"><label class="q" for="link"><span id="linklabel">Link to the audio</span></label><textarea id="link" rows="2" required placeholder="https://soundcloud.com/you/your-track"></textarea><span class="hint" id="linkhint">SoundCloud, YouTube, Bandcamp, Google Drive or Dropbox (set to anyone with the link), or a direct MP3 or WAV link. Up to 6 minutes.</span></div>
-      <div class="vo-field hide" id="extrawrap"><label class="q" for="extra">Titles for tracks 2 and 3</label><input type="text" id="extra" maxlength="200" placeholder="Title two | Title three"><span class="hint">Separate with a vertical bar. Put the links for tracks 2 and 3 in the box above, one per line.</span></div>
+      <span class="vd-step-num" data-es="Paso 2">Step 2</span>
+      <h2 data-es="Cuéntanos sobre la pista">Tell us about the track</h2>
+      <p class="sub" data-es="Usa el mismo correo con el que pagaste, para poder relacionar tu pago.">Use the same email you paid with, so we can match your payment.</p>
+      <div class="vo-field"><label class="q" for="artist" data-es="Nombre del artista">Artist name</label><input type="text" id="artist" maxlength="40" required placeholder="As it should appear on screen" data-es-placeholder="Tal como debe aparecer en pantalla"></div>
+      <div class="vo-field"><label class="q" for="title" data-es="Título de la pista">Track title</label><input type="text" id="title" maxlength="60" required></div>
+      <div class="vo-field"><label class="q" for="link"><span id="linklabel">Link to the audio</span></label><textarea id="link" rows="2" required placeholder="https://soundcloud.com/you/your-track" data-es-placeholder="https://soundcloud.com/tu/tu-pista"></textarea><span class="hint" id="linkhint" data-es="SoundCloud, YouTube, Bandcamp, Google Drive o Dropbox (configurado para cualquiera con el enlace), o un enlace directo a un MP3 o WAV. Hasta 6 minutos.">SoundCloud, YouTube, Bandcamp, Google Drive or Dropbox (set to anyone with the link), or a direct MP3 or WAV link. Up to 6 minutes.</span></div>
+      <div class="vo-field hide" id="extrawrap"><label class="q" for="extra" data-es="Títulos de las pistas 2 y 3">Titles for tracks 2 and 3</label><input type="text" id="extra" maxlength="200" placeholder="Title two | Title three" data-es-placeholder="Título dos | Título tres"><span class="hint" data-es="Sepáralos con una barra vertical. Pon los enlaces de las pistas 2 y 3 en el cuadro de arriba, uno por línea.">Separate with a vertical bar. Put the links for tracks 2 and 3 in the box above, one per line.</span></div>
       <div class="vo-field">
-        <label class="q">Accent color</label>
-        <div class="vo-choices" id="colors">
-          <label class="vo-choice"><input type="radio" name="color" value="violet" checked><span><i class="vo-sw" style="background:#ff3fd0"></i>Violet and cyan</span></label>
-          <label class="vo-choice"><input type="radio" name="color" value="amber"><span><i class="vo-sw" style="background:#ff9a3c"></i>Amber</span></label>
-          <label class="vo-choice"><input type="radio" name="color" value="ice"><span><i class="vo-sw" style="background:#3ee0ff"></i>Ice blue</span></label>
+        <div class="q" id="lblcolor" data-es="Color de acento">Accent color</div>
+        <div class="vo-choices" id="colors" role="radiogroup" aria-labelledby="lblcolor">
+          <label class="vo-choice"><input type="radio" name="color" value="violet" checked><span data-es="<i class=&quot;vo-sw&quot; style=&quot;background:#ff3fd0&quot;></i>Violeta y cian"><i class="vo-sw" style="background:#ff3fd0"></i>Violet and cyan</span></label>
+          <label class="vo-choice"><input type="radio" name="color" value="amber"><span data-es="<i class=&quot;vo-sw&quot; style=&quot;background:#ff9a3c&quot;></i>Ámbar"><i class="vo-sw" style="background:#ff9a3c"></i>Amber</span></label>
+          <label class="vo-choice"><input type="radio" name="color" value="ice"><span data-es="<i class=&quot;vo-sw&quot; style=&quot;background:#3ee0ff&quot;></i>Azul hielo"><i class="vo-sw" style="background:#3ee0ff"></i>Ice blue</span></label>
         </div>
       </div>
       <div class="vo-field">
-        <label class="q">Add the vertical 9:16 cut?</label>
-        <div class="vo-choices">
-          <label class="vo-choice"><input type="radio" name="vertical" value="no" checked><span>No, 16:9 only</span></label>
-          <label class="vo-choice"><input type="radio" name="vertical" value="yes"><span>Yes, add 9:16</span></label>
+        <div class="q" id="lblvert" data-es="¿Agregar el corte vertical 9:16?">Add the vertical 9:16 cut?</div>
+        <div class="vo-choices" role="radiogroup" aria-labelledby="lblvert">
+          <label class="vo-choice"><input type="radio" name="vertical" value="no" checked><span data-es="No, solo 16:9">No, 16:9 only</span></label>
+          <label class="vo-choice"><input type="radio" name="vertical" value="yes"><span data-es="Sí, agregar 9:16">Yes, add 9:16</span></label>
         </div>
       </div>
-      <div class="vo-field"><label class="q" for="email">Email</label><input type="email" id="email" required autocomplete="email"><span class="hint">Your video and preview are sent here.</span></div>
-      <div class="vo-field"><label class="vo-check"><input type="checkbox" id="rights"><span>I own this track or have the right to use it, and I am fine with The Staley Social rendering it for me.</span></label></div>
-      <button type="submit" class="btn btn-primary btn-lg" id="send" style="width:100%;justify-content:center;">Send my track</button>
+      <div class="vo-field"><label class="q" for="email" data-es="Correo electrónico">Email</label><input type="email" id="email" required autocomplete="email"><span class="hint" data-es="Aquí enviamos tu video y la vista previa.">Your video and preview are sent here.</span></div>
+      <div class="vo-field"><label class="vo-check"><input type="checkbox" id="rights" required><span data-es="Soy dueño de esta pista o tengo derecho a usarla, y estoy de acuerdo con que The Staley Social la procese para mí.">I own this track or have the right to use it, and I am fine with The Staley Social rendering it for me.</span></label></div>
+      <button type="submit" class="btn btn-primary btn-lg" id="send" style="width:100%;justify-content:center;" data-es="Enviar mi pista">Send my track</button>
       <p class="vo-err" id="err" role="alert"></p>
     </form>
   </div>
 
   <div class="vo-wrap hide vo-done" id="thanks">
-    <h2 style="font-family:var(--font-display);font-size:2rem;font-weight:800;letter-spacing:-0.03em;color:var(--text);">Got it.</h2>
-    <p class="sub" style="margin-top:12px;">Your order is in. Once payment and details are both here, your 48 hour clock starts and the preview lands in your inbox. If you have not paid yet, <a id="paylater" href="https://square.link/u/RHOUaQai" target="_blank" rel="noopener" style="color:var(--blue);">pay here</a>. Questions: thestaleysocial@gmail.com</p>
+    <h2 style="font-family:var(--font-display);font-size:2rem;font-weight:800;letter-spacing:-0.03em;color:var(--text);" data-es="Listo.">Got it.</h2>
+    <p class="sub" style="margin-top:12px;" data-es="Tu pedido está registrado. Cuando lleguen el pago y los datos, empieza tu reloj de 48 horas y la vista previa llega a tu bandeja de entrada. Si aún no has pagado, <a id=&quot;paylater&quot; href=&quot;https://square.link/u/RHOUaQai&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; style=&quot;color:var(--blue);&quot;>paga aquí</a>. Preguntas: thestaleysocial@gmail.com">Your order is in. Once payment and details are both here, your 48 hour clock starts and the preview lands in your inbox. If you have not paid yet, <a id="paylater" href="https://square.link/u/RHOUaQai" target="_blank" rel="noopener" style="color:var(--blue);">pay here</a>. Questions: thestaleysocial@gmail.com</p>
   </div>
 
 <!-- FOOTER -->
@@ -191,53 +213,63 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3>The Staley Social</h3>
-          <p>Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
+          <p data-es="La agencia de marketing digital integral de Kansas City. Resultados garantizados por escrito.">Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
           <div class="footer-social">
             <a href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
             <a href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
             <a href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
           </div>
         </div>
-        <div class="footer-col"><h4>Product</h4><ul><li><a href="course.html">OPERATOR course</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="os.html">Staley OS</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="results.html">Results</a></li><li><a href="work.html">Work</a></li></ul></div>
-        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><span style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
+        <div class="footer-col"><h4 data-es="Producto">Product</h4><ul><li><a href="course.html" data-es="Curso OPERATOR">OPERATOR course</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="blog-autopilot.html">Blog Autopilot</a></li><li><a href="os.html">Staley OS</a></li><li><a href="pricing.html" data-es="Precios">Pricing</a></li><li><a href="results.html" data-es="Resultados">Results</a></li><li><a href="work.html" data-es="Trabajos">Work</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Empresa">Company</h4><ul><li><a href="about.html" data-es="Quiénes somos">About</a></li><li><a href="services.html" data-es="Servicios">Services</a></li><li><a href="contact.html" data-es="Contacto">Contact</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Contacto">Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><span style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Staley Social LLC. All rights reserved.</p>
-        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
+        <p data-es="&amp;copy; 2026 The Staley Social LLC. Todos los derechos reservados.">&copy; 2026 The Staley Social LLC. All rights reserved.</p>
+        <p data-es="Hecho en Kansas City. <a href=&quot;privacy.html&quot;>Política de privacidad</a> &amp;middot; <a href=&quot;terms.html&quot;>Términos</a>">Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js?v=7"></script>
+  <script src="js/main.js?v=9"></script>
   <script>
   (function(){
     var LINKS={single:"https://square.link/u/RHOUaQai",bundle3:"https://square.link/u/h41TW9Dv"}, PRICE={single:'$49',bundle3:'$120'};
     var plan=(location.search.indexOf('plan=bundle')>-1)?'bundle3':'single';
     var $=function(id){return document.getElementById(id)};
+    var L=function(en,es){return document.documentElement.lang==='es'?es:en};
+    var lastErr=null;
+    function showErr(en,es){lastErr=en?[en,es]:null;$('err').textContent=en?L(en,es):'';}
+    function render(){
+      var b=plan==='bundle3';
+      $('paybtn').firstChild.nodeValue=L('Pay ','Pagar ')+PRICE[plan]+L(' with Square ',' con Square ');
+      $('linklabel').textContent=b?L('Links to your three tracks, one per line','Enlaces de tus tres pistas, uno por línea'):L('Link to the audio','Enlace al audio');
+      if($('paylater')) $('paylater').href=LINKS[plan];
+      if(lastErr) $('err').textContent=L(lastErr[0],lastErr[1]);
+    }
     function setPlan(p){
       plan=p; document.querySelector('input[name=planpick][value='+p+']').checked=true;
-      $('paybtn').href=LINKS[p]; $('paybtn').firstChild.nodeValue='Pay '+PRICE[p]+' with Square ';
-      $('paylater').href=LINKS[p];
+      $('paybtn').href=LINKS[p];
       var b=p==='bundle3';
       $('extrawrap').classList.toggle('hide',!b);
-      $('linklabel').textContent=b?'Links to your three tracks, one per line':'Link to the audio';
       $('link').rows=b?4:2;
+      render();
     }
     [].forEach.call(document.querySelectorAll('input[name=planpick]'),function(r){r.addEventListener('change',function(){setPlan(r.value)})});
+    [].forEach.call(document.querySelectorAll('[data-lang]'),function(b){b.addEventListener('click',render)});
     setPlan(plan);
     function val(n){var e=document.querySelector('input[name='+n+']:checked');return e?e.value:''}
     $('form').addEventListener('submit',function(e){
-      e.preventDefault(); $('err').textContent='';
+      e.preventDefault(); showErr('');
       if($('honey').value) return;
       var links=$('link').value.split(/[\s,]+/).filter(function(x){return /^https?:\/\//i.test(x)});
       var need=plan==='bundle3'?3:1;
-      if(!$('artist').value.trim()||!$('title').value.trim()) return $('err').textContent='Add the artist name and track title.';
-      if(links.length<need) return $('err').textContent=need===1?'Add a link to the audio that starts with http.':'Add three audio links, one per line.';
-      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test($('email').value.trim())) return $('err').textContent='Add a valid email.';
-      if(!$('rights').checked) return $('err').textContent='Please confirm the rights box.';
+      if(!$('artist').value.trim()||!$('title').value.trim()) return showErr('Add the artist name and track title.','Agrega el nombre del artista y el título de la pista.');
+      if(links.length<need) return need===1?showErr('Add a link to the audio that starts with http.','Agrega un enlace al audio que empiece con http.'):showErr('Add three audio links, one per line.','Agrega tres enlaces de audio, uno por línea.');
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test($('email').value.trim())) return showErr('Add a valid email.','Agrega un correo electrónico válido.');
+      if(!$('rights').checked) return showErr('Please confirm the rights box.','Confirma la casilla de derechos.');
       var o={artist:$('artist').value.trim(),title:$('title').value.trim(),track_links:links.slice(0,need),plan:plan,color:val('color'),vertical:val('vertical'),email:$('email').value.trim(),rights:'yes',extra_titles:$('extra').value.trim()};
-      var btn=$('send'); btn.disabled=true; btn.textContent='Sending...';
+      var btn=$('send'); btn.disabled=true; btn.textContent=L('Sending...','Enviando...');
       fetch('https://formsubmit.co/ajax/thestaleysocial@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
         body:JSON.stringify({_subject:'Visualizer Drops order: '+o.artist+' - '+o.title,_template:'table',_captcha:'false',name:o.artist,email:o.email,
           Plan:plan==='bundle3'?'3 videos, $120':'1 video, $49',Artist:o.artist,Title:o.title,'Audio links':links.join(' '),Color:o.color,Vertical:o.vertical,
@@ -246,7 +278,7 @@
         if(String(j.success)!=='true') throw new Error('fail');
         if(window.gtag)gtag('event','visdrop_order_sent',{plan:plan});
         $('orderwrap').classList.add('hide'); $('thanks').classList.remove('hide'); window.scrollTo(0,0);
-      }).catch(function(){ btn.disabled=false; btn.textContent='Send my track'; $('err').textContent='Could not send. Email your details to thestaleysocial@gmail.com and we will take it from there.'; });
+      }).catch(function(){ btn.disabled=false; btn.textContent=L('Send my track','Enviar mi pista'); showErr('Could not send. Email your details to thestaleysocial@gmail.com and we will take it from there.','No se pudo enviar. Escribe tus datos a thestaleysocial@gmail.com y nosotros nos encargamos.'); });
     });
   })();
   </script>

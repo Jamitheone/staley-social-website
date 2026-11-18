@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visualizer Drops | $49 beat-synced music video</title>
+  <title data-es="Visualizer Drops | Videoclip 3D sincronizado al ritmo por $49">Visualizer Drops | $49 beat-synced music video</title>
   <link rel="canonical" href="https://thestaleysocial.com/visualizer-drops.html">
-  <meta name="description" content="Send a track, get a 1080p beat-synced 3D visualizer in 48 hours. $49 per video, $120 for three. One revision included.">
-  <meta property="og:title" content="Visualizer Drops | $49 beat-synced music video">
-  <meta property="og:description" content="Send a track, get a 1080p beat-synced 3D visualizer in 48 hours. $49 per video, $120 for three. One revision included.">
+  <meta name="description" content="Send a track, get a 1080p beat-synced 3D visualizer in 48 hours. $49 per video, $120 for three. One revision included." data-es-content="Envía una pista y recibe en 48 horas un visualizador 3D en 1080p sincronizado al ritmo. $49 por video, $120 por tres. Una revisión incluida.">
+  <meta property="og:title" content="Visualizer Drops | $49 beat-synced music video" data-es-content="Visualizer Drops | Videoclip 3D sincronizado al ritmo por $49">
+  <meta property="og:description" content="Send a track, get a 1080p beat-synced 3D visualizer in 48 hours. $49 per video, $120 for three. One revision included." data-es-content="Envía una pista y recibe en 48 horas un visualizador 3D en 1080p sincronizado al ritmo. $49 por video, $120 por tres. Una revisión incluida.">
   <meta property="og:url" content="https://thestaleysocial.com/visualizer-drops.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Staley Social">
@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB8CM3TL22"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GB8CM3TL22');</script>
-  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <link rel="stylesheet" href="css/flat.css?v=3">
 <style>
 
@@ -67,6 +67,9 @@
 .vd-faq-item.open .vd-faq-a { display:block; }
 .vd-faq-a p { font-size:0.88rem; color:var(--text-2); line-height:1.75; padding:0 0 22px; max-width:68ch; }
 
+.vd-faq-q:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.vd-card .btn{min-height:48px;white-space:normal;text-align:center;padding-left:20px;padding-right:20px}
+@media(max-width:640px){.vd-section{padding:64px 0}.vd-card{min-width:0}}
 </style>
 </head>
 <body class="page-flat">
@@ -77,131 +80,147 @@
     <div class="nav-inner">
       <a href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
       <div class="nav-links">
-        <a href="/">Home</a>
+        <a href="/" data-es="Inicio">Home</a>
         <a href="/os.html">Software</a>
-        <a href="/services.html">Services</a>
-        <a href="/results.html">Results</a>
-        <a href="/work.html">Work</a>
-        <a href="/pricing.html">Pricing</a>
+        <a href="/services.html" data-es="Servicios">Services</a>
+        <a href="/results.html" data-es="Resultados">Results</a>
+        <a href="/work.html" data-es="Trabajos">Work</a>
+        <a href="/pricing.html" data-es="Precios">Pricing</a>
         <a href="/blog/">Blog</a>
-        <a href="/course.html">Course</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/course.html" data-es="Curso">Course</a>
+        <a href="/contact.html" data-es="Contacto">Contact</a>
       </div>
-      <div class="nav-cta">
-        <a href="visualizer-drops-order.html" class="btn btn-primary btn-sm">Order a drop</a>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <div class="nav-cta" data-keep-cta>
+        <div class="lang" role="group" aria-label="Language" data-es-aria-label="Idioma">
+          <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+          <label class="sr-only" for="more-lang" data-es="Más idiomas">More languages</label>
+          <select id="more-lang" translate="no">
+            <option value="" data-es="Más">More</option>
+            <optgroup label="Machine translated" data-es-label="Traducción automática">
+              <option value="pt">Português</option><option value="fr">Français</option>
+              <option value="de">Deutsch</option><option value="it">Italiano</option>
+              <option value="tl">Tagalog</option><option value="vi">Tiếng Việt</option>
+              <option value="zh-CN">中文</option><option value="ja">日本語</option>
+              <option value="ko">한국어</option><option value="ar">العربية</option>
+              <option value="hi">हिन्दी</option><option value="ru">Русский</option>
+            </optgroup>
+          </select>
+        </div>
+        <a href="visualizer-drops-order.html" class="btn btn-primary btn-sm" data-es="Pedir un Drop">Order a drop</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" data-es-aria-label="Abrir o cerrar menú"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
   <div class="nav-mobile" id="nav-mobile">
-    <a href="/">Home</a>
+    <a href="/" data-es="Inicio">Home</a>
     <a href="/os.html">Software</a>
-    <a href="/services.html">Services</a>
-    <a href="/results.html">Results</a>
-    <a href="/work.html">Work</a>
-    <a href="/pricing.html">Pricing</a>
+    <a href="/services.html" data-es="Servicios">Services</a>
+    <a href="/results.html" data-es="Resultados">Results</a>
+    <a href="/work.html" data-es="Trabajos">Work</a>
+    <a href="/pricing.html" data-es="Precios">Pricing</a>
     <a href="/blog/">Blog</a>
-    <a href="/course.html">Course</a>
-    <a href="/contact.html">Contact</a>
+    <a href="/course.html" data-es="Curso">Course</a>
+    <a href="/contact.html" data-es="Contacto">Contact</a>
 
-    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
+    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;" data-es="Agenda una llamada gratis">Book a free call</a>
     <a href="tel:+18166528233" style="text-align:center;font-size:0.75rem;color:var(--text-2);">(816) 652-8233</a>
   </div>
 
   <section class="vd-section" style="padding-top:calc(var(--nav-h) + 72px); text-align:center;">
     <div class="container">
       <span class="vd-eyebrow">Visualizer Drops</span>
-      <h1 class="vd-title">Your track, as a <span class="accent">pro music video.</span></h1>
-      <p class="vd-sub">Send a link to your song. In 48 hours you get a 1080p, beat-synced 3D visualizer with your name and title on screen, ready for YouTube.</p>
+      <h1 class="vd-title" data-es="Tu canción, como un <span class=&quot;accent&quot;>videoclip profesional.</span>">Your track, as a <span class="accent">pro music video.</span></h1>
+      <p class="vd-sub" data-es="Envía el enlace de tu canción. En 48 horas recibes un visualizador 3D en 1080p, sincronizado al ritmo, con tu nombre y el título en pantalla, listo para YouTube.">Send a link to your song. In 48 hours you get a 1080p, beat-synced 3D visualizer with your name and title on screen, ready for YouTube.</p>
       <div class="vd-actions">
-        <a href="visualizer-drops-order.html?plan=single" class="btn btn-primary btn-lg" onclick="if(window.gtag)gtag('event','visdrop_cta',{location:'hero'});">Order for $49 <span style="font-size:1.1em;">&rarr;</span></a>
-        <a href="#how" class="btn btn-secondary btn-lg">How it works</a>
+        <a href="visualizer-drops-order.html?plan=single" class="btn btn-primary btn-lg" onclick="if(window.gtag)gtag('event','visdrop_cta',{location:'hero'});" data-es="Pedir por $49 <span style=&quot;font-size:1.1em;&quot;>&amp;rarr;</span>">Order for $49 <span style="font-size:1.1em;">&rarr;</span></a>
+        <a href="#how" class="btn btn-secondary btn-lg" data-es="Cómo funciona">How it works</a>
       </div>
-      <p class="vd-note">One time, per video. No subscription. Secure checkout by Square.</p>
+      <p class="vd-note" data-es="Pago único, por video. Sin suscripción. Pago seguro con Square.">One time, per video. No subscription. Secure checkout by Square.</p>
       <div class="vd-video">
-        <video src="assets/video/visualizer-drops-sample.mp4" poster="assets/video/visualizer-drops-sample.jpg" controls muted playsinline preload="metadata"></video>
-        <p>A real sample, made the same way your video will be. Track: NIGHTMARE by JAMI.</p>
+        <video aria-label="Visualizer Drops sample video" width="1920" height="1080" src="assets/video/visualizer-drops-sample.mp4" poster="assets/video/visualizer-drops-sample.jpg" controls muted playsinline preload="metadata" data-es-aria-label="Video de muestra de Visualizer Drops"></video>
+        <p data-es="Una muestra real, hecha de la misma forma que tu video. Pista: NIGHTMARE de JAMI.">A real sample, made the same way your video will be. Track: NIGHTMARE by JAMI.</p>
       </div>
     </div>
   </section>
 
   <section class="vd-tight" style="background:var(--bg-2);">
     <div class="container">
-      <div class="vd-head"><span class="tag">What you get</span><h2>One song, fully finished</h2></div>
+      <div class="vd-head"><span class="tag" data-es="Lo que recibes">What you get</span><h2 data-es="Una canción, totalmente terminada">One song, fully finished</h2></div>
       <div class="vd-grid">
-        <div class="vd-item"><h3>20 second preview</h3><p>A short cut to check your name, your title and the color before you download anything big.</p></div>
-        <div class="vd-item"><h3>Full length video</h3><p>1080p, 24 frames per second, the whole track. Black chrome object, mirror floor, lights that move with the music.</p></div>
-        <div class="vd-item"><h3>Your name and title on screen</h3><p>Lettered in the scene itself and again as an opening title and an end card.</p></div>
-        <div class="vd-item"><h3>Cut to the beat</h3><p>The tempo and the drops are read from your audio. The camera and light hit where your track hits.</p></div>
-        <div class="vd-item"><h3>48 hour turnaround</h3><p>From the moment your payment and details are in. One color or title revision is included.</p></div>
-        <div class="vd-item"><h3>Vertical cut, optional</h3><p>A 1080 by 1920 version for TikTok, Reels and Shorts, from the same scene. Say yes on the order form.</p></div>
+        <div class="vd-item"><h3 data-es="Vista previa de 20 segundos">20 second preview</h3><p data-es="Un corte corto para revisar tu nombre, tu título y el color antes de descargar nada pesado.">A short cut to check your name, your title and the color before you download anything big.</p></div>
+        <div class="vd-item"><h3 data-es="Video completo">Full length video</h3><p data-es="1080p, 24 cuadros por segundo, la canción completa. Objeto cromado negro, piso de espejo, luces que se mueven con la música.">1080p, 24 frames per second, the whole track. Black chrome object, mirror floor, lights that move with the music.</p></div>
+        <div class="vd-item"><h3 data-es="Tu nombre y título en pantalla">Your name and title on screen</h3><p data-es="Escritos dentro de la escena y de nuevo como título de apertura y tarjeta final.">Lettered in the scene itself and again as an opening title and an end card.</p></div>
+        <div class="vd-item"><h3 data-es="Cortado al ritmo">Cut to the beat</h3><p data-es="El tempo y los drops se leen de tu audio. La cámara y la luz golpean donde golpea tu canción.">The tempo and the drops are read from your audio. The camera and light hit where your track hits.</p></div>
+        <div class="vd-item"><h3 data-es="Entrega en 48 horas">48 hour turnaround</h3><p data-es="Desde el momento en que llegan tu pago y tus datos. Incluye una revisión de color o de título.">From the moment your payment and details are in. One color or title revision is included.</p></div>
+        <div class="vd-item"><h3 data-es="Corte vertical, opcional">Vertical cut, optional</h3><p data-es="Una versión de 1080 por 1920 para TikTok, Reels y Shorts, de la misma escena. Di que sí en el formulario de pedido.">A 1080 by 1920 version for TikTok, Reels and Shorts, from the same scene. Say yes on the order form.</p></div>
       </div>
     </div>
   </section>
 
   <section class="vd-section" id="how">
     <div class="container">
-      <div class="vd-head"><span class="tag">How it works</span><h2>Three steps, no back and forth</h2></div>
+      <div class="vd-head"><span class="tag" data-es="Cómo funciona">How it works</span><h2 data-es="Tres pasos, sin ir y venir">Three steps, no back and forth</h2></div>
       <div class="vd-grid">
-        <div class="vd-item"><span class="vd-step-num">01</span><h3>Pay</h3><p>$49 for one video, or $120 for three. One payment through Square.</p></div>
-        <div class="vd-item"><span class="vd-step-num">02</span><h3>Send the track</h3><p>Fill in a short form: artist name, track title, a link to the audio, a color, and whether you want the vertical cut.</p></div>
-        <div class="vd-item"><span class="vd-step-num">03</span><h3>Get your video</h3><p>Within 48 hours you get an email with a preview and the download link for the full video.</p></div>
+        <div class="vd-item"><span class="vd-step-num">01</span><h3 data-es="Paga">Pay</h3><p data-es="$49 por un video, o $120 por tres. Un solo pago con Square.">$49 for one video, or $120 for three. One payment through Square.</p></div>
+        <div class="vd-item"><span class="vd-step-num">02</span><h3 data-es="Envía la pista">Send the track</h3><p data-es="Llena un formulario corto: nombre del artista, título de la pista, un enlace al audio, un color y si quieres el corte vertical.">Fill in a short form: artist name, track title, a link to the audio, a color, and whether you want the vertical cut.</p></div>
+        <div class="vd-item"><span class="vd-step-num">03</span><h3 data-es="Recibe tu video">Get your video</h3><p data-es="En 48 horas recibes un correo con una vista previa y el enlace de descarga del video completo.">Within 48 hours you get an email with a preview and the download link for the full video.</p></div>
       </div>
     </div>
   </section>
 
   <section class="vd-section" id="pricing" style="background:var(--bg-2);">
     <div class="container">
-      <div class="vd-head"><span class="tag">Pricing</span><h2>$49 a video</h2><p>Flat price, one time. Everything above is included.</p></div>
+      <div class="vd-head"><span class="tag" data-es="Precios">Pricing</span><h2 data-es="$49 por video">$49 a video</h2><p data-es="Precio fijo, pago único. Todo lo anterior está incluido.">Flat price, one time. Everything above is included.</p></div>
       <div class="vd-prices">
         <div class="vd-card">
-          <span class="badge">One video</span>
-          <div class="row"><span class="dol">$</span><span class="num">49</span><span class="per">one time</span></div>
+          <span class="badge" data-es="Un video">One video</span>
+          <div class="row"><span class="dol">$</span><span class="num">49</span><span class="per" data-es="pago único">one time</span></div>
           <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>1080p24 full length plus 20 second preview</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Your name and title on screen</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>One color or title revision</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Vertical 9:16 cut available</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg><span data-es="1080p a 24 cuadros de largo completo, más vista previa de 20 segundos">1080p24 full length plus 20 second preview</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg><span data-es="Tu nombre y título en pantalla">Your name and title on screen</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg><span data-es="Una revisión de color o de título">One color or title revision</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg><span data-es="Corte vertical 9:16 disponible">Vertical 9:16 cut available</span></li>
           </ul>
-          <a href="visualizer-drops-order.html?plan=single" class="btn btn-secondary btn-lg" style="width:100%; justify-content:center;" onclick="if(window.gtag)gtag('event','visdrop_cta',{location:'price',plan:'single'});">Order for $49 <span style="font-size:1.1em;">&rarr;</span></a>
+          <a href="visualizer-drops-order.html?plan=single" class="btn btn-secondary btn-lg" style="width:100%; justify-content:center;" onclick="if(window.gtag)gtag('event','visdrop_cta',{location:'price',plan:'single'});" data-es="Pedir por $49 <span style=&quot;font-size:1.1em;&quot;>&amp;rarr;</span>">Order for $49 <span style="font-size:1.1em;">&rarr;</span></a>
         </div>
         <div class="vd-card">
-          <span class="badge">Bundle of three</span>
-          <div class="row"><span class="dol">$</span><span class="num">120</span><span class="per">one time, $40 each</span></div>
+          <span class="badge" data-es="Paquete de tres">Bundle of three</span>
+          <div class="row"><span class="dol">$</span><span class="num">120</span><span class="per" data-es="pago único, $40 cada uno">one time, $40 each</span></div>
           <ul>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Three tracks, three full videos</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Everything in the single order, per video</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Good for an EP or a release run</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Save $27 over buying one at a time</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg><span data-es="Tres pistas, tres videos completos">Three tracks, three full videos</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg><span data-es="Todo lo del pedido individual, por cada video">Everything in the single order, per video</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg><span data-es="Ideal para un EP o una tanda de lanzamientos">Good for an EP or a release run</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg><span data-es="Ahorra $27 frente a comprar uno por uno">Save $27 over buying one at a time</span></li>
           </ul>
-          <a href="visualizer-drops-order.html?plan=bundle" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" onclick="if(window.gtag)gtag('event','visdrop_cta',{location:'price',plan:'bundle'});">Order the bundle for $120 <span style="font-size:1.1em;">&rarr;</span></a>
+          <a href="visualizer-drops-order.html?plan=bundle" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" onclick="if(window.gtag)gtag('event','visdrop_cta',{location:'price',plan:'bundle'});" data-es="Pedir el paquete por $120 <span style=&quot;font-size:1.1em;&quot;>&amp;rarr;</span>">Order the bundle for $120 <span style="font-size:1.1em;">&rarr;</span></a>
         </div>
       </div>
-      <p class="vd-compare">For comparison, a Fiverr visualizer gig lists at <b>$30, $50 and $80</b> for its three tiers, and <b>$100 to $200</b> for the AI-driven kind (<a href="https://fiverr.com/creative_st/make-an-amazing-audio-visualizer-video-for-your-song-or-rap" target="_blank" rel="noopener">one example listing</a>). Here it is $49 flat, with the 3D scene look, a 48 hour clock and a revision already in the price.</p>
+      <p class="vd-compare" data-es="Como referencia, un servicio de visualizadores en Fiverr cuesta <b>$30, $50 y $80</b> en sus tres niveles, y <b>$100 a $200</b> para el tipo con IA (<a href=&quot;https://fiverr.com/creative_st/make-an-amazing-audio-visualizer-video-for-your-song-or-rap&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>una publicación de ejemplo</a>). Aquí son $49 fijos, con el look de escena 3D, un reloj de 48 horas y una revisión ya incluidos en el precio.">For comparison, a Fiverr visualizer gig lists at <b>$30, $50 and $80</b> for its three tiers, and <b>$100 to $200</b> for the AI-driven kind (<a href="https://fiverr.com/creative_st/make-an-amazing-audio-visualizer-video-for-your-song-or-rap" target="_blank" rel="noopener">one example listing</a>). Here it is $49 flat, with the 3D scene look, a 48 hour clock and a revision already in the price.</p>
     </div>
   </section>
 
   <section class="vd-tight">
     <div class="container">
-      <div class="vd-head"><span class="tag">Questions</span><h2>Questions artists ask first</h2></div>
+      <div class="vd-head"><span class="tag" data-es="Preguntas">Questions</span><h2 data-es="Lo que los artistas preguntan primero">Questions artists ask first</h2></div>
       <div class="vd-faq">
-        <div class="vd-faq-item"><button class="vd-faq-q">What audio can I send? <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p>A link to the track. SoundCloud, YouTube, Bandcamp, Google Drive or Dropbox share links all work, and so does any direct link to an MP3, WAV or M4A. Drive and Dropbox links need to be set to anyone with the link. Tracks run up to 6 minutes. Need to send a file instead? Reply to your order confirmation and attach it.</p></div></div>
-        <div class="vd-faq-item"><button class="vd-faq-q">Who owns the video, and what about rights? <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p>The video is yours to post anywhere. You confirm on the order form that you own the track or have the right to use it. The 3D scene is built from scratch for each video, with no third party footage in it, so nothing in the picture can trigger a claim. The music itself is your responsibility, as it is on any upload.</p></div></div>
-        <div class="vd-faq-item"><button class="vd-faq-q">What is included if I want a change? <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p>One revision per video, either a color change or a title or name fix. Reply with what to change and the new file comes back within 24 hours. Beat sync and the scene itself are not redone, since those are what you ordered.</p></div></div>
-        <div class="vd-faq-item"><button class="vd-faq-q">How fast is 48 hours? <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p>The clock starts when your payment and your order details are both in. You get an email with the 20 second preview and a download link for the full 1080p file. Most orders finish well inside the window.</p></div></div>
-        <div class="vd-faq-item"><button class="vd-faq-q">What do I get exactly? <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p>A 20 second preview, the full length 1080p, 24 frames per second video with your artist name and track title on screen, cut and lit to the beat of your song, and a thumbnail image. Add the vertical option and you also get a 1080 by 1920 cut for TikTok, Reels and Shorts.</p></div></div>
-        <div class="vd-faq-item"><button class="vd-faq-q">Can I pick the look? <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p>You pick one of three color palettes: violet and cyan, amber, or ice blue. The camera, the lighting and the beat reactions are the same pro scene in every palette.</p></div></div>
-        <div class="vd-faq-item"><button class="vd-faq-q">What does the bundle cover? <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p>Three videos for $120, which is $40 each. Put all three track links on the order form. The bundle is also one color palette and one revision per video.</p></div></div>
-        <div class="vd-faq-item"><button class="vd-faq-q">What if I do not like it? <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p>Tell us within 7 days of delivery. We use the revision first. If it still is not right, we refund the video.</p></div></div>
+        <div class="vd-faq-item"><button class="vd-faq-q" aria-expanded="false"><span data-es="¿Qué audio puedo enviar?">What audio can I send?</span> <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p data-es="Un enlace a la pista. Sirven los enlaces para compartir de SoundCloud, YouTube, Bandcamp, Google Drive o Dropbox, y también cualquier enlace directo a un MP3, WAV o M4A. Los enlaces de Drive y Dropbox deben estar configurados para cualquiera con el enlace. Las pistas pueden durar hasta 6 minutos. ¿Prefieres enviar un archivo? Responde a la confirmación de tu pedido y adjúntalo.">A link to the track. SoundCloud, YouTube, Bandcamp, Google Drive or Dropbox share links all work, and so does any direct link to an MP3, WAV or M4A. Drive and Dropbox links need to be set to anyone with the link. Tracks run up to 6 minutes. Need to send a file instead? Reply to your order confirmation and attach it.</p></div></div>
+        <div class="vd-faq-item"><button class="vd-faq-q" aria-expanded="false"><span data-es="¿De quién es el video y qué pasa con los derechos?">Who owns the video, and what about rights?</span> <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p data-es="El video es tuyo y lo puedes publicar donde quieras. En el formulario de pedido confirmas que eres dueño de la pista o tienes derecho a usarla. La escena 3D se construye desde cero para cada video, sin material de terceros, así que nada en la imagen puede provocar un reclamo. La música es responsabilidad tuya, como en cualquier publicación.">The video is yours to post anywhere. You confirm on the order form that you own the track or have the right to use it. The 3D scene is built from scratch for each video, with no third party footage in it, so nothing in the picture can trigger a claim. The music itself is your responsibility, as it is on any upload.</p></div></div>
+        <div class="vd-faq-item"><button class="vd-faq-q" aria-expanded="false"><span data-es="¿Qué incluye si quiero un cambio?">What is included if I want a change?</span> <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p data-es="Una revisión por video, ya sea un cambio de color o una corrección de título o nombre. Responde con lo que quieres cambiar y el archivo nuevo vuelve en 24 horas. La sincronización con el ritmo y la escena en sí no se rehacen, porque eso es lo que pediste.">One revision per video, either a color change or a title or name fix. Reply with what to change and the new file comes back within 24 hours. Beat sync and the scene itself are not redone, since those are what you ordered.</p></div></div>
+        <div class="vd-faq-item"><button class="vd-faq-q" aria-expanded="false"><span data-es="¿Qué tan rápido son 48 horas?">How fast is 48 hours?</span> <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p data-es="El reloj empieza cuando llegan tu pago y los datos de tu pedido. Recibes un correo con la vista previa de 20 segundos y un enlace de descarga del archivo completo en 1080p. La mayoría de los pedidos terminan bien dentro del plazo.">The clock starts when your payment and your order details are both in. You get an email with the 20 second preview and a download link for the full 1080p file. Most orders finish well inside the window.</p></div></div>
+        <div class="vd-faq-item"><button class="vd-faq-q" aria-expanded="false"><span data-es="¿Qué recibo exactamente?">What do I get exactly?</span> <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p data-es="Una vista previa de 20 segundos, el video completo en 1080p a 24 cuadros por segundo con el nombre del artista y el título de la pista en pantalla, cortado e iluminado al ritmo de tu canción, y una imagen en miniatura. Si agregas la opción vertical, también recibes un corte de 1080 por 1920 para TikTok, Reels y Shorts.">A 20 second preview, the full length 1080p, 24 frames per second video with your artist name and track title on screen, cut and lit to the beat of your song, and a thumbnail image. Add the vertical option and you also get a 1080 by 1920 cut for TikTok, Reels and Shorts.</p></div></div>
+        <div class="vd-faq-item"><button class="vd-faq-q" aria-expanded="false"><span data-es="¿Puedo elegir el estilo?">Can I pick the look?</span> <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p data-es="Eliges una de tres paletas de color: violeta y cian, ámbar o azul hielo. La cámara, la iluminación y las reacciones al ritmo son la misma escena profesional en todas las paletas.">You pick one of three color palettes: violet and cyan, amber, or ice blue. The camera, the lighting and the beat reactions are the same pro scene in every palette.</p></div></div>
+        <div class="vd-faq-item"><button class="vd-faq-q" aria-expanded="false"><span data-es="¿Qué cubre el paquete?">What does the bundle cover?</span> <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p data-es="Tres videos por $120, es decir, $40 cada uno. Pon los tres enlaces de las pistas en el formulario de pedido. El paquete también incluye una paleta de color y una revisión por video.">Three videos for $120, which is $40 each. Put all three track links on the order form. The bundle is also one color palette and one revision per video.</p></div></div>
+        <div class="vd-faq-item"><button class="vd-faq-q" aria-expanded="false"><span data-es="¿Y si no me gusta?">What if I do not like it?</span> <svg class="vd-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="vd-faq-a"><p data-es="Avísanos dentro de los 7 días posteriores a la entrega. Primero usamos la revisión. Si aun así no queda bien, te reembolsamos el video.">Tell us within 7 days of delivery. We use the revision first. If it still is not right, we refund the video.</p></div></div>
       </div>
     </div>
   </section>
 
   <section class="vd-section" style="text-align:center;background:var(--bg-2);">
     <div class="container">
-      <div class="vd-head" style="margin-bottom:28px;"><h2>Ready to see your song move?</h2></div>
-      <div class="vd-actions"><a href="visualizer-drops-order.html?plan=single" class="btn btn-primary btn-lg" onclick="if(window.gtag)gtag('event','visdrop_cta',{location:'footer'});">Order for $49 <span style="font-size:1.1em;">&rarr;</span></a></div>
-      <p class="vd-note">Questions first? <a href="mailto:thestaleysocial@gmail.com" style="color:var(--blue);">thestaleysocial@gmail.com</a></p>
+      <div class="vd-head" style="margin-bottom:28px;"><h2 data-es="¿Listo para ver tu canción moverse?">Ready to see your song move?</h2></div>
+      <div class="vd-actions"><a href="visualizer-drops-order.html?plan=single" class="btn btn-primary btn-lg" onclick="if(window.gtag)gtag('event','visdrop_cta',{location:'footer'});" data-es="Pedir por $49 <span style=&quot;font-size:1.1em;&quot;>&amp;rarr;</span>">Order for $49 <span style="font-size:1.1em;">&rarr;</span></a></div>
+      <p class="vd-note" data-es="¿Preguntas primero? <a href=&quot;mailto:thestaleysocial@gmail.com&quot; style=&quot;color:var(--blue);&quot;>thestaleysocial@gmail.com</a>">Questions first? <a href="mailto:thestaleysocial@gmail.com" style="color:var(--blue);">thestaleysocial@gmail.com</a></p>
     </div>
   </section>
 
@@ -211,28 +230,28 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3>The Staley Social</h3>
-          <p>Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
+          <p data-es="La agencia de marketing digital integral de Kansas City. Resultados garantizados por escrito.">Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
           <div class="footer-social">
             <a href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
             <a href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
             <a href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
           </div>
         </div>
-        <div class="footer-col"><h4>Product</h4><ul><li><a href="course.html">OPERATOR course</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="os.html">Staley OS</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="results.html">Results</a></li><li><a href="work.html">Work</a></li></ul></div>
-        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><span style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
+        <div class="footer-col"><h4 data-es="Producto">Product</h4><ul><li><a href="course.html" data-es="Curso OPERATOR">OPERATOR course</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="blog-autopilot.html">Blog Autopilot</a></li><li><a href="os.html">Staley OS</a></li><li><a href="pricing.html" data-es="Precios">Pricing</a></li><li><a href="results.html" data-es="Resultados">Results</a></li><li><a href="work.html" data-es="Trabajos">Work</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Empresa">Company</h4><ul><li><a href="about.html" data-es="Quiénes somos">About</a></li><li><a href="services.html" data-es="Servicios">Services</a></li><li><a href="contact.html" data-es="Contacto">Contact</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Contacto">Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><span style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Staley Social LLC. All rights reserved.</p>
-        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
+        <p data-es="&amp;copy; 2026 The Staley Social LLC. Todos los derechos reservados.">&copy; 2026 The Staley Social LLC. All rights reserved.</p>
+        <p data-es="Hecho en Kansas City. <a href=&quot;privacy.html&quot;>Política de privacidad</a> &amp;middot; <a href=&quot;terms.html&quot;>Términos</a>">Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js?v=7"></script>
+  <script src="js/main.js?v=9"></script>
   <script>
     document.querySelectorAll('.vd-faq-q').forEach(function(btn){
-      btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });
+      btn.addEventListener('click', function(){ var o=btn.parentElement.classList.toggle('open'); btn.setAttribute('aria-expanded',String(o)); });
     });
   </script>
   <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_901c8ea583cc41d3bc52d54eaee00e34"></script>

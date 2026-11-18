@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free OPERATOR chapters | The Staley Social</title>
+  <title data-es="Capítulos gratis de OPERATOR | The Staley Social">Free OPERATOR chapters | The Staley Social</title>
   <link rel="canonical" href="https://thestaleysocial.com/free-course.html">
   <meta property="og:url" content="https://thestaleysocial.com/free-course.html">
-  <meta name="description" content="Read the first two chapters of OPERATOR free. Set up your machine, run your first AI session, and learn the vibe coding loop. No email, no card.">
+  <meta data-es-content="Lee gratis los dos primeros capítulos de OPERATOR. Prepara tu computadora, haz tu primera sesión con IA y aprende el ciclo del vibe coding. Sin correo, sin tarjeta." name="description" content="Read the first two chapters of OPERATOR free. Set up your machine, run your first AI session, and learn the vibe coding loop. No email, no card.">
   <meta property="og:title" content="Free OPERATOR chapters | Learn to build with AI">
   <meta property="og:description" content="Chapters 0 and 1 of OPERATOR, free. Set up your machine and learn the loop. No email, no card.">
   <meta property="og:type" content="website">
@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB8CM3TL22"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GB8CM3TL22');</script>
-  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <link rel="stylesheet" href="css/flat.css?v=3">
 <style>
 /* ponytail: reuses os.html's .os-* classes from style.css; only course-specific bits here */
@@ -132,34 +132,50 @@
     <div class="nav-inner">
       <a href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/os.html">Software</a>
-        <a href="/services.html">Services</a>
-        <a href="/results.html">Results</a>
-        <a href="/work.html">Work</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/blog/">Blog</a>
-        <a href="/course.html" class="active">Course</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/" data-es="Inicio">Home</a>
+        <a href="/os.html" data-es="Software">Software</a>
+        <a href="/services.html" data-es="Servicios">Services</a>
+        <a href="/results.html" data-es="Resultados">Results</a>
+        <a href="/work.html" data-es="Trabajos">Work</a>
+        <a href="/pricing.html" data-es="Precios">Pricing</a>
+        <a href="/blog/" data-es="Blog">Blog</a>
+        <a href="/course.html" class="active" data-es="Curso">Course</a>
+        <a href="/contact.html" data-es="Contacto">Contact</a>
       </div>
-      <div class="nav-cta">
-        <a href="#pricing" class="btn btn-primary btn-sm" onclick="if(window.gtag)gtag('event','course_cta_click',{location:'free_nav'});">Get OPERATOR</a>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <div class="nav-cta" data-keep-cta>
+        <div class="lang" role="group" aria-label="Language" data-es-aria-label="Idioma">
+          <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+          <label class="sr-only" for="more-lang" data-es="Más idiomas">More languages</label>
+          <select id="more-lang" translate="no">
+            <option value="" data-es="Más">More</option>
+            <optgroup label="Machine translated" data-es-label="Traducción automática">
+              <option value="pt">Português</option><option value="fr">Français</option>
+              <option value="de">Deutsch</option><option value="it">Italiano</option>
+              <option value="tl">Tagalog</option><option value="vi">Tiếng Việt</option>
+              <option value="zh-CN">中文</option><option value="ja">日本語</option>
+              <option value="ko">한국어</option><option value="ar">العربية</option>
+              <option value="hi">हिन्दी</option><option value="ru">Русский</option>
+            </optgroup>
+          </select>
+        </div>
+        <a href="#pricing" class="btn btn-primary btn-sm" onclick="if(window.gtag)gtag('event','course_cta_click',{location:'free_nav'});" data-es="Obtén OPERATOR">Get OPERATOR</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" data-es-aria-label="Abrir o cerrar menú"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
   <div class="nav-mobile" id="nav-mobile">
-    <a href="/">Home</a>
-    <a href="/os.html">Software</a>
-    <a href="/services.html">Services</a>
-    <a href="/results.html">Results</a>
-    <a href="/work.html">Work</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/blog/">Blog</a>
-    <a href="/course.html">Course</a>
-    <a href="/contact.html">Contact</a>
+    <a href="/" data-es="Inicio">Home</a>
+    <a href="/os.html" data-es="Software">Software</a>
+    <a href="/services.html" data-es="Servicios">Services</a>
+    <a href="/results.html" data-es="Resultados">Results</a>
+    <a href="/work.html" data-es="Trabajos">Work</a>
+    <a href="/pricing.html" data-es="Precios">Pricing</a>
+    <a href="/blog/" data-es="Blog">Blog</a>
+    <a href="/course.html" data-es="Curso">Course</a>
+    <a href="/contact.html" data-es="Contacto">Contact</a>
 
-    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
+    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;" data-es="Reserva una llamada gratis">Book a free call</a>
     <a href="tel:+18166528233" style="text-align:center;font-size:0.75rem;color:var(--text-2);">(816) 652-8233</a>
   </div>
 
@@ -168,18 +184,18 @@
   <!-- HERO -->
   <section class="op-section" style="padding-top:calc(var(--nav-h) + 72px); text-align:center;">
     <div class="container">
-      <div class="op-eyebrow reveal">OPERATOR, free preview</div>
-      <h1 class="op-hero-title reveal">Your first two chapters are <span class="accent">free</span>.</h1>
-      <p class="op-hero-sub reveal">This is the start of my OPERATOR course, the one that teaches how I built a personal AI that runs my life and my business. Chapter 0 gets your machine ready. Chapter 1 teaches the conversation loop everything else sits on. No email, no card, no catch.</p>
+      <div class="op-eyebrow reveal" data-es="OPERATOR, vista previa gratis">OPERATOR, free preview</div>
+      <h1 class="op-hero-title reveal" data-es="Tus primeros dos capítulos son <span class=&quot;accent&quot;>gratis</span>.">Your first two chapters are <span class="accent">free</span>.</h1>
+      <p class="op-hero-sub reveal" data-es="Este es el inicio de mi curso OPERATOR, el que enseña cómo construí una IA personal que dirige mi vida y mi negocio. El capítulo 0 prepara tu computadora. El capítulo 1 enseña el ciclo de conversación sobre el que se apoya todo lo demás. Sin correo, sin tarjeta, sin trampa.">This is the start of my OPERATOR course, the one that teaches how I built a personal AI that runs my life and my business. Chapter 0 gets your machine ready. Chapter 1 teaches the conversation loop everything else sits on. No email, no card, no catch.</p>
       <div class="reveal" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:18px;">
-        <a href="#ch0" class="btn btn-primary btn-lg" onclick="if(window.gtag)gtag('event','free_course_cta_click',{location:'hero'});">Start Chapter 0 <span style="font-size:1.1em;">&darr;</span></a>
-        <a href="/course.html" class="btn btn-secondary btn-lg">See the full course</a>
+        <a href="#ch0" class="btn btn-primary btn-lg" onclick="if(window.gtag)gtag('event','free_course_cta_click',{location:'hero'});" data-es="Empieza el capítulo 0 <span style=&quot;font-size:1.1em;&quot;>&darr;</span>">Start Chapter 0 <span style="font-size:1.1em;">&darr;</span></a>
+        <a href="/course.html" class="btn btn-secondary btn-lg" data-es="Mira el curso completo">See the full course</a>
       </div>
-      <div class="op-hero-note reveal"><b>Read both in one sitting,</b> then do the two build-this-now exercises. Want the rest? The full course is $25 for the current build, or $50 for lifetime.</div>
+      <div class="op-hero-note reveal" data-es="<b>Lee los dos de una sentada,</b> y luego haz los dos ejercicios de &quot;constrúyelo ahora&quot;. ¿Quieres el resto? El curso completo cuesta $25 por la versión actual, o $50 por el acceso vitalicio."><b>Read both in one sitting,</b> then do the two build-this-now exercises. Want the rest? The full course is $25 for the current build, or $50 for lifetime.</div>
       <div class="op-trust reveal">
-        <div><div class="op-trust-num"><span class="accent">2</span></div><div class="op-trust-label">Free chapters</div></div>
-        <div><div class="op-trust-num">0</div><div class="op-trust-label">Coding experience needed</div></div>
-        <div><div class="op-trust-num">$0</div><div class="op-trust-label">To start reading</div></div>
+        <div><div class="op-trust-num"><span class="accent">2</span></div><div class="op-trust-label" data-es="Capítulos gratis">Free chapters</div></div>
+        <div><div class="op-trust-num">0</div><div class="op-trust-label" data-es="Experiencia en programación necesaria">Coding experience needed</div></div>
+        <div><div class="op-trust-num">$0</div><div class="op-trust-label" data-es="Para empezar a leer">To start reading</div></div>
       </div>
     </div>
   </section>
@@ -187,31 +203,34 @@
   <!-- CHAPTER 00 -->
   <section class="fc-chapter first" id="ch0">
     <div class="container"><div class="fc-wrap">
-      <div class="fc-chip">Chapter 00 <span class="free">Free</span></div>
-      <h2>Set up your machine</h2>
-      <p class="fc-lead">You need three things: a computer, a terminal, and an AI coding tool. That's it. If the word "terminal" makes you nervous, good. By the end of this chapter it won't.</p>
+      <div class="fc-chip" data-es="Capítulo 00 <span class=&quot;free&quot;>Gratis</span>">Chapter 00 <span class="free">Free</span></div>
+      <h2 data-es="Prepara tu computadora">Set up your machine</h2>
+      <p class="fc-lead" data-es="Necesitas tres cosas: una computadora, una terminal y una herramienta de IA para programar. Eso es todo. Si la palabra &quot;terminal&quot; te pone nervioso, bien. Al final de este capítulo ya no.">You need three things: a computer, a terminal, and an AI coding tool. That's it. If the word "terminal" makes you nervous, good. By the end of this chapter it won't.</p>
 
-      <h3>The stack, and what it costs</h3>
+      <h3 data-es="Las herramientas y lo que cuestan">The stack, and what it costs</h3>
       <ul>
-        <li><strong>Your computer (Mac or Windows).</strong> Nothing special. What you already own is fine.</li>
-        <li><strong>The terminal.</strong> On Mac it's an app literally called Terminal. On Windows, install Windows Terminal from the Store. It's a text box where you type commands instead of clicking buttons. That's the whole mystery.</li>
-        <li><strong>Claude Code.</strong> This is the AI that writes, runs, and fixes code by talking to you. It's what ARIS is built on. Roughly $20/month to start, and you can do a lot on the entry tier.</li>
+        <li data-es="<strong>Tu computadora (Mac o Windows).</strong> Nada especial. Lo que ya tienes sirve."><strong>Your computer (Mac or Windows).</strong> Nothing special. What you already own is fine.</li>
+        <li data-es="<strong>La terminal.</strong> En Mac es una app que se llama literalmente Terminal. En Windows, instala Windows Terminal desde la Store. Es un cuadro de texto donde escribes comandos en vez de hacer clic en botones. Ese es todo el misterio."><strong>The terminal.</strong> On Mac it's an app literally called Terminal. On Windows, install Windows Terminal from the Store. It's a text box where you type commands instead of clicking buttons. That's the whole mystery.</li>
+        <li data-es="<strong>Claude Code.</strong> Esta es la IA que escribe, ejecuta y arregla código conversando contigo. Es la base sobre la que se construye ARIS. Cuesta unos $20 al mes para empezar, y puedes hacer mucho con el nivel de entrada."><strong>Claude Code.</strong> This is the AI that writes, runs, and fixes code by talking to you. It's what ARIS is built on. Roughly $20/month to start, and you can do a lot on the entry tier.</li>
       </ul>
-      <p><strong>Total to start:</strong> the price of one AI subscription. You can build real, deployed things at that level before spending another dollar.</p>
+      <p data-es="<strong>Total para empezar:</strong> el precio de una suscripción de IA. Con ese nivel puedes crear cosas reales y publicadas antes de gastar otro dólar."><strong>Total to start:</strong> the price of one AI subscription. You can build real, deployed things at that level before spending another dollar.</p>
 
-      <h3>Getting Claude Code running</h3>
-      <p>Open your terminal and install it (the current one-line install command is on <a href="https://claude.com/claude-code" target="_blank" rel="noopener">claude.com/claude-code</a>, I'm pointing you there instead of pasting a command that'll be stale in a month). Then type <code>claude</code> and hit enter. You're in. It'll ask you to log in the first time.</p>
+      <h3 data-es="Cómo poner Claude Code a funcionar">Getting Claude Code running</h3>
+      <p data-es="Abre tu terminal e instálalo (el comando de instalación de una línea está en <a href=&quot;https://claude.com/claude-code&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>claude.com/claude-code</a>; te mando allá en vez de pegar un comando que dentro de un mes estará desactualizado). Luego escribe <code>claude</code> y presiona enter. Ya estás dentro. La primera vez te pedirá iniciar sesión.">Open your terminal and install it (the current one-line install command is on <a href="https://claude.com/claude-code" target="_blank" rel="noopener">claude.com/claude-code</a>, I'm pointing you there instead of pasting a command that'll be stale in a month). Then type <code>claude</code> and hit enter. You're in. It'll ask you to log in the first time.</p>
 
-      <h3>The only terminal commands you actually need</h3>
-      <div class="fc-code"><code>cd my-folder      # "change directory", go into a folder
+      <h3 data-es="Los únicos comandos de terminal que realmente necesitas">The only terminal commands you actually need</h3>
+      <div class="fc-code"><code data-es="cd mi-carpeta      # &quot;change directory&quot;, entra a una carpeta
+ls                # lista lo que hay en la carpeta actual
+mkdir proyectos   # crea una carpeta nueva llamada proyectos
+claude            # inicia la IA">cd my-folder      # "change directory", go into a folder
 ls                # list what's in the current folder
 mkdir projects    # make a new folder called projects
 claude            # start the AI</code></div>
-      <p>That's genuinely most of it. When you don't know a command, ask Claude Code itself. "How do I get back to my home folder?" is a valid thing to type at it.</p>
+      <p data-es="De verdad, eso es casi todo. Cuando no conozcas un comando, pregúntale a Claude Code. &quot;¿Cómo vuelvo a mi carpeta de inicio?&quot; es algo totalmente válido para escribirle.">That's genuinely most of it. When you don't know a command, ask Claude Code itself. "How do I get back to my home folder?" is a valid thing to type at it.</p>
 
       <div class="fc-call">
-        <span class="tag">Build this now</span>
-        <p>Make a folder called <code>operator</code>, <code>cd</code> into it, run <code>claude</code>, and type: "Explain what folder we're in right now and what's in it." You just had your first working session. That's the whole loop, everything else is bigger versions of this.</p>
+        <span class="tag" data-es="Constrúyelo ahora">Build this now</span>
+        <p data-es="Crea una carpeta llamada <code>operator</code>, entra con <code>cd</code>, ejecuta <code>claude</code> y escribe: &quot;Explica en qué carpeta estamos ahora y qué hay en ella&quot;. Acabas de tener tu primera sesión de trabajo. Ese es todo el ciclo; lo demás son versiones más grandes de esto.">Make a folder called <code>operator</code>, <code>cd</code> into it, run <code>claude</code>, and type: "Explain what folder we're in right now and what's in it." You just had your first working session. That's the whole loop, everything else is bigger versions of this.</p>
       </div>
     </div></div>
   </section>
@@ -219,38 +238,38 @@ claude            # start the AI</code></div>
   <!-- CHAPTER 01 -->
   <section class="fc-chapter" id="ch1">
     <div class="container"><div class="fc-wrap">
-      <div class="fc-chip">Chapter 01 <span class="free">Free</span></div>
-      <h2>How to actually vibe code</h2>
-      <p class="fc-lead">Vibe coding is not "the AI reads your mind." It's a conversation loop, and there's a skill to running it well. Master this and everything else in the course is just applying it to bigger targets.</p>
+      <div class="fc-chip" data-es="Capítulo 01 <span class=&quot;free&quot;>Gratis</span>">Chapter 01 <span class="free">Free</span></div>
+      <h2 data-es="Cómo hacer vibe coding de verdad">How to actually vibe code</h2>
+      <p class="fc-lead" data-es="El vibe coding no es que &quot;la IA lea tu mente&quot;. Es un ciclo de conversación, y hay una habilidad para llevarlo bien. Domina esto y todo lo demás del curso es aplicarlo a objetivos más grandes.">Vibe coding is not "the AI reads your mind." It's a conversation loop, and there's a skill to running it well. Master this and everything else in the course is just applying it to bigger targets.</p>
 
-      <h3>The loop</h3>
+      <h3 data-es="El ciclo">The loop</h3>
       <ol>
-        <li><strong>Describe the outcome, not the code.</strong> "I want a page that shows my daily tasks in a list" beats "write a React component with a useState array."</li>
-        <li><strong>Let it work.</strong> It'll write files, run things, show you results.</li>
-        <li><strong>Look at what came back.</strong> Did it do the thing? Run it and see.</li>
-        <li><strong>Correct in plain English.</strong> "The list works but I want newest on top" is a complete, useful instruction.</li>
-        <li><strong>Repeat until it's right.</strong></li>
+        <li data-es="<strong>Describe el resultado, no el código.</strong> &quot;Quiero una página que muestre mis tareas diarias en una lista&quot; funciona mejor que &quot;escribe un componente de React con un arreglo useState&quot;."><strong>Describe the outcome, not the code.</strong> "I want a page that shows my daily tasks in a list" beats "write a React component with a useState array."</li>
+        <li data-es="<strong>Déjala trabajar.</strong> Escribirá archivos, ejecutará cosas y te mostrará resultados."><strong>Let it work.</strong> It'll write files, run things, show you results.</li>
+        <li data-es="<strong>Mira lo que devolvió.</strong> ¿Hizo lo que pediste? Ejecútalo y compruébalo."><strong>Look at what came back.</strong> Did it do the thing? Run it and see.</li>
+        <li data-es="<strong>Corrige en lenguaje sencillo.</strong> &quot;La lista funciona pero quiero lo más nuevo arriba&quot; es una instrucción completa y útil."><strong>Correct in plain English.</strong> "The list works but I want newest on top" is a complete, useful instruction.</li>
+        <li data-es="<strong>Repite hasta que quede bien.</strong>"><strong>Repeat until it's right.</strong></li>
       </ol>
 
-      <h3>How to describe what you want</h3>
-      <p>The gap between a bad result and a great one is almost always the prompt. Three habits that fix 90% of it:</p>
+      <h3 data-es="Cómo describir lo que quieres">How to describe what you want</h3>
+      <p data-es="La diferencia entre un mal resultado y uno excelente casi siempre es el prompt. Tres hábitos que arreglan el 90% del problema:">The gap between a bad result and a great one is almost always the prompt. Three habits that fix 90% of it:</p>
       <ul>
-        <li><strong>Give context first.</strong> "I'm building a personal dashboard. It's just for me, runs on my laptop." Now every answer is aimed correctly.</li>
-        <li><strong>Say what "done" looks like.</strong> "Done means I can open it in my browser and see today's date." A clear finish line means it knows when to stop.</li>
-        <li><strong>One thing at a time.</strong> Don't ask for ten features in one message. Ask for one, verify it, then the next. This is the single biggest quality lever.</li>
+        <li data-es="<strong>Da el contexto primero.</strong> &quot;Estoy construyendo un panel personal. Es solo para mí y corre en mi laptop&quot;. Así cada respuesta apunta bien."><strong>Give context first.</strong> "I'm building a personal dashboard. It's just for me, runs on my laptop." Now every answer is aimed correctly.</li>
+        <li data-es="<strong>Di cómo se ve &quot;terminado&quot;.</strong> &quot;Terminado significa que puedo abrirlo en mi navegador y ver la fecha de hoy&quot;. Una meta clara le dice cuándo detenerse."><strong>Say what "done" looks like.</strong> "Done means I can open it in my browser and see today's date." A clear finish line means it knows when to stop.</li>
+        <li data-es="<strong>Una cosa a la vez.</strong> No pidas diez funciones en un mensaje. Pide una, verifícala y sigue con la siguiente. Esta es la palanca más grande de calidad."><strong>One thing at a time.</strong> Don't ask for ten features in one message. Ask for one, verify it, then the next. This is the single biggest quality lever.</li>
       </ul>
 
-      <h3>When it breaks (it will)</h3>
-      <p>Errors are not failure, they're information. When something breaks: copy the error and paste it straight back to the AI with "this broke, fix it." You do not need to understand the error. That's the entire trick that makes non-coders dangerous now. Read the error only well enough to notice if it's saying the same thing twice, which means the current approach is stuck and you should say "try a completely different approach."</p>
+      <h3 data-es="Cuando se rompe (se va a romper)">When it breaks (it will)</h3>
+      <p data-es="Los errores no son un fracaso, son información. Cuando algo se rompe: copia el error y pégalo directo a la IA con &quot;esto se rompió, arréglalo&quot;. No necesitas entender el error. Ese es todo el truco que hoy vuelve peligrosos a los que no programan. Lee el error solo lo suficiente para notar si repite lo mismo dos veces, lo cual significa que el enfoque actual está atascado y debes decir &quot;prueba un enfoque completamente distinto&quot;.">Errors are not failure, they're information. When something breaks: copy the error and paste it straight back to the AI with "this broke, fix it." You do not need to understand the error. That's the entire trick that makes non-coders dangerous now. Read the error only well enough to notice if it's saying the same thing twice, which means the current approach is stuck and you should say "try a completely different approach."</p>
 
       <div class="fc-call">
-        <span class="tag">The rule I live by</span>
-        <p>If it fails the same way two or three times, stop iterating and change the approach entirely. Repeating a broken plan louder never works. This one rule will save you more time than any prompt trick.</p>
+        <span class="tag" data-es="La regla con la que vivo">The rule I live by</span>
+        <p data-es="Si falla de la misma forma dos o tres veces, deja de iterar y cambia el enfoque por completo. Repetir más fuerte un plan roto nunca funciona. Esta sola regla te ahorrará más tiempo que cualquier truco de prompts.">If it fails the same way two or three times, stop iterating and change the approach entirely. Repeating a broken plan louder never works. This one rule will save you more time than any prompt trick.</p>
       </div>
 
       <div class="fc-call">
-        <span class="tag">Build this now</span>
-        <p>Ask Claude Code to build "a single HTML page that shows a random motivational quote and a button to get a new one." Get it working in your browser. Then change one thing about it with a plain-English instruction. You just ran the full loop, including a revision.</p>
+        <span class="tag" data-es="Constrúyelo ahora">Build this now</span>
+        <p data-es="Pídele a Claude Code que construya &quot;una sola página HTML que muestre una frase motivacional al azar y un botón para obtener otra&quot;. Haz que funcione en tu navegador. Luego cambia una cosa con una instrucción en lenguaje sencillo. Acabas de ejecutar el ciclo completo, incluida una revisión.">Ask Claude Code to build "a single HTML page that shows a random motivational quote and a button to get a new one." Get it working in your browser. Then change one thing about it with a plain-English instruction. You just ran the full loop, including a revision.</p>
       </div>
     </div></div>
   </section>
@@ -259,67 +278,67 @@ claude            # start the AI</code></div>
   <section class="op-section" style="background:var(--bg-2);">
     <div class="container">
       <div class="op-head reveal">
-        <span class="tag">What comes next</span>
-        <h2>Chapter 2 is where it gets real</h2>
-        <p>You build and deploy a live website to the internet in your first session. After that: memory, agents, loops, and pointing it all at a business. Here is the rest of the outline.</p>
+        <span class="tag" data-es="Lo que sigue">What comes next</span>
+        <h2 data-es="En el capítulo 2 se pone real">Chapter 2 is where it gets real</h2>
+        <p data-es="Creas y publicas un sitio web real en internet en tu primera sesión. Después: memoria, agentes, ciclos y aplicar todo a un negocio. Este es el resto del temario.">You build and deploy a live website to the internet in your first session. After that: memory, agents, loops, and pointing it all at a business. Here is the rest of the outline.</p>
       </div>
       <div class="op-modules">
-        <div class="op-mod reveal"><div class="op-mod-num">02</div><div class="op-mod-body"><h3>Ship something real, today</h3><p>Build and deploy a live website to the internet in your first session. Proof that this works before we go deeper.</p></div></div>
-        <div class="op-mod reveal"><div class="op-mod-num">03</div><div class="op-mod-body"><h3>Give your AI a memory</h3><p>The single trick that turns a chatbot into an assistant that knows you. Memory files, the CLAUDE.md pattern, and how ARIS remembers across every session.</p></div></div>
-        <div class="op-mod reveal"><div class="op-mod-num">04</div><div class="op-mod-body"><h3>Build your first agent</h3><p>Delegation. Spinning up sub-agents with their own focus and context. When to use one, when not to, and how they keep quality high.</p></div></div>
-        <div class="op-mod reveal"><div class="op-mod-num">05</div><div class="op-mod-body"><h3>Design a loop that runs itself</h3><p>The core idea behind ARIS. The six parts every loop needs, and how to schedule work that happens without you touching it.</p></div></div>
-        <div class="op-mod reveal"><div class="op-mod-num">06</div><div class="op-mod-body"><h3>Connect it to the world</h3><p>APIs, MCP, and browser automation in plain English. Give your AI hands so it can act in your real accounts and tools.</p></div></div>
-        <div class="op-mod reveal"><div class="op-mod-num">07</div><div class="op-mod-body"><h3>Point it at your business</h3><p>The real automations behind my agency: outreach, content, and CRM. Steal the patterns and aim them at whatever you do for money.</p></div></div>
-        <div class="op-mod reveal"><div class="op-mod-num">08</div><div class="op-mod-body"><h3>Architect your own ARIS</h3><p>Put the pieces together into one system. The three-layer design (knowledge, workflows, loops) that everything above snaps into.</p></div></div>
-        <div class="op-mod reveal"><div class="op-mod-num">09</div><div class="op-mod-body"><h3>Turn it into income</h3><p>How to package what you built and sell it, exactly like this course. The meta-chapter: you're inside the playbook right now.</p></div></div>
-        <div class="op-mod reveal"><div class="op-mod-num">10</div><div class="op-mod-body"><h3>Templates and files</h3><p>My real CLAUDE.md template, loop design template, and the starter prompts I use for every new build.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">02</div><div class="op-mod-body"><h3 data-es="Construye algo real, hoy">Ship something real, today</h3><p data-es="Crea y publica un sitio web real en internet en tu primera sesión. La prueba de que esto funciona antes de ir más a fondo.">Build and deploy a live website to the internet in your first session. Proof that this works before we go deeper.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">03</div><div class="op-mod-body"><h3 data-es="Dale memoria a tu IA">Give your AI a memory</h3><p data-es="El único truco que convierte un chatbot en un asistente que te conoce. Archivos de memoria, el patrón CLAUDE.md y cómo ARIS recuerda en cada sesión.">The single trick that turns a chatbot into an assistant that knows you. Memory files, the CLAUDE.md pattern, and how ARIS remembers across every session.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">04</div><div class="op-mod-body"><h3 data-es="Crea tu primer agente">Build your first agent</h3><p data-es="Delegación. Cómo crear subagentes con su propio enfoque y contexto. Cuándo usar uno, cuándo no, y cómo mantienen la calidad alta.">Delegation. Spinning up sub-agents with their own focus and context. When to use one, when not to, and how they keep quality high.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">05</div><div class="op-mod-body"><h3 data-es="Diseña un ciclo que se ejecuta solo">Design a loop that runs itself</h3><p data-es="La idea central detrás de ARIS. Las seis partes que necesita todo ciclo, y cómo programar trabajo que ocurre sin que lo toques.">The core idea behind ARIS. The six parts every loop needs, and how to schedule work that happens without you touching it.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">06</div><div class="op-mod-body"><h3 data-es="Conéctalo con el mundo">Connect it to the world</h3><p data-es="APIs, MCP y automatización del navegador en lenguaje sencillo. Dale manos a tu IA para que actúe en tus cuentas y herramientas reales.">APIs, MCP, and browser automation in plain English. Give your AI hands so it can act in your real accounts and tools.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">07</div><div class="op-mod-body"><h3 data-es="Apúntalo a tu negocio">Point it at your business</h3><p data-es="Las automatizaciones reales detrás de mi agencia: prospección, contenido y CRM. Copia los patrones y apúntalos a lo que sea que hagas para ganar dinero.">The real automations behind my agency: outreach, content, and CRM. Steal the patterns and aim them at whatever you do for money.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">08</div><div class="op-mod-body"><h3 data-es="Diseña tu propio ARIS">Architect your own ARIS</h3><p data-es="Junta las piezas en un solo sistema. El diseño de tres capas (conocimiento, flujos de trabajo y ciclos) en el que encaja todo lo anterior.">Put the pieces together into one system. The three-layer design (knowledge, workflows, loops) that everything above snaps into.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">09</div><div class="op-mod-body"><h3 data-es="Conviértelo en ingresos">Turn it into income</h3><p data-es="Cómo empaquetar lo que construiste y venderlo, igual que este curso. El metacapítulo: ahora mismo estás dentro del manual.">How to package what you built and sell it, exactly like this course. The meta-chapter: you're inside the playbook right now.</p></div></div>
+        <div class="op-mod reveal"><div class="op-mod-num">10</div><div class="op-mod-body"><h3 data-es="Plantillas y archivos">Templates and files</h3><p data-es="Mi plantilla real de CLAUDE.md, mi plantilla de diseño de ciclos y los prompts iniciales que uso en cada proyecto nuevo.">My real CLAUDE.md template, loop design template, and the starter prompts I use for every new build.</p></div></div>
       </div>
-      <p class="fc-next-note">Chapters 11 and up, plus the private repo, come with the $50 lifetime option. <a href="/course.html#curriculum">See the full outline</a></p>
+      <p class="fc-next-note" data-es="Los capítulos 11 en adelante, más el repositorio privado, vienen con la opción vitalicia de $50. <a href=&quot;/course.html#curriculum&quot;>Mira el temario completo</a>">Chapters 11 and up, plus the private repo, come with the $50 lifetime option. <a href="/course.html#curriculum">See the full outline</a></p>
     </div>
   </section>
 
   <section class="op-section" id="pricing" style="background:var(--bg-2);">
     <div class="container">
       <div class="op-head reveal">
-        <span class="tag">Get access</span>
-        <h2>One course, two ways to buy it</h2>
-        <p>Same course either way. Take the current build, or take lifetime and get every chapter I add. No subscription either way.</p>
+        <span class="tag" data-es="Obtén acceso">Get access</span>
+        <h2 data-es="Un solo curso, dos formas de comprarlo">One course, two ways to buy it</h2>
+        <p data-es="Es el mismo curso en ambos casos. Elige la versión actual, o elige la vitalicia y recibe cada capítulo que agregue. Sin suscripción en ningún caso.">Same course either way. Take the current build, or take lifetime and get every chapter I add. No subscription either way.</p>
       </div>
       <div class="op-price-wrap reveal" style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;align-items:stretch;">
         <div class="op-price-card" style="flex:1;min-width:280px;max-width:360px;">
-          <div class="op-price-badge">Current build, chapters 00 to 10</div>
+          <div class="op-price-badge" data-es="Versión actual, capítulos 00 al 10">Current build, chapters 00 to 10</div>
           <div class="op-price-row">
             <span class="op-price-dollar">$</span>
             <span class="op-price-num">25</span>
-            <span class="op-price-period">one time</span>
+            <span class="op-price-period" data-es="pago único">one time</span>
           </div>
           <ul class="op-price-list">
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Chapters 00 to 10, unlocked the moment you buy</span></li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">My real projects and open source code, yours to copy</span></li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Chapter 10: fill in the blank templates and prompts</span></li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">The course exactly as it stands today</span></li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">One payment. No subscription, ever</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li" data-es="Capítulos 00 al 10, desbloqueados en cuanto compras">Chapters 00 to 10, unlocked the moment you buy</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li" data-es="Mis proyectos reales y mi código abierto, para que los copies">My real projects and open source code, yours to copy</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li" data-es="Capítulo 10: plantillas y prompts para completar">Chapter 10: fill in the blank templates and prompts</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li" data-es="El curso exactamente como está hoy">The course exactly as it stands today</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li" data-es="Un solo pago. Sin suscripción, nunca">One payment. No subscription, ever</span></li>
           </ul>
-          <a href="https://square.link/u/Z5EHwS8t" class="btn btn-secondary btn-lg" style="width:100%; justify-content:center;" onclick="if(window.gtag)gtag('event','course_purchase_click',{location:'free_page',tier:'build'});">Get the build for $25 <span style="font-size:1.1em;">&rarr;</span></a>
-          <p style="font-size:0.74rem; color:var(--text-3); margin-top:14px;">Secure checkout by Square. Access delivered the moment you pay.</p>
+          <a href="https://square.link/u/Z5EHwS8t" class="btn btn-secondary btn-lg" style="width:100%; justify-content:center;" onclick="if(window.gtag)gtag('event','course_purchase_click',{location:'free_page',tier:'build'});" data-es="Obtén la versión actual por $25 <span style=&quot;font-size:1.1em;&quot;>&rarr;</span>">Get the build for $25 <span style="font-size:1.1em;">&rarr;</span></a>
+          <p style="font-size:0.74rem; color:var(--text-3); margin-top:14px;" data-es="Pago seguro con Square. El acceso llega en cuanto pagas.">Secure checkout by Square. Access delivered the moment you pay.</p>
         </div>
         <div class="op-price-card" style="flex:1;min-width:280px;max-width:360px;">
-          <div class="op-price-badge">Lifetime, the whole course as it grows</div>
+          <div class="op-price-badge" data-es="Vitalicio, el curso completo mientras crece">Lifetime, the whole course as it grows</div>
           <div class="op-price-row">
             <span class="op-price-dollar">$</span>
             <span class="op-price-num">50</span>
-            <span class="op-price-period">one time</span>
+            <span class="op-price-period" data-es="pago único">one time</span>
           </div>
           <ul class="op-price-list">
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Chapters 00 to 10, everything in the current build</span></li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li"><strong>Chapters 11 to 16.</strong> The advanced patterns and the exact fixes for walls I hit, written up as later chapters of the same course</span></li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li"><strong>Chapter 17.</strong> A private GitHub repo invite, with read-only access to a curated copy of the ARIS build: the agent patterns, loops, memory structure and skills. Send your GitHub username after checkout.</span></li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Every new chapter and video version I add later, no extra charge</span></li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">Locks in this price forever</span></li>
-            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li">One payment. No subscription, ever</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li" data-es="Capítulos 00 al 10, todo lo de la versión actual">Chapters 00 to 10, everything in the current build</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li" data-es="<strong>Capítulos 11 al 16.</strong> Los patrones avanzados y las soluciones exactas a los obstáculos que me encontré, escritos como capítulos posteriores del mismo curso"><strong>Chapters 11 to 16.</strong> The advanced patterns and the exact fixes for walls I hit, written up as later chapters of the same course</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li" data-es="<strong>Capítulo 17.</strong> Una invitación a un repositorio privado de GitHub, con acceso de solo lectura a una copia curada de la versión de ARIS: los patrones de agentes, los ciclos, la estructura de memoria y las skills. Envía tu usuario de GitHub después de pagar."><strong>Chapter 17.</strong> A private GitHub repo invite, with read-only access to a curated copy of the ARIS build: the agent patterns, loops, memory structure and skills. Send your GitHub username after checkout.</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li" data-es="Cada capítulo nuevo y versión en video que agregue después, sin costo extra">Every new chapter and video version I add later, no extra charge</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li" data-es="Fija este precio para siempre">Locks in this price forever</span></li>
+            <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B8EF0" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span><span class="op-li" data-es="Un solo pago. Sin suscripción, nunca">One payment. No subscription, ever</span></li>
           </ul>
-          <a href="https://square.link/u/p16XWFAG" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" onclick="if(window.gtag)gtag('event','course_purchase_click',{location:'free_page',tier:'lifetime'});">Get lifetime for $50 <span style="font-size:1.1em;">&rarr;</span></a>
-          <p style="font-size:0.74rem; color:var(--text-3); margin-top:14px;">Secure checkout by Square. Access delivered the moment you pay.</p>
+          <a href="https://square.link/u/p16XWFAG" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;" onclick="if(window.gtag)gtag('event','course_purchase_click',{location:'free_page',tier:'lifetime'});" data-es="Obtén el acceso vitalicio por $50 <span style=&quot;font-size:1.1em;&quot;>&rarr;</span>">Get lifetime for $50 <span style="font-size:1.1em;">&rarr;</span></a>
+          <p style="font-size:0.74rem; color:var(--text-3); margin-top:14px;" data-es="Pago seguro con Square. El acceso llega en cuanto pagas.">Secure checkout by Square. Access delivered the moment you pay.</p>
         </div>
       </div>
     </div>
@@ -331,25 +350,25 @@ claude            # start the AI</code></div>
       <div class="footer-grid">
         <div class="footer-brand">
           <h3>The Staley Social</h3>
-          <p>Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
+          <p data-es="La agencia de marketing digital de servicio completo de Kansas City. Resultados garantizados por escrito.">Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
           <div class="footer-social">
             <a href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
             <a href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
             <a href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
           </div>
         </div>
-        <div class="footer-col"><h4>Product</h4><ul><li><a href="course.html">OPERATOR course</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="os.html">Staley OS</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="results.html">Results</a></li><li><a href="work.html">Work</a></li></ul></div>
-        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="/jameson-staley">Jameson Staley</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><span style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
+        <div class="footer-col"><h4 data-es="Producto">Product</h4><ul><li><a href="course.html" data-es="Curso OPERATOR">OPERATOR course</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="os.html">Staley OS</a></li><li><a href="pricing.html" data-es="Precios">Pricing</a></li><li><a href="results.html" data-es="Resultados">Results</a></li><li><a href="work.html" data-es="Trabajos">Work</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Empresa">Company</h4><ul><li><a href="about.html" data-es="Acerca de">About</a></li><li><a href="/jameson-staley">Jameson Staley</a></li><li><a href="services.html" data-es="Servicios">Services</a></li><li><a href="contact.html" data-es="Contacto">Contact</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Contacto">Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><span style="color:var(--text-3);" data-es="Kansas City, MO">Kansas City, MO</span></li></ul></div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Staley Social LLC. All rights reserved.</p>
-        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
+        <p data-es="&copy; 2026 The Staley Social LLC. Todos los derechos reservados.">&copy; 2026 The Staley Social LLC. All rights reserved.</p>
+        <p data-es="Hecho en Kansas City. <a href=&quot;privacy.html&quot;>Política de privacidad</a> &middot; <a href=&quot;terms.html&quot;>Términos</a>">Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html" data-es="Términos">Terms</a></p>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js?v=7"></script>
+  <script src="js/main.js?v=9"></script>
   <script>
     document.querySelectorAll('.op-faq-q').forEach(function(btn){
       btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });

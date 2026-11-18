@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
-  <title>Your plan | Staley OS</title>
+  <title data-es="Tu plan | Staley OS">Your plan | Staley OS</title>
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <meta name="theme-color" content="#090910">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB8CM3TL22"></script>
@@ -17,11 +17,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <link rel="stylesheet" href="css/flat.css?v=3">
   <style>
-    .up-wrap { max-width: 980px; margin: 0 auto; padding: 48px 20px 64px; }
-    .up-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+    .up-wrap { max-width: 980px; margin: 0 auto; padding: 64px 20px 64px; position: relative; }
+    .up-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #7aa2ff; margin-bottom: 12px; }
     .up-h1 { font-family: var(--font-display); font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; color: var(--text); margin: 0 0 28px; max-width: 22ch; }
     .up-label { font-size: 0.82rem; font-weight: 600; color: var(--text-2); margin: 28px 0 12px; }
     .up-card { border: 1px solid var(--border); border-radius: 6px; padding: 22px; }
@@ -32,12 +32,33 @@
     .up-list { list-style: none; margin: 0; padding: 0; }
     .up-list li { display: flex; gap: 10px; padding: 6px 0; color: var(--text-2); font-size: 0.95rem; line-height: 1.35; }
     .up-list li span:first-child { flex: none; width: 1.2em; }
-    .up-btn { display: block; text-align: center; margin-top: 18px; padding: 13px 18px; border-radius: 3px; background: var(--blue); color: #fff; font-weight: 600; text-decoration: none; }
-    .up-btn:hover { background: #3D73E8; }
-    .up-foot { color: var(--text-3); font-size: 0.85rem; margin-top: 28px; }
+    .up-btn { display: flex; align-items: center; justify-content: center; min-height: 44px; text-align: center; margin-top: 18px; padding: 13px 18px; border-radius: 3px; background: var(--blue); color: #fff; font-weight: 600; text-decoration: none; }
+    .up-btn:hover { background: #2556c4; }
+    .up-foot { color: #9a9ab8; font-size: 0.85rem; margin-top: 28px; }
+  
+    .lang-corner { position: absolute; top: 12px; right: 16px; z-index: 5; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
 </head>
 <body class="page-flat">
+  <div class="lang lang-corner" role="group" aria-label="Language" data-es-aria-label="Idioma">
+    <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+    <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+    <label class="sr-only" for="more-lang" data-es="Más idiomas">More languages</label>
+    <select id="more-lang" translate="no">
+      <option value="" data-es="Más">More</option>
+      <optgroup label="Machine translated" data-es-label="Traducción automática">
+        <option value="pt">Português</option><option value="fr">Français</option>
+        <option value="de">Deutsch</option><option value="it">Italiano</option>
+        <option value="tl">Tagalog</option><option value="vi">Tiếng Việt</option>
+        <option value="zh-CN">中文</option><option value="ja">日本語</option>
+        <option value="ko">한국어</option><option value="ar">العربية</option>
+        <option value="hi">हिन्दी</option><option value="ru">Русский</option>
+      </optgroup>
+    </select>
+  </div>
   <main class="up-wrap">
     <div class="up-eyebrow" data-t="eyebrow"></div>
     <h1 class="up-h1" data-t="h1"></h1>
@@ -72,6 +93,21 @@
           '797': ['Everything in Growth', 'Seats for your team', 'Advanced automations', 'Documents, contracts and a community space', 'Priority support']
         }
       },
+      es: {
+        eyebrow: 'Tu plan de Staley OS: Gratis',
+        h1: 'Tus publicaciones salen en piloto automático. Esto es lo que puedes activar a continuación.',
+        freeLabel: 'Incluido gratis',
+        free: ['Publicación automática en tus redes sociales, todos los días', 'Tu cuenta de Staley OS'],
+        lockedLabel: 'Listo para desbloquear',
+        unlock: 'Desbloquear ',
+        mo: '/mes',
+        foot: 'Sin cargo de instalación. Sin contrato. Cancela cuando quieras.',
+        tiers: {
+          '197': ['Responde a cada nuevo cliente potencial en 60 segundos, por texto y correo', 'Ve cada llamada y de dónde vino', 'Seguimientos automáticos y solicitudes de reseñas', 'Todos tus contactos en un solo lugar'],
+          '397': ['Todo lo de Starter', 'Campañas de correo para toda tu lista', 'Páginas de aterrizaje y un creador de sitios web', 'Flujos de trabajo y membresías de pago', 'Reportes completos'],
+          '797': ['Todo lo de Growth', 'Accesos para tu equipo', 'Automatizaciones avanzadas', 'Documentos, contratos y un espacio de comunidad', 'Soporte prioritario']
+        }
+      },
       ru: {
         eyebrow: 'Ваш тариф Staley OS: бесплатный',
         h1: 'Ваши посты выходят автоматически. Вот что можно подключить дальше.',
@@ -90,35 +126,47 @@
     (function () {
       var C = window.CheckoutConfig;
       var q = new URLSearchParams(location.search);
-      var lang = q.get('lang') === 'ru' ? 'ru' : 'en';
+      var forced = q.get('lang') === 'ru' ? 'ru' : '';   // ?lang=ru wins until a visitor clicks EN or ES
       var client = C.sanitizeUtm(q.get('c') || '');
-      var T = COPY[lang];
-      document.documentElement.lang = lang;
-      document.querySelectorAll('[data-t]').forEach(function (el) { el.textContent = T[el.dataset.t]; });
 
       function li(mark, text) {
         var e = document.createElement('li'), m = document.createElement('span'), s = document.createElement('span');
-        m.textContent = mark; s.textContent = text; e.append(m, s); return e;
+        m.textContent = mark; m.setAttribute('aria-hidden', 'true'); s.textContent = text; e.append(m, s); return e;
       }
       var free = document.getElementById('up-free');
-      T.free.forEach(function (f) { free.append(li('✓', f)); });
-
       var grid = document.getElementById('up-tiers');
-      Object.keys(C.TIERS).forEach(function (tier) {
-        var card = document.createElement('div'); card.className = 'up-card';
-        var name = document.createElement('div'); name.className = 'up-name'; name.textContent = C.TIERS[tier].name;
-        var price = document.createElement('div'); price.className = 'up-price'; price.textContent = C.TIERS[tier].price;
-        var ul = document.createElement('ul'); ul.className = 'up-list';
-        T.tiers[tier].forEach(function (f) { ul.append(li('🔒', f)); });
-        var a = document.createElement('a'); a.className = 'up-btn';
-        a.href = '/checkout.html?tier=' + tier + '&utm_source=inapp' + (client ? '_' + client : '');
-        a.target = '_blank'; a.rel = 'noopener'; // we render inside the Staley OS iframe; checkout needs its own tab
-        a.textContent = T.unlock + C.TIERS[tier].name;
-        a.addEventListener('click', function () { gtag('event', 'paywall_click', { tier: tier, client: client }); });
-        card.append(name, price, ul, a); grid.append(card);
-      });
-      gtag('event', 'paywall_view', { client: client, lang: lang });
+      function render(lang) {
+        var T = COPY[lang] || COPY.en;
+        document.querySelectorAll('[data-t]').forEach(function (el) { el.textContent = T[el.dataset.t]; });
+        free.textContent = ''; grid.textContent = '';
+        T.free.forEach(function (f) { free.append(li('\u2713', f)); });
+        Object.keys(C.TIERS).forEach(function (tier) {
+          var card = document.createElement('div'); card.className = 'up-card';
+          var name = document.createElement('div'); name.className = 'up-name'; name.textContent = C.TIERS[tier].name;
+          var price = document.createElement('div'); price.className = 'up-price';
+          price.textContent = T.mo ? C.TIERS[tier].price.replace('/mo', T.mo) : C.TIERS[tier].price;
+          var ul = document.createElement('ul'); ul.className = 'up-list';
+          T.tiers[tier].forEach(function (f) { ul.append(li('\uD83D\uDD12', f)); });
+          var a = document.createElement('a'); a.className = 'up-btn';
+          a.href = '/checkout.html?tier=' + tier + '&utm_source=inapp' + (client ? '_' + client : '');
+          a.target = '_blank'; a.rel = 'noopener'; // we render inside the Staley OS iframe; checkout needs its own tab
+          a.textContent = T.unlock + C.TIERS[tier].name;
+          a.addEventListener('click', function () { gtag('event', 'paywall_click', { tier: tier, client: client }); });
+          card.append(name, price, ul, a); grid.append(card);
+        });
+      }
+      function sync() {
+        var cur = document.documentElement.lang;
+        if (forced) { if (cur !== forced) document.documentElement.lang = forced; render(forced); return; }
+        render(cur === 'es' ? 'es' : 'en');
+      }
+      sync();
+      // main.js (deferred) sets <html lang> from the saved choice or the browser, and on every EN/ES click.
+      new MutationObserver(sync).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+      document.querySelectorAll('[data-lang]').forEach(function (b) { b.addEventListener('click', function () { forced = ''; }, true); });
+      document.addEventListener('DOMContentLoaded', function () { gtag('event', 'paywall_view', { client: client, lang: forced || document.documentElement.lang }); });
     })();
   </script>
+  <script src="js/main.js?v=9" defer></script>
 </body>
 </html>

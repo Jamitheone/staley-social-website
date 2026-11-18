@@ -2161,7 +2161,8 @@ body::after {
 .lang select { max-width: 76px; background-color: #0d0d16; color: var(--text-2, #b5b5c4); border-color: var(--border, rgba(255,255,255,0.18)); }
 .lang button:focus-visible, .lang select:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 .lang-404 { position: absolute; top: 12px; right: 16px; z-index: 5; }
-@media (max-width: 1500px) { .nav-cta:has(.lang) .nav-phone, .nav-cta:has(.lang) .btn-secondary { display: none; } }
+/* With the language switch in the header there is no room for the phone number and second button at any width */
+.nav-cta:has(.lang) .nav-phone, .nav-cta:has(.lang) .btn-secondary { display: none; }
 @media (max-width: 560px) {
   .nav-cta:has(.lang) .btn-primary { display: none; }
   .nav-cta:has(.lang) { gap: 4px; }
@@ -2175,4 +2176,31 @@ body::after {
 }
 @media (max-width: 560px) {
   .reveal > table th, .reveal > table td { padding: 12px 8px !important; font-size: 0.8rem !important; overflow-wrap: anywhere; }
+}
+/* 44px tap targets for the header controls, only on pages that carry the language switch */
+.nav-cta:has(.lang) .btn-sm { min-height: 44px; }
+.nav-cta:has(.lang) .nav-hamburger { min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+
+/* Phone header on pages that sell something: keep the buy button, show the logo as its dot only
+   (same as the product pages), and leave the machine-translation menu to wider screens. */
+@media (max-width: 560px) {
+  .nav-inner:has(.nav-cta[data-keep-cta]) .nav-logo { font-size: 0; gap: 0; }
+  .nav-cta[data-keep-cta]:has(.lang) .btn-primary { display: inline-flex; align-items: center; padding: 0 12px; font-size: 0.8rem; white-space: nowrap; }
+  .nav-cta[data-keep-cta] .lang select, .nav-cta[data-keep-cta] .lang label { display: none; }
+}
+
+/* Spanish labels run longer: tighten the desktop header in Spanish so no button is cut off */
+@media (min-width: 561px) {
+  html[lang="es"] .nav-links { gap: 14px; }
+  html[lang="es"] .nav-cta:has(.lang) .lang select, html[lang="es"] .nav-cta:has(.lang) .lang label { display: none; }
+}
+/* Smallest phones: the menu button must stay on screen */
+@media (max-width: 380px) {
+  .nav-cta:has(.lang) .lang select, .nav-cta:has(.lang) .lang label { display: none; }
+}
+
+/* About page on the narrowest phones: the photo tag wraps instead of widening the page */
+@media (max-width: 380px) {
+  .about-image, .about-text { min-width: 0; max-width: 100%; }
+  .about-image-tag { white-space: normal; max-width: calc(100% - 24px); }
 }

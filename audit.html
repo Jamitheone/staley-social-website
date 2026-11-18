@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Get a free marketing audit of your Google presence, website, and ads. See what's costing you leads. Kansas City agency with a written guarantee.">
-  <title>Free Marketing Audit | The Staley Social</title>
+  <meta data-es-content="Obtén una auditoría de marketing gratis de tu presencia en Google, tu sitio web y tus anuncios. Mira qué te está costando prospectos. Agencia de Kansas City con garantía por escrito." name="description" content="Get a free marketing audit of your Google presence, website, and ads. See what's costing you leads. Kansas City agency with a written guarantee.">
+  <title data-es="Auditoría de marketing gratis | The Staley Social">Free Marketing Audit | The Staley Social</title>
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="assets/logos/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -31,8 +31,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <link rel="stylesheet" href="css/flat.css?v=3">
+  <style>
+    .audit-trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    @media (max-width: 700px) { .audit-trust-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
+    .contact-form .btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+  </style>
   <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
 <script type="application/ld+json">
 {
@@ -54,43 +59,59 @@
   </script>
 </head>
 <body class="page-flat">
-  <a href="#main-content" class="skip-link">Skip to content</a>
+  <a href="#main-content" class="skip-link" data-es="Saltar al contenido">Skip to content</a>
 
   <!-- NAV -->
   <nav class="nav" id="main-nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/os.html">Software</a>
-        <a href="/services.html">Services</a>
-        <a href="/results.html">Results</a>
-        <a href="/work.html">Work</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/blog/">Blog</a>
-        <a href="/course.html">Course</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/" data-es="Inicio">Home</a>
+        <a href="/os.html" data-es="Software">Software</a>
+        <a href="/services.html" data-es="Servicios">Services</a>
+        <a href="/results.html" data-es="Resultados">Results</a>
+        <a href="/work.html" data-es="Trabajos">Work</a>
+        <a href="/pricing.html" data-es="Precios">Pricing</a>
+        <a href="/blog/" data-es="Blog">Blog</a>
+        <a href="/course.html" data-es="Curso">Course</a>
+        <a href="/contact.html" data-es="Contacto">Contact</a>
       </div>
       <div class="nav-cta">
-        <a href="tel:+18166528233" class="nav-phone" aria-label="Call us">(816) 652-8233</a>
-        <a href="contact.html" class="btn btn-secondary btn-sm">Get in touch</a>
-        <a href="contact.html#book" class="btn btn-primary btn-sm">Book a call</a>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <div class="lang" role="group" aria-label="Language" data-es-aria-label="Idioma">
+          <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+          <label class="sr-only" for="more-lang" data-es="Más idiomas">More languages</label>
+          <select id="more-lang" translate="no">
+            <option value="" data-es="Más">More</option>
+            <optgroup label="Machine translated" data-es-label="Traducción automática">
+              <option value="pt">Português</option><option value="fr">Français</option>
+              <option value="de">Deutsch</option><option value="it">Italiano</option>
+              <option value="tl">Tagalog</option><option value="vi">Tiếng Việt</option>
+              <option value="zh-CN">中文</option><option value="ja">日本語</option>
+              <option value="ko">한국어</option><option value="ar">العربية</option>
+              <option value="hi">हिन्दी</option><option value="ru">Русский</option>
+            </optgroup>
+          </select>
+        </div>
+        <a href="tel:+18166528233" class="nav-phone" aria-label="Call us" data-es-aria-label="Llámanos">(816) 652-8233</a>
+        <a href="contact.html" class="btn btn-secondary btn-sm" data-es="Ponte en contacto">Get in touch</a>
+        <a href="contact.html#book" class="btn btn-primary btn-sm" data-es="Agenda una llamada">Book a call</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" data-es-aria-label="Abrir o cerrar menú"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
   <div class="nav-mobile" id="nav-mobile">
-    <a href="/">Home</a>
-    <a href="/os.html">Software</a>
-    <a href="/services.html">Services</a>
-    <a href="/results.html">Results</a>
-    <a href="/work.html">Work</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/blog/">Blog</a>
-    <a href="/course.html">Course</a>
-    <a href="/contact.html">Contact</a>
+    <a href="/" data-es="Inicio">Home</a>
+    <a href="/os.html" data-es="Software">Software</a>
+    <a href="/services.html" data-es="Servicios">Services</a>
+    <a href="/results.html" data-es="Resultados">Results</a>
+    <a href="/work.html" data-es="Trabajos">Work</a>
+    <a href="/pricing.html" data-es="Precios">Pricing</a>
+    <a href="/blog/" data-es="Blog">Blog</a>
+    <a href="/course.html" data-es="Curso">Course</a>
+    <a href="/contact.html" data-es="Contacto">Contact</a>
 
-    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
+    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;" data-es="Agenda una llamada gratis">Book a free call</a>
     <a href="tel:+18166528233" style="text-align:center;font-size:0.75rem;color:var(--text-2);">(816) 652-8233</a>
   </div>
   <main id="main-content">
@@ -98,9 +119,9 @@
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="container">
-      <div class="section-label">Free marketing audit</div>
-      <h1 class="display-lg">Find out what's<br><span class="text-gradient">costing you leads.</span></h1>
-      <p>Tell us where to look and we'll audit your Google Business Profile, website, ads, and local search presence. You get a plain-English breakdown of what's broken and what we'd fix first. Free, no strings attached.</p>
+      <div class="section-label" data-es="Auditoría de marketing gratis">Free marketing audit</div>
+      <h1 class="display-lg" data-es="Descubre qué te<br><span class=&quot;text-gradient&quot;>está costando prospectos.</span>">Find out what's<br><span class="text-gradient">costing you leads.</span></h1>
+      <p data-es="Dinos dónde mirar y auditaremos tu Perfil de Empresa de Google, tu sitio web, tus anuncios y tu presencia en la búsqueda local. Recibes un resumen en lenguaje claro de lo que está fallando y qué arreglaríamos primero. Gratis, sin compromiso.">Tell us where to look and we'll audit your Google Business Profile, website, ads, and local search presence. You get a plain-English breakdown of what's broken and what we'd fix first. Free, no strings attached.</p>
     </div>
   </section>
 
@@ -111,16 +132,16 @@
 
         <!-- LEFT: WHAT YOU GET -->
         <div>
-          <div class="section-label">What you get</div>
-          <h2 class="display-sm mb-16">A real audit,<br>not a sales pitch.</h2>
-          <p style="color:var(--text-2);line-height:1.75;margin-bottom:32px;">
+          <div class="section-label" data-es="Lo que recibes">What you get</div>
+          <h2 class="display-sm mb-16" data-es="Una auditoría real,<br>no un discurso de ventas.">A real audit,<br>not a sales pitch.</h2>
+          <p style="color:var(--text-2);line-height:1.75;margin-bottom:32px;" data-es="Revisamos tu negocio tal como lo ven tus clientes y calificamos lo que importa:">
             We pull up your business the way your customers see it and grade what matters:
           </p>
           <ul style="list-style:none;padding:0;margin:0 0 32px;display:grid;gap:14px;">
-            <li style="display:flex;gap:12px;align-items:flex-start;color:var(--text-2);line-height:1.6;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.5" style="flex-shrink:0;margin-top:3px;"><path d="M20 6L9 17l-5-5"/></svg><span><strong style="color:var(--text);">Google Business Profile.</strong> Completeness, reviews, photos, and how you rank against the three businesses beating you.</span></li>
-            <li style="display:flex;gap:12px;align-items:flex-start;color:var(--text-2);line-height:1.6;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.5" style="flex-shrink:0;margin-top:3px;"><path d="M20 6L9 17l-5-5"/></svg><span><strong style="color:var(--text);">Website.</strong> Speed, mobile experience, and whether it actually converts visitors into calls.</span></li>
-            <li style="display:flex;gap:12px;align-items:flex-start;color:var(--text-2);line-height:1.6;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.5" style="flex-shrink:0;margin-top:3px;"><path d="M20 6L9 17l-5-5"/></svg><span><strong style="color:var(--text);">Ads &amp; tracking.</strong> If you're running ads, whether conversions are even being counted. Most aren't.</span></li>
-            <li style="display:flex;gap:12px;align-items:flex-start;color:var(--text-2);line-height:1.6;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.5" style="flex-shrink:0;margin-top:3px;"><path d="M20 6L9 17l-5-5"/></svg><span><strong style="color:var(--text);">Local search visibility.</strong> Where you show up on the map, and where you don't.</span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;color:var(--text-2);line-height:1.6;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.5" style="flex-shrink:0;margin-top:3px;"><path d="M20 6L9 17l-5-5"/></svg><span data-es="<strong style=&quot;color:var(--text);&quot;>Perfil de Empresa de Google.</strong> Qué tan completo está, reseñas, fotos y cómo te posicionas frente a los tres negocios que te están ganando."><strong style="color:var(--text);">Google Business Profile.</strong> Completeness, reviews, photos, and how you rank against the three businesses beating you.</span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;color:var(--text-2);line-height:1.6;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.5" style="flex-shrink:0;margin-top:3px;"><path d="M20 6L9 17l-5-5"/></svg><span data-es="<strong style=&quot;color:var(--text);&quot;>Sitio web.</strong> Velocidad, experiencia en móvil y si realmente convierte visitantes en llamadas."><strong style="color:var(--text);">Website.</strong> Speed, mobile experience, and whether it actually converts visitors into calls.</span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;color:var(--text-2);line-height:1.6;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.5" style="flex-shrink:0;margin-top:3px;"><path d="M20 6L9 17l-5-5"/></svg><span data-es="<strong style=&quot;color:var(--text);&quot;>Anuncios y seguimiento.</strong> Si publicas anuncios, si siquiera se están contando las conversiones. La mayoría no."><strong style="color:var(--text);">Ads &amp; tracking.</strong> If you're running ads, whether conversions are even being counted. Most aren't.</span></li>
+            <li style="display:flex;gap:12px;align-items:flex-start;color:var(--text-2);line-height:1.6;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2.5" style="flex-shrink:0;margin-top:3px;"><path d="M20 6L9 17l-5-5"/></svg><span data-es="<strong style=&quot;color:var(--text);&quot;>Visibilidad en la búsqueda local.</strong> Dónde apareces en el mapa y dónde no."><strong style="color:var(--text);">Local search visibility.</strong> Where you show up on the map, and where you don't.</span></li>
           </ul>
 
           <!-- GUARANTEE REMINDER -->
@@ -128,8 +149,8 @@
             <div style="display:flex;align-items:flex-start;gap:12px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
               <div>
-                <div style="font-size:0.85rem;font-weight:600;color:var(--blue);margin-bottom:4px;">The Staley Guarantee</div>
-                <div style="font-size:0.83rem;color:var(--text-2);line-height:1.6;">30% more Google Business Profile views by month 2, or month 2 is free. The only guarantee of its kind in Kansas City, and we put it in writing before you pay.</div>
+                <div style="font-size:0.85rem;font-weight:600;color:var(--blue);margin-bottom:4px;" data-es="La garantía Staley">The Staley Guarantee</div>
+                <div style="font-size:0.83rem;color:var(--text-2);line-height:1.6;" data-es="30% más vistas en tu Perfil de Empresa de Google para el mes 2, o el mes 2 es gratis. La única garantía de su tipo en Kansas City, y la ponemos por escrito antes de que pagues.">30% more Google Business Profile views by month 2, or month 2 is free. The only guarantee of its kind in Kansas City, and we put it in writing before you pay.</div>
               </div>
             </div>
           </div>
@@ -142,9 +163,9 @@
              original audit form when it is down. The funnel never white-screens. -->
         <div>
           <div class="contact-form reveal">
-            <h3>Get your free audit</h3>
+            <h3 data-es="Obtén tu auditoría gratis">Get your free audit</h3>
             <div id="widget-wrap">
-              <iframe src="https://services.leadconnectorhq.com/prospecting/widgets/public/6a669a92ca53d71c4a2d8307" style="width:100%;border:none;overflow:hidden;min-height:820px;display:block;" scrolling="no" id="prospecting-widget-6a669a92ca53d71c4a2d8307" title="Get Your Report from The Staley OS"></iframe>
+              <iframe src="https://services.leadconnectorhq.com/prospecting/widgets/public/6a669a92ca53d71c4a2d8307" style="width:100%;border:none;overflow:hidden;min-height:820px;display:block;" scrolling="no" id="prospecting-widget-6a669a92ca53d71c4a2d8307" title="Get Your Report from The Staley OS" data-es-title="Obtén tu informe de The Staley OS"></iframe>
             </div>
             <div id="audit-fallback" style="display:none;">
             <form id="audit-form" action="https://formsubmit.co/thestaleysocial@gmail.com" method="POST">
@@ -154,37 +175,37 @@
               <input type="text" name="_honey" style="display:none" aria-hidden="true" tabindex="-1">
               <div class="form-row">
                 <div class="form-group">
-                  <label for="first-name">First name</label>
-                  <input type="text" id="first-name" name="first-name" placeholder="Jamie" autocomplete="given-name" required>
+                  <label for="first-name" data-es="Nombre">First name</label>
+                  <input type="text" id="first-name" name="first-name" placeholder="Jamie" data-es-placeholder="María" autocomplete="given-name" required>
                 </div>
                 <div class="form-group">
-                  <label for="last-name">Last name</label>
-                  <input type="text" id="last-name" name="last-name" placeholder="Smith" autocomplete="family-name" required>
+                  <label for="last-name" data-es="Apellido">Last name</label>
+                  <input type="text" id="last-name" name="last-name" placeholder="Smith" data-es-placeholder="García" autocomplete="family-name" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" id="email" name="email" placeholder="jamie@yourbusiness.com" autocomplete="email" required>
+                <label for="email" data-es="Correo electrónico">Email address</label>
+                <input type="email" id="email" name="email" placeholder="jamie@yourbusiness.com" data-es-placeholder="maria@tunegocio.com" autocomplete="email" required>
               </div>
               <div class="form-group">
-                <label for="business">Business name</label>
-                <input type="text" id="business" name="business" placeholder="Your business" autocomplete="organization" required>
+                <label for="business" data-es="Nombre del negocio">Business name</label>
+                <input type="text" id="business" name="business" placeholder="Your business" data-es-placeholder="Tu negocio" autocomplete="organization" required>
               </div>
               <div class="form-group">
-                <label for="website">Website (or Google Business listing)</label>
-                <input type="text" id="website" name="website" placeholder="yourbusiness.com" inputmode="url" required>
+                <label for="website" data-es="Sitio web (o ficha de Google Business)">Website (or Google Business listing)</label>
+                <input type="text" id="website" name="website" placeholder="yourbusiness.com" data-es-placeholder="tunegocio.com" inputmode="url" required>
               </div>
               <div class="form-group">
-                <label for="phone">Phone (optional, for texting the results)</label>
+                <label for="phone" data-es="Teléfono (opcional, para enviarte los resultados por mensaje)">Phone (optional, for texting the results)</label>
                 <input type="tel" id="phone" name="phone" placeholder="(816) 555-0100" autocomplete="tel">
               </div>
               <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">
-                Send me my audit
+                <span data-es="Envíame mi auditoría">Send me my audit</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
             </form>
             </div>
-            <p style="text-align:center;font-size:0.78rem;color:var(--text-3);margin-top:12px;">Audit delivered within one business day. No spam, no pitch deck.</p>
+            <p style="text-align:center;font-size:0.78rem;color:var(--text-3);margin-top:12px;" data-es="Auditoría entregada en un día hábil. Sin spam, sin presentaciones de venta.">Audit delivered within one business day. No spam, no pitch deck.</p>
           </div>
         </div>
       </div>
@@ -194,22 +215,22 @@
   <!-- TRUST REASSURANCE -->
   <section class="section-sm" style="background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
     <div class="container">
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;" class="reveal">
+      <div style="text-align:center;" class="reveal audit-trust-grid">
         <div>
           <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-0.04em;margin-bottom:4px;">$0</div>
-          <div style="font-size:0.82rem;color:var(--text-3);">Cost of the audit</div>
+          <div style="font-size:0.82rem;color:var(--text-3);" data-es="Costo de la auditoría">Cost of the audit</div>
         </div>
         <div>
-          <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-0.04em;margin-bottom:4px;">1 day</div>
-          <div style="font-size:0.82rem;color:var(--text-3);">Turnaround time</div>
+          <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-0.04em;margin-bottom:4px;" data-es="1 día">1 day</div>
+          <div style="font-size:0.82rem;color:var(--text-3);" data-es="Tiempo de entrega">Turnaround time</div>
         </div>
         <div>
-          <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-0.04em;margin-bottom:4px;">4 areas</div>
-          <div style="font-size:0.82rem;color:var(--text-3);">Google, website, ads, local search</div>
+          <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-0.04em;margin-bottom:4px;" data-es="4 áreas">4 areas</div>
+          <div style="font-size:0.82rem;color:var(--text-3);" data-es="Google, sitio web, anuncios, búsqueda local">Google, website, ads, local search</div>
         </div>
         <div>
-          <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-0.04em;margin-bottom:4px;">Guaranteed</div>
-          <div style="font-size:0.82rem;color:var(--text-3);">Results in writing</div>
+          <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-0.04em;margin-bottom:4px;" data-es="Garantizado">Guaranteed</div>
+          <div style="font-size:0.82rem;color:var(--text-3);" data-es="Resultados por escrito">Results in writing</div>
         </div>
       </div>
     </div>
@@ -218,12 +239,12 @@
   <!-- NEXT STEP CTA -->
   <section class="section-sm">
     <div class="container" style="text-align:center;">
-      <p style="color:var(--text-2);margin-bottom:16px;">Already know what's broken? Skip the audit.</p>
+      <p style="color:var(--text-2);margin-bottom:16px;" data-es="¿Ya sabes qué está fallando? Sáltate la auditoría.">Already know what's broken? Skip the audit.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="/checkout.html?tier=197" class="btn btn-primary btn-lg" onclick="gtag('event','checkout_click',{location:'audit_page'});">Get Staley OS, starts at $197/mo</a>
-        <a href="contact.html#book" class="btn btn-secondary btn-lg">Book a free 15-min call</a>
+        <a href="/checkout.html?tier=197" class="btn btn-primary btn-lg" onclick="gtag('event','checkout_click',{location:'audit_page'});" data-es="Obtén Staley OS, desde $197/mes">Get Staley OS, starts at $197/mo</a>
+        <a href="contact.html#book" class="btn btn-secondary btn-lg" data-es="Agenda una llamada gratis de 15 min">Book a free 15-min call</a>
       </div>
-      <p style="font-size:0.78rem;color:var(--text-3);margin-top:12px;">Lead CRM, speed-to-lead, and pipeline in one dashboard. Starts at $197/mo. Cancel anytime.</p>
+      <p style="font-size:0.78rem;color:var(--text-3);margin-top:12px;" data-es="CRM de prospectos, respuesta inmediata y pipeline en un solo panel. Desde $197/mes. Cancela cuando quieras.">Lead CRM, speed-to-lead, and pipeline in one dashboard. Starts at $197/mo. Cancel anytime.</p>
     </div>
   </section>
 
@@ -234,29 +255,29 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>The Staley Social</h3>
-          <p>Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
+          <h3 data-es="The Staley Social">The Staley Social</h3>
+          <p data-es="La agencia de marketing digital integral de Kansas City. Resultados garantizados por escrito.">Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
           <div class="footer-social">
             <a href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
             <a href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
             <a href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
           </div>
         </div>
-        <div class="footer-col"><h4>Services</h4><ul>
-            <li><a href="course.html">OPERATOR course</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="services.html#google-ads">Google Ads</a></li><li><a href="services.html#social">Social Media</a></li><li><a href="services.html#web">Website Design</a></li><li><a href="services.html#gbp">Google Business</a></li><li><a href="services.html#video">Video &amp; Content</a></li><li><a href="services.html#email">Email Marketing</a></li></ul></div>
-        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="/jameson-staley">Jameson Staley</a></li><li><a href="results.html">Results</a></li><li><a href="work.html">Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><a href="contact.html#book">Book a free call</a></li><li><span style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
+        <div class="footer-col"><h4 data-es="Servicios">Services</h4><ul>
+            <li><a href="course.html" data-es="Curso OPERATOR">OPERATOR course</a></li><li><a href="visualizer-drops.html" data-es="Visualizer Drops">Visualizer Drops</a></li><li><a href="services.html#google-ads" data-es="Google Ads">Google Ads</a></li><li><a href="services.html#social" data-es="Redes sociales">Social Media</a></li><li><a href="services.html#web" data-es="Diseño web">Website Design</a></li><li><a href="services.html#gbp" data-es="Google Business">Google Business</a></li><li><a href="services.html#video" data-es="Video y contenido">Video &amp; Content</a></li><li><a href="services.html#email" data-es="Email marketing">Email Marketing</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Empresa">Company</h4><ul><li><a href="about.html" data-es="Quiénes somos">About</a></li><li><a href="/jameson-staley">Jameson Staley</a></li><li><a href="results.html" data-es="Resultados">Results</a></li><li><a href="work.html" data-es="Trabajos">Work</a></li><li><a href="pricing.html" data-es="Precios">Pricing</a></li><li><a href="contact.html" data-es="Contacto">Contact</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Contacto">Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com" data-es="jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><a href="contact.html#book" data-es="Agenda una llamada gratis">Book a free call</a></li><li><span style="color:var(--text-3);" data-es="Kansas City, MO">Kansas City, MO</span></li></ul></div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Staley Social LLC. All rights reserved.</p>
-        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
+        <p data-es="&copy; 2026 The Staley Social LLC. Todos los derechos reservados.">&copy; 2026 The Staley Social LLC. All rights reserved.</p>
+        <p data-es="Hecho en Kansas City. <a href=&quot;privacy.html&quot;>Política de privacidad</a> &amp;middot; <a href=&quot;terms.html&quot;>Términos</a>">Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </footer>
 
-  <div id="form-success" style="display:none;position:fixed;top:calc(var(--nav-h) + 16px);left:50%;transform:translateX(-50%);z-index:200;background:var(--bg-2);border:1px solid rgba(45,99,216,0.35);border-radius:var(--radius-sm);padding:16px 28px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.5);white-space:nowrap;">
-    <div style="font-weight:600;color:var(--text);margin-bottom:2px;">Audit request received.</div>
-    <div style="font-size:0.82rem;color:var(--text-2);">Your audit lands in your inbox within one business day.</div>
+  <div id="form-success" style="display:none;position:fixed;top:calc(var(--nav-h) + 16px);left:50%;transform:translateX(-50%);z-index:200;background:var(--bg-2);border:1px solid rgba(45,99,216,0.35);border-radius:var(--radius-sm);padding:16px 28px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.5);max-width:calc(100vw - 32px);" role="status">
+    <div style="font-weight:600;color:var(--text);margin-bottom:2px;" data-es="Solicitud de auditoría recibida.">Audit request received.</div>
+    <div style="font-size:0.82rem;color:var(--text-2);" data-es="Tu auditoría llega a tu bandeja de entrada en un día hábil.">Your audit lands in your inbox within one business day.</div>
   </div>
   <script>
     if (window.location.search.includes('sent=true')) {
@@ -334,7 +355,7 @@
       });
     });
   </script>
-  <script defer src="js/main.js?v=7"></script>
+  <script defer src="js/main.js?v=9"></script>
   <script
     src="https://link.msgsndr.com/js/external-tracking.js"
     data-tracking-id="tk_901c8ea583cc41d3bc52d54eaee00e34"
