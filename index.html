@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kansas City marketing agency with a written guarantee: hit your goals in 90 days or month 2 is free. Google Ads, social, web and SEO. One invoice.">
-  <title>Kansas City Digital Marketing Agency | The Staley Social</title>
+  <meta data-es-content="Agencia de marketing en Kansas City con garantía por escrito: alcanza tus metas en 90 días o el mes 2 es gratis. Google Ads, redes sociales, web y SEO. Una sola factura." name="description" content="Kansas City marketing agency with a written guarantee: hit your goals in 90 days or month 2 is free. Google Ads, social, web and SEO. One invoice.">
+  <title data-es="Agencia de marketing digital en Kansas City | The Staley Social">Kansas City Digital Marketing Agency | The Staley Social</title>
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="assets/logos/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -31,8 +31,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=14">
-  <link rel="stylesheet" href="css/home.css?v=16">
+  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="stylesheet" href="css/home.css?v=17">
   <!-- Lenis smooth scroll (package renamed from @studio-freight/lenis; old URL 404'd silently) -->
   <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
 <script type="application/ld+json">
@@ -135,13 +135,13 @@
   </script>
 </head>
 <body class="page-home">
-  <a href="#main-content" class="skip-link">Skip to content</a>
+  <a data-es="Saltar al contenido" href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- INTRO SPLASH -->
   <div class="intro-overlay" id="introOverlay" aria-hidden="true">
     <div class="intro-inner">
-      <img src="assets/logos/logo-full.webp" alt="The Staley Social" class="intro-logo" id="introLogo" width="1254" height="1254">
-      <div class="intro-tagline" id="introTagline">Results or month 2 is free.</div>
+      <img data-es-alt="The Staley Social" src="assets/logos/logo-full.webp" alt="The Staley Social" class="intro-logo" id="introLogo" width="1254" height="1254">
+      <div data-es="Resultados o el mes 2 es gratis." class="intro-tagline" id="introTagline">Results or month 2 is free.</div>
     </div>
     <div class="intro-bar" id="introBar"></div>
   </div>
@@ -149,27 +149,44 @@
   <!-- NAV -->
   <nav class="nav" id="main-nav">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">
+      <a data-es="<span class=&quot;nav-logo-dot&quot;></span>
+        The Staley Social" href="/" class="nav-logo">
         <span class="nav-logo-dot"></span>
         The Staley Social
       </a>
       <div class="nav-links">
-        <a href="/" class="active">Home</a>
-        <a href="/os.html">Software</a>
-        <a href="/services.html">Services</a>
-        <a href="/results.html">Results</a>
-        <a href="/#reviews">Reviews</a>
-        <a href="/work.html">Work</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/blog/">Blog</a>
-        <a href="/course.html">Course</a>
-        <a href="/contact.html">Contact</a>
+        <a data-es="Inicio" href="/" class="active">Home</a>
+        <a data-es="Software" href="/os.html">Software</a>
+        <a data-es="Servicios" href="/services.html">Services</a>
+        <a data-es="Resultados" href="/results.html">Results</a>
+        <a data-es="Reseñas" href="/#reviews">Reviews</a>
+        <a data-es="Trabajos" href="/work.html">Work</a>
+        <a data-es="Precios" href="/pricing.html">Pricing</a>
+        <a data-es="Blog" href="/blog/">Blog</a>
+        <a data-es="Curso" href="/course.html">Course</a>
+        <a data-es="Contacto" href="/contact.html">Contact</a>
       </div>
       <div class="nav-cta">
-        <a href="tel:+18166528233" class="nav-phone" aria-label="Call us">(816) 652-8233</a>
-        <a href="start.html" class="btn btn-secondary btn-sm">Find your plan</a>
-        <a href="os.html" class="btn btn-primary btn-sm">Start free</a>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+        <div class="lang" role="group" aria-label="Language" data-es-aria-label="Idioma">
+          <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+          <label class="sr-only" for="more-lang" data-es="Más idiomas">More languages</label>
+          <select id="more-lang" translate="no">
+            <option value="" data-es="Más">More</option>
+            <optgroup label="Machine translated" data-es-label="Traducción automática">
+              <option value="pt">Português</option><option value="fr">Français</option>
+              <option value="de">Deutsch</option><option value="it">Italiano</option>
+              <option value="tl">Tagalog</option><option value="vi">Tiếng Việt</option>
+              <option value="zh-CN">中文</option><option value="ja">日本語</option>
+              <option value="ko">한국어</option><option value="ar">العربية</option>
+              <option value="hi">हिन्दी</option><option value="ru">Русский</option>
+            </optgroup>
+          </select>
+        </div>
+        <a data-es-aria-label="Llámanos" href="tel:+18166528233" class="nav-phone" aria-label="Call us">(816) 652-8233</a>
+        <a data-es="Encuentra tu plan" href="start.html" class="btn btn-secondary btn-sm">Find your plan</a>
+        <a data-es="Empieza gratis" href="os.html" class="btn btn-primary btn-sm">Start free</a>
+        <button data-es-aria-label="Abrir o cerrar menú" class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -178,18 +195,18 @@
 
   <!-- MOBILE MENU -->
   <div class="nav-mobile" id="nav-mobile">
-    <a href="/">Home</a>
-    <a href="/os.html">Software</a>
-    <a href="/services.html">Services</a>
-    <a href="/results.html">Results</a>
-    <a href="/#reviews">Reviews</a>
-    <a href="/work.html">Work</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/blog/">Blog</a>
-    <a href="/course.html">Course</a>
-    <a href="/contact.html">Contact</a>
+    <a data-es="Inicio" href="/">Home</a>
+    <a data-es="Software" href="/os.html">Software</a>
+    <a data-es="Servicios" href="/services.html">Services</a>
+    <a data-es="Resultados" href="/results.html">Results</a>
+    <a data-es="Reseñas" href="/#reviews">Reviews</a>
+    <a data-es="Trabajos" href="/work.html">Work</a>
+    <a data-es="Precios" href="/pricing.html">Pricing</a>
+    <a data-es="Blog" href="/blog/">Blog</a>
+    <a data-es="Curso" href="/course.html">Course</a>
+    <a data-es="Contacto" href="/contact.html">Contact</a>
 
-    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
+    <a data-es="Agenda una llamada gratis" href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
     <a href="tel:+18166528233" style="text-align:center;font-size:0.75rem;color:var(--text-2);">(816) 652-8233</a>
   </div>
 
@@ -212,37 +229,43 @@
 
         <!-- LEFT: Headline + CTAs -->
         <div>
-          <a href="contact.html#book" class="hero-scarcity hero-line" aria-label="Book a call, accepting 2 new clients until May 1st">
+          <a data-es="<span class=&quot;hero-scarcity-dot&quot; aria-hidden=&quot;true&quot;></span>
+            Aceptamos 2 clientes nuevos hasta el 1 de mayo" data-es-aria-label="Reserva una llamada, aceptamos 2 clientes nuevos hasta el 1 de mayo" href="contact.html#book" class="hero-scarcity hero-line" aria-label="Book a call, accepting 2 new clients until May 1st">
             <span class="hero-scarcity-dot" aria-hidden="true"></span>
             Accepting 2 new clients until May 1st
           </a>
           <h1 class="hero-headline display-xl">
-            <span class="hero-line">We make <span class="text-blue">KC</span></span>
-            <span class="hero-line text-blue">businesses</span>
-            <span class="hero-line">impossible</span>
-            <span class="hero-line">to ignore.</span>
+            <span data-es="Hacemos que los" class="hero-line">We make <span class="text-blue">KC</span></span>
+            <span data-es="negocios de KC" class="hero-line text-blue">businesses</span>
+            <span data-es="sean imposibles" class="hero-line">impossible</span>
+            <span data-es="de ignorar." class="hero-line">to ignore.</span>
           </h1>
-          <p class="hero-sub hero-line">One team runs your ads, content, and web. You watch the leads come in.</p>
+          <p data-es="Un solo equipo se encarga de tus anuncios, tu contenido y tu web. Tú solo ves llegar los clientes potenciales." class="hero-sub hero-line">One team runs your ads, content, and web. You watch the leads come in.</p>
           <div class="hero-actions hero-line">
-            <a href="contact.html#book" class="btn btn-primary btn-lg">
+            <a data-es="<svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; aria-hidden=&quot;true&quot;><rect x=&quot;3&quot; y=&quot;4&quot; width=&quot;18&quot; height=&quot;18&quot; rx=&quot;2&quot;/><path d=&quot;M16 2v4M8 2v4M3 10h18&quot;/></svg>
+              Agenda una llamada gratis de 15 min" href="contact.html#book" class="btn btn-primary btn-lg">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
               Book a free 15-min call
             </a>
-            <a href="audit.html" class="btn btn-secondary btn-lg">
+            <a data-es="<svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; aria-hidden=&quot;true&quot;><path d=&quot;M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z&quot;/></svg>
+              Obtén una auditoría gratis" href="audit.html" class="btn btn-secondary btn-lg">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
               Get a free audit
             </a>
           </div>
           <div class="hero-proof-bar hero-line">
-            <div class="hero-proof-item">
+            <div data-es="<svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; aria-hidden=&quot;true&quot;><path d=&quot;M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2&quot;/><circle cx=&quot;9&quot; cy=&quot;7&quot; r=&quot;4&quot;/><path d=&quot;M23 21v-2a4 4 0 0 0-3-3.87&quot;/><path d=&quot;M16 3.13a4 4 0 0 1 0 7.75&quot;/></svg>
+              100% de retención de clientes (activos)" class="hero-proof-item">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               100% client retention (active)
             </div>
-            <div class="hero-proof-item">
+            <div data-es="<svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; aria-hidden=&quot;true&quot;><path d=&quot;M5 13l4 4L19 7&quot;/></svg>
+              Resultados garantizados" class="hero-proof-item">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
               Guaranteed results
             </div>
-            <div class="hero-proof-item">
+            <div data-es="<svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot; aria-hidden=&quot;true&quot;><path d=&quot;M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z&quot;/></svg>
+              De Kansas City, con dueños que operan el negocio" class="hero-proof-item">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
               Kansas City owned &amp; operated
             </div>
@@ -253,7 +276,9 @@
              two glass cards. Same copy, no surfaces. -->
         <div class="hero-right hero-line">
           <div class="hero-ledger">
-            <p class="hero-ledger-lede">
+            <p data-es="<span class=&quot;hero-ledger-mark&quot;>La Garantía Staley.</span>
+              <span class=&quot;guarantee-bold&quot;>30% más vistas en Google Business Profile para el mes 2,</span>
+              o el mes 2 es totalmente gratis. Ninguna otra agencia de KC lo pone por escrito." class="hero-ledger-lede">
               <span class="hero-ledger-mark">The Staley Guarantee.</span>
               <span class="guarantee-bold">30% more Google Business Profile views by month 2,</span>
               or month 2 is completely free. No other KC agency puts this in writing.
@@ -261,15 +286,15 @@
             <dl class="hero-stats">
               <div class="hero-stat">
                 <dt class="stat-num"><span data-counter data-target="20" data-suffix="%">20%</span></dt>
-                <dd class="stat-label">More ticket sales, KC Comets, month 1</dd>
+                <dd data-es="Más venta de boletos, KC Comets, mes 1" class="stat-label">More ticket sales, KC Comets, month 1</dd>
               </div>
               <div class="hero-stat">
                 <dt class="stat-num"><span data-counter data-target="14" data-suffix="+">14</span></dt>
-                <dd class="stat-label">Leads in week 1, OFB SWFL</dd>
+                <dd data-es="Clientes potenciales en la semana 1, OFB SWFL" class="stat-label">Leads in week 1, OFB SWFL</dd>
               </div>
               <div class="hero-stat">
                 <dt class="stat-num"><span data-counter data-target="180" data-suffix="M+">180</span></dt>
-                <dd class="stat-label">Views generated across platforms</dd>
+                <dd data-es="Vistas generadas en todas las plataformas" class="stat-label">Views generated across platforms</dd>
               </div>
             </dl>
           </div>
@@ -283,46 +308,46 @@
   <div class="trust-bar">
     <div class="marquee-track">
       <div class="marquee-content">
-        <span class="trust-logo-item">KC Comets</span>
+        <span data-es="KC Comets" class="trust-logo-item">KC Comets</span>
         <span class="marquee-dot">&#10022;</span>
-        <span class="trust-logo-item">Office Brokers of SWFL</span>
+        <span data-es="Office Brokers of SWFL" class="trust-logo-item">Office Brokers of SWFL</span>
         <span class="marquee-dot">&#10022;</span>
-        <span class="trust-logo-item">Clean Cuts KC</span>
+        <span data-es="Clean Cuts KC" class="trust-logo-item">Clean Cuts KC</span>
         <span class="marquee-dot">&#10022;</span>
-        <span class="trust-logo-item">Show Me Smoke</span>
+        <span data-es="Show Me Smoke" class="trust-logo-item">Show Me Smoke</span>
         <span class="marquee-dot">&#10022;</span>
-        <span class="trust-logo-item">A1 Fencing</span>
+        <span data-es="A1 Fencing" class="trust-logo-item">A1 Fencing</span>
         <span class="marquee-dot">&#10022;</span>
-        <span class="trust-logo-item">A1 Window Tinting</span>
+        <span data-es="A1 Window Tinting" class="trust-logo-item">A1 Window Tinting</span>
         <span class="marquee-dot">&#10022;</span>
-        <span class="trust-logo-item">Factory Direct Hydroponics</span>
+        <span data-es="Factory Direct Hydroponics" class="trust-logo-item">Factory Direct Hydroponics</span>
         <span class="marquee-dot">&#10022;</span>
-        <span class="trust-logo-item">Chesterfield Service</span>
+        <span data-es="Chesterfield Service" class="trust-logo-item">Chesterfield Service</span>
         <span class="marquee-dot">&#10022;</span>
       </div>
       <div class="marquee-content" aria-hidden="true">
-        <span class="trust-logo-item">KC Comets</span>
+        <span data-es="KC Comets" class="trust-logo-item">KC Comets</span>
         <span class="marquee-dot">&#10022;</span>
-        <span class="trust-logo-item">Office Brokers of SWFL</span>
+        <span data-es="Office Brokers of SWFL" class="trust-logo-item">Office Brokers of SWFL</span>
         <span class="marquee-dot">&#10022;</span>
-        <span class="trust-logo-item">Clean Cuts KC</span>
+        <span data-es="Clean Cuts KC" class="trust-logo-item">Clean Cuts KC</span>
         <span class="marquee-dot">&#10022;</span>
-        <span class="trust-logo-item">Show Me Smoke</span>
+        <span data-es="Show Me Smoke" class="trust-logo-item">Show Me Smoke</span>
         <span class="marquee-dot">&#10022;</span>
-        <span class="trust-logo-item">A1 Fencing</span>
+        <span data-es="A1 Fencing" class="trust-logo-item">A1 Fencing</span>
         <span class="marquee-dot">&#10022;</span>
-        <span class="trust-logo-item">A1 Window Tinting</span>
+        <span data-es="A1 Window Tinting" class="trust-logo-item">A1 Window Tinting</span>
         <span class="marquee-dot">&#10022;</span>
-        <span class="trust-logo-item">Factory Direct Hydroponics</span>
+        <span data-es="Factory Direct Hydroponics" class="trust-logo-item">Factory Direct Hydroponics</span>
         <span class="marquee-dot">&#10022;</span>
-        <span class="trust-logo-item">Chesterfield Service</span>
+        <span data-es="Chesterfield Service" class="trust-logo-item">Chesterfield Service</span>
         <span class="marquee-dot">&#10022;</span>
       </div>
     </div>
   </div>
 
   <!-- Live rating badge: pulls readers straight to the reviews section, high on the page -->
-  <a href="#reviews" class="reveal" aria-label="Rated 5.0 by Kansas City business owners, jump to reviews" style="display:flex;align-items:center;justify-content:center;gap:10px;width:fit-content;margin:4px auto 0;padding:9px 18px;border:1px solid rgba(255,255,255,0.14);border-radius:999px;text-decoration:none;font-size:0.88rem;background:rgba(255,255,255,0.03);">
+  <a data-es-aria-label="Calificación de 5.0 de dueños de negocios de Kansas City, ir a las reseñas" href="#reviews" class="reveal" aria-label="Rated 5.0 by Kansas City business owners, jump to reviews" style="display:flex;align-items:center;justify-content:center;gap:10px;width:fit-content;margin:4px auto 0;padding:9px 18px;border:1px solid rgba(255,255,255,0.14);border-radius:999px;text-decoration:none;font-size:0.88rem;background:rgba(255,255,255,0.03);">
     <span aria-hidden="true" style="display:inline-flex;gap:2px;color:#f5b301;">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -330,7 +355,7 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
     </span>
-    <span style="color:var(--text-2);"><strong style="color:#fff;">5.0</strong> from Kansas City business owners</span>
+    <span data-es="<strong style=&quot;color:#fff;&quot;>5.0</strong> de dueños de negocios de Kansas City" style="color:var(--text-2);"><strong style="color:#fff;">5.0</strong> from Kansas City business owners</span>
   </a>
 
   <div class="section-divider"></div>
@@ -340,50 +365,50 @@
     <div class="container">
 
       <div class="h-services-header reveal-wipe">
-        <h2 class="display-md">Everything your business needs.</h2>
-        <p class="h-services-sub">Handled in-house, so nothing gets passed between three vendors before it reaches you.</p>
+        <h2 data-es="Todo lo que tu negocio necesita." class="display-md">Everything your business needs.</h2>
+        <p data-es="Todo se maneja internamente, así que nada pasa por tres proveedores antes de llegar a ti." class="h-services-sub">Handled in-house, so nothing gets passed between three vendors before it reaches you.</p>
       </div>
 
       <div class="h-srv-list">
         <a href="services.html#google-ads" class="h-srv-row reveal">
-          <span class="h-srv-name">Google Ads &amp; Geofencing</span>
-          <span class="h-srv-desc">Stop bleeding budget on clicks that don't convert.</span>
+          <span data-es="Google Ads y geovallado" class="h-srv-name">Google Ads &amp; Geofencing</span>
+          <span data-es="Deja de tirar tu presupuesto en clics que no convierten." class="h-srv-desc">Stop bleeding budget on clicks that don't convert.</span>
           <span class="h-srv-arrow">&rarr;</span>
         </a>
         <a href="services.html#web" class="h-srv-row reveal">
-          <span class="h-srv-name">Website Design &amp; Development</span>
-          <span class="h-srv-desc">Fast, mobile-first sites built to convert visitors.</span>
+          <span data-es="Diseño y desarrollo web" class="h-srv-name">Website Design &amp; Development</span>
+          <span data-es="Sitios rápidos, pensados primero para móvil, creados para convertir visitantes." class="h-srv-desc">Fast, mobile-first sites built to convert visitors.</span>
           <span class="h-srv-arrow">&rarr;</span>
         </a>
         <a href="services.html#gbp" class="h-srv-row reveal">
-          <span class="h-srv-name">Google Business Profile</span>
-          <span class="h-srv-desc">Show up in the Local 3-Pack and get more calls.</span>
+          <span data-es="Google Business Profile" class="h-srv-name">Google Business Profile</span>
+          <span data-es="Aparece en el Local 3-Pack y recibe más llamadas." class="h-srv-desc">Show up in the Local 3-Pack and get more calls.</span>
           <span class="h-srv-arrow">&rarr;</span>
         </a>
         <a href="services.html#social" class="h-srv-row reveal">
-          <span class="h-srv-name">Social Media Management</span>
-          <span class="h-srv-desc">Content that actually looks like your brand.</span>
+          <span data-es="Gestión de redes sociales" class="h-srv-name">Social Media Management</span>
+          <span data-es="Contenido que realmente se ve como tu marca." class="h-srv-desc">Content that actually looks like your brand.</span>
           <span class="h-srv-arrow">&rarr;</span>
         </a>
         <a href="services.html#video" class="h-srv-row reveal">
-          <span class="h-srv-name">Video &amp; Content Production</span>
-          <span class="h-srv-desc">Reels, TikToks, brand videos, scripted and shot.</span>
+          <span data-es="Producción de video y contenido" class="h-srv-name">Video &amp; Content Production</span>
+          <span data-es="Reels, TikToks y videos de marca, con guion y producción." class="h-srv-desc">Reels, TikToks, brand videos, scripted and shot.</span>
           <span class="h-srv-arrow">&rarr;</span>
         </a>
         <a href="services.html#email" class="h-srv-row reveal">
-          <span class="h-srv-name">Email Marketing &amp; SEO</span>
-          <span class="h-srv-desc">Automated nurture flows plus long-term organic traffic.</span>
+          <span data-es="Email marketing y SEO" class="h-srv-name">Email Marketing &amp; SEO</span>
+          <span data-es="Flujos de nutrición automatizados y tráfico orgánico a largo plazo." class="h-srv-desc">Automated nurture flows plus long-term organic traffic.</span>
           <span class="h-srv-arrow">&rarr;</span>
         </a>
         <a href="pricing.html#staley-os" class="h-srv-row reveal os-service-row">
-          <span class="h-srv-name">Staley OS <span class="h-srv-badge">Software</span></span>
-          <span class="h-srv-desc">CRM, speed-to-lead, pipeline, dashboard. Your operating system.</span>
+          <span data-es="Staley OS <span class=&quot;h-srv-badge&quot;>Software</span>" class="h-srv-name">Staley OS <span class="h-srv-badge">Software</span></span>
+          <span data-es="CRM, respuesta inmediata a leads, pipeline y panel. Tu sistema operativo." class="h-srv-desc">CRM, speed-to-lead, pipeline, dashboard. Your operating system.</span>
           <span class="h-srv-arrow">&rarr;</span>
         </a>
       </div>
 
       <div class="text-center" style="margin-top:48px;">
-        <a href="services.html" class="btn btn-outline-blue btn-lg">See all services</a>
+        <a data-es="Ver todos los servicios" href="services.html" class="btn btn-outline-blue btn-lg">See all services</a>
       </div>
     </div>
   </section>
@@ -393,17 +418,18 @@
     <div class="container">
 
       <div class="os-intro reveal-wipe">
-        <div class="section-label">
+        <div data-es="<svg width=&quot;8&quot; height=&quot;8&quot; viewBox=&quot;0 0 8 8&quot; fill=&quot;currentColor&quot; aria-hidden=&quot;true&quot;><circle cx=&quot;4&quot; cy=&quot;4&quot; r=&quot;4&quot;/></svg>
+          Staley OS, software propio" class="section-label">
           <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor" aria-hidden="true"><circle cx="4" cy="4" r="4"/></svg>
           Staley OS, Proprietary Software
         </div>
-        <h2 class="display-md os-headline">Your business's<br>operating system.</h2>
-        <p class="os-sub">Most businesses lose 70% of their leads because they respond too slow. Staley OS texts and emails every new lead in under 60 seconds. Automatically, at 2am, on weekends, without you touching anything.</p>
+        <h2 data-es="El sistema operativo<br>de tu negocio." class="display-md os-headline">Your business's<br>operating system.</h2>
+        <p data-es="La mayoría de los negocios pierde el 70% de sus leads por responder muy tarde. Staley OS envía un texto y un correo a cada lead nuevo en menos de 60 segundos. De forma automática, a las 2 a. m., en fines de semana, sin que tú toques nada." class="os-sub">Most businesses lose 70% of their leads because they respond too slow. Staley OS texts and emails every new lead in under 60 seconds. Automatically, at 2am, on weekends, without you touching anything.</p>
       </div>
 
       <div class="os-hero-stat reveal">
         <div class="os-big-num">60<span class="os-big-unit">s</span></div>
-        <div class="os-big-desc">Speed-to-lead. Every new inquiry gets a text and email before your competitor's phone stops ringing. Most clients see a 2 to 3x lift in close rate from the same ad spend.</div>
+        <div data-es="Respuesta inmediata. Cada consulta nueva recibe un texto y un correo antes de que el teléfono de tu competencia deje de sonar. La mayoría de los clientes ve un aumento de 2 a 3 veces en su tasa de cierre con la misma inversión en anuncios." class="os-big-desc">Speed-to-lead. Every new inquiry gets a text and email before your competitor's phone stops ringing. Most clients see a 2 to 3x lift in close rate from the same ad spend.</div>
       </div>
 
       <div class="os-body">
@@ -414,8 +440,8 @@
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <div class="os-feat-text">
-              <div class="os-feat-name">CRM + Pipeline</div>
-              <div class="os-feat-desc">Every lead tracked, every deal staged, every follow-up scheduled. Nothing falls through.</div>
+              <div data-es="CRM + Pipeline" class="os-feat-name">CRM + Pipeline</div>
+              <div data-es="Cada lead rastreado, cada venta en su etapa, cada seguimiento programado. Nada se pierde." class="os-feat-desc">Every lead tracked, every deal staged, every follow-up scheduled. Nothing falls through.</div>
             </div>
           </div>
           <div class="os-feature">
@@ -423,8 +449,8 @@
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.67 3.37 2 2 0 0 1 3.64 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
             <div class="os-feat-text">
-              <div class="os-feat-name">Speed-to-Lead Automation</div>
-              <div class="os-feat-desc">60-second SMS and email on every new lead. Built-in, not bolted on.</div>
+              <div data-es="Automatización de respuesta inmediata" class="os-feat-name">Speed-to-Lead Automation</div>
+              <div data-es="SMS y correo en 60 segundos para cada lead nuevo. Integrado desde el inicio, no agregado después." class="os-feat-desc">60-second SMS and email on every new lead. Built-in, not bolted on.</div>
             </div>
           </div>
           <div class="os-feature">
@@ -432,8 +458,8 @@
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
             </div>
             <div class="os-feat-text">
-              <div class="os-feat-name">Live Dashboard</div>
-              <div class="os-feat-desc">Revenue, leads, calls, and ad spend, all in one place, updated in real time.</div>
+              <div data-es="Panel en vivo" class="os-feat-name">Live Dashboard</div>
+              <div data-es="Ingresos, leads, llamadas y gasto en anuncios, todo en un solo lugar y actualizado en tiempo real." class="os-feat-desc">Revenue, leads, calls, and ad spend, all in one place, updated in real time.</div>
             </div>
           </div>
           <div class="os-feature">
@@ -441,8 +467,8 @@
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg>
             </div>
             <div class="os-feat-text">
-              <div class="os-feat-name">Call Tracking</div>
-              <div class="os-feat-desc">Know which ads drive calls, which keywords close, which campaigns earn their budget.</div>
+              <div data-es="Rastreo de llamadas" class="os-feat-name">Call Tracking</div>
+              <div data-es="Sabe qué anuncios generan llamadas, qué palabras clave cierran y qué campañas se ganan su presupuesto." class="os-feat-desc">Know which ads drive calls, which keywords close, which campaigns earn their budget.</div>
             </div>
           </div>
           <div class="os-feature">
@@ -450,8 +476,8 @@
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
             <div class="os-feat-text">
-              <div class="os-feat-name">Reputation Management</div>
-              <div class="os-feat-desc">Automated review requests after every job. Your Google rating climbs while you sleep.</div>
+              <div data-es="Manejo de reputación" class="os-feat-name">Reputation Management</div>
+              <div data-es="Solicitudes de reseña automáticas después de cada trabajo. Tu calificación en Google sube mientras duermes." class="os-feat-desc">Automated review requests after every job. Your Google rating climbs while you sleep.</div>
             </div>
           </div>
           <div class="os-feature">
@@ -459,54 +485,55 @@
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </div>
             <div class="os-feat-text">
-              <div class="os-feat-name">Microsoft 365</div>
-              <div class="os-feat-desc">Professional email under your domain. No more @gmail.com on business cards.</div>
+              <div data-es="Microsoft 365" class="os-feat-name">Microsoft 365</div>
+              <div data-es="Correo profesional con tu dominio. Se acabaron los @gmail.com en las tarjetas de presentación." class="os-feat-desc">Professional email under your domain. No more @gmail.com on business cards.</div>
             </div>
           </div>
         </div>
 
-        <div class="os-dashboard reveal reveal-delay-1" aria-hidden="true" role="img" aria-label="Example of the Staley OS dashboard, illustrative data">
+        <div data-es-aria-label="Ejemplo del panel de Staley OS, datos ilustrativos" class="os-dashboard reveal reveal-delay-1" aria-hidden="true" role="img" aria-label="Example of the Staley OS dashboard, illustrative data">
           <div class="os-dash-bar">
             <div class="os-dash-dots">
               <span class="os-dash-dot os-dot-red"></span>
               <span class="os-dash-dot os-dot-yellow"></span>
               <span class="os-dash-dot os-dot-green"></span>
             </div>
-            <span class="os-dash-bar-label">Staley OS dashboard &middot; example view</span>
-            <span class="os-dash-live"><span class="os-dash-live-dot"></span>Live</span>
+            <span data-es="Panel de Staley OS &amp;middot; vista de ejemplo" class="os-dash-bar-label">Staley OS dashboard &middot; example view</span>
+            <span data-es="<span class=&quot;os-dash-live-dot&quot;></span>En vivo" class="os-dash-live"><span class="os-dash-live-dot"></span>Live</span>
           </div>
           <div class="os-dash-stats">
             <div class="os-dash-stat">
               <div class="os-dash-stat-num">14</div>
-              <div class="os-dash-stat-lbl">Leads today</div>
+              <div data-es="Leads de hoy" class="os-dash-stat-lbl">Leads today</div>
             </div>
             <div class="os-dash-stat os-dash-stat-hi">
               <div class="os-dash-stat-num">$24,800</div>
-              <div class="os-dash-stat-lbl">Open pipeline</div>
+              <div data-es="Pipeline abierto" class="os-dash-stat-lbl">Open pipeline</div>
             </div>
             <div class="os-dash-stat">
               <div class="os-dash-stat-num">4.9&#9733;</div>
-              <div class="os-dash-stat-lbl">Google rating</div>
+              <div data-es="Calificación en Google" class="os-dash-stat-lbl">Google rating</div>
             </div>
           </div>
           <div class="os-dash-pipe">
             <div class="os-dash-col">
-              <div class="os-dash-col-hd">New Lead <span>3</span></div>
-              <div class="os-dash-card"><div class="os-card-name">Darnell Pruitt</div><div class="os-card-meta os-green">Contacted &middot; 60s</div></div>
-              <div class="os-dash-card"><div class="os-card-name">Marisol Vega</div><div class="os-card-meta os-green">Contacted &middot; 2m</div></div>
-              <div class="os-dash-card"><div class="os-card-name">Aaron Whitfield</div><div class="os-card-meta os-yellow">Awaiting reply</div></div>
+              <div data-es="Lead nuevo <span>3</span>" class="os-dash-col-hd">New Lead <span>3</span></div>
+              <div class="os-dash-card"><div data-es="Darnell Pruitt" class="os-card-name">Darnell Pruitt</div><div data-es="Contactado &amp;middot; 60 s" class="os-card-meta os-green">Contacted &middot; 60s</div></div>
+              <div class="os-dash-card"><div data-es="Marisol Vega" class="os-card-name">Marisol Vega</div><div data-es="Contactada &amp;middot; 2 min" class="os-card-meta os-green">Contacted &middot; 2m</div></div>
+              <div class="os-dash-card"><div data-es="Aaron Whitfield" class="os-card-name">Aaron Whitfield</div><div data-es="Esperando respuesta" class="os-card-meta os-yellow">Awaiting reply</div></div>
             </div>
             <div class="os-dash-col">
-              <div class="os-dash-col-hd">Qualified <span>2</span></div>
-              <div class="os-dash-card"><div class="os-card-name">Priya Raghavan</div><div class="os-card-meta">$8,500 &middot; Call booked</div></div>
-              <div class="os-dash-card"><div class="os-card-name">Cody Lindstrom</div><div class="os-card-meta">$5,200 &middot; Proposal sent</div></div>
+              <div data-es="Calificados <span>2</span>" class="os-dash-col-hd">Qualified <span>2</span></div>
+              <div class="os-dash-card"><div data-es="Priya Raghavan" class="os-card-name">Priya Raghavan</div><div data-es="$8,500 &amp;middot; Llamada agendada" class="os-card-meta">$8,500 &middot; Call booked</div></div>
+              <div class="os-dash-card"><div data-es="Cody Lindstrom" class="os-card-name">Cody Lindstrom</div><div data-es="$5,200 &amp;middot; Propuesta enviada" class="os-card-meta">$5,200 &middot; Proposal sent</div></div>
             </div>
             <div class="os-dash-col">
-              <div class="os-dash-col-hd">Won <span>1</span></div>
-              <div class="os-dash-card os-card-won"><div class="os-card-name">Renata Alvarez</div><div class="os-card-meta os-green">$12,000 &middot; Closed</div></div>
+              <div data-es="Ganados <span>1</span>" class="os-dash-col-hd">Won <span>1</span></div>
+              <div class="os-dash-card os-card-won"><div data-es="Renata Alvarez" class="os-card-name">Renata Alvarez</div><div data-es="$12,000 &amp;middot; Cerrado" class="os-card-meta os-green">$12,000 &middot; Closed</div></div>
             </div>
           </div>
-          <div class="os-dash-foot">
+          <div data-es="<svg width=&quot;8&quot; height=&quot;8&quot; viewBox=&quot;0 0 8 8&quot; fill=&quot;currentColor&quot;><circle cx=&quot;4&quot; cy=&quot;4&quot; r=&quot;4&quot;/></svg>
+            Respuesta inmediata de 60 segundos activa" class="os-dash-foot">
             <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
             60-second speed-to-lead active
           </div>
@@ -516,14 +543,14 @@
 
       <div class="os-bottom reveal">
         <div class="os-price-block">
-          <span class="os-price-from">Starts at</span>
+          <span data-es="Desde" class="os-price-from">Starts at</span>
           <span class="os-price-num">$197</span>
-          <span class="os-price-mo">/mo</span>
-          <span class="os-price-note">Starts at $197/mo. No long-term contracts.</span>
+          <span data-es="/mes" class="os-price-mo">/mo</span>
+          <span data-es="Desde $197/mes. Sin contratos a largo plazo." class="os-price-note">Starts at $197/mo. No long-term contracts.</span>
         </div>
         <div class="os-bottom-ctas">
-          <a href="pricing.html#staley-os" class="btn btn-primary btn-lg">See Staley OS plans</a>
-          <a href="contact.html#book" class="btn btn-secondary btn-lg">Get a free demo</a>
+          <a data-es="Ver planes de Staley OS" href="pricing.html#staley-os" class="btn btn-primary btn-lg">See Staley OS plans</a>
+          <a data-es="Pide una demo gratis" href="contact.html#book" class="btn btn-secondary btn-lg">Get a free demo</a>
         </div>
       </div>
 
@@ -535,15 +562,17 @@
     <div class="container">
       <div class="guarantee-inner">
         <div class="reveal-left">
-          <div class="guarantee-badge">
+          <div data-es="<svg width=&quot;12&quot; height=&quot;12&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z&quot;/></svg>
+            La Garantía Staley" class="guarantee-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
             The Staley Guarantee
           </div>
-          <h2 class="display-md guarantee-headline">
+          <h2 data-es="Resultados por escrito.<br>
+            <span class=&quot;text-gradient&quot;>O no pagas.</span>" class="display-md guarantee-headline">
             Results in writing.<br>
             <span class="text-gradient">Or you don't pay.</span>
           </h2>
-          <p class="guarantee-body">
+          <p data-es="Todas las agencias de Kansas City te prometen resultados. Somos la única en KC que lo respalda por escrito. Si no logramos 30% más vistas en Google Business Profile para el mes dos, ese mes corre por nuestra cuenta." class="guarantee-body">
             Every agency in Kansas City will promise you results. We're the only one in KC that backs it up in writing. If we don't hit 30% more Google Business Profile views by month two, that month is completely on us.
           </p>
           <div class="guarantee-points">
@@ -551,32 +580,32 @@
               <div class="guarantee-point-icon">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
               </div>
-              <div class="guarantee-point-text"><strong>30% more GBP views by month 2,</strong> measurable and verifiable in Google Search Console.</div>
+              <div data-es="<strong>30% más vistas en GBP para el mes 2,</strong> medibles y verificables en Google Search Console." class="guarantee-point-text"><strong>30% more GBP views by month 2,</strong> measurable and verifiable in Google Search Console.</div>
             </div>
             <div class="guarantee-point">
               <div class="guarantee-point-icon">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
               </div>
-              <div class="guarantee-point-text">If we miss it, <strong>month 2 is free.</strong> No questions asked, no fine print.</div>
+              <div data-es="Si no lo logramos, <strong>el mes 2 es gratis.</strong> Sin preguntas y sin letra pequeña." class="guarantee-point-text">If we miss it, <strong>month 2 is free.</strong> No questions asked, no fine print.</div>
             </div>
             <div class="guarantee-point">
               <div class="guarantee-point-icon">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
               </div>
-              <div class="guarantee-point-text"><strong>No KC competitor offers this.</strong> We've checked. They don't.</div>
+              <div data-es="<strong>Ningún competidor de KC ofrece esto.</strong> Lo revisamos. No lo hacen." class="guarantee-point-text"><strong>No KC competitor offers this.</strong> We've checked. They don't.</div>
             </div>
           </div>
           <div style="margin-top:36px;">
-            <a href="audit.html" class="btn btn-primary btn-lg">Claim your free audit</a>
+            <a data-es="Reclama tu auditoría gratis" href="audit.html" class="btn btn-primary btn-lg">Claim your free audit</a>
           </div>
         </div>
 
         <div class="guarantee-visual reveal-right">
           <div class="guarantee-percent">30%</div>
-          <div class="guarantee-percent-label">More Google Business Profile views<br>by month 2, guaranteed</div>
-          <div class="guarantee-or">or</div>
-          <div class="guarantee-free">Month 2 is FREE</div>
-          <div class="guarantee-fine">The only guarantee of its kind in Kansas City</div>
+          <div data-es="Más vistas en Google Business Profile<br>para el mes 2, garantizado" class="guarantee-percent-label">More Google Business Profile views<br>by month 2, guaranteed</div>
+          <div data-es="o" class="guarantee-or">or</div>
+          <div data-es="El mes 2 es GRATIS" class="guarantee-free">Month 2 is FREE</div>
+          <div data-es="La única garantía de su tipo en Kansas City" class="guarantee-fine">The only guarantee of its kind in Kansas City</div>
         </div>
       </div>
     </div>
@@ -585,54 +614,56 @@
   <div class="section-divider"></div>
 
   <!-- ─── TESTIMONIALS / REVIEWS (moved up for visibility) ─── -->
-  <section class="section" id="reviews" style="padding-top:60px;" aria-label="Client testimonials">
+  <section data-es-aria-label="Testimonios de clientes" class="section" id="reviews" style="padding-top:60px;" aria-label="Client testimonials">
     <div class="container">
       <div class="mb-48 reveal-wipe">
-        <h2 class="display-md">What our clients say.</h2>
+        <h2 data-es="Lo que dicen nuestros clientes." class="display-md">What our clients say.</h2>
       </div>
 
       <!-- Featured testimonial -->
       <div class="h-testy-feature reveal">
-        <div class="h-testy-stars" aria-label="5 out of 5 stars">
+        <div data-es-aria-label="5 de 5 estrellas" class="h-testy-stars" aria-label="5 out of 5 stars">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <p class="h-testy-quote">Jameson built a live prototype in under an hour and presented it side-by-side with our current site. The difference was night and day. He immediately understood our business and came in knowing our weaknesses better than we did.</p>
+        <p data-es="Jameson armó un prototipo funcional en menos de una hora y lo presentó junto a nuestro sitio actual. La diferencia fue enorme. Entendió nuestro negocio de inmediato y llegó conociendo nuestras debilidades mejor que nosotros." class="h-testy-quote">Jameson built a live prototype in under an hour and presented it side-by-side with our current site. The difference was night and day. He immediately understood our business and came in knowing our weaknesses better than we did.</p>
         <cite class="h-testy-cite">
           <div class="h-testy-avatar" aria-hidden="true">B</div>
-          <span><strong>Brian</strong> - Owner, KC Comets</span>
+          <span data-es="<strong>Brian</strong> - Dueño, KC Comets"><strong>Brian</strong> - Owner, KC Comets</span>
         </cite>
       </div>
 
       <!-- Two smaller testimonials -->
       <div class="h-testy-pair reveal">
         <div class="h-testy-item">
-          <div class="h-testy-item-stars" aria-label="5 out of 5 stars">
+          <div data-es-aria-label="5 de 5 estrellas" class="h-testy-item-stars" aria-label="5 out of 5 stars">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="h-testy-item-quote">We started getting qualified leads in the first week of our Google Ads campaign. Jameson set up conversion tracking so we could see exactly what was working, something our last agency never bothered to do.</p>
-          <cite class="h-testy-item-cite">
+          <p data-es="Empezamos a recibir leads calificados en la primera semana de nuestra campaña de Google Ads. Jameson configuró el seguimiento de conversiones para que viéramos exactamente qué funcionaba, algo que nuestra agencia anterior nunca se molestó en hacer." class="h-testy-item-quote">We started getting qualified leads in the first week of our Google Ads campaign. Jameson set up conversion tracking so we could see exactly what was working, something our last agency never bothered to do.</p>
+          <cite data-es="<strong>Jeff Moore</strong>
+            Dueño, Office Brokers of SWFL" class="h-testy-item-cite">
             <strong>Jeff Moore</strong>
             Owner, Office Brokers of SWFL
           </cite>
         </div>
         <div class="h-testy-item">
-          <div class="h-testy-item-stars" aria-label="5 out of 5 stars">
+          <div data-es-aria-label="5 de 5 estrellas" class="h-testy-item-stars" aria-label="5 out of 5 stars">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <p class="h-testy-item-quote">Built our barber shop from the ground up: website, Google Business, ads, social. We went from zero online presence to showing up first in local searches. The monthly report actually makes sense, which is more than I can say for any agency before him.</p>
-          <cite class="h-testy-item-cite">
+          <p data-es="Construyeron nuestra barbería desde cero: sitio web, Google Business, anuncios y redes sociales. Pasamos de no tener presencia en línea a aparecer primero en las búsquedas locales. El reporte mensual sí se entiende, algo que no puedo decir de ninguna agencia anterior." class="h-testy-item-quote">Built our barber shop from the ground up: website, Google Business, ads, social. We went from zero online presence to showing up first in local searches. The monthly report actually makes sense, which is more than I can say for any agency before him.</p>
+          <cite data-es="<strong>Francisco</strong>
+            Dueño, Clean Cuts KC" class="h-testy-item-cite">
             <strong>Francisco</strong>
             Owner, Clean Cuts KC
           </cite>
@@ -647,14 +678,14 @@
       <!-- Review ask: placed directly under the proof, where readers are already in review mode -->
       <div class="h-review-ask reveal">
         <div class="h-review-ask-copy">
-          <strong>Worked with us? Tell the next owner.</strong>
-          <span>Two minutes on Google. It is the single biggest thing you can do for a small agency.</span>
+          <strong data-es="¿Trabajaste con nosotros? Cuéntaselo al próximo dueño.">Worked with us? Tell the next owner.</strong>
+          <span data-es="Dos minutos en Google. Es lo más valioso que puedes hacer por una agencia pequeña.">Two minutes on Google. It is the single biggest thing you can do for a small agency.</span>
         </div>
-        <a href="https://search.google.com/local/writereview?placeid=ChIJJy-50fmf72IRcoKgPIvv184" class="btn btn-primary" target="_blank" rel="noopener">Write a Google review</a>
+        <a data-es="Escribe una reseña en Google" href="https://search.google.com/local/writereview?placeid=ChIJJy-50fmf72IRcoKgPIvv184" class="btn btn-primary" target="_blank" rel="noopener">Write a Google review</a>
       </div>
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="results.html" class="btn btn-secondary btn-lg">See all client results</a>
+      <a data-es="Ver todos los resultados de clientes" href="results.html" class="btn btn-secondary btn-lg">See all client results</a>
     </div>
   </section>
 
@@ -664,9 +695,9 @@
   <section class="section">
     <div class="container">
       <div class="text-center mb-60 reveal-wipe">
-        <div class="section-label" style="justify-content:center;">Proof of work</div>
-        <h2 class="display-md mb-16">What the last 12 months<br>actually produced.</h2>
-        <p style="color:var(--text-2);font-size:1rem;max-width:520px;margin:0 auto;line-height:1.75;">
+        <div data-es="Prueba de trabajo" class="section-label" style="justify-content:center;">Proof of work</div>
+        <h2 data-es="Lo que produjeron<br>los últimos 12 meses." class="display-md mb-16">What the last 12 months<br>actually produced.</h2>
+        <p data-es="Venta de boletos, leads calificados y vistas. Cada número de abajo se puede rastrear hasta un cliente con nombre y una fecha." style="color:var(--text-2);font-size:1rem;max-width:520px;margin:0 auto;line-height:1.75;">
           Ticket sales, qualified leads, and views. Every number below traces back to a named client and a date.
         </p>
       </div>
@@ -674,64 +705,64 @@
       <div class="results-grid reveal">
         <div class="result-stat">
           <div class="result-num"><span data-counter data-target="20" data-suffix="%">20%</span></div>
-          <div class="result-label">More ticket sales in month 1</div>
-          <div class="result-client">KC Comets, Professional Indoor Soccer</div>
+          <div data-es="Más venta de boletos en el mes 1" class="result-label">More ticket sales in month 1</div>
+          <div data-es="KC Comets, fútbol profesional bajo techo" class="result-client">KC Comets, Professional Indoor Soccer</div>
         </div>
         <div class="result-stat">
           <div class="result-num"><span data-counter data-target="14">14</span><span class="suffix">+</span></div>
-          <div class="result-label">New leads in week 1</div>
-          <div class="result-client">Office Brokers of SWFL, Google Ads</div>
+          <div data-es="Leads nuevos en la semana 1" class="result-label">New leads in week 1</div>
+          <div data-es="Office Brokers of SWFL, Google Ads" class="result-client">Office Brokers of SWFL, Google Ads</div>
         </div>
         <div class="result-stat">
           <div class="result-num"><span data-counter data-target="180">180</span><span class="suffix">M+</span></div>
-          <div class="result-label">Views generated across platforms</div>
-          <div class="result-client">Content &amp; video clients</div>
+          <div data-es="Vistas generadas en todas las plataformas" class="result-label">Views generated across platforms</div>
+          <div data-es="Clientes de contenido y video" class="result-client">Content &amp; video clients</div>
         </div>
       </div>
 
       <div class="case-studies" style="margin-top:24px;">
         <div class="case-card reveal">
-          <div class="case-card-tag">Sports Marketing</div>
-          <h3>KC Comets, Professional Indoor Soccer</h3>
-          <p>Full digital overhaul: website rebuild, Google Ads restructure with 3-tier geofencing around Cable Dahmer Arena, social media strategy, and email automation. More ticket sales from day one.</p>
+          <div data-es="Marketing deportivo" class="case-card-tag">Sports Marketing</div>
+          <h3 data-es="KC Comets, fútbol profesional bajo techo">KC Comets, Professional Indoor Soccer</h3>
+          <p data-es="Renovación digital completa: rediseño del sitio web, reestructura de Google Ads con geocercas de 3 niveles alrededor de Cable Dahmer Arena, estrategia de redes sociales y automatización de correo. Más venta de boletos desde el primer día.">Full digital overhaul: website rebuild, Google Ads restructure with 3-tier geofencing around Cable Dahmer Arena, social media strategy, and email automation. More ticket sales from day one.</p>
           <div class="case-metrics">
             <div class="case-metric">
               <div class="case-metric-num">+20%</div>
-              <div class="case-metric-label">Ticket sales, month 1</div>
+              <div data-es="Venta de boletos, mes 1" class="case-metric-label">Ticket sales, month 1</div>
             </div>
             <div class="case-metric">
-              <div class="case-metric-num">3-Tier</div>
-              <div class="case-metric-label">Geofence radius built</div>
+              <div data-es="3 niveles" class="case-metric-num">3-Tier</div>
+              <div data-es="Radio de geocerca creado" class="case-metric-label">Geofence radius built</div>
             </div>
             <div class="case-metric">
-              <div class="case-metric-num">1-Click</div>
-              <div class="case-metric-label">Ticket funnel (was 3 clicks)</div>
+              <div data-es="1 clic" class="case-metric-num">1-Click</div>
+              <div data-es="Embudo de boletos (antes eran 3 clics)" class="case-metric-label">Ticket funnel (was 3 clicks)</div>
             </div>
           </div>
         </div>
         <div class="case-card reveal reveal-delay-1">
-          <div class="case-card-tag">Commercial Real Estate</div>
-          <h3>Office Brokers of SWFL, Google Ads</h3>
-          <p>Google Ads account built from scratch for a commercial real estate firm in Southwest Florida. Precision targeting, conversion tracking, and keyword strategy that drove qualified leads immediately after launch.</p>
+          <div data-es="Bienes raíces comerciales" class="case-card-tag">Commercial Real Estate</div>
+          <h3 data-es="Office Brokers of SWFL, Google Ads">Office Brokers of SWFL, Google Ads</h3>
+          <p data-es="Cuenta de Google Ads creada desde cero para una firma de bienes raíces comerciales en el suroeste de Florida. Segmentación precisa, seguimiento de conversiones y estrategia de palabras clave que generaron leads calificados justo después del lanzamiento.">Google Ads account built from scratch for a commercial real estate firm in Southwest Florida. Precision targeting, conversion tracking, and keyword strategy that drove qualified leads immediately after launch.</p>
           <div class="case-metrics">
             <div class="case-metric">
               <div class="case-metric-num">14+</div>
-              <div class="case-metric-label">Qualified leads, week 1</div>
+              <div data-es="Leads calificados, semana 1" class="case-metric-label">Qualified leads, week 1</div>
             </div>
             <div class="case-metric">
-              <div class="case-metric-num">48-state</div>
-              <div class="case-metric-label">Targeting footprint built</div>
+              <div data-es="48 estados" class="case-metric-num">48-state</div>
+              <div data-es="Cobertura de segmentación creada" class="case-metric-label">Targeting footprint built</div>
             </div>
             <div class="case-metric">
-              <div class="case-metric-num">Full</div>
-              <div class="case-metric-label">Conversion tracking, GA4 + calls</div>
+              <div data-es="Completo" class="case-metric-num">Full</div>
+              <div data-es="Seguimiento de conversiones, GA4 + llamadas" class="case-metric-label">Conversion tracking, GA4 + calls</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="text-center" style="margin-top:48px;">
-        <a href="results.html" class="btn btn-outline-blue btn-lg">View all case studies</a>
+        <a data-es="Ver todos los casos de estudio" href="results.html" class="btn btn-outline-blue btn-lg">View all case studies</a>
       </div>
     </div>
   </section>
@@ -740,30 +771,30 @@
   <section class="section" style="padding-top:60px;">
     <div class="container">
       <div class="text-center mb-60 reveal-wipe">
-        <div class="section-label" style="justify-content:center;">How we work</div>
-        <h2 class="display-md">From signed to scaling<br>in 90 days.</h2>
+        <div data-es="Cómo trabajamos" class="section-label" style="justify-content:center;">How we work</div>
+        <h2 data-es="De la firma al crecimiento<br>en 90 días." class="display-md">From signed to scaling<br>in 90 days.</h2>
       </div>
 
       <div class="process-steps">
         <div class="process-step reveal">
           <div class="process-num">01</div>
-          <h4>Free Audit</h4>
-          <p>We pull up your Google profile, ads account, and website on a 15-minute screen share. You see exactly what's costing you customers before you spend a dollar.</p>
+          <h3 data-es="Auditoría gratis">Free Audit</h3>
+          <p data-es="Revisamos tu perfil de Google, tu cuenta de anuncios y tu sitio web en una videollamada con pantalla compartida de 15 minutos. Ves exactamente qué te está costando clientes antes de gastar un dólar.">We pull up your Google profile, ads account, and website on a 15-minute screen share. You see exactly what's costing you customers before you spend a dollar.</p>
         </div>
         <div class="process-step reveal reveal-delay-1">
           <div class="process-num">02</div>
-          <h4>Custom Game Plan</h4>
-          <p>A strategy built for your business, your market, and your goals, not a template. We tell you what to fix first, what to build next, and what results to expect.</p>
+          <h3 data-es="Plan de juego a la medida">Custom Game Plan</h3>
+          <p data-es="Una estrategia hecha para tu negocio, tu mercado y tus metas, no una plantilla. Te decimos qué arreglar primero, qué construir después y qué resultados esperar.">A strategy built for your business, your market, and your goals, not a template. We tell you what to fix first, what to build next, and what results to expect.</p>
         </div>
         <div class="process-step reveal reveal-delay-2">
           <div class="process-num">03</div>
-          <h4>Build &amp; Launch</h4>
-          <p>Days 1-30: stop the bleeding. Redirect bad traffic, fix tracking, launch quick-win campaigns. You start seeing movement in the first month.</p>
+          <h3 data-es="Construcción y lanzamiento">Build &amp; Launch</h3>
+          <p data-es="Días 1-30: frenar la fuga. Redirigimos el tráfico malo, arreglamos el seguimiento y lanzamos campañas de resultados rápidos. Empiezas a ver movimiento en el primer mes.">Days 1-30: stop the bleeding. Redirect bad traffic, fix tracking, launch quick-win campaigns. You start seeing movement in the first month.</p>
         </div>
         <div class="process-step reveal reveal-delay-3">
           <div class="process-num">04</div>
-          <h4>Scale &amp; Report</h4>
-          <p>Days 31-90: optimize, scale what's working, cut what isn't. Monthly reports you can read in 5 minutes. KPIs tied to real revenue, not impressions.</p>
+          <h3 data-es="Escala y reportes">Scale &amp; Report</h3>
+          <p data-es="Días 31-90: optimizamos, escalamos lo que funciona y cortamos lo que no. Reportes mensuales que lees en 5 minutos. KPIs ligados a ingresos reales, no a impresiones.">Days 31-90: optimize, scale what's working, cut what isn't. Monthly reports you can read in 5 minutes. KPIs tied to real revenue, not impressions.</p>
         </div>
       </div>
     </div>
@@ -774,12 +805,12 @@
     <div class="container">
       <div class="cta-inner reveal">
         <div class="cta-text">
-          <h2 class="display-sm">Ready to stop leaving<br>customers on the table?</h2>
-          <p>Book a free 15-minute call. We'll pull up your Google presence live and show you exactly what we'd fix first, no pitch deck, just a real look.</p>
+          <h2 data-es="¿Listo para dejar de perder<br>clientes?" class="display-sm">Ready to stop leaving<br>customers on the table?</h2>
+          <p data-es="Reserva una llamada gratis de 15 minutos. Revisamos tu presencia en Google en vivo y te mostramos exactamente qué arreglaríamos primero, sin presentaciones largas, solo una mirada real.">Book a free 15-minute call. We'll pull up your Google presence live and show you exactly what we'd fix first, no pitch deck, just a real look.</p>
         </div>
         <div class="cta-actions">
-          <a href="contact.html#book" class="btn btn-primary btn-lg">Book a free call</a>
-          <a href="pricing.html" class="btn btn-secondary btn-lg">See pricing</a>
+          <a data-es="Agenda una llamada gratis" href="contact.html#book" class="btn btn-primary btn-lg">Book a free call</a>
+          <a data-es="Ver precios" href="pricing.html" class="btn btn-secondary btn-lg">See pricing</a>
         </div>
       </div>
     </div>
@@ -792,69 +823,69 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>The Staley Social</h3>
-          <p>Kansas City's full-stack digital marketing agency. Google Ads, social media, web development, and SEO, all under one roof, with results guaranteed in writing.</p>
+          <h3 data-es="The Staley Social">The Staley Social</h3>
+          <p data-es="La agencia de marketing digital integral de Kansas City. Google Ads, redes sociales, desarrollo web y SEO, todo bajo un mismo techo, con resultados garantizados por escrito.">Kansas City's full-stack digital marketing agency. Google Ads, social media, web development, and SEO, all under one roof, with results guaranteed in writing.</p>
           <div class="footer-social">
-            <a href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram">
+            <a data-es-aria-label="Instagram" href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
-            <a href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook">
+            <a data-es-aria-label="Facebook" href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
             </a>
-            <a href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <a data-es-aria-label="LinkedIn" href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
           </div>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
+          <h4 data-es="Servicios">Services</h4>
           <ul>
-            <li><a href="course.html">OPERATOR course</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li>
-            <li><a href="services.html#google-ads">Google Ads</a></li>
-            <li><a href="services.html#social">Social Media</a></li>
-            <li><a href="services.html#web">Website Design</a></li>
-            <li><a href="services.html#gbp">Google Business</a></li>
-            <li><a href="services.html#video">Video &amp; Content</a></li>
-            <li><a href="services.html#email">Email Marketing</a></li>
+            <li><a data-es="Curso OPERATOR" href="course.html">OPERATOR course</a></li><li><a data-es="Visualizer Drops" href="visualizer-drops.html">Visualizer Drops</a></li>
+            <li><a data-es="Google Ads" href="services.html#google-ads">Google Ads</a></li>
+            <li><a data-es="Redes sociales" href="services.html#social">Social Media</a></li>
+            <li><a data-es="Diseño web" href="services.html#web">Website Design</a></li>
+            <li><a data-es="Google Business" href="services.html#gbp">Google Business</a></li>
+            <li><a data-es="Video &amp;amp; Contenido" href="services.html#video">Video &amp; Content</a></li>
+            <li><a data-es="Email marketing" href="services.html#email">Email Marketing</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Company</h4>
+          <h4 data-es="Empresa">Company</h4>
           <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="results.html">Results</a></li><li><a href="work.html">Work</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a data-es="Quiénes somos" href="about.html">About Us</a></li>
+            <li><a data-es="Resultados" href="results.html">Results</a></li><li><a data-es="Trabajos" href="work.html">Work</a></li>
+            <li><a data-es="Precios" href="pricing.html">Pricing</a></li>
+            <li><a data-es="Contacto" href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Contact</h4>
+          <h4 data-es="Contacto">Contact</h4>
           <ul>
-            <li><a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li>
+            <li><a data-es="jameson@thestaleysocial.com" href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li>
             <li><a href="tel:+18166528233">(816) 652-8233</a></li>
-            <li><a href="contact.html#book">Book a free call</a></li>
-            <li><span style="color:var(--text-3);">Kansas City, MO</span></li>
+            <li><a data-es="Agenda una llamada gratis" href="contact.html#book">Book a free call</a></li>
+            <li><span data-es="Kansas City, MO" style="color:var(--text-3);">Kansas City, MO</span></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Staley Social LLC. All rights reserved.</p>
-        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
+        <p data-es="&amp;copy; 2026 The Staley Social LLC. Todos los derechos reservados.">&copy; 2026 The Staley Social LLC. All rights reserved.</p>
+        <p data-es="Hecho en Kansas City. <a href=&quot;privacy.html&quot;>Política de privacidad</a> &amp;middot; <a href=&quot;terms.html&quot;>Términos</a>">Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </footer>
 
   <!-- FLOATING CTA POPUP -->
-  <div class="floating-cta" id="floatingCta" role="dialog" aria-label="Ready to grow?" aria-live="polite">
-    <button class="floating-cta-close" id="floatingCtaClose" aria-label="Close">
+  <div data-es-aria-label="¿Listo para crecer?" class="floating-cta" id="floatingCta" role="dialog" aria-label="Ready to grow?" aria-live="polite">
+    <button data-es-aria-label="Cerrar" class="floating-cta-close" id="floatingCtaClose" aria-label="Close">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
-    <h3 class="floating-cta-heading">Ready to grow?</h3>
-    <p class="floating-cta-body">See exactly what's costing you leads. <span class="floating-cta-underline">Book a free audit.</span></p>
-    <a href="contact.html#book" class="floating-cta-btn">Get started &rarr;</a>
+    <h3 data-es="¿Listo para crecer?" class="floating-cta-heading">Ready to grow?</h3>
+    <p data-es="Descubre exactamente qué te está costando clientes potenciales. <span class=&quot;floating-cta-underline&quot;>Reserva una auditoría gratis.</span>" class="floating-cta-body">See exactly what's costing you leads. <span class="floating-cta-underline">Book a free audit.</span></p>
+    <a data-es="Empieza ahora &amp;rarr;" href="contact.html#book" class="floating-cta-btn">Get started &rarr;</a>
   </div>
 
-  <script defer src="js/main.js?v=7"></script>
+  <script defer src="js/main.js?v=8"></script>
   <script
     src="https://link.msgsndr.com/js/external-tracking.js"
     data-tracking-id="tk_901c8ea583cc41d3bc52d54eaee00e34"

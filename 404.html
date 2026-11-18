@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page not found | The Staley Social</title>
+  <title data-es="Página no encontrada | The Staley Social">Page not found | The Staley Social</title>
+  <meta data-es-content="Esta página no existe o fue movida. Vuelve a la página principal de The Staley Social o ponte en contacto con nuestro equipo de Kansas City." name="description" content="This page does not exist or was moved. Head back to The Staley Social homepage or get in touch with our Kansas City team.">
   <meta name="robots" content="noindex">
-  <link rel="icon" href="favicon.ico" sizes="32x32">
-  <link rel="icon" href="assets/logos/favicon.png" type="image/png">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=14">
-  <link rel="stylesheet" href="css/flat.css?v=3">
+  <link rel="stylesheet" href="/css/style.css?v=15">
+  <link rel="stylesheet" href="/css/flat.css?v=4">
   <style>
     .not-found {
       min-height: 100dvh;
@@ -88,17 +89,33 @@
   </script>
 </head>
 <body class="page-flat">
-  <a href="#main-content" class="skip-link">Skip to content</a>
+  <a data-es="Saltar al contenido" href="#main-content" class="skip-link">Skip to content</a>
 
+  <div class="lang-404"><div class="lang" role="group" aria-label="Language" data-es-aria-label="Idioma">
+  <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+  <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+  <label class="sr-only" for="more-lang" data-es="Más idiomas">More languages</label>
+  <select id="more-lang" translate="no">
+    <option value="" data-es="Más">More</option>
+    <optgroup label="Machine translated" data-es-label="Traducción automática">
+      <option value="pt">Português</option><option value="fr">Français</option>
+      <option value="de">Deutsch</option><option value="it">Italiano</option>
+      <option value="tl">Tagalog</option><option value="vi">Tiếng Việt</option>
+      <option value="zh-CN">中文</option><option value="ja">日本語</option>
+      <option value="ko">한국어</option><option value="ar">العربية</option>
+      <option value="hi">हिन्दी</option><option value="ru">Русский</option>
+    </optgroup>
+  </select>
+        </div></div>
   <main id="main-content" class="not-found">
     <div class="not-found-inner">
       <div class="not-found-code">404</div>
       <div class="not-found-divider"></div>
-      <h1 class="not-found-title">Page not found</h1>
-      <p class="not-found-body">This page doesn't exist or was moved. Head back to the homepage or check one of these links.</p>
-      <nav class="not-found-actions" aria-label="Recovery navigation">
-        <a href="index.html" class="btn btn-primary btn-lg">Back to home</a>
-        <a href="contact.html" class="btn btn-secondary btn-lg">Get in touch</a>
+      <h1 data-es="Página no encontrada" class="not-found-title">Page not found</h1>
+      <p data-es="Esta página no existe o se movió. Vuelve al inicio o prueba con uno de estos enlaces." class="not-found-body">This page doesn't exist or was moved. Head back to the homepage or check one of these links.</p>
+      <nav data-es-aria-label="Navegación de recuperación" class="not-found-actions" aria-label="Recovery navigation">
+        <a data-es="Volver al inicio" href="/" class="btn btn-primary btn-lg">Back to home</a>
+        <a data-es="Contáctanos" href="/contact.html" class="btn btn-secondary btn-lg">Get in touch</a>
       </nav>
     </div>
   </main>
@@ -106,5 +123,6 @@
     src="https://link.msgsndr.com/js/external-tracking.js"
     data-tracking-id="tk_901c8ea583cc41d3bc52d54eaee00e34"
   ></script>
+<script defer src="/js/main.js?v=8"></script>
 </body>
 </html>

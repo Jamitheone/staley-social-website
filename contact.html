@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Book a free audit and see what's broken in your Google Ads, website, and local search. Kansas City agency with a written results guarantee.">
-  <title>Book a Free Audit | The Staley Social</title>
+  <meta data-es-content="Reserva una auditoría gratis y descubre qué está fallando en tu Google Ads, tu sitio web y tu búsqueda local. Agencia de Kansas City con garantía de resultados por escrito." name="description" content="Book a free audit and see what's broken in your Google Ads, website, and local search. Kansas City agency with a written results guarantee.">
+  <title data-es="Reserva una auditoría gratis | The Staley Social">Book a Free Audit | The Staley Social</title>
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="assets/logos/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -31,8 +31,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=14">
-  <link rel="stylesheet" href="css/flat.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="stylesheet" href="css/flat.css?v=4">
   <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
 <script type="application/ld+json">
 {
@@ -128,43 +128,59 @@
   </script>
 </head>
 <body class="page-flat">
-  <a href="#main-content" class="skip-link">Skip to content</a>
+  <a data-es="Saltar al contenido" href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- NAV -->
   <nav class="nav" id="main-nav">
     <div class="nav-inner">
-      <a href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
+      <a data-es="<span class=&quot;nav-logo-dot&quot;></span>The Staley Social" href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/os.html">Software</a>
-        <a href="/services.html">Services</a>
-        <a href="/results.html">Results</a>
-        <a href="/work.html">Work</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/blog/">Blog</a>
-        <a href="/course.html">Course</a>
-        <a href="/contact.html" class="active">Contact</a>
+        <a data-es="Inicio" href="/">Home</a>
+        <a data-es="Software" href="/os.html">Software</a>
+        <a data-es="Servicios" href="/services.html">Services</a>
+        <a data-es="Resultados" href="/results.html">Results</a>
+        <a data-es="Trabajos" href="/work.html">Work</a>
+        <a data-es="Precios" href="/pricing.html">Pricing</a>
+        <a data-es="Blog" href="/blog/">Blog</a>
+        <a data-es="Curso" href="/course.html">Course</a>
+        <a data-es="Contacto" href="/contact.html" class="active">Contact</a>
       </div>
       <div class="nav-cta">
-        <a href="tel:+18166528233" class="nav-phone" aria-label="Call us">(816) 652-8233</a>
-        <a href="contact.html" class="btn btn-secondary btn-sm">Get in touch</a>
-        <a href="contact.html#book" class="btn btn-primary btn-sm">Book a call</a>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <div class="lang" role="group" aria-label="Language" data-es-aria-label="Idioma">
+          <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+          <label class="sr-only" for="more-lang" data-es="Más idiomas">More languages</label>
+          <select id="more-lang" translate="no">
+            <option value="" data-es="Más">More</option>
+            <optgroup label="Machine translated" data-es-label="Traducción automática">
+              <option value="pt">Português</option><option value="fr">Français</option>
+              <option value="de">Deutsch</option><option value="it">Italiano</option>
+              <option value="tl">Tagalog</option><option value="vi">Tiếng Việt</option>
+              <option value="zh-CN">中文</option><option value="ja">日本語</option>
+              <option value="ko">한국어</option><option value="ar">العربية</option>
+              <option value="hi">हिन्दी</option><option value="ru">Русский</option>
+            </optgroup>
+          </select>
+        </div>
+        <a data-es-aria-label="Llámanos" href="tel:+18166528233" class="nav-phone" aria-label="Call us">(816) 652-8233</a>
+        <a data-es="Contáctanos" href="contact.html" class="btn btn-secondary btn-sm">Get in touch</a>
+        <a data-es="Reservar llamada" href="contact.html#book" class="btn btn-primary btn-sm">Book a call</a>
+        <button data-es-aria-label="Abrir o cerrar menú" class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
   <div class="nav-mobile" id="nav-mobile">
-    <a href="/">Home</a>
-    <a href="/os.html">Software</a>
-    <a href="/services.html">Services</a>
-    <a href="/results.html">Results</a>
-    <a href="/work.html">Work</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/blog/">Blog</a>
-    <a href="/course.html">Course</a>
-    <a href="/contact.html">Contact</a>
+    <a data-es="Inicio" href="/">Home</a>
+    <a data-es="Software" href="/os.html">Software</a>
+    <a data-es="Servicios" href="/services.html">Services</a>
+    <a data-es="Resultados" href="/results.html">Results</a>
+    <a data-es="Trabajos" href="/work.html">Work</a>
+    <a data-es="Precios" href="/pricing.html">Pricing</a>
+    <a data-es="Blog" href="/blog/">Blog</a>
+    <a data-es="Curso" href="/course.html">Course</a>
+    <a data-es="Contacto" href="/contact.html">Contact</a>
 
-    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
+    <a data-es="Agenda una llamada gratis" href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
     <a href="tel:+18166528233" style="text-align:center;font-size:0.75rem;color:var(--text-2);">(816) 652-8233</a>
   </div>
   <main id="main-content">
@@ -172,9 +188,9 @@
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="container">
-      <div class="section-label">Get in touch</div>
-      <h1 class="display-lg">Let's talk about<br><span class="text-gradient">your business.</span></h1>
-      <p>Pick your lane: book a 15-minute call and we'll pull up your Google presence live, or send a message and we'll get back to you within a few hours. Either way, no pitch deck, no pressure.</p>
+      <div data-es="Contáctanos" class="section-label">Get in touch</div>
+      <h1 data-es="Hablemos de<br><span class=&quot;text-gradient&quot;>tu negocio.</span>" class="display-lg">Let's talk about<br><span class="text-gradient">your business.</span></h1>
+      <p data-es="Elige tu camino: reserva una llamada de 15 minutos y revisamos tu presencia en Google en vivo, o envíanos un mensaje y te respondemos en pocas horas. De cualquier forma, sin presentaciones largas y sin presión.">Pick your lane: book a 15-minute call and we'll pull up your Google presence live, or send a message and we'll get back to you within a few hours. Either way, no pitch deck, no pressure.</p>
     </div>
   </section>
 
@@ -184,9 +200,9 @@
 
       <!-- BOOKING CALENDAR (GoHighLevel) -->
       <div id="book" style="margin-bottom:64px;">
-        <div class="section-label">Book a call</div>
-        <h2 class="display-sm mb-16">Free 15-minute<br>audit call.</h2>
-        <p style="color:var(--text-2);line-height:1.75;margin-bottom:36px;max-width:680px;">
+        <div data-es="Reservar llamada" class="section-label">Book a call</div>
+        <h2 data-es="Llamada de auditoría<br>gratis de 15 minutos." class="display-sm mb-16">Free 15-minute<br>audit call.</h2>
+        <p data-es="Elige un horario abajo y tendrás 15 minutos con el fundador. Jameson abre tu perfil de Google, tu sitio web y tu cuenta de anuncios en vivo, compartiendo pantalla, y te muestra exactamente qué arreglaríamos primero. Sin compromiso." style="color:var(--text-2);line-height:1.75;margin-bottom:36px;max-width:680px;">
           Pick a time below and you'll get 15 minutes with the founder. Jameson pulls your Google profile, website, and ad account up live on a screen share and shows you exactly what we'd fix first. No strings attached.
         </p>
 
@@ -202,32 +218,32 @@
         </style>
         <div class="founders-split reveal" style="margin-bottom:44px;">
           <div style="text-align:center;max-width:640px;margin:0 auto 32px;">
-            <div class="section-label" style="display:inline-block;">Who you're meeting</div>
-            <h3 style="font-family:var(--font-display);font-weight:800;font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.08;letter-spacing:-0.02em;margin-bottom:14px;">You talk to the founder.<br>Every time.</h3>
-            <p style="color:var(--text-2);line-height:1.7;">Most agencies put a salesperson on the call, then hand you to a junior account rep. Here the person who runs your audit is the person who builds your system and answers your texts.</p>
+            <div data-es="Con quién hablarás" class="section-label" style="display:inline-block;">Who you're meeting</div>
+            <h3 data-es="Hablas con el fundador.<br>Siempre." style="font-family:var(--font-display);font-weight:800;font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.08;letter-spacing:-0.02em;margin-bottom:14px;">You talk to the founder.<br>Every time.</h3>
+            <p data-es="La mayoría de las agencias pone a un vendedor en la llamada y luego te pasa con un ejecutivo de cuenta junior. Aquí, quien hace tu auditoría es quien construye tu sistema y responde tus mensajes." style="color:var(--text-2);line-height:1.7;">Most agencies put a salesperson on the call, then hand you to a junior account rep. Here the person who runs your audit is the person who builds your system and answers your texts.</p>
           </div>
           <div class="founders-grid" style="grid-template-columns:1fr;max-width:560px;margin:0 auto;">
             <div class="founder-card">
               <div style="display:flex;align-items:center;gap:15px;margin-bottom:18px;">
-                <div class="founder-mono">JS</div>
+                <div data-es="JS" class="founder-mono">JS</div>
                 <div>
-                  <div style="font-family:var(--font-display);font-weight:700;font-size:1.18rem;line-height:1.2;">Jameson Staley</div>
-                  <div style="font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--blue);margin-top:3px;">Founder &amp; operator</div>
+                  <div data-es="Jameson Staley" style="font-family:var(--font-display);font-weight:700;font-size:1.18rem;line-height:1.2;">Jameson Staley</div>
+                  <div data-es="Fundador y operador" style="font-size:0.73rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;color:var(--blue);margin-top:3px;">Founder &amp; operator</div>
                 </div>
               </div>
-              <p style="color:var(--text-2);line-height:1.65;font-size:0.93rem;margin-bottom:20px;">Runs the audit live on the call. Finds the exact leaks costing you leads across your ads, tracking, and site, then builds the automated systems that fix them and prove the return in numbers you can read.</p>
+              <p data-es="Hace la auditoría en vivo durante la llamada. Encuentra las fugas exactas que te cuestan leads en tus anuncios, tu seguimiento y tu sitio, y luego construye los sistemas automatizados que las arreglan y demuestran el retorno con números que puedes leer." style="color:var(--text-2);line-height:1.65;font-size:0.93rem;margin-bottom:20px;">Runs the audit live on the call. Finds the exact leaks costing you leads across your ads, tracking, and site, then builds the automated systems that fix them and prove the return in numbers you can read.</p>
               <div style="display:flex;flex-wrap:wrap;gap:8px;">
-                <span class="skill-chip">Google Ads &amp; tracking</span>
-                <span class="skill-chip">Web &amp; automation</span>
-                <span class="skill-chip">Brand &amp; content systems</span>
-                <span class="skill-chip">Data &amp; reporting</span>
+                <span data-es="Google Ads y seguimiento" class="skill-chip">Google Ads &amp; tracking</span>
+                <span data-es="Web y automatización" class="skill-chip">Web &amp; automation</span>
+                <span data-es="Sistemas de marca y contenido" class="skill-chip">Brand &amp; content systems</span>
+                <span data-es="Datos y reportes" class="skill-chip">Data &amp; reporting</span>
               </div>
             </div>
           </div>
-          <div style="text-align:center;margin-top:22px;color:var(--text-3);font-size:0.85rem;">One accountable person, backed by software that answers leads in under 60 seconds and never takes a day off.</div>
+          <div data-es="Una sola persona responsable, respaldada por software que responde a los leads en menos de 60 segundos y nunca se toma un día libre." style="text-align:center;margin-top:22px;color:var(--text-3);font-size:0.85rem;">One accountable person, backed by software that answers leads in under 60 seconds and never takes a day off.</div>
         </div>
         <div style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;overflow:hidden;" class="reveal">
-          <iframe src="https://api.leadconnectorhq.com/widget/booking/NaxMeovXbpOUwKhhK5RB" style="width:100%;border:none;overflow:hidden;min-height:720px;display:block;" scrolling="no" id="msgsndr_NaxMeovXbpOUwKhhK5RB" title="Book a free 15-minute audit call"></iframe>
+          <iframe data-es-title="Reserva una llamada de auditoría gratis de 15 minutos" src="https://api.leadconnectorhq.com/widget/booking/NaxMeovXbpOUwKhhK5RB" style="width:100%;border:none;overflow:hidden;min-height:720px;display:block;" scrolling="no" id="msgsndr_NaxMeovXbpOUwKhhK5RB" title="Book a free 15-minute audit call"></iframe>
         </div>
       </div>
 
@@ -235,9 +251,9 @@
         <!-- LEFT: PREFER TO REACH OUT DIRECTLY -->
         <div>
           <div>
-            <div class="section-label">Prefer to reach out directly?</div>
-            <h2 class="display-sm mb-16">Or just<br>say hello.</h2>
-            <p style="color:var(--text-2);line-height:1.75;margin-bottom:32px;">
+            <div data-es="¿Prefieres escribirnos directo?" class="section-label">Prefer to reach out directly?</div>
+            <h2 data-es="O simplemente<br>saluda." class="display-sm mb-16">Or just<br>say hello.</h2>
+            <p data-es="¿Aún no quieres reservar horario? Escríbenos por correo o mensaje de texto y te respondemos en pocas horas." style="color:var(--text-2);line-height:1.75;margin-bottom:32px;">
               Not ready to book a time? Email or text us and we'll get back to you within a few hours.
             </p>
 
@@ -248,8 +264,8 @@
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 </div>
                 <div>
-                  <div class="contact-cta-label">Email us</div>
-                  <div class="contact-cta-value">jameson@thestaleysocial.com</div>
+                  <div data-es="Escríbenos" class="contact-cta-label">Email us</div>
+                  <div data-es="jameson@thestaleysocial.com" class="contact-cta-value">jameson@thestaleysocial.com</div>
                 </div>
                 <svg class="contact-cta-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
@@ -258,14 +274,14 @@
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.06 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
                 </div>
                 <div>
-                  <div class="contact-cta-label">Call or text</div>
+                  <div data-es="Llama o envía un texto" class="contact-cta-label">Call or text</div>
                   <div class="contact-cta-value" id="phoneDisplay">(816) 652-8233</div>
                 </div>
                 <svg class="contact-cta-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
             </div>
 
-            <p style="font-size:0.78rem;color:var(--text-3);margin-top:16px;text-align:center;">We respond within 2-4 hours. No spam, no pitch deck.</p>
+            <p data-es="Respondemos en 2-4 horas. Sin spam y sin presentaciones largas." style="font-size:0.78rem;color:var(--text-3);margin-top:16px;text-align:center;">We respond within 2-4 hours. No spam, no pitch deck.</p>
           </div>
 
           <!-- CONTACT DETAILS -->
@@ -275,8 +291,8 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
               </div>
               <div>
-                <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:2px;">Email</div>
-                <a href="mailto:jameson@thestaleysocial.com" class="contact-detail-text" style="color:var(--text);">jameson@thestaleysocial.com</a>
+                <div data-es="Correo" style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:2px;">Email</div>
+                <a data-es="jameson@thestaleysocial.com" href="mailto:jameson@thestaleysocial.com" class="contact-detail-text" style="color:var(--text);">jameson@thestaleysocial.com</a>
               </div>
             </div>
             <div class="contact-detail">
@@ -284,8 +300,8 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </div>
               <div>
-                <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:2px;">Location</div>
-                <div class="contact-detail-text">Kansas City, MO</div>
+                <div data-es="Ubicación" style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:2px;">Location</div>
+                <div data-es="Kansas City, MO" class="contact-detail-text">Kansas City, MO</div>
               </div>
             </div>
             <div class="contact-detail">
@@ -293,8 +309,8 @@
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
               </div>
               <div>
-                <div style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:2px;">Response time</div>
-                <div class="contact-detail-text">Within 2-4 hours during business hours</div>
+                <div data-es="Tiempo de respuesta" style="font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:2px;">Response time</div>
+                <div data-es="En 2-4 horas durante el horario laboral" class="contact-detail-text">Within 2-4 hours during business hours</div>
               </div>
             </div>
           </div>
@@ -304,8 +320,8 @@
             <div style="display:flex;align-items:flex-start;gap:12px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
               <div>
-                <div style="font-size:0.85rem;font-weight:600;color:var(--blue);margin-bottom:4px;">The Staley Guarantee</div>
-                <div style="font-size:0.83rem;color:var(--text-2);line-height:1.6;">30% more Google Business Profile views by month 2, or month 2 is free. The only guarantee of its kind in Kansas City, and we put it in writing before you pay.</div>
+                <div data-es="La garantía Staley" style="font-size:0.85rem;font-weight:600;color:var(--blue);margin-bottom:4px;">The Staley Guarantee</div>
+                <div data-es="30% más vistas en Google Business Profile para el mes 2, o el mes 2 es gratis. La única garantía de su tipo en Kansas City, y la ponemos por escrito antes de que pagues." style="font-size:0.83rem;color:var(--text-2);line-height:1.6;">30% more Google Business Profile views by month 2, or month 2 is free. The only guarantee of its kind in Kansas City, and we put it in writing before you pay.</div>
               </div>
             </div>
           </div>
@@ -314,7 +330,7 @@
         <!-- RIGHT: CONTACT FORM -->
         <div>
           <div class="contact-form reveal">
-            <h3>Tell us about your challenge</h3>
+            <h3 data-es="Cuéntanos tu reto">Tell us about your challenge</h3>
             <form id="contact-form" action="https://formsubmit.co/thestaleysocial@gmail.com" method="POST">
               <input type="hidden" name="_subject" value="New inquiry from thestaleysocial.com">
               <input type="hidden" name="_cc" value="gevongarner2003@gmail.com">
@@ -323,55 +339,56 @@
               <input type="text" name="_honey" style="display:none" aria-hidden="true" tabindex="-1">
               <div class="form-row">
                 <div class="form-group">
-                  <label for="first-name">First name</label>
-                  <input type="text" id="first-name" name="first-name" placeholder="Jamie" autocomplete="given-name" required>
+                  <label data-es="Nombre" for="first-name">First name</label>
+                  <input data-es-placeholder="Jamie" type="text" id="first-name" name="first-name" placeholder="Jamie" autocomplete="given-name" required>
                 </div>
                 <div class="form-group">
-                  <label for="last-name">Last name</label>
-                  <input type="text" id="last-name" name="last-name" placeholder="Smith" autocomplete="family-name" required>
+                  <label data-es="Apellido" for="last-name">Last name</label>
+                  <input data-es-placeholder="Smith" type="text" id="last-name" name="last-name" placeholder="Smith" autocomplete="family-name" required>
                 </div>
               </div>
               <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" id="email" name="email" placeholder="jamie@yourbusiness.com" autocomplete="email" required>
+                <label data-es="Correo electrónico" for="email">Email address</label>
+                <input data-es-placeholder="jamie@yourbusiness.com" type="email" id="email" name="email" placeholder="jamie@yourbusiness.com" autocomplete="email" required>
               </div>
               <div class="form-group">
-                <label for="business">Business name</label>
-                <input type="text" id="business" name="business" placeholder="Your business" autocomplete="organization" required>
+                <label data-es="Nombre del negocio" for="business">Business name</label>
+                <input data-es-placeholder="Tu negocio" type="text" id="business" name="business" placeholder="Your business" autocomplete="organization" required>
               </div>
               <div class="form-group">
-                <label for="service">What are you looking for?</label>
+                <label data-es="¿Qué estás buscando?" for="service">What are you looking for?</label>
                 <select id="service" name="service" required>
-                  <option value="" disabled selected>Select a service</option>
-                  <option>Google Ads &amp; Geofencing</option>
-                  <option>Social Media Management</option>
-                  <option>Website Design &amp; Development</option>
-                  <option>Google Business Profile</option>
-                  <option>Email Marketing &amp; SEO</option>
-                  <option>Video &amp; Content Production</option>
-                  <option>Full-service (multiple services)</option>
-                  <option>Not sure, need guidance</option>
+                  <option data-es="Selecciona un servicio" value="" disabled selected>Select a service</option>
+                  <option data-es="Google Ads y geovallado">Google Ads &amp; Geofencing</option>
+                  <option data-es="Gestión de redes sociales">Social Media Management</option>
+                  <option data-es="Diseño y desarrollo web">Website Design &amp; Development</option>
+                  <option data-es="Google Business Profile">Google Business Profile</option>
+                  <option data-es="Email marketing y SEO">Email Marketing &amp; SEO</option>
+                  <option data-es="Producción de video y contenido">Video &amp; Content Production</option>
+                  <option data-es="Servicio completo (varios servicios)">Full-service (multiple services)</option>
+                  <option data-es="No estoy seguro, necesito orientación">Not sure, need guidance</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="budget">Monthly budget range</label>
+                <label data-es="Rango de presupuesto mensual" for="budget">Monthly budget range</label>
                 <select id="budget" name="budget" required>
-                  <option value="" disabled selected>Select a range</option>
-                  <option>Under $1,000/mo</option>
-                  <option>$1,000 - $2,500/mo</option>
-                  <option>$2,500 - $5,000/mo</option>
-                  <option>$5,000+/mo</option>
+                  <option data-es="Selecciona un rango" value="" disabled selected>Select a range</option>
+                  <option data-es="Menos de $1,000/mes">Under $1,000/mo</option>
+                  <option data-es="$1,000 - $2,500/mes">$1,000 - $2,500/mo</option>
+                  <option data-es="$2,500 - $5,000/mes">$2,500 - $5,000/mo</option>
+                  <option data-es="$5,000+/mes">$5,000+/mo</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="message">Tell us about your business</label>
-                <textarea id="message" name="message" rows="5" placeholder="What's your biggest challenge right now? What have you tried before? The more context, the better we can help."></textarea>
+                <label data-es="Cuéntanos sobre tu negocio" for="message">Tell us about your business</label>
+                <textarea data-es-placeholder="¿Cuál es tu mayor reto ahora mismo? ¿Qué has probado antes? Mientras más contexto, mejor podremos ayudarte." id="message" name="message" rows="5" placeholder="What's your biggest challenge right now? What have you tried before? The more context, the better we can help."></textarea>
               </div>
-              <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">
+              <button data-es="Enviar mensaje
+                <svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.5&quot;><path d=&quot;M5 12h14M12 5l7 7-7 7&quot;/></svg>" type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">
                 Send message
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
-              <p style="text-align:center;font-size:0.78rem;color:var(--text-3);margin-top:12px;">Weekdays, 9am to 6pm Central.</p>
+              <p data-es="De lunes a viernes, de 9am a 6pm hora central." style="text-align:center;font-size:0.78rem;color:var(--text-3);margin-top:12px;">Weekdays, 9am to 6pm Central.</p>
             </form>
           </div>
         </div>
@@ -384,20 +401,20 @@
     <div class="container">
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;" class="reveal">
         <div>
-          <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-0.04em;margin-bottom:4px;">15 min</div>
-          <div style="font-size:0.82rem;color:var(--text-3);">Free discovery call</div>
+          <div data-es="15 min" style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-0.04em;margin-bottom:4px;">15 min</div>
+          <div data-es="Llamada de diagnóstico gratis" style="font-size:0.82rem;color:var(--text-3);">Free discovery call</div>
         </div>
         <div>
-          <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-0.04em;margin-bottom:4px;">2-4 hrs</div>
-          <div style="font-size:0.82rem;color:var(--text-3);">Response time</div>
+          <div data-es="2-4 h" style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-0.04em;margin-bottom:4px;">2-4 hrs</div>
+          <div data-es="Tiempo de respuesta" style="font-size:0.82rem;color:var(--text-3);">Response time</div>
         </div>
         <div>
           <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-0.04em;margin-bottom:4px;">$0</div>
-          <div style="font-size:0.82rem;color:var(--text-3);">Cost to find out if we're a fit</div>
+          <div data-es="Lo que cuesta saber si somos compatibles" style="font-size:0.82rem;color:var(--text-3);">Cost to find out if we're a fit</div>
         </div>
         <div>
-          <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-0.04em;margin-bottom:4px;">Guaranteed</div>
-          <div style="font-size:0.82rem;color:var(--text-3);">Results in writing</div>
+          <div data-es="Garantizado" style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--blue);letter-spacing:-0.04em;margin-bottom:4px;">Guaranteed</div>
+          <div data-es="Resultados por escrito" style="font-size:0.82rem;color:var(--text-3);">Results in writing</div>
         </div>
       </div>
     </div>
@@ -410,29 +427,29 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>The Staley Social</h3>
-          <p>Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
+          <h3 data-es="The Staley Social">The Staley Social</h3>
+          <p data-es="La agencia de marketing digital integral de Kansas City. Resultados garantizados por escrito.">Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
           <div class="footer-social">
-            <a href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-            <a href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-            <a href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a data-es-aria-label="Instagram" href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a data-es-aria-label="Facebook" href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a data-es-aria-label="LinkedIn" href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
           </div>
         </div>
-        <div class="footer-col"><h4>Services</h4><ul>
-            <li><a href="course.html">OPERATOR course</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="services.html#google-ads">Google Ads</a></li><li><a href="services.html#social">Social Media</a></li><li><a href="services.html#web">Website Design</a></li><li><a href="services.html#gbp">Google Business</a></li><li><a href="services.html#video">Video &amp; Content</a></li><li><a href="services.html#email">Email Marketing</a></li></ul></div>
-        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="results.html">Results</a></li><li><a href="work.html">Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><a href="contact.html#book">Book a free call</a></li><li><span style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
+        <div class="footer-col"><h4 data-es="Servicios">Services</h4><ul>
+            <li><a data-es="Curso OPERATOR" href="course.html">OPERATOR course</a></li><li><a data-es="Visualizer Drops" href="visualizer-drops.html">Visualizer Drops</a></li><li><a data-es="Google Ads" href="services.html#google-ads">Google Ads</a></li><li><a data-es="Redes sociales" href="services.html#social">Social Media</a></li><li><a data-es="Diseño web" href="services.html#web">Website Design</a></li><li><a data-es="Google Business" href="services.html#gbp">Google Business</a></li><li><a data-es="Video &amp;amp; Contenido" href="services.html#video">Video &amp; Content</a></li><li><a data-es="Email marketing" href="services.html#email">Email Marketing</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Empresa">Company</h4><ul><li><a data-es="Nosotros" href="about.html">About</a></li><li><a data-es="Resultados" href="results.html">Results</a></li><li><a data-es="Trabajos" href="work.html">Work</a></li><li><a data-es="Precios" href="pricing.html">Pricing</a></li><li><a data-es="Contacto" href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Contacto">Contact</h4><ul><li><a data-es="jameson@thestaleysocial.com" href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><a data-es="Agenda una llamada gratis" href="contact.html#book">Book a free call</a></li><li><span data-es="Kansas City, MO" style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Staley Social LLC. All rights reserved.</p>
-        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
+        <p data-es="&amp;copy; 2026 The Staley Social LLC. Todos los derechos reservados.">&copy; 2026 The Staley Social LLC. All rights reserved.</p>
+        <p data-es="Hecho en Kansas City. <a href=&quot;privacy.html&quot;>Política de privacidad</a> &amp;middot; <a href=&quot;terms.html&quot;>Términos</a>">Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </footer>
 
   <div id="form-success" style="display:none;position:fixed;top:calc(var(--nav-h) + 16px);left:50%;transform:translateX(-50%);z-index:200;background:var(--bg-2);border:1px solid rgba(45,99,216,0.35);border-radius:var(--radius-sm);padding:16px 28px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.5);white-space:nowrap;">
-    <div style="font-weight:600;color:var(--text);margin-bottom:2px;">Message sent.</div>
-    <div style="font-size:0.82rem;color:var(--text-2);">We'll get back to you within 2-4 hours.</div>
+    <div data-es="Mensaje enviado." style="font-weight:600;color:var(--text);margin-bottom:2px;">Message sent.</div>
+    <div data-es="Te responderemos en 2-4 horas." style="font-size:0.82rem;color:var(--text-2);">We'll get back to you within 2-4 hours.</div>
   </div>
   <script>
     if (window.location.search.includes('sent=true')) {
@@ -443,7 +460,7 @@
     }
   </script>
   <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
-  <script defer src="js/main.js?v=7"></script>
+  <script defer src="js/main.js?v=8"></script>
   <script
     src="https://link.msgsndr.com/js/external-tracking.js"
     data-tracking-id="tk_901c8ea583cc41d3bc52d54eaee00e34"

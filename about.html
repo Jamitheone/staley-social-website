@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Founded by Jameson Staley in Kansas City, MO. 8 years in digital marketing, started at 15. One operator plus automation that works around the clock.">
-  <title>About Jameson Staley | The Staley Social</title>
+  <meta data-es-content="Fundada por Jameson Staley en Kansas City, MO. 8 años en marketing digital, desde los 15. Un operador más automatización que trabaja las 24 horas." name="description" content="Founded by Jameson Staley in Kansas City, MO. 8 years in digital marketing, started at 15. One operator plus automation that works around the clock.">
+  <title data-es="Sobre Jameson Staley | The Staley Social">About Jameson Staley | The Staley Social</title>
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="assets/logos/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -31,8 +31,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=14">
-  <link rel="stylesheet" href="css/flat.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="stylesheet" href="css/flat.css?v=4">
   <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
 <script type="application/ld+json">
 {
@@ -133,43 +133,59 @@
   </script>
 </head>
 <body class="page-flat">
-  <a href="#main-content" class="skip-link">Skip to content</a>
+  <a data-es="Saltar al contenido" href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- NAV -->
   <nav class="nav" id="main-nav">
     <div class="nav-inner">
-      <a href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
+      <a data-es="<span class=&quot;nav-logo-dot&quot;></span>The Staley Social" href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/os.html">Software</a>
-        <a href="/services.html">Services</a>
-        <a href="/results.html">Results</a>
-        <a href="/work.html">Work</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/blog/">Blog</a>
-        <a href="/course.html">Course</a>
-        <a href="/contact.html">Contact</a>
+        <a data-es="Inicio" href="/">Home</a>
+        <a data-es="Software" href="/os.html">Software</a>
+        <a data-es="Servicios" href="/services.html">Services</a>
+        <a data-es="Resultados" href="/results.html">Results</a>
+        <a data-es="Trabajos" href="/work.html">Work</a>
+        <a data-es="Precios" href="/pricing.html">Pricing</a>
+        <a data-es="Blog" href="/blog/">Blog</a>
+        <a data-es="Curso" href="/course.html">Course</a>
+        <a data-es="Contacto" href="/contact.html">Contact</a>
       </div>
       <div class="nav-cta">
-        <a href="tel:+18166528233" class="nav-phone" aria-label="Call us">(816) 652-8233</a>
-        <a href="contact.html" class="btn btn-secondary btn-sm">Get in touch</a>
-        <a href="contact.html#book" class="btn btn-primary btn-sm">Book a call</a>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <div class="lang" role="group" aria-label="Language" data-es-aria-label="Idioma">
+          <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+          <label class="sr-only" for="more-lang" data-es="Más idiomas">More languages</label>
+          <select id="more-lang" translate="no">
+            <option value="" data-es="Más">More</option>
+            <optgroup label="Machine translated" data-es-label="Traducción automática">
+              <option value="pt">Português</option><option value="fr">Français</option>
+              <option value="de">Deutsch</option><option value="it">Italiano</option>
+              <option value="tl">Tagalog</option><option value="vi">Tiếng Việt</option>
+              <option value="zh-CN">中文</option><option value="ja">日本語</option>
+              <option value="ko">한국어</option><option value="ar">العربية</option>
+              <option value="hi">हिन्दी</option><option value="ru">Русский</option>
+            </optgroup>
+          </select>
+        </div>
+        <a data-es-aria-label="Llámanos" href="tel:+18166528233" class="nav-phone" aria-label="Call us">(816) 652-8233</a>
+        <a data-es="Contáctanos" href="contact.html" class="btn btn-secondary btn-sm">Get in touch</a>
+        <a data-es="Reservar llamada" href="contact.html#book" class="btn btn-primary btn-sm">Book a call</a>
+        <button data-es-aria-label="Abrir o cerrar menú" class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
   <div class="nav-mobile" id="nav-mobile">
-    <a href="/">Home</a>
-    <a href="/os.html">Software</a>
-    <a href="/services.html">Services</a>
-    <a href="/results.html">Results</a>
-    <a href="/work.html">Work</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/blog/">Blog</a>
-    <a href="/course.html">Course</a>
-    <a href="/contact.html">Contact</a>
+    <a data-es="Inicio" href="/">Home</a>
+    <a data-es="Software" href="/os.html">Software</a>
+    <a data-es="Servicios" href="/services.html">Services</a>
+    <a data-es="Resultados" href="/results.html">Results</a>
+    <a data-es="Trabajos" href="/work.html">Work</a>
+    <a data-es="Precios" href="/pricing.html">Pricing</a>
+    <a data-es="Blog" href="/blog/">Blog</a>
+    <a data-es="Curso" href="/course.html">Course</a>
+    <a data-es="Contacto" href="/contact.html">Contact</a>
 
-    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
+    <a data-es="Agenda una llamada gratis" href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
     <a href="tel:+18166528233" style="text-align:center;font-size:0.75rem;color:var(--text-2);">(816) 652-8233</a>
   </div>
   <main id="main-content">
@@ -177,9 +193,9 @@
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="container">
-      <div class="section-label">Our story</div>
-      <h1 class="display-lg">Started at 15.<br><span class="text-gradient">Built for KC.</span></h1>
-      <p>We're not a 50-person agency with rotating account reps and quarterly reviews. We're a tight crew of people who actually know marketing, and we're right here in Kansas City.</p>
+      <div data-es="Nuestra historia" class="section-label">Our story</div>
+      <h1 data-es="Empezamos a los 15.<br><span class=&quot;text-gradient&quot;>Hechos para KC.</span>" class="display-lg">Started at 15.<br><span class="text-gradient">Built for KC.</span></h1>
+      <p data-es="No somos una agencia de 50 personas con ejecutivos de cuenta que rotan y revisiones trimestrales. Somos un equipo compacto de gente que de verdad sabe de marketing, y estamos aquí mismo, en Kansas City.">We're not a 50-person agency with rotating account reps and quarterly reviews. We're a tight crew of people who actually know marketing, and we're right here in Kansas City.</p>
     </div>
   </section>
 
@@ -188,53 +204,57 @@
     <div class="container">
       <div class="about-intro reveal">
         <div class="about-image">
-          <img src="assets/images/jameson-profile.webp" alt="Jameson Staley, Founder of The Staley Social" class="about-photo" width="1179" height="1212">
+          <img data-es-alt="Jameson Staley, fundador de The Staley Social" src="assets/images/jameson-profile.webp" alt="Jameson Staley, Founder of The Staley Social" class="about-photo" width="1179" height="1212">
           <div class="about-image-tag">
-            <div class="name">Jameson Staley</div>
-            <div class="title">Founder &amp; CEO, The Staley Social</div>
+            <div data-es="Jameson Staley" class="name">Jameson Staley</div>
+            <div data-es="Fundador y CEO, The Staley Social" class="title">Founder &amp; CEO, The Staley Social</div>
           </div>
         </div>
         <div class="about-text">
-          <div class="section-label">Founder</div>
-          <h2 class="display-md mb-20">The agency I wished existed<br>when I started.</h2>
-          <p>I got into digital marketing at 15 because I thought it was interesting. By 17-18, I was running Google Ads accounts for real businesses and watching agencies charge companies hundreds of thousands of dollars for work that wasn't set up correctly.</p>
-          <p>The first big client I saw up close had burned through almost $1M across four agencies. Nobody had ever set up proper geofencing. Nobody had touched the conversion tracking. The campaigns were just running, bleeding money into the wrong zip codes.</p>
-          <p>That's what The Staley Social was built to fix. Not just run ads, but actually understand what's working, explain it clearly, and connect it to real revenue. No black boxes. No "trust the process." Just transparent work and measurable results.</p>
-          <p>Eight years in, we work with professional sports teams, commercial real estate firms, local service businesses, and everything in between. The team is small by design, you always know who's working on your account.</p>
+          <div data-es="Fundador" class="section-label">Founder</div>
+          <h2 data-es="La agencia que ojalá hubiera existido<br>cuando yo empecé." class="display-md mb-20">The agency I wished existed<br>when I started.</h2>
+          <p data-es="Entré al marketing digital a los 15 porque me parecía interesante. A los 17 o 18 ya manejaba cuentas de Google Ads para negocios reales y veía cómo las agencias les cobraban cientos de miles de dólares por un trabajo mal configurado.">I got into digital marketing at 15 because I thought it was interesting. By 17-18, I was running Google Ads accounts for real businesses and watching agencies charge companies hundreds of thousands of dollars for work that wasn't set up correctly.</p>
+          <p data-es="El primer cliente grande que vi de cerca había gastado casi $1M entre cuatro agencias. Nadie había configurado bien el geofencing. Nadie había tocado el seguimiento de conversiones. Las campañas simplemente corrían, tirando dinero en los códigos postales equivocados.">The first big client I saw up close had burned through almost $1M across four agencies. Nobody had ever set up proper geofencing. Nobody had touched the conversion tracking. The campaigns were just running, bleeding money into the wrong zip codes.</p>
+          <p data-es="Para arreglar eso se creó The Staley Social. No solo para manejar anuncios, sino para entender de verdad qué funciona, explicarlo con claridad y conectarlo con ingresos reales. Sin cajas negras. Sin &quot;confía en el proceso&quot;. Solo trabajo transparente y resultados medibles.">That's what The Staley Social was built to fix. Not just run ads, but actually understand what's working, explain it clearly, and connect it to real revenue. No black boxes. No "trust the process." Just transparent work and measurable results.</p>
+          <p data-es="Ocho años después, trabajamos con equipos deportivos profesionales, empresas de bienes raíces comerciales, negocios de servicios locales y todo lo que hay en medio. El equipo es pequeño a propósito, siempre sabes quién trabaja en tu cuenta.">Eight years in, we work with professional sports teams, commercial real estate firms, local service businesses, and everything in between. The team is small by design, you always know who's working on your account.</p>
 
           <div class="about-stats">
             <div class="about-stat">
-              <div class="num">8<span style="font-size:1.2rem;">yrs</span></div>
-              <div class="lbl">Hands-on experience</div>
+              <div data-es="8<span style=&quot;font-size:1.2rem;&quot;>años</span>" class="num">8<span style="font-size:1.2rem;">yrs</span></div>
+              <div data-es="Experiencia práctica" class="lbl">Hands-on experience</div>
             </div>
             <div class="about-stat">
               <div class="num">15</div>
-              <div class="lbl">Age started freelancing</div>
+              <div data-es="Edad al empezar como freelance" class="lbl">Age started freelancing</div>
             </div>
             <div class="about-stat">
               <div class="num">6+</div>
-              <div class="lbl">Active client industries</div>
+              <div data-es="Industrias de clientes activos" class="lbl">Active client industries</div>
             </div>
             <div class="about-stat">
-              <div class="num">KC</div>
-              <div class="lbl">Kansas City, MO based</div>
+              <div data-es="KC" class="num">KC</div>
+              <div data-es="Con sede en Kansas City, MO" class="lbl">Kansas City, MO based</div>
             </div>
           </div>
 
           <div style="display:flex;gap:12px;margin-top:32px;">
-            <a href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" class="founder-social-link">
+            <a data-es="<svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><path d=&quot;M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z&quot;/><circle cx=&quot;4&quot; cy=&quot;4&quot; r=&quot;2&quot;/></svg>
+              Conecta en LinkedIn" href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" class="founder-social-link">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
               Connect on LinkedIn
             </a>
-            <a href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" class="founder-social-link">
+            <a data-es="<svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><rect x=&quot;2&quot; y=&quot;2&quot; width=&quot;20&quot; height=&quot;20&quot; rx=&quot;5&quot;/><path d=&quot;M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z&quot;/><line x1=&quot;17.5&quot; y1=&quot;6.5&quot; x2=&quot;17.51&quot; y2=&quot;6.5&quot;/></svg>
+              Síguenos en Instagram" href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" class="founder-social-link">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               Follow on Instagram
             </a>
-            <a href="https://medium.com/@jameson_23094/jameson-staley-the-kansas-city-digital-marketing-strategist-rewriting-rules-at-23-a22e1b314548" target="_blank" rel="noopener" class="founder-social-link">
+            <a data-es="<svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z&quot;/></svg>
+              Lee el reportaje en Medium" href="https://medium.com/@jameson_23094/jameson-staley-the-kansas-city-digital-marketing-strategist-rewriting-rules-at-23-a22e1b314548" target="_blank" rel="noopener" class="founder-social-link">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z"/></svg>
               Read the feature on Medium
             </a>
-            <a href="/jameson-staley" class="founder-social-link">
+            <a data-es="<svg width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;><path d=&quot;M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2&quot;/><circle cx=&quot;12&quot; cy=&quot;7&quot; r=&quot;4&quot;/></svg>
+              Perfil completo del fundador" href="/jameson-staley" class="founder-social-link">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               Full founder profile
             </a>
@@ -248,51 +268,51 @@
   <section class="section" style="padding-top:0;background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
     <div class="container">
       <div class="text-center mb-60">
-        <div class="section-label" style="justify-content:center;">How we operate</div>
-        <h2 class="display-md">What we believe.</h2>
+        <div data-es="Cómo trabajamos" class="section-label" style="justify-content:center;">How we operate</div>
+        <h2 data-es="En lo que creemos." class="display-md">What we believe.</h2>
       </div>
       <div class="services-grid">
         <div class="service-card reveal">
           <div class="service-icon blue">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           </div>
-          <h3>Transparency over polish</h3>
-          <p>We'll tell you what's broken before you hire us. We'll tell you what's not working after. Monthly reports you can read in 5 minutes with KPIs tied to your actual revenue, not impressions or follower counts.</p>
+          <h3 data-es="Transparencia antes que pulido">Transparency over polish</h3>
+          <p data-es="Te diremos qué está roto antes de que nos contrates. Te diremos qué no está funcionando después. Reportes mensuales que lees en 5 minutos, con KPIs ligados a tus ingresos reales, no a impresiones ni a seguidores.">We'll tell you what's broken before you hire us. We'll tell you what's not working after. Monthly reports you can read in 5 minutes with KPIs tied to your actual revenue, not impressions or follower counts.</p>
         </div>
         <div class="service-card reveal reveal-delay-1">
           <div class="service-icon blue">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
-          <h3>Results in 30 days</h3>
-          <p>We don't hide behind a "6-month runway" to show you results. Our 30/60/90 approach starts with stopping the bleeding in month 1. You see movement before you finish paying your first invoice.</p>
+          <h3 data-es="Resultados en 30 días">Results in 30 days</h3>
+          <p data-es="No nos escondemos tras una &quot;pista de 6 meses&quot; para mostrarte resultados. Nuestro enfoque 30/60/90 empieza en el mes 1 deteniendo la fuga de dinero. Ves movimiento antes de terminar de pagar tu primera factura.">We don't hide behind a "6-month runway" to show you results. Our 30/60/90 approach starts with stopping the bleeding in month 1. You see movement before you finish paying your first invoice.</p>
         </div>
         <div class="service-card reveal reveal-delay-2">
           <div class="service-icon green">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
-          <h3>You know who's working on your account</h3>
-          <p>No rotation. No handoffs to a junior rep three months in. You work with the same people from day one. Jameson is personally involved in every account, that's a feature, not a coincidence.</p>
+          <h3 data-es="Sabes quién trabaja en tu cuenta">You know who's working on your account</h3>
+          <p data-es="Sin rotaciones. Sin pasarte a un ejecutivo junior a los tres meses. Trabajas con las mismas personas desde el primer día. Jameson participa personalmente en cada cuenta, eso es una característica, no una casualidad.">No rotation. No handoffs to a junior rep three months in. You work with the same people from day one. Jameson is personally involved in every account, that's a feature, not a coincidence.</p>
         </div>
         <div class="service-card reveal">
           <div class="service-icon purple">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3>The guarantee is real</h3>
-          <p>30% more Google Business Profile views by month 2 or month 2 is free. We put it in writing because we've earned the confidence to back it up. No other KC agency does this.</p>
+          <h3 data-es="La garantía es real">The guarantee is real</h3>
+          <p data-es="30% más de vistas en tu Google Business Profile para el mes 2 o el mes 2 es gratis. Lo ponemos por escrito porque nos hemos ganado la confianza para respaldarlo. Ninguna otra agencia de KC lo hace.">30% more Google Business Profile views by month 2 or month 2 is free. We put it in writing because we've earned the confidence to back it up. No other KC agency does this.</p>
         </div>
         <div class="service-card reveal reveal-delay-1">
           <div class="service-icon red">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </div>
-          <h3>No ad spend markup, ever</h3>
-          <p>Your Google Ads budget goes directly to Google. We don't take a percentage of your spend. Our incentive is your results, not inflating your ad budget so our take gets bigger.</p>
+          <h3 data-es="Sin recargo sobre tu inversión en anuncios, nunca">No ad spend markup, ever</h3>
+          <p data-es="Tu presupuesto de Google Ads va directo a Google. No cobramos un porcentaje de tu gasto. Nuestro incentivo son tus resultados, no inflar tu presupuesto de anuncios para que crezca nuestra parte.">Your Google Ads budget goes directly to Google. We don't take a percentage of your spend. Our incentive is your results, not inflating your ad budget so our take gets bigger.</p>
         </div>
         <div class="service-card reveal reveal-delay-2">
           <div class="service-icon teal">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
-          <h3>Kansas City is our home</h3>
-          <p>We're not a remote agency that treats KC as a market. We live here. We know the neighborhoods, the local search behavior, the seasonal patterns. That local context is a real edge, and our clients feel it.</p>
+          <h3 data-es="Kansas City es nuestro hogar">Kansas City is our home</h3>
+          <p data-es="No somos una agencia remota que trata a KC como un mercado más. Vivimos aquí. Conocemos los vecindarios, el comportamiento de búsqueda local, los patrones de temporada. Ese contexto local es una ventaja real, y nuestros clientes lo sienten.">We're not a remote agency that treats KC as a market. We live here. We know the neighborhoods, the local search behavior, the seasonal patterns. That local context is a real edge, and our clients feel it.</p>
         </div>
       </div>
     </div>
@@ -302,32 +322,32 @@
   <section class="section">
     <div class="container">
       <div class="text-center mb-48">
-        <div class="section-label" style="justify-content:center;">Who does the work</div>
-        <h2 class="display-md">One operator.<br>A system that never sleeps.</h2>
+        <div data-es="Quién hace el trabajo" class="section-label" style="justify-content:center;">Who does the work</div>
+        <h2 data-es="Un operador.<br>Un sistema que nunca duerme." class="display-md">One operator.<br>A system that never sleeps.</h2>
       </div>
 
       <div class="team-grid">
         <div class="team-card reveal">
-          <div class="team-avatar">JS</div>
-          <div class="name">Jameson Staley</div>
-          <div class="role">Founder &amp; Operator</div>
-          <p style="font-size:0.78rem;color:var(--text-3);line-height:1.6;margin-top:10px;">8 years running campaigns for sports orgs, CRE firms, and local service businesses. Started at 15. Every strategy call, every audit, every decision. You work with the person who built it, not a junior account rep.</p>
+          <div data-es="JS" class="team-avatar">JS</div>
+          <div data-es="Jameson Staley" class="name">Jameson Staley</div>
+          <div data-es="Fundador y operador" class="role">Founder &amp; Operator</div>
+          <p data-es="8 años manejando campañas para organizaciones deportivas, firmas de bienes raíces comerciales y negocios de servicios locales. Empecé a los 15. Cada llamada de estrategia, cada auditoría, cada decisión. Trabajas con la persona que lo construyó, no con un ejecutivo de cuenta junior." style="font-size:0.78rem;color:var(--text-3);line-height:1.6;margin-top:10px;">8 years running campaigns for sports orgs, CRE firms, and local service businesses. Started at 15. Every strategy call, every audit, every decision. You work with the person who built it, not a junior account rep.</p>
         </div>
         <div class="team-card reveal reveal-delay-1">
-          <div class="team-avatar">OS</div>
-          <div class="name">The Staley OS</div>
-          <div class="role">Automation Engine</div>
-          <p style="font-size:0.78rem;color:var(--text-3);line-height:1.6;margin-top:10px;">Purpose-built software that answers your leads in under 60 seconds, follows up until they book, and posts your content on schedule. It does not take weekends off, and it does not miss.</p>
+          <div data-es="OS" class="team-avatar">OS</div>
+          <div data-es="The Staley OS" class="name">The Staley OS</div>
+          <div data-es="Motor de automatización" class="role">Automation Engine</div>
+          <p data-es="Software hecho a la medida que responde a tus clientes potenciales en menos de 60 segundos, les da seguimiento hasta que reservan y publica tu contenido a tiempo. No descansa los fines de semana y no falla." style="font-size:0.78rem;color:var(--text-3);line-height:1.6;margin-top:10px;">Purpose-built software that answers your leads in under 60 seconds, follows up until they book, and posts your content on schedule. It does not take weekends off, and it does not miss.</p>
         </div>
         <div class="team-card reveal reveal-delay-2">
           <div class="team-avatar">24</div>
-          <div class="name">Always-On Monitoring</div>
-          <div class="role">Quality Control</div>
-          <p style="font-size:0.78rem;color:var(--text-3);line-height:1.6;margin-top:10px;">Every automation is watched, verified, and repaired around the clock. If something breaks at 2am, it gets caught and fixed before you or your customers ever notice.</p>
+          <div data-es="Monitoreo permanente" class="name">Always-On Monitoring</div>
+          <div data-es="Control de calidad" class="role">Quality Control</div>
+          <p data-es="Cada automatización se vigila, se verifica y se repara las 24 horas. Si algo se rompe a las 2 de la mañana, se detecta y se arregla antes de que tú o tus clientes lo noten." style="font-size:0.78rem;color:var(--text-3);line-height:1.6;margin-top:10px;">Every automation is watched, verified, and repaired around the clock. If something breaks at 2am, it gets caught and fixed before you or your customers ever notice.</p>
         </div>
       </div>
 
-      <p class="text-center reveal" style="font-size:0.82rem;color:var(--text-3);max-width:560px;margin:32px auto 0;line-height:1.7;">Most agencies sell you a team of people you never meet, splitting attention across 40 clients. We built the opposite: one accountable human, backed by software that does the repetitive work perfectly, every time.</p>
+      <p data-es="La mayoría de las agencias te venden un equipo de personas que nunca conoces, repartiendo su atención entre 40 clientes. Nosotros construimos lo contrario: una persona responsable, respaldada por software que hace el trabajo repetitivo a la perfección, siempre." class="text-center reveal" style="font-size:0.82rem;color:var(--text-3);max-width:560px;margin:32px auto 0;line-height:1.7;">Most agencies sell you a team of people you never meet, splitting attention across 40 clients. We built the opposite: one accountable human, backed by software that does the repetitive work perfectly, every time.</p>
     </div>
   </section>
 
@@ -336,12 +356,12 @@
     <div class="container">
       <div class="cta-inner reveal">
         <div class="cta-text">
-          <h2 class="display-sm">Want to work with<br>a team that actually delivers?</h2>
-          <p>Book a free 15-minute call and let's see if we're the right fit. We're honest about what we can and can't do, and we only take on clients we're confident we can get results for.</p>
+          <h2 data-es="¿Quieres trabajar con<br>un equipo que de verdad cumple?" class="display-sm">Want to work with<br>a team that actually delivers?</h2>
+          <p data-es="Reserva una llamada gratis de 15 minutos y veamos si somos la opción correcta. Somos honestos sobre lo que podemos y no podemos hacer, y solo aceptamos clientes a quienes estamos seguros de poder darles resultados.">Book a free 15-minute call and let's see if we're the right fit. We're honest about what we can and can't do, and we only take on clients we're confident we can get results for.</p>
         </div>
         <div class="cta-actions">
-          <a href="contact.html#book" class="btn btn-primary btn-lg">Book a free call</a>
-          <a href="services.html" class="btn btn-secondary btn-lg">View services</a>
+          <a data-es="Agenda una llamada gratis" href="contact.html#book" class="btn btn-primary btn-lg">Book a free call</a>
+          <a data-es="Ver servicios" href="services.html" class="btn btn-secondary btn-lg">View services</a>
         </div>
       </div>
     </div>
@@ -354,27 +374,27 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>The Staley Social</h3>
-          <p>Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
+          <h3 data-es="The Staley Social">The Staley Social</h3>
+          <p data-es="La agencia de marketing digital integral de Kansas City. Resultados garantizados por escrito.">Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
           <div class="footer-social">
-            <a href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-            <a href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-            <a href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a data-es-aria-label="Instagram" href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a data-es-aria-label="Facebook" href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a data-es-aria-label="LinkedIn" href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
           </div>
         </div>
-        <div class="footer-col"><h4>Services</h4><ul>
-            <li><a href="course.html">OPERATOR course</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="services.html#google-ads">Google Ads</a></li><li><a href="services.html#social">Social Media</a></li><li><a href="services.html#web">Website Design</a></li><li><a href="services.html#gbp">Google Business</a></li><li><a href="services.html#video">Video &amp; Content</a></li><li><a href="services.html#email">Email Marketing</a></li></ul></div>
-        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="results.html">Results</a></li><li><a href="work.html">Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><a href="contact.html#book">Book a free call</a></li><li><span style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
+        <div class="footer-col"><h4 data-es="Servicios">Services</h4><ul>
+            <li><a data-es="Curso OPERATOR" href="course.html">OPERATOR course</a></li><li><a data-es="Visualizer Drops" href="visualizer-drops.html">Visualizer Drops</a></li><li><a data-es="Google Ads" href="services.html#google-ads">Google Ads</a></li><li><a data-es="Redes sociales" href="services.html#social">Social Media</a></li><li><a data-es="Diseño web" href="services.html#web">Website Design</a></li><li><a data-es="Google Business" href="services.html#gbp">Google Business</a></li><li><a data-es="Video &amp;amp; Contenido" href="services.html#video">Video &amp; Content</a></li><li><a data-es="Email marketing" href="services.html#email">Email Marketing</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Empresa">Company</h4><ul><li><a data-es="Nosotros" href="about.html">About</a></li><li><a data-es="Resultados" href="results.html">Results</a></li><li><a data-es="Trabajos" href="work.html">Work</a></li><li><a data-es="Precios" href="pricing.html">Pricing</a></li><li><a data-es="Contacto" href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Contacto">Contact</h4><ul><li><a data-es="jameson@thestaleysocial.com" href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><a data-es="Agenda una llamada gratis" href="contact.html#book">Book a free call</a></li><li><span data-es="Kansas City, MO" style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Staley Social LLC. All rights reserved.</p>
-        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
+        <p data-es="&amp;copy; 2026 The Staley Social LLC. Todos los derechos reservados.">&copy; 2026 The Staley Social LLC. All rights reserved.</p>
+        <p data-es="Hecho en Kansas City. <a href=&quot;privacy.html&quot;>Política de privacidad</a> &amp;middot; <a href=&quot;terms.html&quot;>Términos</a>">Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </footer>
 
-  <script defer src="js/main.js?v=7"></script>
+  <script defer src="js/main.js?v=8"></script>
   <script
     src="https://link.msgsndr.com/js/external-tracking.js"
     data-tracking-id="tk_901c8ea583cc41d3bc52d54eaee00e34"

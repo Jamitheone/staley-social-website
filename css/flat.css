@@ -1,5 +1,5 @@
 /* ============================================================
-   TSS — de-slop pass for services / pricing / results
+   TSS - de-slop pass for services / pricing / results
    2026-07-29, continuation of the homepage pass in home.css
 
    Same principle: remove surfaces, let hairlines, type weight
@@ -150,7 +150,7 @@
 .page-flat .faq-a p { padding: 0 0 22px; max-width: 68ch; }
 
 /* ============================================================
-   PASS 3 — 2026-07-30: about / contact / audit / work / legal.
+   PASS 3 - 2026-07-30: about / contact / audit / work / legal.
    Every remaining page now carries .page-flat, so the scoping
    note above is historical. style.css is still untouched: the
    card style is what an un-flagged page falls back to, which

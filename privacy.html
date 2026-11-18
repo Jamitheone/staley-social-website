@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Privacy Policy for The Staley Social. How we collect, use, and protect your information.">
+  <meta data-es-content="Política de privacidad de The Staley Social. Cómo recopilamos, usamos y protegemos tu información cuando visitas nuestro sitio, llenas un formulario o trabajas con nosotros." name="description" content="Privacy Policy for The Staley Social. How we collect, use, and protect your information when you visit our site, fill out a form, or work with us.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Privacy Policy | The Staley Social">
-  <meta property="og:description" content="Privacy Policy for The Staley Social. How we collect, use, and protect your information.">
+  <meta property="og:description" content="Privacy Policy for The Staley Social. How we collect, use, and protect your information when you visit our site, fill out a form, or work with us.">
   <meta property="og:url" content="https://thestaleysocial.com/privacy.html">
   <meta property="og:image" content="https://thestaleysocial.com/assets/og-image.png">
   <meta property="og:site_name" content="The Staley Social">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Privacy Policy | The Staley Social">
-  <meta name="twitter:description" content="Privacy Policy for The Staley Social. How we collect, use, and protect your information.">
+  <meta name="twitter:description" content="Privacy Policy for The Staley Social. How we collect, use, and protect your information when you visit our site, fill out a form, or work with us.">
   <meta name="twitter:image" content="https://thestaleysocial.com/assets/og-image.png">
-  <title>Privacy Policy | The Staley Social</title>
+  <title data-es="Política de privacidad | The Staley Social">Privacy Policy | The Staley Social</title>
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="icon" href="assets/logos/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -31,8 +31,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=14">
-  <link rel="stylesheet" href="css/flat.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="stylesheet" href="css/flat.css?v=4">
   <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
 <script type="application/ld+json">
 {
@@ -57,50 +57,66 @@
 </script>
 </head>
 <body class="page-flat">
-  <a href="#main-content" class="skip-link">Skip to content</a>
+  <a data-es="Saltar al contenido" href="#main-content" class="skip-link">Skip to content</a>
 
   <nav class="nav" id="main-nav">
     <div class="nav-inner">
-      <a href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
+      <a data-es="<span class=&quot;nav-logo-dot&quot;></span>The Staley Social" href="/" class="nav-logo"><span class="nav-logo-dot"></span>The Staley Social</a>
       <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/os.html">Software</a>
-        <a href="/services.html">Services</a>
-        <a href="/results.html">Results</a>
-        <a href="/work.html">Work</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/blog/">Blog</a>
-        <a href="/course.html">Course</a>
-        <a href="/contact.html">Contact</a>
+        <a data-es="Inicio" href="/">Home</a>
+        <a data-es="Software" href="/os.html">Software</a>
+        <a data-es="Servicios" href="/services.html">Services</a>
+        <a data-es="Resultados" href="/results.html">Results</a>
+        <a data-es="Trabajos" href="/work.html">Work</a>
+        <a data-es="Precios" href="/pricing.html">Pricing</a>
+        <a data-es="Blog" href="/blog/">Blog</a>
+        <a data-es="Curso" href="/course.html">Course</a>
+        <a data-es="Contacto" href="/contact.html">Contact</a>
       </div>
       <div class="nav-cta">
-        <a href="contact.html" class="btn btn-secondary btn-sm">Get in touch</a>
-        <a href="contact.html#book" class="btn btn-primary btn-sm">Book a call</a>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <div class="lang" role="group" aria-label="Language" data-es-aria-label="Idioma">
+          <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
+          <label class="sr-only" for="more-lang" data-es="Más idiomas">More languages</label>
+          <select id="more-lang" translate="no">
+            <option value="" data-es="Más">More</option>
+            <optgroup label="Machine translated" data-es-label="Traducción automática">
+              <option value="pt">Português</option><option value="fr">Français</option>
+              <option value="de">Deutsch</option><option value="it">Italiano</option>
+              <option value="tl">Tagalog</option><option value="vi">Tiếng Việt</option>
+              <option value="zh-CN">中文</option><option value="ja">日本語</option>
+              <option value="ko">한국어</option><option value="ar">العربية</option>
+              <option value="hi">हिन्दी</option><option value="ru">Русский</option>
+            </optgroup>
+          </select>
+        </div>
+        <a data-es="Contáctanos" href="contact.html" class="btn btn-secondary btn-sm">Get in touch</a>
+        <a data-es="Reservar llamada" href="contact.html#book" class="btn btn-primary btn-sm">Book a call</a>
+        <button data-es-aria-label="Abrir o cerrar menú" class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
   <div class="nav-mobile" id="nav-mobile">
-    <a href="/">Home</a>
-    <a href="/os.html">Software</a>
-    <a href="/services.html">Services</a>
-    <a href="/results.html">Results</a>
-    <a href="/work.html">Work</a>
-    <a href="/pricing.html">Pricing</a>
-    <a href="/blog/">Blog</a>
-    <a href="/course.html">Course</a>
-    <a href="/contact.html">Contact</a>
+    <a data-es="Inicio" href="/">Home</a>
+    <a data-es="Software" href="/os.html">Software</a>
+    <a data-es="Servicios" href="/services.html">Services</a>
+    <a data-es="Resultados" href="/results.html">Results</a>
+    <a data-es="Trabajos" href="/work.html">Work</a>
+    <a data-es="Precios" href="/pricing.html">Pricing</a>
+    <a data-es="Blog" href="/blog/">Blog</a>
+    <a data-es="Curso" href="/course.html">Course</a>
+    <a data-es="Contacto" href="/contact.html">Contact</a>
 
-    <a href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
+    <a data-es="Agenda una llamada gratis" href="/contact.html#book" class="btn btn-primary" style="margin:12px 0 4px;text-align:center;">Book a free call</a>
     <a href="tel:+18166528233" style="text-align:center;font-size:0.75rem;color:var(--text-2);">(816) 652-8233</a>
   </div>
   <main id="main-content">
 
   <section class="page-hero">
     <div class="container">
-      <div class="section-label">Legal</div>
-      <h1 class="display-lg">Privacy Policy</h1>
-      <p>Last updated: June 2026</p>
+      <div data-es="Legal" class="section-label">Legal</div>
+      <h1 data-es="Política de privacidad" class="display-lg">Privacy Policy</h1>
+      <p data-es="Última actualización: junio de 2026">Last updated: June 2026</p>
     </div>
   </section>
 
@@ -108,23 +124,23 @@
     <div class="container" style="max-width:720px;">
       <div style="color:var(--text-2);line-height:1.85;font-size:0.95rem;">
 
-        <h2 style="color:var(--text);font-size:1.25rem;font-weight:700;margin:40px 0 12px;">1. Information we collect</h2>
-        <p>When you fill out a contact form or reach out directly, we collect your name, email address, business name, and any other information you choose to share. We do not collect payment information on this site.</p>
+        <h2 data-es="1. Información que recopilamos" style="color:var(--text);font-size:1.25rem;font-weight:700;margin:40px 0 12px;">1. Information we collect</h2>
+        <p data-es="Cuando llenas un formulario de contacto o nos escribes directamente, recopilamos tu nombre, correo electrónico, nombre del negocio y cualquier otra información que decidas compartir. No recopilamos información de pago en este sitio.">When you fill out a contact form or reach out directly, we collect your name, email address, business name, and any other information you choose to share. We do not collect payment information on this site.</p>
 
-        <h2 style="color:var(--text);font-size:1.25rem;font-weight:700;margin:40px 0 12px;">2. How we use your information</h2>
-        <p>We use your information solely to respond to your inquiry, schedule calls, and provide the services you've requested. We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+        <h2 data-es="2. Cómo usamos tu información" style="color:var(--text);font-size:1.25rem;font-weight:700;margin:40px 0 12px;">2. How we use your information</h2>
+        <p data-es="Usamos tu información únicamente para responder tu consulta, agendar llamadas y brindarte los servicios que solicitaste. No vendemos, alquilamos ni compartimos tu información personal con terceros para fines de marketing.">We use your information solely to respond to your inquiry, schedule calls, and provide the services you've requested. We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
 
-        <h2 style="color:var(--text);font-size:1.25rem;font-weight:700;margin:40px 0 12px;">3. Cookies and analytics</h2>
-        <p>This site may use basic analytics tools (such as Google Analytics) to understand traffic patterns. These tools may use cookies. You can opt out of Google Analytics tracking at <a href="https://tools.google.com/dlpage/gaoptout" style="color:var(--blue);">tools.google.com/dlpage/gaoptout</a>.</p>
+        <h2 data-es="3. Cookies y analítica" style="color:var(--text);font-size:1.25rem;font-weight:700;margin:40px 0 12px;">3. Cookies and analytics</h2>
+        <p data-es="Este sitio puede usar herramientas básicas de analítica (como Google Analytics) para entender los patrones de tráfico. Estas herramientas pueden usar cookies. Puedes desactivar el rastreo de Google Analytics en <a href=&quot;https://tools.google.com/dlpage/gaoptout&quot; style=&quot;color:var(--blue);&quot;>tools.google.com/dlpage/gaoptout</a>.">This site may use basic analytics tools (such as Google Analytics) to understand traffic patterns. These tools may use cookies. You can opt out of Google Analytics tracking at <a href="https://tools.google.com/dlpage/gaoptout" style="color:var(--blue);">tools.google.com/dlpage/gaoptout</a>.</p>
 
-        <h2 style="color:var(--text);font-size:1.25rem;font-weight:700;margin:40px 0 12px;">4. Data security</h2>
-        <p>We take reasonable precautions to protect your information. Contact form submissions are handled via FormSubmit and delivered directly to our email inbox. We do not store form data on external servers beyond standard email delivery.</p>
+        <h2 data-es="4. Seguridad de los datos" style="color:var(--text);font-size:1.25rem;font-weight:700;margin:40px 0 12px;">4. Data security</h2>
+        <p data-es="Tomamos precauciones razonables para proteger tu información. Los envíos del formulario de contacto se gestionan mediante FormSubmit y llegan directamente a nuestra bandeja de correo. No almacenamos los datos del formulario en servidores externos más allá de la entrega normal del correo.">We take reasonable precautions to protect your information. Contact form submissions are handled via FormSubmit and delivered directly to our email inbox. We do not store form data on external servers beyond standard email delivery.</p>
 
-        <h2 style="color:var(--text);font-size:1.25rem;font-weight:700;margin:40px 0 12px;">5. Third-party links</h2>
-        <p>This site may contain links to external websites. We are not responsible for the privacy practices of those sites.</p>
+        <h2 data-es="5. Enlaces de terceros" style="color:var(--text);font-size:1.25rem;font-weight:700;margin:40px 0 12px;">5. Third-party links</h2>
+        <p data-es="Este sitio puede contener enlaces a sitios web externos. No somos responsables de las prácticas de privacidad de esos sitios.">This site may contain links to external websites. We are not responsible for the privacy practices of those sites.</p>
 
-        <h2 style="color:var(--text);font-size:1.25rem;font-weight:700;margin:40px 0 12px;">6. Contact</h2>
-        <p>Questions about this policy? Email us at <a href="mailto:jameson@thestaleysocial.com" style="color:var(--blue);">jameson@thestaleysocial.com</a>.</p>
+        <h2 data-es="6. Contacto" style="color:var(--text);font-size:1.25rem;font-weight:700;margin:40px 0 12px;">6. Contact</h2>
+        <p data-es="¿Tienes preguntas sobre esta política? Escríbenos a <a href=&quot;mailto:jameson@thestaleysocial.com&quot; style=&quot;color:var(--blue);&quot;>jameson@thestaleysocial.com</a>.">Questions about this policy? Email us at <a href="mailto:jameson@thestaleysocial.com" style="color:var(--blue);">jameson@thestaleysocial.com</a>.</p>
 
       </div>
     </div>
@@ -136,27 +152,27 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>The Staley Social</h3>
-          <p>Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
+          <h3 data-es="The Staley Social">The Staley Social</h3>
+          <p data-es="La agencia de marketing digital integral de Kansas City. Resultados garantizados por escrito.">Kansas City's full-stack digital marketing agency. Results guaranteed in writing.</p>
           <div class="footer-social">
-            <a href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-            <a href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-            <a href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a data-es-aria-label="Instagram" href="https://www.instagram.com/thestaleysocial/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a data-es-aria-label="Facebook" href="https://www.facebook.com/profile.php?id=100064086639717" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a data-es-aria-label="LinkedIn" href="https://www.linkedin.com/company/113523990/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
           </div>
         </div>
-        <div class="footer-col"><h4>Services</h4><ul>
-            <li><a href="course.html">OPERATOR course</a></li><li><a href="visualizer-drops.html">Visualizer Drops</a></li><li><a href="services.html#google-ads">Google Ads</a></li><li><a href="services.html#social">Social Media</a></li><li><a href="services.html#web">Website Design</a></li><li><a href="services.html#gbp">Google Business</a></li><li><a href="services.html#video">Video &amp; Content</a></li><li><a href="services.html#email">Email Marketing</a></li></ul></div>
-        <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="results.html">Results</a></li><li><a href="work.html">Work</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><a href="contact.html#book">Book a free call</a></li><li><span style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
+        <div class="footer-col"><h4 data-es="Servicios">Services</h4><ul>
+            <li><a data-es="Curso OPERATOR" href="course.html">OPERATOR course</a></li><li><a data-es="Visualizer Drops" href="visualizer-drops.html">Visualizer Drops</a></li><li><a data-es="Google Ads" href="services.html#google-ads">Google Ads</a></li><li><a data-es="Redes sociales" href="services.html#social">Social Media</a></li><li><a data-es="Diseño web" href="services.html#web">Website Design</a></li><li><a data-es="Google Business" href="services.html#gbp">Google Business</a></li><li><a data-es="Video &amp;amp; Contenido" href="services.html#video">Video &amp; Content</a></li><li><a data-es="Email marketing" href="services.html#email">Email Marketing</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Empresa">Company</h4><ul><li><a data-es="Nosotros" href="about.html">About</a></li><li><a data-es="Resultados" href="results.html">Results</a></li><li><a data-es="Trabajos" href="work.html">Work</a></li><li><a data-es="Precios" href="pricing.html">Pricing</a></li><li><a data-es="Contacto" href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4 data-es="Contacto">Contact</h4><ul><li><a data-es="jameson@thestaleysocial.com" href="mailto:jameson@thestaleysocial.com">jameson@thestaleysocial.com</a></li><li><a href="tel:+18166528233">(816) 652-8233</a></li><li><a data-es="Agenda una llamada gratis" href="contact.html#book">Book a free call</a></li><li><span data-es="Kansas City, MO" style="color:var(--text-3);">Kansas City, MO</span></li></ul></div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Staley Social LLC. All rights reserved.</p>
-        <p>Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
+        <p data-es="&amp;copy; 2026 The Staley Social LLC. Todos los derechos reservados.">&copy; 2026 The Staley Social LLC. All rights reserved.</p>
+        <p data-es="Hecho en Kansas City. <a href=&quot;privacy.html&quot;>Política de privacidad</a> &amp;middot; <a href=&quot;terms.html&quot;>Términos</a>">Built in Kansas City. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
     </div>
   </footer>
 
-  <script defer src="js/main.js?v=7"></script>
+  <script defer src="js/main.js?v=8"></script>
   <script
     src="https://link.msgsndr.com/js/external-tracking.js"
     data-tracking-id="tk_901c8ea583cc41d3bc52d54eaee00e34"

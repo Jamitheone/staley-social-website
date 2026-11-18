@@ -1,5 +1,5 @@
 /* ============================================
-   THE STALEY SOCIAL — Main JS
+   THE STALEY SOCIAL - Main JS
    Scroll reveals, counter animations,
    nav behavior, FAQ, mobile menu
    ============================================ */
@@ -17,8 +17,37 @@
   } catch (e) { /* private mode: attribution is best effort */ }
 })();
 
+// ─── Language switch (EN / ES). Spanish is hand-written, baked into data-es* attributes. ───
+// ponytail: one hand-written language; add another by adding data-<code> and a button.
+(function () {
+  var ATTRS = ['alt', 'aria-label', 'placeholder', 'title', 'content', 'label'];
+  var els = document.querySelectorAll('[data-es],[data-es-alt],[data-es-aria-label],[data-es-placeholder],[data-es-title],[data-es-content],[data-es-label]');
+  els.forEach(function (el) {
+    if (el.hasAttribute('data-es')) el.dataset.en = el.innerHTML;
+    ATTRS.forEach(function (a) { if (el.hasAttribute('data-es-' + a)) el.setAttribute('data-en-' + a, el.getAttribute(a) || ''); });
+  });
+  function setLang(l) {
+    els.forEach(function (el) {
+      if (el.hasAttribute('data-es')) el.innerHTML = l === 'es' ? el.dataset.es : el.dataset.en;
+      ATTRS.forEach(function (a) { if (el.hasAttribute('data-es-' + a)) el.setAttribute(a, el.getAttribute('data-' + l + '-' + a)); });
+    });
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === l)); });
+    document.querySelectorAll('.pc-dot').forEach(function (d, i) { d.setAttribute('aria-label', (l === 'es' ? 'Ir a la diapositiva ' : 'Go to slide ') + (i + 1)); });
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  }
+  var saved; try { saved = localStorage.getItem('lang'); } catch (e) {}
+  setLang(saved || ((navigator.language || 'en').slice(0, 2) === 'es' ? 'es' : 'en'));
+  document.querySelectorAll('[data-lang]').forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
+  var more = document.getElementById('more-lang');
+  if (more) more.addEventListener('change', function () {
+    if (more.value) location.href = 'https://translate.google.com/translate?sl=en&tl=' + more.value + '&u=' + encodeURIComponent(location.origin + location.pathname);
+  });
+})();
+
 // ─── Motion preference (respected throughout) ───
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (reduceMotion) document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
 
 // ─── Intro splash sequence ───
 (function () {
@@ -49,29 +78,29 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
   // Lock scroll during intro
   document.body.style.overflow = 'hidden';
 
-  // Step 1 — logo fades + scales in (200ms delay)
+  // Step 1 - logo fades + scales in (200ms delay)
   setTimeout(() => { logo.classList.add('show'); }, 200);
 
-  // Step 2 — tagline slides up (700ms)
+  // Step 2 - tagline slides up (700ms)
   setTimeout(() => { tagline.classList.add('show'); }, 700);
 
-  // Step 3 — progress bar fills (900ms)
+  // Step 3 - progress bar fills (900ms)
   setTimeout(() => { bar.classList.add('fill'); }, 900);
 
-  // Step 4 — logo glow pulse (1.4s)
+  // Step 4 - logo glow pulse (1.4s)
   setTimeout(() => { logo.classList.add('glow'); }, 1400);
 
-  // Step 5 — overlay fades out (2.6s)
+  // Step 5 - overlay fades out (2.6s)
   setTimeout(() => {
     overlay.classList.add('hide');
     document.body.style.overflow = '';
   }, 2600);
 
-  // Step 6 — remove from DOM (3.4s)
+  // Step 6 - remove from DOM (3.4s)
   setTimeout(() => { overlay.classList.add('gone'); }, 3400);
 })();
 
-// ─── Lenis smooth scroll (optional — graceful fallback if CDN fails) ───
+// ─── Lenis smooth scroll (optional - graceful fallback if CDN fails) ───
 let lenis = null;
 try {
   if (typeof Lenis !== 'undefined') {
@@ -105,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dots = Array.from({ length: total }, (_, i) => {
       const d = document.createElement('button');
       d.className = 'pc-dot' + (i === 0 ? ' active' : '');
-      d.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      d.setAttribute('aria-label', (document.documentElement.lang === 'es' ? 'Ir a la diapositiva ' : 'Go to slide ') + (i + 1));
       d.addEventListener('click', () => goTo(i));
       dotsEl.appendChild(d);
       return d;
@@ -204,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ─── Scroll reveal + counter — Lenis-compatible ───
+  // ─── Scroll reveal + counter - Lenis-compatible ───
   // IO breaks with Lenis; use scroll + RAF check instead
   const allRevealEls = Array.from(document.querySelectorAll('.reveal, .reveal-wipe, .reveal-left, .reveal-right, .section-divider'));
   const allCounterEls = Array.from(document.querySelectorAll('[data-counter]'));
@@ -314,12 +343,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ─── Contact form — let it POST naturally; formsubmit redirects to ?sent=true ───
+  // ─── Contact form - let it POST naturally; formsubmit redirects to ?sent=true ───
   const form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', () => {
       const btn = form.querySelector('[type="submit"]');
-      btn.textContent = 'Sending…';
+      btn.textContent = document.documentElement.lang === 'es' ? 'Enviando…' : 'Sending…';
       btn.disabled = true;
     });
   }

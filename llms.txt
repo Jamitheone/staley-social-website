@@ -20,3 +20,7 @@
 
 Phone: +1 816-652-8233 | Email: jameson@thestaleysocial.com
 Kansas City, Missouri. Serving the KC metro and statewide MO/KS.
+
+## Languages
+
+The site reads in English and Spanish. Use the EN / ES switch in the header.
